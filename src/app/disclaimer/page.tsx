@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+import { LegalPage } from "@/components/legal-page";
+
+export const metadata: Metadata = { title: "Disclaimer" };
+export default function DisclaimerPage() { return <LegalPage title="Disclaimer" updated="August 26, 2026"><p>This website is a frontend demonstration. Company details, performance statistics, client names, testimonials, case-study results, contact details, scheduling availability, and media placeholders are illustrative until replaced with approved production content.</p><h2>No guaranteed outcomes</h2><p>Marketing results vary by market, offer, budget, execution, competition, and other factors. Any examples or projected outcomes should not be understood as guarantees.</p><h2>External resources</h2><p>Yellow Agency is not responsible for the content or availability of third-party services linked from this website.</p><h2>Professional review</h2><p>Final privacy, cookie, accessibility, and legal content should be reviewed by qualified professionals before the website is published.</p></LegalPage>; }

@@ -1,0 +1,7 @@
+import type { Metadata } from "next";
+import { MediaPlaceholder } from "@/components/media-placeholder";
+import { StandardCta } from "@/components/page-templates";
+import { testimonials } from "@/content/site-data";
+
+export const metadata: Metadata = { title: "Client Testimonials", description: "What growing teams say about working with Yellow Agency." };
+export default function TestimonialsPage() { return <main id="top"><section className="page-hero page-hero--yellow"><div className="container article-header"><p className="eyebrow">Client stories</p><h1>Nice things, said by smart people.</h1><p className="page-hero__lead">The strongest partnerships are built on clarity, care, and work everyone can be proud of.</p></div></section><section className="section"><div className="container collection-grid">{testimonials.map((testimonial) => <article className="collection-card" key={testimonial.name}><span className="collection-card__number">“</span><h3>“{testimonial.quote}”</h3><p><strong>{testimonial.name}</strong><br />{testimonial.role}</p></article>)}</div></section><section className="section section--dark"><div className="container featured-work__grid"><div><p className="eyebrow">Hear it directly</p><h2>Client interview and testimonial reel.</h2><p>The final approved video can replace this placeholder while keeping the same section structure.</p></div><MediaPlaceholder label="Client testimonial reel placeholder" type="video" /></div></section><StandardCta title="Ready for a partnership worth talking about?" /></main>; }
