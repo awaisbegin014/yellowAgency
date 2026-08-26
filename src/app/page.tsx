@@ -125,7 +125,7 @@ export default function Home() {
 
       <section className="section benefits-section section--soft">
         <div className="container two-column two-column--wide">
-          <div className="sticky-copy"><p className="eyebrow">Solutions for small-business clients</p><h2>Help more clients without stretching your agency thinner.</h2><p>Offer a broader, more dependable digital marketing service while keeping your team focused on relationships, sales, and strategy.</p><Link href="/dedicated-teams" className="button button--yellow">Build your fulfillment team <span>↗</span></Link></div>
+          <div className="sticky-copy"><p className="eyebrow">Solutions for small-business clients</p><h2>Help more clients without stretching your agency thinner.</h2><p>Offer a broader, more dependable digital marketing service while keeping your team focused on relationships, sales, and strategy.</p><Link href="/dedicated-teams" className="button button--yellow">Build your fulfillment team <span>↗</span></Link><MediaPlaceholder label="Agency fulfillment team collaboration" className="benefits-section__image" /></div>
           <div className="benefit-list">
             {[["01", "More services", "Expand the capabilities you can confidently sell without recruiting a full department."], ["02", "More capacity", "Take on new work while a trusted specialist team protects delivery quality."], ["03", "More retention", "Give clients one connected experience and fewer reasons to look for another provider."], ["04", "More clarity", "Use plain-language dashboards, direct communication, and visible delivery workflows."]].map(([number, title, copy]) => <article key={number}><span>{number}</span><div><h3>{title}</h3><p>{copy}</p></div></article>)}
           </div>
