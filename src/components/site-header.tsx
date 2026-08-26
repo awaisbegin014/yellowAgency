@@ -7,8 +7,8 @@ import { caseStudies, services } from "@/content/site-data";
 function Brand() {
   return (
     <span className="brand" aria-label="Yellow Agency home">
-      <span className="brand__word">YELLOW<span className="brand__dot">.</span></span>
-      <span className="brand__sub">white label growth agency</span>
+      <span className="brand__mark" aria-hidden="true">Y</span>
+      <span className="brand__copy"><span className="brand__word">Yellow</span><span className="brand__sub">white label growth agency</span></span>
     </span>
   );
 }
