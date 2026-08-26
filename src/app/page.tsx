@@ -11,7 +11,16 @@ const onboarding = [
   ["04", "Launch Plan", "Workflows, schedules, and deliverables are agreed."],
   ["05", "Project Kickoff", "Delivery begins with recurring progress reporting."],
 ];
-const supportFlow = ["Your Client", "You · Agency", "Yellow · Growth Partner", "Client Success Manager", "Project Manager", "Project Lead", "Team Lead", "Fulfillment Team"];
+const supportFlow = [
+  { role: "Your Client", icon: "$", tone: "dark" },
+  { role: "You - Agency", icon: "◎", tone: "yellow" },
+  { role: "Yellow - Agency Growth Partner", icon: "Y", tone: "brand" },
+  { role: "Client Success Delivery Manager", icon: "☆", tone: "light" },
+  { role: "Project Manager", icon: "⚙", tone: "light" },
+  { role: "Project Lead", icon: "⌘", tone: "light" },
+  { role: "Team Lead", icon: "♙", tone: "light" },
+  { role: "Fulfillment Team", icon: "♧", tone: "light" },
+];
 
 function MiniBars({ count = 12 }: { count?: number }) {
   return <div className="hc-bars" aria-hidden="true">{Array.from({ length: count }, (_, index) => <i key={index} style={{ height: `${28 + ((index * 19) % 58)}%` }} />)}</div>;
@@ -71,7 +80,7 @@ export default function Home() {
 
       <section className="hc-section hc-agency-model"><div className="hc-shell hc-two-col"><div><h2>White Label Digital<br />Marketing Agency Model</h2><p>Yellow is structured to help agencies offer complete digital marketing services to small businesses, speed up delivery, and grow without compromising quality.</p><p>Your agency stays in front while our specialists focus on fulfillment, documentation, and quality service delivery.</p><div className="hc-link-columns"><ul><li>White Label PPC Services</li><li>White Label SMM Services</li><li>Book an Appointment</li><li>Read Client Reviews</li></ul><ul><li>White Label SEO Services</li><li>About Yellow Agency</li><li>Get in Touch</li><li>What We Offer</li></ul></div></div><div className="hc-model-diagram" aria-label="Yellow white label agency partnership model"><div className="hc-model-client"><span className="hc-model-client__icon" aria-hidden="true"><i /></span><b>Your Client</b></div><div className="hc-model-connector"><span>↑</span><i /><span>↓</span></div><div className="hc-model-agency"><div><b>$$</b><strong>Agency</strong></div><div><span>Margins</span><b>$$</b></div></div><span className="hc-model-side hc-model-side--revenue">$$$ <small>Partner revenue</small></span><span className="hc-model-side hc-model-side--channels">SEO&nbsp;&nbsp; PPC&nbsp;&nbsp; SOCIAL</span><div className="hc-model-connector"><i /></div><div className="hc-model-yellow"><b>Y</b><strong>Yellow</strong><span>Your fulfillment team</span></div></div></div></section>
 
-      <section className="hc-section hc-support"><div className="hc-shell hc-centered"><h2>How Will Our Support Team<br />Help You?</h2><p>Every client project is supervised by a client success manager and project manager, with clear KPIs, reports, analysis, and updates ready for your clients.</p><Link href="/dedicated-teams" className="hc-btn hc-btn--outline">Learn More</Link><div className="hc-support-flow">{supportFlow.map((role, index) => <div key={role}><Hexagon accent={index === 1 || index === 2}>{role}</Hexagon>{index < supportFlow.length - 1 && <i />}</div>)}</div></div></section>
+      <section className="hc-section hc-support"><div className="hc-shell hc-centered"><h2>How Will Our Support Team<br />Help You?</h2><p>Every client project is supervised by a client success manager and project manager, with clear KPIs, reports, analysis, and updates ready for your clients.</p><Link href="/dedicated-teams" className="hc-btn hc-btn--outline">Learn More</Link><div className="hc-support-flow" aria-label="Support delivery flow">{supportFlow.map(({ role, icon, tone }, index) => <div className={`hc-support-step hc-support-step--${tone}`} key={role}><div className="hc-support-node"><span aria-hidden="true">{icon}</span><strong>{role}</strong></div>{index < supportFlow.length - 1 ? <i aria-hidden="true" /> : null}</div>)}</div></div></section>
 
       <section className="hc-section hc-lead"><div className="hc-shell hc-two-col"><div><h2>Power-Up And Join Other Great Businesses Focusing On Their Growth</h2><ul><li>Scale your business by expanding your services</li><li>Generate more revenue without increasing costs</li><li>Save and reallocate your time towards growth</li><li>Customize services across niches</li><li>Gain useful digital marketing insights</li></ul></div><form className="hc-lead-form"><div><input aria-label="Full name" placeholder="Full Name*" /><input aria-label="Company" placeholder="Company*" /></div><div><input type="email" aria-label="Email" placeholder="Email*" /><input type="tel" aria-label="Phone" placeholder="Phone*" /></div><div className="hc-options"><label><input type="checkbox" /> Immediate Need, Let&apos;s Talk</label><label><input type="checkbox" /> Agency</label><label><input type="checkbox" /> In Research Mode</label><label><input type="checkbox" /> Business Owner</label></div><textarea aria-label="Message" placeholder="Message" rows={5} /><label className="hc-consent"><input type="checkbox" /> I consent to receive updates about my consultation and service inquiry.</label><button className="hc-btn hc-btn--blue" type="submit">Submit</button></form></div></section>
 

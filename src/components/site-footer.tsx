@@ -12,7 +12,14 @@ export function SiteFooter() {
           <h3>Get Free Strategy Audit</h3>
           <form><input type="email" aria-label="Email address" placeholder="Enter your email" /><button type="submit">Subscribe</button></form>
           <a href="mailto:hello@yellowagency.co">✉ hello@yellowagency.co</a>
-          <div className="reference-footer__social">● ◉</div>
+          <div className="reference-footer__social">
+            <a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Yellow Agency on Facebook">f</a>
+            <a href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Yellow Agency on Instagram">◎</a>
+          </div>
+          <div className="reference-footer__badges" aria-label="Technology partnerships">
+            <div className="reference-footer__badge"><span className="google-g" aria-hidden="true">G</span><strong>Google Partner</strong></div>
+            <div className="reference-footer__badge"><span className="google-cloud" aria-hidden="true">☁</span><strong><small>Google Cloud</small>Partner</strong></div>
+          </div>
         </div>
         <div><h3>Industries</h3>{industries.map((item) => <Link href="/industries" key={item}>{item}</Link>)}</div>
         <div><h3>White Label Agency</h3>{services.map((item) => <Link href="/white-label" key={item}>White Label {item}</Link>)}</div>

@@ -91,12 +91,12 @@ export function PartnerEquation({ services }: { services: string[] }) {
         <div className="hc-equation-brand"><span aria-hidden="true">Y</span><b>Yellow</b></div>
         <ul>{services.map((item) => <li key={item}>{item}</li>)}</ul>
       </article>
-      <span className="hc-equation-symbol hc-equation-symbol--plus" aria-hidden="true">+</span>
+      <span className="hc-equation-symbol hc-equation-symbol--plus" aria-hidden="true"><b>+</b></span>
       <article className="hc-equation-card">
         <h3>You As Our Partner</h3>
         <ul><li>Focus on getting more business</li><li>Drive sales</li><li>Ensure client satisfaction</li><li>Oversee project success</li></ul>
       </article>
-      <span className="hc-equation-symbol hc-equation-symbol--equals" aria-hidden="true">=</span>
+      <span className="hc-equation-symbol hc-equation-symbol--equals" aria-hidden="true"><b>=</b></span>
       <article className="hc-equation-card is-yellow" aria-live="polite">
         <div className="hc-testimonial-person">
           <div className="hc-avatar"><Image src={testimonial.image} alt={testimonial.name} fill sizes="95px" /></div>
