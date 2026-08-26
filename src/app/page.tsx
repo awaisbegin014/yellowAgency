@@ -20,7 +20,7 @@ const industryTabs = industries.map((industry) => ({
 
 export default function Home() {
   return (
-    <main id="top">
+    <main id="top" className="home-page">
       <section className="hero section">
         <div className="container hero__inner">
           <h1>Full Stack White Label<br /><span className="marker-ring">Digital Marketing Agency</span></h1>
