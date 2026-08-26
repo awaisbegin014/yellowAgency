@@ -457,6 +457,11 @@ body:has(.home-page) {
   background-attachment: fixed;
 }
 
+body:has(.home-page) .site-header {
+  background: var(--home-yellow-glow);
+  background-attachment: fixed;
+}
+
 .home-page,
 .home-page > section { background: transparent; }
 .home-page .section--soft,
@@ -496,3 +501,10 @@ body:has(.home-page) .site-footer .brand--light .brand__sub { color: var(--ink);
 body:has(.home-page) .site-footer__nav a,
 body:has(.home-page) .site-footer__bottom { color: var(--muted); }
 body:has(.home-page) .site-footer__bottom { border-top-color: #efd66e; }
+
+@media (max-width: 1050px) {
+  body:has(.home-page) .primary-nav {
+    background: var(--home-yellow-glow);
+    background-attachment: fixed;
+  }
+}
