@@ -869,7 +869,13 @@ body:has(.reference-home) .site-header { background: var(--site-yellow-glow); ba
 @keyframes hc-case-slide-right { from { opacity: 0; transform: translateX(34px); } to { opacity: 1; transform: translateX(0); } }
 
 .hc-small-business { padding-block: 90px; }
-.hc-small-business .hc-analytics { width: 100%; height: 580px; transform: scale(.88); }
+.hc-small-business .hc-analytics { width: 100%; height: 580px; transform: scale(.88); transform-origin: center; }
+.hc-small-business .hc-analytics__window { inset: 30px 24px 70px; }
+.hc-small-business .hc-analytics__float { padding: 20px; }
+.hc-small-business .hc-analytics__float--left { bottom: 0; left: 0; width: 230px; }
+.hc-small-business .hc-analytics__float--right { right: 0; bottom: 38px; width: 250px; }
+.hc-small-business .hc-analytics__float b { font-size: 38px; }
+.hc-small-business .hc-analytics__float .hc-bars { height: 84px; }
 .hc-small-business h2 { font-size: clamp(48px, 4vw, 74px); }
 .hc-small-business .hc-arrow-list { margin-block: 24px; }
 .hc-small-business__note { margin-top: 18px; padding-left: 18px; border-left: 4px solid var(--yellow); font-weight: 700; }
