@@ -981,6 +981,10 @@ body:has(.reference-home) .site-header { background: var(--site-yellow-glow); ba
   .hc-section { padding: 64px 0; }
   .hc-split-heading, .hc-two-col, .hc-services__grid, .hc-niche-detail { grid-template-columns: 1fr; gap: 55px; }
   .hc-services__grid, .hc-service-detail, .hc-model-cards, .hc-model-cards article, .hc-niche-detail > div { min-width: 0; }
+  .hc-service-list button.is-active > b { transform: rotate(90deg); }
+  .hc-service-detail--desktop { display: none; }
+  .hc-service-detail--mobile { display: block; width: 100%; min-width: 0; padding: 22px 0 36px; overflow: hidden; }
+  .hc-service-detail--mobile .hc-browser-shot { width: 100%; min-width: 0; margin-top: 0; }
   .hc-hero { min-height: auto; }
   .hc-analytics { width: min(900px, calc(100vw - 48px)); height: 560px; }
   .hc-analytics__window { inset: 20px 24px 50px; }
