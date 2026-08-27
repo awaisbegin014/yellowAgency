@@ -97,11 +97,56 @@ export default function Home() {
 
       <section className="hc-section hc-onboarding"><div className="hc-shell hc-centered"><h2>White Label Digital Marketing<br />Onboarding Process</h2><p>Our onboarding process is simple and swift. We support your agency from discovery and audit through launch, reporting, and ongoing optimization.</p><div className="hc-onboarding-flow">{onboarding.map(([number, title, text]) => <article key={number}><Hexagon><b>{number}</b></Hexagon><i /><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
 
-      <section className="hc-section hc-agency-model"><div className="hc-shell hc-two-col"><div><h2>White Label Digital<br />Marketing Agency Model</h2><p>Yellow is structured to help agencies offer complete digital marketing services to small businesses, speed up delivery, and grow without compromising quality.</p><p>Your agency stays in front while our specialists focus on fulfillment, documentation, and quality service delivery.</p><div className="hc-link-columns"><ul><li>White Label PPC Services</li><li>White Label SMM Services</li><li>Book an Appointment</li><li>Read Client Reviews</li></ul><ul><li>White Label SEO Services</li><li>About Yellow Agency</li><li>Get in Touch</li><li>What We Offer</li></ul></div></div><div className="hc-model-diagram" aria-label="Yellow white label agency partnership model"><div className="hc-model-client"><span className="hc-model-client__icon" aria-hidden="true"><i /></span><b>Your Client</b></div><div className="hc-model-connector"><span>↑</span><i /><span>↓</span></div><div className="hc-model-agency"><div><b>$$</b><strong>Agency</strong></div><div><span>Margins</span><b>$$</b></div></div><span className="hc-model-side hc-model-side--revenue">$$$ <small>Partner revenue</small></span><span className="hc-model-side hc-model-side--channels">SEO&nbsp;&nbsp; PPC&nbsp;&nbsp; SOCIAL</span><div className="hc-model-connector"><i /></div><div className="hc-model-yellow"><b>Y</b><strong>Yellow</strong><span>Your fulfillment team</span></div></div></div></section>
+      <section className="hc-section hc-agency-model">
+        <div className="hc-shell hc-two-col">
+          <div className="hc-agency-model__copy">
+            <span className="hc-agency-model__eyebrow">Your brand. Our delivery team.</span>
+            <h2>White Label Digital<br />Marketing Agency Model</h2>
+            <p>Yellow helps agencies offer a complete digital marketing department without the time, cost, and risk of building every specialty in-house.</p>
+            <p>Your agency remains the trusted client-facing partner. Our strategists, campaign specialists, designers, developers, and account team work behind the scenes to deliver dependable results under your name.</p>
+            <div className="hc-agency-model__benefits">
+              <span><b>01</b> You own every client relationship</span>
+              <span><b>02</b> We manage specialist fulfillment</span>
+              <span><b>03</b> Your margins and brand stay protected</span>
+              <span><b>04</b> Capacity scales with your pipeline</span>
+            </div>
+            <p className="hc-agency-model__note">Sell more confidently, deliver consistently, and grow without adding unnecessary overhead.</p>
+            <div className="hc-link-columns"><ul><li>White Label PPC Services</li><li>White Label SMM Services</li><li>Book an Appointment</li><li>Read Client Reviews</li></ul><ul><li>White Label SEO Services</li><li>About Yellow Agency</li><li>Get in Touch</li><li>What We Offer</li></ul></div>
+          </div>
+          <div className="hc-model-diagram" aria-label="Yellow white label agency partnership model"><div className="hc-model-client"><span className="hc-model-client__icon" aria-hidden="true"><i /></span><b>Your Client</b></div><div className="hc-model-connector"><span>↑</span><i /><span>↓</span></div><div className="hc-model-agency"><div><b>$$</b><strong>Agency</strong></div><div><span>Margins</span><b>$$</b></div></div><span className="hc-model-side hc-model-side--revenue">$$$ <small>Partner revenue</small></span><span className="hc-model-side hc-model-side--channels">SEO&nbsp;&nbsp; PPC&nbsp;&nbsp; SOCIAL</span><div className="hc-model-connector"><i /></div><div className="hc-model-yellow"><b>Y</b><strong>Yellow</strong><span>Your fulfillment team</span></div></div>
+        </div>
+      </section>
 
       <section className="hc-section hc-support"><div className="hc-shell hc-centered"><h2>How Will Our Support Team<br />Help You?</h2><p>Every client project is supervised by a client success manager and project manager, with clear KPIs, reports, analysis, and updates ready for your clients.</p><Link href="/dedicated-teams" className="hc-btn hc-btn--outline">Learn More</Link><div className="hc-support-flow" aria-label="Support delivery flow"><svg className="hc-support-connectors" viewBox="0 0 1600 650" preserveAspectRatio="none" aria-hidden="true"><defs><marker id="support-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" /></marker></defs><path d="M175 180 L240 230" /><path d="M285 355 L235 390" /><path d="M270 450 L410 450" /><path d="M580 425 L680 380" /><path d="M850 300 L955 230" /><path d="M1120 230 L1225 300" /><path d="M1390 300 L1425 230" /></svg>{supportFlow.map(({ role, icon, tone }) => <div className={`hc-support-step hc-support-step--${tone}`} key={role}><div className="hc-support-node"><span aria-hidden="true">{icon}</span><strong>{role}</strong></div></div>)}</div></div></section>
 
-      <section className="hc-section hc-lead"><div className="hc-shell hc-two-col"><div><h2>Power-Up And Join Other Great Businesses Focusing On Their Growth</h2><ul><li>Scale your business by expanding your services</li><li>Generate more revenue without increasing costs</li><li>Save and reallocate your time towards growth</li><li>Customize services across niches</li><li>Gain useful digital marketing insights</li></ul></div><form className="hc-lead-form"><div><input aria-label="Full name" placeholder="Full Name*" /><input aria-label="Company" placeholder="Company*" /></div><div><input type="email" aria-label="Email" placeholder="Email*" /><input type="tel" aria-label="Phone" placeholder="Phone*" /></div><div className="hc-options"><label><input type="checkbox" /> Immediate Need, Let&apos;s Talk</label><label><input type="checkbox" /> Agency</label><label><input type="checkbox" /> In Research Mode</label><label><input type="checkbox" /> Business Owner</label></div><textarea aria-label="Message" placeholder="Message" rows={5} /><label className="hc-consent"><input type="checkbox" /> I consent to receive updates about my consultation and service inquiry.</label><button className="hc-btn hc-btn--blue" type="submit">Submit</button></form></div></section>
+      <section className="hc-section hc-lead">
+        <div className="hc-shell hc-two-col">
+          <div className="hc-lead__copy">
+            <span className="hc-lead__eyebrow">Grow without the overhead</span>
+            <h2>Power-Up And Join Other Great Businesses Focusing On Their Growth</h2>
+            <p>Build a stronger service offering with a specialist fulfillment team working quietly behind your agency. You own the client relationship while Yellow supports strategy, delivery, optimization, and reporting.</p>
+            <ul>
+              <li>Scale your business by expanding your services</li>
+              <li>Generate more revenue without increasing fixed costs</li>
+              <li>Save and reallocate your time towards growth</li>
+              <li>Customize services across industries and niches</li>
+              <li>Gain useful digital marketing insights</li>
+              <li>Take on more client work with dependable capacity</li>
+              <li>Deliver campaigns under your own agency brand</li>
+              <li>Get clear communication and performance reporting</li>
+            </ul>
+            <p className="hc-lead__note">Tell us what your agency needs today, and we&apos;ll recommend a practical fulfillment setup that can grow with you.</p>
+          </div>
+          <form className="hc-lead-form">
+            <div><input aria-label="Full name" placeholder="Full Name*" /><input aria-label="Company" placeholder="Company*" /></div>
+            <div><input type="email" aria-label="Email" placeholder="Email*" /><input type="tel" aria-label="Phone" placeholder="Phone*" /></div>
+            <div className="hc-options"><label><input type="checkbox" /> Immediate Need, Let&apos;s Talk</label><label><input type="checkbox" /> Agency</label><label><input type="checkbox" /> In Research Mode</label><label><input type="checkbox" /> Business Owner</label></div>
+            <textarea aria-label="Message" placeholder="Message" rows={5} />
+            <label className="hc-consent"><input type="checkbox" /> I consent to receive updates about my consultation and service inquiry.</label>
+            <button className="hc-btn hc-btn--blue" type="submit">Submit</button>
+          </form>
+        </div>
+      </section>
 
       <section className="hc-final-cta"><div className="hc-shell"><div><h2>Can A Third Party Agency Truly Take Care Of My Clients?</h2><p>Set up a free session with us to learn how our process and services can help drive your agency&apos;s growth.</p></div><Link href="/book-appointment" className="hc-btn hc-btn--dark">Free 20-Mins Consultation</Link></div></section>
     </main>
