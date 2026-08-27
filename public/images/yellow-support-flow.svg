@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1756" height="760" viewBox="0 0 1756 760" role="img" aria-labelledby="title desc">
+  <title id="title">Yellow Agency support delivery flow</title>
+  <desc id="desc">A connected flow from the client and agency to Yellow's client success, project management, and fulfillment team.</desc>
+  <defs>
+    <linearGradient id="yellowBrand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe45f"/>
+      <stop offset="1" stop-color="#ffc400"/>
+    </linearGradient>
+    <linearGradient id="yellowPartner" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffe16a"/>
+      <stop offset="1" stop-color="#f7bf00"/>
+    </linearGradient>
+    <marker id="arrowGold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#efb400"/>
+    </marker>
+    <style>
+      .connector { fill: none; stroke: #7c7c7c; stroke-width: 4; stroke-dasharray: 11 9; marker-end: url(#arrowGold); }
+      .node { fill: #fbfbfb; stroke: #ececec; stroke-width: 2; }
+      .label { fill: #343434; font-family: Arial, Helvetica, sans-serif; font-size: 23px; font-weight: 700; text-anchor: middle; }
+      .icon { fill: #efb400; font-family: "Segoe UI Symbol", Arial, sans-serif; font-size: 67px; font-weight: 700; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <rect width="1756" height="720" fill="#fff"/>
+
+  <path class="connector" d="M 250 235 L 309 292"/>
+  <path class="connector" d="M 354 463 L 326 492"/>
+  <path class="connector" d="M 342 588 L 445 580"/>
+  <path class="connector" d="M 658 496 L 747 442"/>
+  <path class="connector" d="M 930 331 L 1027 248"/>
+  <path class="connector" d="M 1220 248 L 1315 331"/>
+  <path class="connector" d="M 1494 331 L 1560 267"/>
+
+  <g transform="translate(40 40)">
+    <polygon points="64,0 192,0 256,110 192,220 64,220 0,110" fill="#343434"/>
+    <text x="128" y="92" class="icon" fill="#efb400">$</text>
+    <text x="128" y="154" class="label" fill="#fff">Your Client</text>
+  </g>
+
+  <g transform="translate(300 245)">
+    <polygon points="64,0 192,0 256,110 192,220 64,220 0,110" fill="url(#yellowBrand)"/>
+    <text x="128" y="92" class="icon" fill="#efb400">◎</text>
+    <text x="128" y="154" class="label">You - Agency</text>
+  </g>
+
+  <g transform="translate(70 470)">
+    <polygon points="68,0 204,0 272,118 204,236 68,236 0,118" fill="url(#yellowPartner)"/>
+    <text x="136" y="102" class="icon" fill="#343434">Y</text>
+    <text x="136" y="162" class="label">Yellow - Agency</text>
+    <text x="136" y="192" class="label">Growth Partner</text>
+  </g>
+
+  <g transform="translate(440 470)">
+    <polygon class="node" points="64,0 192,0 256,110 192,220 64,220 0,110"/>
+    <text x="128" y="94" class="icon">★</text>
+    <text x="128" y="151" class="label">Client Success</text>
+    <text x="128" y="181" class="label">Delivery Manager</text>
+  </g>
+
+  <g transform="translate(734 289)">
+    <polygon class="node" points="64,0 192,0 256,110 192,220 64,220 0,110"/>
+    <text x="128" y="98" class="icon">⚙</text>
+    <text x="128" y="160" class="label">Project Manager</text>
+  </g>
+
+  <g transform="translate(1014 102)">
+    <polygon class="node" points="64,0 192,0 256,110 192,220 64,220 0,110"/>
+    <text x="128" y="100" class="icon">⌘</text>
+    <text x="128" y="160" class="label">Project Lead</text>
+  </g>
+
+  <g transform="translate(1299 289)">
+    <polygon class="node" points="64,0 192,0 256,110 192,220 64,220 0,110"/>
+    <text x="128" y="98" class="icon">♟</text>
+    <text x="128" y="160" class="label">Team Lead</text>
+  </g>
+
+  <g transform="translate(1486 102)">
+    <polygon class="node" points="64,0 192,0 256,110 192,220 64,220 0,110"/>
+    <text x="128" y="98" class="icon">♣</text>
+    <text x="128" y="160" class="label">Fulfillment Team</text>
+  </g>
+</svg>

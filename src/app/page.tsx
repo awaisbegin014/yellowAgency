@@ -9,17 +9,6 @@ const onboarding = [
   ["04", "Launch Plan", "Workflows, schedules, and deliverables are agreed."],
   ["05", "Project Kickoff", "Delivery begins with recurring progress reporting."],
 ];
-const supportFlow = [
-  { role: "Your Client", icon: "$", tone: "dark" },
-  { role: "You - Agency", icon: "◎", tone: "yellow" },
-  { role: "Yellow - Agency Growth Partner", icon: "Y", tone: "brand" },
-  { role: "Client Success Delivery Manager", icon: "☆", tone: "light" },
-  { role: "Project Manager", icon: "⚙", tone: "light" },
-  { role: "Project Lead", icon: "⌘", tone: "light" },
-  { role: "Team Lead", icon: "♙", tone: "light" },
-  { role: "Fulfillment Team", icon: "♧", tone: "light" },
-];
-
 function MiniBars({ count = 12 }: { count?: number }) {
   return <div className="hc-bars" aria-hidden="true">{Array.from({ length: count }, (_, index) => <i key={index} style={{ height: `${28 + ((index * 19) % 58)}%` }} />)}</div>;
 }
@@ -52,7 +41,7 @@ export default function Home() {
         <div className="hc-shell hc-hero__visual"><AnalyticsDashboard /></div>
       </section>
 
-      <section className="hc-section hc-partners"><div className="hc-shell"><div className="hc-split-heading"><h2>Hear What Our Partners<br />Have To Say About Us</h2><div><p>Our clients endorse and appreciate our personable service, expert knowledge and on-time delivery. This section explores our recent highlights.</p><ul className="hc-checks"><li>We want you to scale your business</li><li>Retaining your high quality</li></ul></div></div><div className="hc-video-grid"><article className="hc-video-card"><Image src="/images/unsplash/portrait-02.jpg" alt="Agency partner Seth Brown" fill sizes="50vw" /><div><h3>Seth Brown</h3><span>Agency Owner</span></div></article><article className="hc-video-card"><Image src="/images/unsplash/portrait-04.jpg" alt="Agency partner Josh Radford" fill sizes="50vw" /><div><h3>Josh Radford</h3><span>Agency Owner</span></div></article></div></div></section>
+      <section className="hc-section hc-partners"><div className="hc-shell"><div className="hc-split-heading"><h2>Hear What Our Partners<br />Have To Say About Us</h2><div><p>Our partners value responsive communication, specialist knowledge, and dependable delivery that stays invisible behind their brand. We help agencies confidently accept more work while protecting the client relationships they worked hard to build.</p><ul className="hc-checks"><li>Scale your agency without expanding overhead</li><li>Retain high-quality client relationships</li><li>Deliver campaigns through proven specialists</li><li>Receive clear updates, reports, and strategic support</li></ul></div></div><div className="hc-video-grid"><article className="hc-video-card"><Image src="/images/unsplash/portrait-02.jpg" alt="Agency partner Seth Brown" fill sizes="50vw" /><div><h3>Seth Brown</h3><span>Agency Owner</span></div></article><article className="hc-video-card"><Image src="/images/unsplash/portrait-04.jpg" alt="Agency partner Josh Radford" fill sizes="50vw" /><div><h3>Josh Radford</h3><span>Agency Owner</span></div></article></div></div></section>
 
       <section className="hc-section hc-help"><div className="hc-shell hc-two-col"><div className="hc-photo-collage"><Image src="/images/unsplash/team-collaboration-01.jpg" alt="Agency strategy meeting" fill sizes="50vw" /><div className="hc-chart-card hc-chart-card--top"><span>Users</span><div className="hc-area-chart"><i /></div></div><div className="hc-chart-card hc-chart-card--bottom"><span>Search volume trends</span><MiniBars count={9} /></div></div><div><h2>How Can Yellow Help You?</h2><p>Yellow is your elite white label growth and fulfillment partner for digital marketing services. We will:</p><ul className="hc-arrow-list"><li>Streamline your client onboarding process</li><li>Scale your profits fast</li><li>Generate more revenue</li><li>Reduce overhead costs</li><li>Save and reallocate your time</li><li>Customize your services across niches</li></ul><p>Gain refined insight with complete transparency under your agency&apos;s name. Our reseller services evolve with the market to offer premium white label marketing services.</p><p className="hc-help__note">From the first strategy call through campaign delivery and monthly reporting, our specialists work quietly behind your brand. You keep ownership of every client relationship while gaining the capacity, systems, and expertise of an experienced fulfillment department.</p><Link href="/about-us" className="hc-btn hc-btn--outline">About Us</Link></div></div></section>
 
@@ -118,7 +107,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="hc-section hc-support"><div className="hc-shell hc-centered"><h2>How Will Our Support Team<br />Help You?</h2><p>Every client project is supervised by a client success manager and project manager, with clear KPIs, reports, analysis, and updates ready for your clients.</p><Link href="/dedicated-teams" className="hc-btn hc-btn--outline">Learn More</Link><div className="hc-support-flow" aria-label="Support delivery flow"><svg className="hc-support-connectors" viewBox="0 0 1600 650" preserveAspectRatio="none" aria-hidden="true"><defs><marker id="support-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" /></marker></defs><path d="M175 180 L240 230" /><path d="M285 355 L235 390" /><path d="M270 450 L410 450" /><path d="M580 425 L680 380" /><path d="M850 300 L955 230" /><path d="M1120 230 L1225 300" /><path d="M1390 300 L1425 230" /></svg>{supportFlow.map(({ role, icon, tone }) => <div className={`hc-support-step hc-support-step--${tone}`} key={role}><div className="hc-support-node"><span aria-hidden="true">{icon}</span><strong>{role}</strong></div></div>)}</div></div></section>
+      <section className="hc-section hc-support"><div className="hc-shell hc-centered"><h2>How Will Our Support Team<br />Help You?</h2><p>Every client project is supervised by a client success manager and project manager, with clear KPIs, reports, analysis, and updates ready for your clients.</p><Link href="/dedicated-teams" className="hc-btn hc-btn--outline">Learn More</Link><div className="hc-support-flow-image"><Image src="/images/yellow-support-flow.svg" alt="Yellow Agency support delivery flow from client to fulfillment team" width={1756} height={760} sizes="100vw" priority unoptimized /></div></div></section>
 
       <section className="hc-section hc-lead">
         <div className="hc-shell hc-two-col">
