@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const resultSets = {
@@ -57,6 +58,30 @@ const agencyStats = [
   { value: 10, suffix: "+", label: "Years of Success" },
   { value: 6, suffix: "+", label: "Dynamic Verticals" },
   { value: 3, suffix: "", label: "Countries" },
+];
+
+const nicheData = [
+  { slug: "hvac", title: "HVAC", clients: "20+", description: "Local visibility, paid search, and lead follow-up designed for competitive HVAC service areas.", benefits: ["Local growth strategy", "High-intent search campaigns", "Service-area SEO", "Call and lead tracking"] },
+  { slug: "cosmetic-surgeon", title: "Cosmetic Surgeon", clients: "12+", description: "A trust-led patient journey across search, content, reputation, and high-consideration landing pages.", benefits: ["Patient acquisition strategy", "Procedure-focused campaigns", "Reputation support", "Consultation conversion tracking"] },
+  { slug: "pest-control", title: "Pest Control", clients: "18+", description: "Fast, focused acquisition and local-search programs for residential and commercial pest-control teams.", benefits: ["Seasonal demand campaigns", "Local search optimization", "Emergency-service advertising", "Qualified lead reporting"] },
+  { slug: "dental", title: "Dental", clients: "25+", description: "A patient-first system spanning local search, paid media, reputation, and useful treatment content.", benefits: ["New-patient campaigns", "Treatment page SEO", "Local reputation growth", "Appointment conversion tracking"] },
+  { slug: "flooring", title: "Flooring", clients: "10+", description: "Visual creative and local lead generation designed for showrooms, installers, and specialty contractors.", benefits: ["Project-led creative", "Local lead generation", "Showroom campaign support", "Quote-request optimization"] },
+  { slug: "landscaping", title: "Landscaping", clients: "14+", description: "Service-area search, project-led creative, and follow-up systems for residential and commercial teams.", benefits: ["Seasonal growth planning", "Service-area targeting", "Project portfolio content", "Estimate lead nurturing"] },
+  { slug: "plumbing", title: "Plumbing", clients: "22+", description: "Urgent-intent advertising, local search, and reputation programs designed to turn demand into calls.", benefits: ["Emergency search campaigns", "Local SEO coverage", "Call-focused landing pages", "Lead quality monitoring"] },
+  { slug: "roofing", title: "Roofing", clients: "16+", description: "A full local-growth system for inspection, repair, replacement, and storm-related demand.", benefits: ["Inspection lead campaigns", "Storm-demand targeting", "Roofing service SEO", "Estimate conversion reporting"] },
+];
+
+const serviceTabs = [
+  { slug: "facebook-ads-services", title: "Facebook Ads", dashboard: "Meta Ads Manager", image: "social-media.jpg", description: "Audience-led Facebook and Instagram campaigns built to create qualified demand and measurable growth.", benefits: ["Audience and competitor research", "Creative testing and optimization", "Conversion tracking and reporting"] },
+  { slug: "google-ads-services", title: "Google Ads", dashboard: "Google Ads Dashboard", image: "analytics-01.jpg", description: "High-intent search and display campaigns that connect client offers with people ready to take action.", benefits: ["Keyword and search-term strategy", "Campaign and bidding optimization", "Lead-quality performance reporting"] },
+  { slug: "seo-services", title: "Search Engine Optimization", dashboard: "SEO Performance Dashboard", image: "analytics-02.jpg", description: "Technical, content, and authority improvements designed to grow sustainable organic visibility.", benefits: ["Technical and on-page audits", "Content opportunity planning", "Ranking and conversion measurement"] },
+  { slug: "seo-services", title: "Local SEO", dashboard: "Local Search Dashboard", image: "contractor.jpg", description: "Location-focused search programs that help service businesses appear when nearby customers need them.", benefits: ["Google Business Profile optimization", "Local landing-page strategy", "Review and citation support"] },
+  { slug: "web-design-services", title: "Website Design", dashboard: "Website Design Preview", image: "creative-design-01.jpg", description: "Clear, polished website experiences designed around brand trust, usability, and conversion.", benefits: ["Conversion-focused page layouts", "Responsive interface design", "Brand-consistent design systems"] },
+  { slug: "web-development-services", title: "Website Development", dashboard: "Development Workspace", image: "web-development.jpg", description: "Reliable, responsive websites developed for speed, maintainability, and a smooth customer journey.", benefits: ["Responsive frontend development", "Performance optimization", "Quality assurance and launch support"] },
+  { slug: "social-media-management-services", title: "Social Media Management", dashboard: "Social Content Planner", image: "social-02.jpg", description: "Consistent social content and community activity that keep client brands relevant and recognizable.", benefits: ["Monthly content planning", "Platform-specific creative", "Engagement and growth reporting"] },
+  { slug: "content-writing-services", title: "Content Writing", dashboard: "Content Calendar", image: "content-writing.jpg", description: "Useful, search-aware writing that communicates expertise and guides readers toward the next step.", benefits: ["Website and landing-page copy", "SEO articles and resources", "Editing and brand-voice alignment"] },
+  { slug: "graphics-design-services", title: "Graphic Designing", dashboard: "Creative Studio", image: "creative-design-03.jpg", description: "On-brand visual assets that give every campaign, channel, and client touchpoint a professional finish.", benefits: ["Campaign and social graphics", "Brand collateral and templates", "Digital ad creative production"] },
+  { slug: "go-high-level-services", title: "Go High Level", dashboard: "CRM Automation Dashboard", image: "analytics-03.jpg", description: "White-label CRM setup and automation that organize leads, communication, and follow-up under your brand.", benefits: ["CRM and pipeline configuration", "Workflow and nurture automation", "White-label account support"] },
 ];
 
 function MetricCard({ value, label, offset, active }: { value: string; label: string; offset: number; active: boolean }) {
@@ -142,6 +167,57 @@ export function AnimatedStats() {
         {agencyStats.map((stat, index) => <div key={stat.label}><b>{values[index]}{stat.suffix}</b><span>{stat.label}</span></div>)}
       </div>
     </section>
+  );
+}
+
+export function NicheTabs() {
+  const [activeSlug, setActiveSlug] = useState(nicheData[0].slug);
+  const activeNiche = nicheData.find((niche) => niche.slug === activeSlug) ?? nicheData[0];
+
+  return (
+    <>
+      <div className="hc-pills" aria-label="Choose an industry specialization">
+        {nicheData.map((niche) => (
+          <button
+            type="button"
+            className={niche.slug === activeSlug ? "is-active" : ""}
+            aria-pressed={niche.slug === activeSlug}
+            onClick={() => setActiveSlug(niche.slug)}
+            key={niche.slug}
+          >
+            {niche.title}
+          </button>
+        ))}
+      </div>
+      <div className="hc-niche-detail" key={activeNiche.slug}>
+        <div><h3>{activeNiche.title}</h3><span>Worked on {activeNiche.clients} clients</span><p>{activeNiche.description}</p></div>
+        <div><h3>What You&apos;ll Get:</h3><ul>{activeNiche.benefits.map((benefit) => <li key={benefit}>{benefit}</li>)}</ul><Link href={`/industries/${activeNiche.slug}`} className="hc-text-link">Learn More ↗</Link></div>
+      </div>
+    </>
+  );
+}
+
+export function ServiceTabs() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeService = serviceTabs[activeIndex];
+
+  return (
+    <div className="hc-services__grid">
+      <div className="hc-service-list" aria-label="Choose a service dashboard">
+        {serviceTabs.map((service, index) => (
+          <button type="button" className={index === activeIndex ? "is-active" : ""} aria-pressed={index === activeIndex} onClick={() => setActiveIndex(index)} key={service.title}>
+            <span>{service.title}</span><b aria-hidden="true">→</b>
+          </button>
+        ))}
+      </div>
+      <div className="hc-service-detail" key={activeService.title}>
+        <div className="hc-browser-shot"><div className="hc-window-bar"><i /><i /><i /><span>{activeService.dashboard}</span></div><Image src={`/images/unsplash/${activeService.image}`} alt={`${activeService.title} dashboard preview`} fill sizes="50vw" /></div>
+        <h3>{activeService.title}</h3>
+        <p>{activeService.description}</p>
+        <ul>{activeService.benefits.map((benefit) => <li key={benefit}>{benefit}</li>)}</ul>
+        <Link href={`/white-label/${activeService.slug}`} className="hc-text-link">Learn More ↗</Link>
+      </div>
+    </div>
   );
 }
 
