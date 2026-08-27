@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatedStats, NicheTabs, PartnerEquation, ResultsComparison, ServiceTabs } from "@/components/home-interactions";
+import { AnimatedStats, CaseStudiesSlider, NicheTabs, PartnerEquation, ResultsComparison, ServiceTabs } from "@/components/home-interactions";
 
 const onboarding = [
   ["01", "Client Privacy", "NDAs and contracts protect every client relationship."],
@@ -68,7 +68,7 @@ export default function Home() {
 
       <section className="hc-band"><div className="hc-shell"><h2><em>Need GoHighLevel For Clients?</em><br />Or Custom White Label GHL</h2><Link href="/white-label/go-high-level-services" className="hc-btn hc-btn--outline">Learn More</Link></div></section>
 
-      <section className="hc-section hc-cases"><div className="hc-shell hc-centered"><h2>Backup Your Agency With<br />Data-Driven Case Studies</h2><p>All it takes for clients to choose your services is a stellar case study. Use proof from niche campaigns to improve conversion rates and grow with confidence.</p><div className="hc-case-grid">{[["Cold Email Outreach Digital Marketing Case Study", "content-writing.jpg"], ["Auto Dealer Google Ads Case Study", "contractor-02.jpg"], ["Party Rentals Google Ads Case Study", "brand-growth.jpg"]].map(([title, image]) => <article key={title}><div><Image src={`/images/unsplash/${image}`} alt={title} fill sizes="33vw" /><span className="hc-case-chart"><MiniBars count={5} /></span></div><h3>{title}</h3><Link href="/case-studies" aria-label={`View ${title}`}>→</Link></article>)}</div><Link href="/case-studies" className="hc-btn hc-btn--outline">View All Case Studies</Link></div></section>
+      <section className="hc-section hc-cases"><div className="hc-shell hc-centered"><h2>Backup Your Agency With<br />Data-Driven Case Studies</h2><p>All it takes for clients to choose your services is a stellar case study. Use proof from niche campaigns to improve conversion rates and grow with confidence.</p><CaseStudiesSlider /><Link href="/case-studies" className="hc-btn hc-btn--outline">View All Case Studies</Link></div></section>
 
       <section className="hc-band hc-band--cta"><div className="hc-shell"><h2><em>Ready To Move Into</em><br />The Digital World?</h2><div><Link href="/book-appointment" className="hc-btn hc-btn--dark">Schedule A Consultation</Link><Link href="/contact-us" className="hc-btn hc-btn--outline">Contact Us</Link></div></div></section>
 
@@ -104,6 +104,7 @@ export default function Home() {
             <h2>White Label Digital<br />Marketing Agency Model</h2>
             <p>Yellow helps agencies offer a complete digital marketing department without the time, cost, and risk of building every specialty in-house.</p>
             <p>Your agency remains the trusted client-facing partner. Our strategists, campaign specialists, designers, developers, and account team work behind the scenes to deliver dependable results under your name.</p>
+            <p>Each engagement includes a defined delivery plan, shared priorities, quality checks, and straightforward reporting. That gives your team a reliable way to add services, protect turnaround times, and keep every client informed as their campaigns grow.</p>
             <div className="hc-agency-model__benefits">
               <span><b>01</b> You own every client relationship</span>
               <span><b>02</b> We manage specialist fulfillment</span>

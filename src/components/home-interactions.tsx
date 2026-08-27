@@ -84,6 +84,12 @@ const serviceTabs = [
   { slug: "go-high-level-services", title: "Go High Level", dashboard: "CRM Automation Dashboard", image: "analytics-03.jpg", description: "White-label CRM setup and automation that organize leads, communication, and follow-up under your brand.", benefits: ["CRM and pipeline configuration", "Workflow and nurture automation", "White-label account support"] },
 ];
 
+const homeCaseStudies = [
+  { title: "Cold Email Outreach Digital Marketing Case Study", image: "content-writing.jpg" },
+  { title: "Auto Dealer Google Ads Case Study", image: "contractor-02.jpg" },
+  { title: "Party Rentals Google Ads Case Study", image: "brand-growth.jpg" },
+];
+
 const serviceDashboardMetrics: Record<string, Array<{ label: string; value: string; change: string }>> = {
   "Facebook Ads": [{ label: "Reach", value: "128K", change: "+24%" }, { label: "Qualified leads", value: "842", change: "+18%" }, { label: "ROAS", value: "4.8x", change: "+0.7x" }],
   "Google Ads": [{ label: "Clicks", value: "18.4K", change: "+21%" }, { label: "Conversions", value: "1,206", change: "+16%" }, { label: "Cost per lead", value: "$31", change: "-12%" }],
@@ -98,13 +104,29 @@ const serviceDashboardMetrics: Record<string, Array<{ label: string; value: stri
 };
 
 function MetricCard({ value, label, offset, active }: { value: string; label: string; offset: number; active: boolean }) {
-  const chartHeight = Math.min(82, 16 + Number.parseFloat(value) * 0.54);
+  const numericValue = Number.parseFloat(value);
+  const chartHeight = Math.min(41, 30 + numericValue * 0.12);
+  const lift = Math.min(4, offset * 0.25);
+  const graphLevels = (active
+    ? [35, 39, 29, 36, 22, 30, 15, 24, 7, 14]
+    : [38, 40, 34, 38, 29, 34, 24, 29, 18, 23]
+  ).map((level) => Math.max(4, level - lift));
+  const graphPoints = graphLevels
+    .map((level, index) => `${(index / (graphLevels.length - 1)) * 100},${level}`)
+    .join(", ");
 
   return (
     <article className={`hc-metric-card ${active ? "is-after" : "is-before"}`}>
       <b>{value}</b>
       <span>{label}</span>
-      <div className="hc-metric-card__mountain" style={{ height: `${chartHeight}%`, clipPath: `polygon(0 ${70 - offset}%, 14% ${78 - offset}%, 28% ${61 + offset}%, 43% 72%, 58% ${53 + offset}%, 72% 68%, 87% ${45 + offset}%, 100% 58%, 100% 100%, 0 100%)` }} />
+      <div className="hc-metric-card__mountain" aria-hidden="true" style={{ height: `${chartHeight}%` }}>
+        <svg key={`${active}-${value}`} viewBox="0 0 100 40" preserveAspectRatio="none">
+          <line x1="0" y1="30" x2="100" y2="30" />
+          <line x1="0" y1="20" x2="100" y2="20" />
+          <polygon points={`${graphPoints} 100,40 0,40`} />
+          <polyline points={graphPoints} />
+        </svg>
+      </div>
     </article>
   );
 }
@@ -210,7 +232,47 @@ export function NicheTabs() {
   );
 }
 
+function CaseStudyCard({ study, sizes }: { study: (typeof homeCaseStudies)[number]; sizes: string }) {
+  return (
+    <article>
+      <div>
+        <Image src={`/images/unsplash/${study.image}`} alt={study.title} fill sizes={sizes} />
+        <span className="hc-case-chart"><span className="hc-bars" aria-hidden="true">{Array.from({ length: 5 }, (_, index) => <i key={index} style={{ height: `${28 + ((index * 19) % 58)}%` }} />)}</span></span>
+      </div>
+      <h3>{study.title}</h3>
+      <Link href="/case-studies" aria-label={`View ${study.title}`}>→</Link>
+    </article>
+  );
+}
+
+export function CaseStudiesSlider() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [direction, setDirection] = useState<"left" | "right">("right");
+  const move = (amount: number) => {
+    setDirection(amount > 0 ? "right" : "left");
+    setActiveIndex((current) => (current + amount + homeCaseStudies.length) % homeCaseStudies.length);
+  };
+
+  return (
+    <>
+      <div className="hc-case-grid hc-case-grid--desktop">
+        {homeCaseStudies.map((study) => <CaseStudyCard key={study.title} study={study} sizes="33vw" />)}
+      </div>
+      <div className="hc-case-slider" aria-live="polite">
+        <div className={`hc-case-slider__slide is-${direction}`} key={activeIndex}>
+          <CaseStudyCard study={homeCaseStudies[activeIndex]} sizes="92vw" />
+        </div>
+        <div className="hc-case-slider__controls">
+          <button type="button" onClick={() => move(-1)} aria-label="Previous case study">‹</button>
+          <button type="button" onClick={() => move(1)} aria-label="Next case study">›</button>
+        </div>
+      </div>
+    </>
+  );
+}
+
 type DashboardMetric = { label: string; value: string; change: string };
+type ServiceTab = (typeof serviceTabs)[number];
 
 function DashboardHeader({ title, period = "Last 30 days" }: { title: string; period?: string }) {
   return <div className="hc-unique-dashboard__header"><div><span>Yellow reporting</span><b>{title}</b></div><small>{period}</small></div>;
@@ -244,30 +306,40 @@ function ServiceDashboardVisual({ metrics, activeIndex }: { metrics: DashboardMe
   return <div className="hc-unique-dashboard hc-board--ghl"><DashboardHeader title="GoHighLevel opportunity pipeline" period="Live CRM" /><div className="hc-ghl-pipeline">{[["New leads", "128", "Consultation request", "Website lead"], ["Contacted", "74", "Follow-up sent", "Call scheduled"], ["Qualified", "39", "Proposal ready", "Decision maker"], ["Won", "18", "New retainer", "Onboarding"]].map(([title, count, ...cards]) => <div key={title}><header><b>{title}</b><span>{count}</span></header>{cards.map((card) => <p key={card}>{card}<small>Automation active</small></p>)}</div>)}</div><div className="hc-ghl-automation"><i>Trigger</i><span>→</span><i>SMS + Email</i><span>→</span><i>Book call</i><span>→</span><i>Pipeline update</i></div></div>;
 }
 
+function ServiceDetail({ service, activeIndex, variant }: { service: ServiceTab; activeIndex: number; variant: "desktop" | "mobile" }) {
+  const dashboardMetrics = serviceDashboardMetrics[service.title];
+
+  return (
+    <div className={`hc-service-detail hc-service-detail--${variant}`}>
+      <div className="hc-browser-shot">
+        <div className="hc-window-bar"><i /><i /><i /><span>{service.dashboard}</span></div>
+        <ServiceDashboardVisual metrics={dashboardMetrics} activeIndex={activeIndex} />
+      </div>
+      <h3>{service.title}</h3>
+      <p>{service.description}</p>
+      <ul>{service.benefits.map((benefit) => <li key={benefit}>{benefit}</li>)}</ul>
+      <Link href={`/white-label/${service.slug}`} className="hc-text-link">Learn More ↗</Link>
+    </div>
+  );
+}
+
 export function ServiceTabs() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const activeService = serviceTabs[activeIndex];
-  const dashboardMetrics = serviceDashboardMetrics[activeService.title];
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const activeService = activeIndex === null ? null : serviceTabs[activeIndex];
 
   return (
     <div className="hc-services__grid">
       <div className="hc-service-list" aria-label="Choose a service dashboard">
         {serviceTabs.map((service, index) => (
-          <button type="button" className={index === activeIndex ? "is-active" : ""} aria-pressed={index === activeIndex} onClick={() => setActiveIndex(index)} key={service.title}>
-            <span>{service.title}</span><b aria-hidden="true">→</b>
-          </button>
+          <div className="hc-service-list__item" key={service.title}>
+            <button type="button" className={index === activeIndex ? "is-active" : ""} aria-pressed={index === activeIndex} aria-expanded={index === activeIndex} onClick={() => setActiveIndex((current) => current === index ? null : index)}>
+              <span>{service.title}</span><b aria-hidden="true">→</b>
+            </button>
+            {index === activeIndex ? <ServiceDetail service={service} activeIndex={index} variant="mobile" /> : null}
+          </div>
         ))}
       </div>
-      <div className="hc-service-detail" key={activeService.title}>
-        <div className="hc-browser-shot">
-          <div className="hc-window-bar"><i /><i /><i /><span>{activeService.dashboard}</span></div>
-          <ServiceDashboardVisual metrics={dashboardMetrics} activeIndex={activeIndex} />
-        </div>
-        <h3>{activeService.title}</h3>
-        <p>{activeService.description}</p>
-        <ul>{activeService.benefits.map((benefit) => <li key={benefit}>{benefit}</li>)}</ul>
-        <Link href={`/white-label/${activeService.slug}`} className="hc-text-link">Learn More ↗</Link>
-      </div>
+      {activeService && activeIndex !== null ? <ServiceDetail service={activeService} activeIndex={activeIndex} variant="desktop" /> : <div className="hc-service-detail hc-service-detail--desktop" />}
     </div>
   );
 }
