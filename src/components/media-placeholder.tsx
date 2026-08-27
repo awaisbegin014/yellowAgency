@@ -4,6 +4,7 @@ type MediaPlaceholderProps = {
   label?: string;
   type?: "image" | "video" | "portrait" | "logo";
   className?: string;
+  priority?: boolean;
 };
 
 type MediaAsset = {
@@ -115,6 +116,7 @@ export function MediaPlaceholder({
   label = "Image placeholder",
   type = "image",
   className = "",
+  priority = false,
 }: MediaPlaceholderProps) {
   const selectedAsset = getMediaAsset(label, type);
   const alt = getAltText(label);
@@ -126,6 +128,7 @@ export function MediaPlaceholder({
         src={selectedAsset.src}
         alt={alt}
         fill
+        priority={priority}
         sizes={type === "portrait" ? "(max-width: 580px) 100vw, (max-width: 1050px) 50vw, 30vw" : "(max-width: 800px) 100vw, 60vw"}
       />
       <span className="media-placeholder__credit">Photo by {selectedAsset.photographer} · Unsplash</span>
