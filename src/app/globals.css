@@ -961,6 +961,7 @@ body:has(.reference-home) .site-header { background: var(--site-yellow-glow); ba
 @media (max-width: 1100px) {
   .hc-section { padding: 64px 0; }
   .hc-split-heading, .hc-two-col, .hc-services__grid, .hc-niche-detail { grid-template-columns: 1fr; gap: 55px; }
+  .hc-services__grid, .hc-service-detail, .hc-model-cards, .hc-model-cards article, .hc-niche-detail > div { min-width: 0; }
   .hc-hero { min-height: auto; }
   .hc-analytics { width: min(900px, 84vw); height: 560px; }
   .hc-analytics__float--left { left: -35px; }
@@ -980,11 +981,16 @@ body:has(.reference-home) .site-header { background: var(--site-yellow-glow); ba
 }
 
 @media (max-width: 700px) {
+  html, body { max-width: 100%; overflow-x: clip; }
   .hc-shell { width: min(calc(100% - 30px), 1840px); }
   .reference-home p, .reference-home li { font-size: 16px; }
+  .reference-home h1, .reference-home h2, .reference-home h3 { overflow-wrap: break-word; }
   .hc-hero { min-height: auto; padding: 70px 0 45px; }
   .hc-hero h1 { font-size: 42px; }
+  .hc-split-heading h2, .hc-help h2, .hc-dental h2, .hc-niches .hc-centered h2, .hc-cases h2, .hc-small-business h2, .hc-onboarding h2, .hc-agency-model h2, .hc-support h2, .hc-lead h2, .hc-band h2 { font-size: clamp(36px, 11vw, 43px); line-height: 1.06; }
+  .hc-split-heading, .hc-two-col, .hc-services__grid, .hc-niche-detail { gap: 34px; }
   .hc-actions, .hc-band--cta .hc-shell > div { align-items: stretch; flex-direction: column; }
+  .hc-btn { width: 100%; min-height: 58px; padding-inline: 20px; font-size: 18px; text-align: center; }
   .hc-analytics { width: 100%; height: 400px; }
   .hc-analytics__window { inset: 0 0 45px; }
   .hc-analytics__body { grid-template-columns: 90px 1fr; }
@@ -1005,9 +1011,12 @@ body:has(.reference-home) .site-header { background: var(--site-yellow-glow); ba
   .hc-chart-card--bottom { right: 10px; bottom: 20px; }
   .hc-stats .hc-shell { grid-template-columns: repeat(2, 1fr); }
   .hc-stats div div:nth-child(even) { border-right: 0; }
+  .hc-stats div div { padding-inline: 10px; }
   .hc-stats b { font-size: 48px; }
-  .hc-services > .hc-shell > h2 { font-size: 48px; }
+  .hc-services > .hc-shell > h2 { margin-bottom: 32px; font-size: 43px; }
   .hc-service-list button { min-height: 65px; padding-inline: 15px; font-size: 19px; }
+  .hc-service-detail h3 { margin-top: 30px; font-size: 40px; }
+  .hc-service-detail ul { padding-left: 22px; }
   .hc-browser-shot { min-height: 390px; }
   .hc-service-dashboard { min-height: 390px; grid-template-columns: 90px 1fr; }
   .hc-service-dashboard > aside { padding: 18px 8px; }
@@ -1049,18 +1058,37 @@ body:has(.reference-home) .site-header { background: var(--site-yellow-glow); ba
   .hc-metric-card { min-height: 360px; }
   .hc-toggle { gap: 12px; font-size: 15px; }
   .hc-toggle button { flex: 0 0 76px; }
+  .hc-model-cards { gap: 22px; }
+  .hc-model-cards article { min-height: auto; padding: 28px; }
+  .hc-model-cards h3, .hc-equation-brand { font-size: 34px; }
+  .hc-model-cards blockquote { margin-top: 32px; font-size: 20px; line-height: 1.45; }
+  .hc-model-cards article.is-yellow { min-height: 570px; padding-bottom: 132px; }
+  .hc-testimonial-controls { right: 28px; bottom: 32px; left: 28px; gap: 12px; }
+  .hc-testimonial-controls button { width: 58px; height: 58px; flex: 0 0 58px; }
+  .hc-testimonial-controls span { margin-left: auto; }
+  .hc-testimonial-person { align-items: flex-start; gap: 16px; }
+  .hc-avatar { width: 82px; height: 82px; flex: 0 0 82px; }
   .hc-model-diagram { min-height: 720px; }
-  .hc-model-side--revenue { right: 0; }
+  .hc-model-client, .hc-model-agency, .hc-model-yellow, .hc-hex, .hc-support-node { flex-shrink: 0; }
+  .hc-model-side--revenue { top: 432px; right: 0; padding: 7px 10px; border: 1px solid var(--yellow-deep); border-radius: 8px; background: white; font-size: 25px; text-align: center; }
+  .hc-model-side--revenue small { font-size: 10px; }
   .hc-model-side--channels { display: none; }
   .hc-pills { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; }
   .hc-pills button { flex: 0 0 auto; }
+  .hc-niche-detail { padding-inline: 0; }
+  .hc-niche-detail > div { padding: 28px; }
   .hc-band .hc-shell::after { font-size: 200px; }
   .hc-onboarding-flow { grid-template-columns: 1fr; }
+  .hc-onboarding-flow article { display: flex; align-items: center; flex-direction: column; }
   .hc-link-columns { grid-template-columns: 1fr; }
   .hc-agency-model__benefits { grid-template-columns: 1fr; }
+  .hc-small-business { padding-block: 64px; }
+  .hc-small-business .hc-analytics { width: 100%; height: 400px; transform: none; }
   .hc-support-flow { min-height: auto; grid-template-columns: 1fr; gap: 22px; }
   .hc-support-node, .hc-support-step--brand .hc-support-node { width: 220px; height: 245px; flex-basis: 220px; }
   .hc-lead-form > div:not(.hc-options), .hc-options { grid-template-columns: 1fr; }
+  .hc-lead-form input:not([type="checkbox"]), .hc-lead-form textarea { padding: 18px; font-size: 16px; }
+  .hc-options { gap: 13px; }
   .hc-final-cta .hc-shell { grid-template-columns: 1fr; text-align: center; }
 }
 
@@ -1108,7 +1136,8 @@ body:has(.reference-home) .site-header > .site-header__inner > .nav-cta { min-wi
   body:has(.reference-home) .site-header__inner { width: min(calc(100% - 30px), 1700px); min-height: 78px; }
   .brand__mark { width: 40px; height: 46px; }
   .brand__word { font-size: 1.35rem; }
-  .reference-footer__grid { grid-template-columns: 1fr; }
+  .reference-footer { padding-top: 65px; }
+  .reference-footer__grid { grid-template-columns: 1fr; gap: 42px; padding-bottom: 50px; }
   .reference-footer__badges { flex-direction: column; }
   .reference-footer__bottom .hc-shell { align-items: flex-start; flex-direction: column; }
   .reference-footer__bottom div div { flex-wrap: wrap; }
