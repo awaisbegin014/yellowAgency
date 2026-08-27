@@ -84,6 +84,19 @@ const serviceTabs = [
   { slug: "go-high-level-services", title: "Go High Level", dashboard: "CRM Automation Dashboard", image: "analytics-03.jpg", description: "White-label CRM setup and automation that organize leads, communication, and follow-up under your brand.", benefits: ["CRM and pipeline configuration", "Workflow and nurture automation", "White-label account support"] },
 ];
 
+const serviceDashboardMetrics: Record<string, Array<{ label: string; value: string; change: string }>> = {
+  "Facebook Ads": [{ label: "Reach", value: "128K", change: "+24%" }, { label: "Qualified leads", value: "842", change: "+18%" }, { label: "ROAS", value: "4.8x", change: "+0.7x" }],
+  "Google Ads": [{ label: "Clicks", value: "18.4K", change: "+21%" }, { label: "Conversions", value: "1,206", change: "+16%" }, { label: "Cost per lead", value: "$31", change: "-12%" }],
+  "Search Engine Optimization": [{ label: "Organic visits", value: "42.8K", change: "+32%" }, { label: "Top 10 keywords", value: "186", change: "+41" }, { label: "Organic leads", value: "936", change: "+27%" }],
+  "Local SEO": [{ label: "Map views", value: "26.3K", change: "+29%" }, { label: "Phone calls", value: "684", change: "+22%" }, { label: "Direction requests", value: "1,142", change: "+18%" }],
+  "Website Design": [{ label: "Pages approved", value: "18", change: "+6" }, { label: "Conversion rate", value: "6.4%", change: "+1.8%" }, { label: "Mobile score", value: "96", change: "+11" }],
+  "Website Development": [{ label: "Deployments", value: "24", change: "+8" }, { label: "Uptime", value: "99.99%", change: "+0.4%" }, { label: "Load time", value: "1.2s", change: "-0.8s" }],
+  "Social Media Management": [{ label: "Posts published", value: "86", change: "+14" }, { label: "Engagement", value: "8.7%", change: "+2.1%" }, { label: "Followers", value: "14.2K", change: "+19%" }],
+  "Content Writing": [{ label: "Articles delivered", value: "32", change: "+9" }, { label: "Organic clicks", value: "21.6K", change: "+26%" }, { label: "Avg. read time", value: "4m 12s", change: "+38s" }],
+  "Graphic Designing": [{ label: "Assets created", value: "148", change: "+36" }, { label: "Approval rate", value: "94%", change: "+7%" }, { label: "Turnaround", value: "1.8d", change: "-0.6d" }],
+  "Go High Level": [{ label: "Leads managed", value: "3,820", change: "+31%" }, { label: "Automations live", value: "46", change: "+12" }, { label: "Response time", value: "2m 08s", change: "-41%" }],
+};
+
 function MetricCard({ value, label, offset, active }: { value: string; label: string; offset: number; active: boolean }) {
   const chartHeight = Math.min(82, 16 + Number.parseFloat(value) * 0.54);
 
@@ -200,6 +213,7 @@ export function NicheTabs() {
 export function ServiceTabs() {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeService = serviceTabs[activeIndex];
+  const dashboardMetrics = serviceDashboardMetrics[activeService.title];
 
   return (
     <div className="hc-services__grid">
@@ -211,7 +225,18 @@ export function ServiceTabs() {
         ))}
       </div>
       <div className="hc-service-detail" key={activeService.title}>
-        <div className="hc-browser-shot"><div className="hc-window-bar"><i /><i /><i /><span>{activeService.dashboard}</span></div><Image src={`/images/unsplash/${activeService.image}`} alt={`${activeService.title} dashboard preview`} fill sizes="50vw" /></div>
+        <div className="hc-browser-shot">
+          <div className="hc-window-bar"><i /><i /><i /><span>{activeService.dashboard}</span></div>
+          <div className="hc-service-dashboard" aria-label={`${activeService.title} performance dashboard`}>
+            <aside><b>{activeService.title}</b>{["Overview", "Campaigns", "Reports", "Audience"].map((item, index) => <span className={index === 0 ? "is-current" : ""} key={item}>{item}</span>)}</aside>
+            <div className="hc-service-dashboard__main">
+              <div className="hc-service-dashboard__heading"><div><span>Performance overview</span><b>Last 30 days</b></div><button type="button" aria-label="Export dashboard report">Export report</button></div>
+              <div className="hc-service-dashboard__metrics">{dashboardMetrics.map((metric) => <article key={metric.label}><span>{metric.label}</span><b>{metric.value}</b><small>{metric.change}</small></article>)}</div>
+              <div className="hc-service-dashboard__chart"><div><span>Performance trend</span><b>{dashboardMetrics[0].value}</b></div><div className="hc-dashboard-bars" aria-hidden="true">{Array.from({ length: 14 }, (_, index) => <i key={index} style={{ height: `${30 + ((index * 17 + activeIndex * 11) % 62)}%` }} />)}</div></div>
+              <div className="hc-service-dashboard__table"><b>Active work</b>{["Primary campaign", "Optimization sprint", "Monthly reporting"].map((item, index) => <div key={item}><span>{item}</span><small>{index === 2 ? "Ready" : "Active"}</small></div>)}</div>
+            </div>
+          </div>
+        </div>
         <h3>{activeService.title}</h3>
         <p>{activeService.description}</p>
         <ul>{activeService.benefits.map((benefit) => <li key={benefit}>{benefit}</li>)}</ul>

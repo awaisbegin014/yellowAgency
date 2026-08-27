@@ -621,6 +621,30 @@ body:has(.reference-home) .site-header { background: #fff; background-attachment
 .hc-service-list b { font-size: 35px; font-weight: 400; }
 .hc-browser-shot { position: relative; min-height: 560px; overflow: hidden; border-radius: 12px; background: #f3f3f3; }
 .hc-browser-shot img { top: 54px !important; height: calc(100% - 54px) !important; object-fit: cover; }
+.hc-service-dashboard { display: grid; min-height: 506px; grid-template-columns: 180px 1fr; background: #f6f6f3; text-align: left; }
+.hc-service-dashboard > aside { display: flex; padding: 28px 18px; border-right: 1px solid #ddd; background: #343434; color: white; flex-direction: column; gap: 7px; }
+.hc-service-dashboard > aside b { margin-bottom: 26px; color: var(--yellow); font-family: var(--heading); font-size: 18px; }
+.hc-service-dashboard > aside span { padding: 11px 12px; border-radius: 7px; font-size: 13px; }
+.hc-service-dashboard > aside span.is-current { background: var(--yellow); color: #343434; font-weight: 800; }
+.hc-service-dashboard__main { padding: 24px; }
+.hc-service-dashboard__heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.hc-service-dashboard__heading > div { display: flex; flex-direction: column; }
+.hc-service-dashboard__heading span { color: #777; font-size: 13px; }
+.hc-service-dashboard__heading b { font-size: 20px; }
+.hc-service-dashboard__heading button { padding: 9px 13px; border: 0; border-radius: 6px; background: var(--yellow); font-weight: 800; }
+.hc-service-dashboard__metrics { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin: 22px 0; }
+.hc-service-dashboard__metrics article { display: flex; min-height: 105px; padding: 16px; border: 1px solid #ddd; border-radius: 10px; background: white; flex-direction: column; }
+.hc-service-dashboard__metrics span { color: #777; font-size: 12px; }
+.hc-service-dashboard__metrics b { margin-top: 4px; font-size: 25px; }
+.hc-service-dashboard__metrics small { margin-top: auto; color: #9a7500; font-weight: 800; }
+.hc-service-dashboard__chart { padding: 18px; border: 1px solid #ddd; border-radius: 10px; background: white; }
+.hc-service-dashboard__chart > div:first-child { display: flex; align-items: center; justify-content: space-between; }
+.hc-dashboard-bars { display: flex; height: 125px; align-items: flex-end; gap: 8px; margin-top: 13px; border-bottom: 1px solid #ccc; }
+.hc-dashboard-bars i { flex: 1; min-width: 5px; border-radius: 4px 4px 0 0; background: linear-gradient(180deg, #ffe778, var(--yellow-deep)); transition: height .35s ease; }
+.hc-service-dashboard__table { margin-top: 15px; padding: 15px 18px; border: 1px solid #ddd; border-radius: 10px; background: white; }
+.hc-service-dashboard__table > b { display: block; margin-bottom: 7px; }
+.hc-service-dashboard__table > div { display: flex; justify-content: space-between; padding: 7px 0; border-top: 1px solid #eee; font-size: 12px; }
+.hc-service-dashboard__table small { color: #9a7500; font-weight: 800; }
 .hc-service-detail { animation: hc-service-in .3s ease both; }
 .hc-service-detail h3 { margin: 55px 0 20px; font-size: 56px; }
 .hc-service-detail ul { margin: 35px 0; }
@@ -838,6 +862,17 @@ body:has(.reference-home) .site-header { background: #fff; background-attachment
   .hc-services > .hc-shell > h2 { font-size: 48px; }
   .hc-service-list button { min-height: 65px; padding-inline: 15px; font-size: 19px; }
   .hc-browser-shot { min-height: 390px; }
+  .hc-service-dashboard { min-height: 390px; grid-template-columns: 90px 1fr; }
+  .hc-service-dashboard > aside { padding: 18px 8px; }
+  .hc-service-dashboard > aside b { font-size: 12px; }
+  .hc-service-dashboard > aside span { padding: 8px 6px; font-size: 9px; }
+  .hc-service-dashboard__main { padding: 12px; }
+  .hc-service-dashboard__metrics { gap: 5px; }
+  .hc-service-dashboard__metrics article { min-height: 85px; padding: 8px; }
+  .hc-service-dashboard__metrics b { font-size: 17px; }
+  .hc-service-dashboard__chart { padding: 10px; }
+  .hc-dashboard-bars { height: 85px; gap: 3px; }
+  .hc-service-dashboard__table { display: none; }
   .hc-metric-card { min-height: 360px; }
   .hc-toggle { gap: 12px; font-size: 15px; }
   .hc-toggle button { flex: 0 0 76px; }
