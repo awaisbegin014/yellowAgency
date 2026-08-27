@@ -3,11 +3,11 @@ import Link from "next/link";
 import { AnimatedStats, CaseStudiesSlider, NicheTabs, PartnerEquation, ResultsComparison, ServiceTabs } from "@/components/home-interactions";
 
 const onboarding = [
-  ["01", "Client Privacy", "NDAs and contracts protect every client relationship."],
-  ["02", "Onboarding Call", "Meet your account manager and delivery team."],
-  ["03", "Initiating Set Up", "We securely connect the accounts and tools we need."],
-  ["04", "Launch Plan", "Workflows, schedules, and deliverables are agreed."],
-  ["05", "Project Kickoff", "Delivery begins with recurring progress reporting."],
+  ["01", "Client Privacy", "We put NDAs, access rules, and white-label safeguards in place so every client relationship, account, and shared asset remains protected."],
+  ["02", "Onboarding Call", "Meet your dedicated account manager and delivery leads, confirm communication channels, and align on responsibilities, priorities, and response times."],
+  ["03", "Initiating Set Up", "We securely connect the required platforms, collect brand and campaign assets, review current performance, and document everything needed for a smooth setup."],
+  ["04", "Launch Plan", "Together we finalize the scope, workflows, milestones, approval steps, KPIs, and reporting schedule before production begins."],
+  ["05", "Project Kickoff", "Your project moves into delivery with clear ownership, recurring updates, quality checks, and an agreed optimization plan for continuous improvement."],
 ];
 function MiniBars({ count = 12 }: { count?: number }) {
   return <div className="hc-bars" aria-hidden="true">{Array.from({ length: count }, (_, index) => <i key={index} style={{ height: `${28 + ((index * 19) % 58)}%` }} />)}</div>;
@@ -84,7 +84,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="hc-section hc-onboarding"><div className="hc-shell hc-centered"><h2>White Label Digital Marketing<br /><span className="hc-heading-accent">Onboarding Process</span></h2><p>Our onboarding process is simple and swift. We support your agency from discovery and audit through launch, reporting, and ongoing optimization.</p><div className="hc-onboarding-flow">{onboarding.map(([number, title, text]) => <article key={number}><Hexagon><b>{number}</b></Hexagon><i /><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
+      <section className="hc-section hc-onboarding">
+        <div className="hc-shell hc-centered">
+          <h2>White Label Digital Marketing<br /><span className="hc-heading-accent">Onboarding Process</span></h2>
+          <p className="hc-onboarding__intro">Our onboarding process is simple, secure, and transparent. We support your agency from discovery and audit through launch, reporting, and ongoing optimization. Every step is designed to keep responsibilities clear, protect your client relationships, and give your team full visibility before delivery begins.</p>
+          <div className="hc-onboarding-flow">
+            {onboarding.map(([number, title, text]) => (
+              <article key={number}>
+                <Hexagon><b>{number}</b></Hexagon>
+                <i />
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="hc-section hc-agency-model">
         <div className="hc-shell hc-two-col">

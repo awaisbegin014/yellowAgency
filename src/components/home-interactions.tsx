@@ -104,26 +104,30 @@ const serviceDashboardMetrics: Record<string, Array<{ label: string; value: stri
 };
 
 function MetricCard({ value, label, offset, active }: { value: string; label: string; offset: number; active: boolean }) {
-  const numericValue = Number.parseFloat(value);
-  const chartHeight = Math.min(41, 30 + numericValue * 0.12);
-  const lift = Math.min(4, offset * 0.25);
+  const chartHeight = active ? 56 + Math.min(5, offset * 0.35) : 38 + Math.min(4, offset * 0.25);
+  const lift = Math.min(5, offset * 0.25);
   const graphLevels = (active
-    ? [35, 39, 29, 36, 22, 30, 15, 24, 7, 14]
-    : [38, 40, 34, 38, 29, 34, 24, 29, 18, 23]
-  ).map((level) => Math.max(4, level - lift));
+    ? [62, 58, 64, 54, 55, 47, 44, 41, 42, 36, 39, 31, 29, 26, 22, 20, 15, 12]
+    : [86, 82, 87, 78, 80, 72, 70, 68, 70, 64, 67, 59, 58, 55, 51, 50, 45, 42]
+  ).map((level, index, levels) => Math.max(8, level - lift * (index / (levels.length - 1))));
   const graphPoints = graphLevels
     .map((level, index) => `${(index / (graphLevels.length - 1)) * 100},${level}`)
     .join(", ");
+  const gradientId = `metric-fill-${label.toLowerCase().replace(/\s+/g, "-")}-${active ? "after" : "before"}`;
 
   return (
     <article className={`hc-metric-card ${active ? "is-after" : "is-before"}`}>
       <b>{value}</b>
       <span>{label}</span>
       <div className="hc-metric-card__mountain" aria-hidden="true" style={{ height: `${chartHeight}%` }}>
-        <svg key={`${active}-${value}`} viewBox="0 0 100 40" preserveAspectRatio="none">
-          <line x1="0" y1="30" x2="100" y2="30" />
-          <line x1="0" y1="20" x2="100" y2="20" />
-          <polygon points={`${graphPoints} 100,40 0,40`} />
+        <svg key={`${active}-${value}`} viewBox="0 0 100 100" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id={gradientId} x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor={active ? "#efb900" : "#cfcfcd"} />
+              <stop offset="100%" stopColor={active ? "#ffd93f" : "#e3e3e1"} />
+            </linearGradient>
+          </defs>
+          <polygon points={`${graphPoints} 100,100 0,100`} style={{ fill: `url(#${gradientId})` }} />
           <polyline points={graphPoints} />
         </svg>
       </div>

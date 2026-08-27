@@ -796,7 +796,7 @@ body:has(.reference-home) .site-header { background: var(--site-yellow-glow); ba
 .hc-metric-card__mountain line { stroke: rgba(52,52,52,.08); stroke-width: .35; vector-effect: non-scaling-stroke; }
 .hc-metric-card__mountain polygon { fill: #ddddda; }
 .hc-metric-card__mountain polyline { fill: none; stroke: #aaa; stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; animation: hc-graph-draw .65s ease both; }
-.hc-metric-card.is-after .hc-metric-card__mountain polygon { fill: url("#metric-fill"); fill: var(--yellow); opacity: .88; }
+.hc-metric-card.is-after .hc-metric-card__mountain polygon { fill: var(--yellow); opacity: .9; }
 .hc-metric-card.is-after .hc-metric-card__mountain polyline { stroke: var(--yellow-deep); }
 @keyframes hc-graph-draw { from { opacity: .3; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -892,12 +892,13 @@ body:has(.reference-home) .site-header { background: var(--site-yellow-glow); ba
 
 .hc-onboarding { background: radial-gradient(circle at 50% 42%, rgba(255,210,26,.2), transparent 38%), #fff; }
 .hc-onboarding h2 { font-size: clamp(50px, 4vw, 78px); }
+.hc-onboarding__intro { max-width: 1380px; margin-inline: auto; }
 .hc-onboarding-flow { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 30px; margin-top: 50px; }
 .hc-onboarding-flow::before { content: ""; position: absolute; top: 90px; right: 9%; left: 9%; height: 3px; background: var(--yellow-deep); }
 .hc-onboarding-flow article { position: relative; }
 .hc-onboarding-flow article > i { position: relative; z-index: 2; display: block; width: 26px; height: 26px; margin: 18px auto 25px; border: 5px solid white; border-radius: 50%; background: var(--yellow); }
 .hc-onboarding-flow h3 { font-size: 25px; }
-.hc-onboarding-flow p { font-size: 15px; }
+.hc-onboarding-flow p { max-width: 320px; margin-inline: auto; font-size: 15px; }
 .hc-hex { display: grid; position: relative; width: 160px; height: 180px; place-items: center; margin: 0 auto; padding: 24px; background: var(--yellow-deep); clip-path: polygon(25% 7%, 75% 7%, 100% 50%, 75% 93%, 25% 93%, 0 50%); color: var(--yellow-deep); font-family: var(--heading); font-size: 18px; font-weight: 800; text-align: center; }
 .hc-hex::before { content: ""; position: absolute; inset: 3px; background: linear-gradient(145deg, #fff, #fff9dc); clip-path: inherit; }
 .hc-hex > * { position: relative; z-index: 1; }
