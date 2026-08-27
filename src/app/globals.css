@@ -586,6 +586,10 @@ body:has(.reference-home) .site-header { background: #fff; background-attachment
 .hc-video-card > div { position: absolute; z-index: 2; top: 50%; left: 65px; transform: translateY(-50%); }
 .hc-video-card h3 { margin-bottom: 4px; font-size: 40px; }
 .hc-video-card span { font-size: 16px; font-weight: 700; }
+.hc-partners .hc-split-heading { display: block; }
+.hc-partners .hc-split-heading > div { max-width: 1050px; margin-top: 34px; }
+.hc-partners .hc-split-heading > div > p { margin-bottom: 24px; }
+.hc-partners .hc-checks { margin-top: 20px; }
 
 .hc-help { padding-top: 45px; }
 .hc-help h2 { font-size: clamp(48px, 4vw, 76px); }
@@ -630,7 +634,7 @@ body:has(.reference-home) .site-header { background: #fff; background-attachment
 .hc-metric-card.is-after { border-color: var(--yellow-deep); box-shadow: 0 18px 42px rgba(239,185,0,.14); }
 .hc-metric-card b { display: block; font-size: 70px; }
 .hc-metric-card span { font-size: 25px; }
-.hc-metric-card__mountain { position: absolute; right: 0; bottom: 0; left: 0; height: 55%; background: #ddd; transition: background .25s ease, clip-path .35s ease; }
+.hc-metric-card__mountain { position: absolute; right: 0; bottom: 0; left: 0; background: #ddd; transition: height .55s cubic-bezier(.2,.8,.2,1), background .25s ease, clip-path .55s cubic-bezier(.2,.8,.2,1); }
 .hc-metric-card.is-after .hc-metric-card__mountain { background: linear-gradient(180deg, #ffe67c, var(--yellow)); }
 
 .hc-model-cards { position: relative; display: grid; grid-template-columns: minmax(0,1fr) 52px minmax(0,1fr) 52px minmax(0,1fr); align-items: center; gap: 0; }
@@ -643,9 +647,9 @@ body:has(.reference-home) .site-header { background: #fff; background-attachment
 .hc-model-cards li { font-size: 18px; }
 .hc-equation-brand { display: flex; align-items: center; gap: 15px; margin-bottom: 30px; font-family: var(--heading); font-size: 42px; }
 .hc-equation-brand span { display: grid; width: 54px; height: 54px; place-items: center; background: var(--yellow); clip-path: polygon(25% 7%, 75% 7%, 100% 50%, 75% 93%, 25% 93%, 0 50%); font-size: 30px; font-weight: 900; }
-.hc-equation-symbol { position: relative; z-index: 3; display: grid; width: 78px; height: 90px; place-items: center; justify-self: center; background: var(--yellow-deep); clip-path: polygon(25% 7%, 75% 7%, 100% 50%, 75% 93%, 25% 93%, 0 50%); color: var(--yellow-deep); font-size: 54px; font-weight: 500; filter: drop-shadow(0 10px 14px rgba(0,0,0,.18)); }
+.hc-equation-symbol { position: relative; z-index: 3; display: grid; width: 78px; height: 90px; align-self: center; place-items: center; justify-self: center; background: var(--yellow-deep); clip-path: polygon(25% 7%, 75% 7%, 100% 50%, 75% 93%, 25% 93%, 0 50%); color: var(--yellow-deep); font-size: 54px; font-weight: 500; filter: drop-shadow(0 10px 14px rgba(0,0,0,.18)); }
 .hc-equation-symbol::before { content: ""; position: absolute; inset: 4px; background: white; clip-path: inherit; }
-.hc-equation-symbol b { position: relative; z-index: 1; font-size: inherit; font-weight: 500; line-height: 1; }
+.hc-equation-symbol b { position: absolute; z-index: 1; inset: 0; display: grid; place-items: center; padding: 0; font-family: Arial, sans-serif; font-size: inherit; font-weight: 500; line-height: 1; transform: translateY(-1px); }
 .hc-avatar { position: relative; width: 95px; height: 95px; overflow: hidden; border: 5px solid white; border-radius: 50%; }
 .hc-avatar img { object-fit: cover; }
 .hc-testimonial-person { position: relative; z-index: 1; display: flex; align-items: center; gap: 22px; }
