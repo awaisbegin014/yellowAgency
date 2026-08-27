@@ -24,7 +24,7 @@ const testimonials = [
     image: "/images/unsplash/portrait-04.jpg",
     quote: "Yellow gave us the specialist team we needed to confidently call ourselves a full-service marketing agency.",
     services: ["Facebook Ads", "Google Ads", "Search Engine Optimization", "Local SEO", "Website Design", "Website Development", "Social Media Marketing", "Go High Level"],
-    partnerFocus: ["Win and onboard new clients", "Lead sales conversations", "Own client relationships", "Guide account strategy"],
+    partnerFocus: ["Win and onboard new clients", "Lead sales conversations", "Own client relationships", "Guide account strategy", "Approve priorities and offers", "Share timely client feedback", "Present transparent reports", "Identify retention opportunities"],
   },
   {
     name: "Seth Brown",
@@ -32,7 +32,7 @@ const testimonials = [
     image: "/images/unsplash/portrait-02.jpg",
     quote: "The communication is clear, delivery is dependable, and our clients see consistently stronger results.",
     services: ["Google Ads", "Facebook Ads", "Landing Page Design", "Conversion Tracking", "Campaign Reporting", "Lead Quality Reviews", "Creative Testing", "Retargeting"],
-    partnerFocus: ["Define campaign goals", "Approve budgets and offers", "Keep clients informed", "Review growth opportunities"],
+    partnerFocus: ["Define campaign goals", "Approve budgets and offers", "Keep clients informed", "Review growth opportunities", "Share sales-team feedback", "Confirm creative direction", "Present monthly performance", "Plan the next campaign phase"],
   },
   {
     name: "Maya Collins",
@@ -40,7 +40,7 @@ const testimonials = [
     image: "/images/unsplash/portrait-01.jpg",
     quote: "We expanded our services without adding overhead. Yellow feels like a natural extension of our own team.",
     services: ["Technical SEO", "Local SEO", "Content Strategy", "Content Writing", "Link Building", "GBP Optimization", "SEO Reporting", "Competitor Research"],
-    partnerFocus: ["Set the growth roadmap", "Share brand knowledge", "Present monthly results", "Identify expansion opportunities"],
+    partnerFocus: ["Set the growth roadmap", "Share brand knowledge", "Present monthly results", "Identify expansion opportunities", "Confirm target audiences", "Approve content priorities", "Coordinate client decisions", "Guide long-term retention"],
   },
   {
     name: "Daniel Foster",
@@ -48,7 +48,7 @@ const testimonials = [
     image: "/images/unsplash/portrait-03.jpg",
     quote: "Their white-label process lets us stay focused on relationships while every campaign is handled with care.",
     services: ["Website Design", "Website Development", "Graphic Design", "Go High Level", "CRM Automation", "Content Writing", "Quality Assurance", "Ongoing Support"],
-    partnerFocus: ["Gather client requirements", "Approve creative direction", "Manage client feedback", "Lead launch and retention"],
+    partnerFocus: ["Gather client requirements", "Approve creative direction", "Manage client feedback", "Lead launch and retention", "Confirm scope and timelines", "Share access and brand assets", "Present delivery updates", "Spot account-growth opportunities"],
   },
 ];
 
@@ -370,7 +370,6 @@ export function PartnerEquation() {
         <div className="hc-testimonial-controls">
           <button type="button" onClick={() => move(-1)} aria-label="Previous testimonial">‹</button>
           <button type="button" onClick={() => move(1)} aria-label="Next testimonial">›</button>
-          <span>{activeIndex + 1} / {testimonials.length}</span>
         </div>
       </article>
     </div>
