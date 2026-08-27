@@ -1107,7 +1107,7 @@ body:has(.reference-home) .site-header { background: var(--site-yellow-glow); ba
   .hc-niche-detail { padding-inline: 0; }
   .hc-niche-detail > div { padding: 28px; }
   .hc-case-grid--desktop { display: none; }
-  .hc-case-slider { position: relative; display: block; margin-top: 38px; text-align: left; }
+  .hc-case-slider { position: relative; display: block; margin: 38px 0 32px; text-align: left; }
   .hc-case-slider__slide.is-left { animation: hc-case-slide-left .35s ease both; }
   .hc-case-slider__slide.is-right { animation: hc-case-slide-right .35s ease both; }
   .hc-case-slider article > div { position: relative; height: 285px; overflow: hidden; background: #eee; }
