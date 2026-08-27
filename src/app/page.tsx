@@ -72,7 +72,28 @@ export default function Home() {
 
       <section className="hc-band hc-band--cta"><div className="hc-shell"><h2><em>Ready To Move Into</em><br />The Digital World?</h2><div><Link href="/book-appointment" className="hc-btn hc-btn--dark">Schedule A Consultation</Link><Link href="/contact-us" className="hc-btn hc-btn--outline">Contact Us</Link></div></div></section>
 
-      <section className="hc-section hc-small-business"><div className="hc-shell hc-two-col"><AnalyticsDashboard compact /><div><h2>Does Your Agency Offer Digital Marketing Solutions To Small Businesses?</h2><p>To be successful in this industry, you will need:</p><ul className="hc-arrow-list"><li>Qualified leads and conversions</li><li>Curated business plans</li><li>Seasoned and experienced teams</li><li>Value-based onboarding proposition</li><li>Resource enhancement tools</li><li>Better and competitive deliverability</li></ul><p>We want to help you maintain high-quality digital marketing services for your clients so you can grow and scale your agency.</p><Link href="/dedicated-teams" className="hc-btn hc-btn--outline">Learn More</Link></div></div></section>
+      <section className="hc-section hc-small-business">
+        <div className="hc-shell hc-two-col">
+          <AnalyticsDashboard compact />
+          <div>
+            <h2>Does Your Agency Offer Digital Marketing Solutions To Small Businesses?</h2>
+            <p>To build a dependable, profitable service for small-business clients, your agency needs:</p>
+            <ul className="hc-arrow-list">
+              <li>Qualified leads and conversion-focused campaigns</li>
+              <li>Curated business and channel plans</li>
+              <li>Seasoned specialists across every discipline</li>
+              <li>A clear, value-based onboarding proposition</li>
+              <li>Reporting and resource enhancement tools</li>
+              <li>Reliable, competitive campaign delivery</li>
+              <li>Flexible capacity for busy growth periods</li>
+              <li>Consistent quality under your agency&apos;s name</li>
+            </ul>
+            <p>Yellow supplies the strategy, production, optimization, and reporting support behind your brand. Your team can stay focused on relationships and sales while we quietly handle the specialist work.</p>
+            <p className="hc-small-business__note">Add complete fulfillment capacity without recruiting a separate department, increasing overhead, or giving up control of your client experience.</p>
+            <Link href="/dedicated-teams" className="hc-btn hc-btn--outline">Learn More</Link>
+          </div>
+        </div>
+      </section>
 
       <section className="hc-section hc-onboarding"><div className="hc-shell hc-centered"><h2>White Label Digital Marketing<br />Onboarding Process</h2><p>Our onboarding process is simple and swift. We support your agency from discovery and audit through launch, reporting, and ongoing optimization.</p><div className="hc-onboarding-flow">{onboarding.map(([number, title, text]) => <article key={number}><Hexagon><b>{number}</b></Hexagon><i /><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
 

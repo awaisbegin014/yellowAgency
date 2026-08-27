@@ -645,6 +645,122 @@ body:has(.reference-home) .site-header { background: #fff; background-attachment
 .hc-service-dashboard__table > b { display: block; margin-bottom: 7px; }
 .hc-service-dashboard__table > div { display: flex; justify-content: space-between; padding: 7px 0; border-top: 1px solid #eee; font-size: 12px; }
 .hc-service-dashboard__table small { color: #9a7500; font-weight: 800; }
+
+/* Every service opens its own purpose-built dashboard. */
+.hc-unique-dashboard { min-height: 506px; padding: 22px; overflow: hidden; background: #f6f6f3; color: #343434; text-align: left; }
+.hc-unique-dashboard__header { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding-bottom: 14px; border-bottom: 1px solid #d9d9d4; }
+.hc-unique-dashboard__header > div { display: flex; flex-direction: column; gap: 2px; }
+.hc-unique-dashboard__header span, .hc-unique-dashboard__header small { color: #777; font-size: 11px; }
+.hc-unique-dashboard__header b { font-family: var(--heading); font-size: 18px; }
+.hc-unique-dashboard__header small { padding: 6px 10px; border-radius: 20px; background: white; }
+.hc-unique-dashboard__metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 16px 0; }
+.hc-unique-dashboard__metrics article { display: flex; min-height: 82px; padding: 12px; border: 1px solid #ddd; border-radius: 9px; background: white; flex-direction: column; }
+.hc-unique-dashboard__metrics span { color: #777; font-size: 10px; }
+.hc-unique-dashboard__metrics b { margin-top: 2px; font-size: 22px; }
+.hc-unique-dashboard__metrics small { margin-top: auto; color: #9a7500; font-size: 9px; font-weight: 800; }
+
+/* Meta Ads: audience chart and campaign split. */
+.hc-board-split { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(125px, .7fr); gap: 13px; }
+.hc-board-chart, .hc-board-donut { min-height: 190px; padding: 15px; border: 1px solid #ddd; border-radius: 10px; background: white; }
+.hc-board-chart > b { font-size: 12px; }
+.hc-board-donut { display: grid; position: relative; align-content: center; justify-items: center; }
+.hc-board-donut i { width: 105px; height: 105px; border-radius: 50%; background: conic-gradient(var(--yellow) 0 68%, #ecece8 68%); }
+.hc-board-donut i::after { content: ""; display: block; width: 63px; height: 63px; margin: 21px; border-radius: 50%; background: white; }
+.hc-board-donut b { position: absolute; top: 76px; font-size: 18px; }
+.hc-board-donut span { margin-top: 8px; color: #777; font-size: 10px; }
+
+/* Google Ads: compact campaign manager table. */
+.hc-search-campaigns { overflow: hidden; border: 1px solid #ddd; border-radius: 10px; background: white; }
+.hc-search-campaigns > div { display: grid; grid-template-columns: 1.5fr .8fr .8fr; padding: 12px 15px; border-bottom: 1px solid #ecece8; font-size: 11px; }
+.hc-search-campaigns > div:first-child { background: #343434; color: white; }
+.hc-search-campaigns > div:not(:first-child):hover { background: rgba(255, 210, 26, .16); }
+.hc-search-campaigns > div:last-child { border-bottom: 0; }
+.hc-search-campaigns span:last-child { color: #9a7500; font-weight: 800; }
+
+/* SEO: visibility curve and live keyword positions. */
+.hc-seo-overview { display: grid; grid-template-columns: 1fr 1.15fr; gap: 14px; margin-top: 17px; }
+.hc-seo-overview > div { min-height: 220px; padding: 18px; border: 1px solid #ddd; border-radius: 10px; background: white; }
+.hc-seo-overview > div:first-child > span, .hc-seo-overview > div:first-child > small { display: block; color: #777; font-size: 10px; }
+.hc-seo-overview > div:first-child > b { display: block; margin: 3px 0; font-size: 34px; }
+.hc-seo-overview > div:first-child > small { color: #9a7500; font-weight: 800; }
+.hc-seo-line { display: flex; height: 90px; align-items: flex-end; gap: 8px; margin-top: 15px; border-bottom: 1px solid #ddd; }
+.hc-seo-line i { width: 12%; border-radius: 9px 9px 0 0; background: var(--yellow); }
+.hc-seo-line i:nth-child(1) { height: 22%; } .hc-seo-line i:nth-child(2) { height: 35%; } .hc-seo-line i:nth-child(3) { height: 31%; } .hc-seo-line i:nth-child(4) { height: 52%; } .hc-seo-line i:nth-child(5) { height: 61%; } .hc-seo-line i:nth-child(6) { height: 78%; } .hc-seo-line i:nth-child(7) { height: 94%; }
+.hc-keyword-list > b, .hc-local-list > b { display: block; margin-bottom: 12px; font-size: 12px; }
+.hc-keyword-list p, .hc-local-list p { display: grid; grid-template-columns: 1fr auto auto; gap: 10px; margin: 0; padding: 10px 0; border-top: 1px solid #eee; font-size: 10px; }
+.hc-keyword-list small, .hc-local-list small { color: #9a7500; font-weight: 800; }
+
+/* Local SEO: location map and map-pack rankings. */
+.hc-local-layout { display: grid; grid-template-columns: 1.35fr 1fr; gap: 14px; margin-top: 17px; }
+.hc-local-map, .hc-local-list { min-height: 235px; border: 1px solid #ddd; border-radius: 10px; background: white; }
+.hc-local-map { position: relative; overflow: hidden; background: linear-gradient(30deg, transparent 47%, #deded8 48%, #deded8 50%, transparent 51%), linear-gradient(-32deg, transparent 46%, #e5e5df 47%, #e5e5df 50%, transparent 51%), white; background-size: 120px 90px, 150px 105px; }
+.hc-local-map > i { display: grid; position: absolute; width: 30px; height: 30px; border: 3px solid white; border-radius: 50% 50% 50% 0; background: var(--yellow); box-shadow: 0 4px 10px rgba(0,0,0,.15); font-size: 10px; font-style: normal; font-weight: 900; place-items: center; transform: rotate(-45deg); }
+.hc-local-map > i::first-letter { transform: rotate(45deg); }
+.hc-local-map .pin-1 { top: 30px; left: 26%; } .hc-local-map .pin-2 { top: 85px; left: 66%; } .hc-local-map .pin-3 { top: 145px; left: 43%; } .hc-local-map .pin-4 { top: 175px; left: 78%; }
+.hc-local-list { padding: 18px; }
+
+/* Website Design: visual editor canvas. */
+.hc-design-workspace { display: grid; min-height: 390px; grid-template-columns: 92px 1fr 42px; margin-top: 17px; overflow: hidden; border: 1px solid #d8d8d3; border-radius: 10px; background: white; }
+.hc-design-workspace aside { display: flex; padding: 15px 9px; background: #343434; flex-direction: column; gap: 8px; }
+.hc-design-workspace aside span { padding: 8px; border-radius: 5px; color: white; font-size: 9px; }
+.hc-design-workspace aside .is-current { background: var(--yellow); color: #343434; font-weight: 800; }
+.hc-design-canvas { padding: 18px; }
+.hc-design-nav { width: 100%; height: 20px; border-radius: 4px; background: #ededeb; }
+.hc-design-hero { display: grid; height: 190px; margin-top: 15px; padding: 25px; align-content: center; border-radius: 8px; background: linear-gradient(130deg, #fff7d1, white 68%); }
+.hc-design-hero i { width: 55%; height: 22px; background: #343434; }
+.hc-design-hero span { width: 78%; height: 8px; margin-top: 10px; background: #d5d5d0; }
+.hc-design-hero span:last-child { width: 34%; height: 25px; border-radius: 3px; background: var(--yellow); }
+.hc-design-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px; }
+.hc-design-cards i { height: 80px; border: 1px solid #ddd; border-radius: 6px; background: linear-gradient(145deg, white 45%, #fff3bb); }
+.hc-design-tools { display: flex; align-items: center; padding: 8px; border-left: 1px solid #ddd; flex-direction: column; gap: 12px; }
+.hc-design-tools span { display: grid; width: 25px; height: 25px; border-radius: 4px; background: #efefec; font-size: 9px; place-items: center; }
+
+/* Development: terminal, deployment health and core metrics. */
+.hc-dev-layout { display: grid; grid-template-columns: 1.3fr .8fr; gap: 12px; margin-top: 17px; }
+.hc-dev-terminal { min-height: 225px; padding: 20px; border-radius: 10px; background: #343434; color: white; font-family: Consolas, monospace; }
+.hc-dev-terminal p { margin: 0 0 15px; font-size: 10px; }
+.hc-dev-terminal p span { margin-right: 14px; color: #8d8d8d; }
+.hc-dev-terminal p b, .hc-dev-terminal small { color: var(--yellow); }
+.hc-dev-status { padding: 18px; border: 1px solid #ddd; border-radius: 10px; background: white; }
+.hc-dev-status > b { font-size: 12px; }
+.hc-dev-status p { display: flex; justify-content: space-between; margin: 0; padding: 12px 0; border-bottom: 1px solid #eee; font-size: 10px; }
+.hc-dev-status small { color: #8a6900; font-weight: 800; }
+
+/* Social Media: visual publishing calendar. */
+.hc-social-calendar { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-top: 17px; }
+.hc-social-calendar > div { position: relative; min-height: 76px; padding: 7px; border: 1px solid #ddd; border-radius: 6px; background: white; font-size: 9px; }
+.hc-social-calendar > div.has-post { background: #fff7d1; border-color: var(--yellow-deep); }
+.hc-social-calendar i { display: grid; position: absolute; right: 6px; bottom: 6px; width: 28px; height: 28px; border-radius: 6px; background: var(--yellow); font-size: 8px; font-style: normal; font-weight: 900; place-items: center; }
+.hc-social-summary { display: flex; gap: 28px; margin-top: 17px; padding: 13px 17px; border-radius: 8px; background: #343434; color: white; font-size: 10px; }
+.hc-social-summary span { display: flex; align-items: center; gap: 7px; }
+.hc-social-summary b { color: var(--yellow); font-size: 18px; }
+
+/* Content Writing: editorial kanban. */
+.hc-content-board, .hc-ghl-pipeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 17px; }
+.hc-content-board > div { min-height: 225px; padding: 12px; border-radius: 8px; background: #e9e9e5; }
+.hc-content-board > div > b { font-size: 11px; }
+.hc-content-board > div > span { display: flex; min-height: 68px; justify-content: space-between; margin-top: 10px; padding: 10px; border-left: 4px solid var(--yellow); border-radius: 5px; background: white; flex-direction: column; font-size: 9px; }
+.hc-content-board small { color: #888; letter-spacing: 2px; }
+
+/* Graphic Design: creative asset gallery. */
+.hc-graphics-gallery { display: grid; height: 330px; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 1fr); gap: 9px; margin-top: 17px; }
+.hc-graphics-gallery > div { display: flex; position: relative; overflow: hidden; padding: 13px; border-radius: 8px; background: white; flex-direction: column; justify-content: space-between; }
+.hc-graphics-gallery > div::after { content: ""; position: absolute; width: 110px; height: 110px; right: -40px; bottom: -48px; border-radius: 50%; background: var(--yellow); opacity: .75; }
+.hc-graphics-gallery .tile-1 { grid-row: span 2; background: #343434; color: white; }
+.hc-graphics-gallery .tile-4 { grid-column: span 2; background: var(--yellow); }
+.hc-graphics-gallery i { font-size: 24px; font-style: normal; font-weight: 900; }
+.hc-graphics-gallery span { z-index: 1; font-size: 10px; font-weight: 800; }
+.hc-graphics-footer { display: flex; justify-content: space-between; margin-top: 13px; color: #777; font-size: 9px; }
+
+/* GoHighLevel: CRM pipeline and automation flow. */
+.hc-ghl-pipeline > div { min-height: 250px; padding: 10px; border-radius: 8px; background: #e9e9e5; }
+.hc-ghl-pipeline header { display: flex; align-items: center; justify-content: space-between; font-size: 10px; }
+.hc-ghl-pipeline header span { display: grid; width: 23px; height: 23px; border-radius: 50%; background: var(--yellow); font-size: 9px; font-weight: 900; place-items: center; }
+.hc-ghl-pipeline p { display: flex; min-height: 77px; margin: 10px 0 0; padding: 10px; border-radius: 5px; background: white; flex-direction: column; font-size: 9px; }
+.hc-ghl-pipeline p small { margin-top: auto; color: #9a7500; font-size: 7px; }
+.hc-ghl-automation { display: flex; align-items: center; justify-content: center; gap: 9px; margin-top: 13px; }
+.hc-ghl-automation i { padding: 7px 10px; border: 1px solid var(--yellow-deep); border-radius: 20px; background: #fff7d1; font-size: 8px; font-style: normal; font-weight: 800; }
+.hc-ghl-automation span { color: #9a7500; }
 .hc-service-detail { animation: hc-service-in .3s ease both; }
 .hc-service-detail h3 { margin: 55px 0 20px; font-size: 56px; }
 .hc-service-detail ul { margin: 35px 0; }
@@ -742,17 +858,22 @@ body:has(.reference-home) .site-header { background: #fff; background-attachment
 .hc-small-business { padding-block: 170px; }
 .hc-small-business .hc-analytics { width: 100%; height: 650px; transform: scale(.82); }
 .hc-small-business h2 { font-size: clamp(48px, 4vw, 74px); }
+.hc-small-business .hc-arrow-list { margin-block: 24px; }
+.hc-small-business__note { margin-top: 18px; padding-left: 18px; border-left: 4px solid var(--yellow); font-weight: 700; }
+.hc-small-business .hc-btn { margin-top: 34px; }
 
 .hc-onboarding { background: radial-gradient(circle at 50% 42%, rgba(255,210,26,.2), transparent 38%), #fff; }
 .hc-onboarding h2 { font-size: clamp(50px, 4vw, 78px); }
 .hc-onboarding-flow { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 30px; margin-top: 80px; }
-.hc-onboarding-flow::before { content: ""; position: absolute; top: 112px; right: 9%; left: 9%; height: 3px; background: var(--yellow-deep); }
+.hc-onboarding-flow::before { content: ""; position: absolute; top: 90px; right: 9%; left: 9%; height: 3px; background: var(--yellow-deep); }
 .hc-onboarding-flow article { position: relative; }
 .hc-onboarding-flow article > i { position: relative; z-index: 2; display: block; width: 26px; height: 26px; margin: 18px auto 25px; border: 5px solid white; border-radius: 50%; background: var(--yellow); }
 .hc-onboarding-flow h3 { font-size: 25px; }
 .hc-onboarding-flow p { font-size: 15px; }
-.hc-hex { display: grid; width: 160px; height: 180px; place-items: center; margin: 0 auto; padding: 24px; border: 2px dashed var(--yellow-deep); background: linear-gradient(145deg, #fff, #fff9dc); clip-path: polygon(25% 7%, 75% 7%, 100% 50%, 75% 93%, 25% 93%, 0 50%); color: var(--yellow-deep); font-family: var(--heading); font-size: 18px; font-weight: 800; text-align: center; }
-.hc-hex--accent { border: 0; background: var(--yellow); }
+.hc-hex { display: grid; position: relative; width: 160px; height: 180px; place-items: center; margin: 0 auto; padding: 24px; background: var(--yellow-deep); clip-path: polygon(25% 7%, 75% 7%, 100% 50%, 75% 93%, 25% 93%, 0 50%); color: var(--yellow-deep); font-family: var(--heading); font-size: 18px; font-weight: 800; text-align: center; }
+.hc-hex::before { content: ""; position: absolute; inset: 3px; background: linear-gradient(145deg, #fff, #fff9dc); clip-path: inherit; }
+.hc-hex > * { position: relative; z-index: 1; }
+.hc-hex--accent::before { background: var(--yellow); }
 
 .hc-agency-model { padding-block: 170px; }
 .hc-agency-model h2 { font-size: clamp(50px, 4vw, 78px); }
@@ -882,6 +1003,32 @@ body:has(.reference-home) .site-header { background: #fff; background-attachment
   .hc-service-dashboard__chart { padding: 10px; }
   .hc-dashboard-bars { height: 85px; gap: 3px; }
   .hc-service-dashboard__table { display: none; }
+  .hc-unique-dashboard { min-height: 336px; padding: 12px; }
+  .hc-unique-dashboard__header { padding-bottom: 9px; }
+  .hc-unique-dashboard__header b { font-size: 13px; }
+  .hc-unique-dashboard__metrics { gap: 5px; margin: 9px 0; }
+  .hc-unique-dashboard__metrics article { min-height: 62px; padding: 7px; }
+  .hc-unique-dashboard__metrics b { font-size: 15px; }
+  .hc-board-split, .hc-seo-overview, .hc-local-layout, .hc-dev-layout { grid-template-columns: 1fr; }
+  .hc-board-donut, .hc-seo-overview > div:first-child, .hc-local-list, .hc-dev-status { display: none; }
+  .hc-board-chart, .hc-local-map, .hc-dev-terminal { min-height: 205px; }
+  .hc-search-campaigns > div { padding: 9px 8px; font-size: 8px; }
+  .hc-keyword-list { min-height: 215px !important; }
+  .hc-design-workspace { min-height: 280px; grid-template-columns: 65px 1fr; }
+  .hc-design-tools { display: none; }
+  .hc-design-canvas { padding: 10px; }
+  .hc-design-hero { height: 130px; }
+  .hc-design-cards i { height: 55px; }
+  .hc-social-calendar { gap: 3px; }
+  .hc-social-calendar > div { min-height: 44px; padding: 4px; }
+  .hc-social-calendar i { width: 19px; height: 19px; right: 3px; bottom: 3px; }
+  .hc-social-summary { justify-content: space-between; gap: 5px; padding: 9px; }
+  .hc-content-board, .hc-ghl-pipeline { grid-template-columns: repeat(2, 1fr); }
+  .hc-content-board > div, .hc-ghl-pipeline > div { min-height: 135px; }
+  .hc-content-board > div > span, .hc-content-board > div > span:nth-of-type(2), .hc-ghl-pipeline p:nth-of-type(2) { min-height: 45px; }
+  .hc-graphics-gallery { height: 250px; grid-template-columns: repeat(3, 1fr); }
+  .hc-graphics-gallery .tile-4 { grid-column: auto; }
+  .hc-ghl-automation { display: none; }
   .hc-metric-card { min-height: 360px; }
   .hc-toggle { gap: 12px; font-size: 15px; }
   .hc-toggle button { flex: 0 0 76px; }

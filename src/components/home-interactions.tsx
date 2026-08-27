@@ -210,6 +210,40 @@ export function NicheTabs() {
   );
 }
 
+type DashboardMetric = { label: string; value: string; change: string };
+
+function DashboardHeader({ title, period = "Last 30 days" }: { title: string; period?: string }) {
+  return <div className="hc-unique-dashboard__header"><div><span>Yellow reporting</span><b>{title}</b></div><small>{period}</small></div>;
+}
+
+function MetricStrip({ metrics }: { metrics: DashboardMetric[] }) {
+  return <div className="hc-unique-dashboard__metrics">{metrics.map((metric) => <article key={metric.label}><span>{metric.label}</span><b>{metric.value}</b><small>{metric.change}</small></article>)}</div>;
+}
+
+function ServiceDashboardVisual({ metrics, activeIndex }: { metrics: DashboardMetric[]; activeIndex: number }) {
+  const bars = Array.from({ length: 12 }, (_, index) => 26 + ((index * 17 + activeIndex * 13) % 68));
+
+  if (activeIndex === 0) return <div className="hc-unique-dashboard hc-board--meta"><DashboardHeader title="Meta campaign overview" /><MetricStrip metrics={metrics} /><div className="hc-board-split"><div className="hc-board-chart"><b>Reach by campaign</b><div className="hc-dashboard-bars">{bars.map((height, index) => <i key={index} style={{ height: `${height}%` }} />)}</div></div><div className="hc-board-donut"><i /><b>68%</b><span>Primary audience</span></div></div></div>;
+
+  if (activeIndex === 1) return <div className="hc-unique-dashboard hc-board--google"><DashboardHeader title="Google search campaigns" /><MetricStrip metrics={metrics} /><div className="hc-search-campaigns"><div><b>Campaign</b><b>Budget</b><b>Conversions</b></div>{[["Brand search", "$4,200", "486"], ["Service search", "$8,750", "391"], ["Competitor", "$2,180", "174"], ["Remarketing", "$1,940", "155"]].map((row) => <div key={row[0]}>{row.map((cell) => <span key={cell}>{cell}</span>)}</div>)}</div></div>;
+
+  if (activeIndex === 2) return <div className="hc-unique-dashboard hc-board--seo"><DashboardHeader title="Organic search visibility" /><div className="hc-seo-overview"><div><span>Visibility score</span><b>78.4</b><small>+12.8 this quarter</small><div className="hc-seo-line"><i /><i /><i /><i /><i /><i /><i /></div></div><div className="hc-keyword-list"><b>Keyword movement</b>{[["white label marketing", "3", "+4"], ["agency fulfillment", "5", "+7"], ["local growth partner", "8", "+11"]].map((row) => <p key={row[0]}><span>{row[0]}</span><b>#{row[1]}</b><small>{row[2]}</small></p>)}</div></div><MetricStrip metrics={metrics} /></div>;
+
+  if (activeIndex === 3) return <div className="hc-unique-dashboard hc-board--local"><DashboardHeader title="Local search map" /><div className="hc-local-layout"><div className="hc-local-map"><i className="pin-1">1</i><i className="pin-2">2</i><i className="pin-3">3</i><i className="pin-4">4</i><span /><span /><span /></div><div className="hc-local-list"><b>Location performance</b>{[["Downtown", "#1", "312 calls"], ["Northside", "#2", "186 calls"], ["West District", "#3", "142 calls"]].map((row) => <p key={row[0]}><span>{row[0]}</span><b>{row[1]}</b><small>{row[2]}</small></p>)}</div></div><MetricStrip metrics={metrics} /></div>;
+
+  if (activeIndex === 4) return <div className="hc-unique-dashboard hc-board--design"><DashboardHeader title="Website design workspace" period="Design review" /><div className="hc-design-workspace"><aside>{["Home", "Services", "About", "Contact"].map((item, index) => <span className={index === 0 ? "is-current" : ""} key={item}>{item}</span>)}</aside><div className="hc-design-canvas"><div className="hc-design-nav" /><div className="hc-design-hero"><i /><span /><span /></div><div className="hc-design-cards"><i /><i /><i /></div></div><div className="hc-design-tools"><span>Aa</span><span>◐</span><span>▦</span><span>↗</span></div></div></div>;
+
+  if (activeIndex === 5) return <div className="hc-unique-dashboard hc-board--development"><DashboardHeader title="Development and deployments" period="Production" /><div className="hc-dev-layout"><div className="hc-dev-terminal"><p><span>01</span><b>const</b> site = await build();</p><p><span>02</span><b>if</b> (tests.pass) deploy(site);</p><p><span>03</span>optimize(images, fonts);</p><p><span>04</span>monitor(&quot;performance&quot;);</p><small>✓ Build successful · deployed 2m ago</small></div><div className="hc-dev-status"><b>System status</b>{[["Frontend", "Healthy"], ["API", "Healthy"], ["CDN", "Optimized"], ["Core Web Vitals", "Passed"]].map((row) => <p key={row[0]}><span>{row[0]}</span><small>{row[1]}</small></p>)}</div></div><MetricStrip metrics={metrics} /></div>;
+
+  if (activeIndex === 6) return <div className="hc-unique-dashboard hc-board--social"><DashboardHeader title="Social content calendar" period="August" /><div className="hc-social-calendar">{Array.from({ length: 21 }, (_, index) => <div className={[2, 5, 8, 12, 15, 19].includes(index) ? "has-post" : ""} key={index}><span>{index + 1}</span>{[2, 8, 15].includes(index) ? <i>IG</i> : null}{[5, 12, 19].includes(index) ? <i>FB</i> : null}</div>)}</div><div className="hc-social-summary"><span><b>18</b>Scheduled</span><span><b>9</b>Approved</span><span><b>4</b>In review</span></div></div>;
+
+  if (activeIndex === 7) return <div className="hc-unique-dashboard hc-board--content"><DashboardHeader title="Editorial production board" /><div className="hc-content-board">{[["Ideas", "Local SEO guide", "Service comparison"], ["Writing", "Dental landing page", "HVAC case study"], ["Editing", "Roofing article", "Email sequence"], ["Published", "August newsletter", "Pest control page"]].map(([title, ...items]) => <div key={title}><b>{title}</b>{items.map((item) => <span key={item}>{item}<small>•••</small></span>)}</div>)}</div><MetricStrip metrics={metrics} /></div>;
+
+  if (activeIndex === 8) return <div className="hc-unique-dashboard hc-board--graphics"><DashboardHeader title="Creative asset library" period="148 assets" /><div className="hc-graphics-gallery">{["Ad creative", "Brand template", "Social carousel", "Campaign banner", "Case study", "Email header"].map((item, index) => <div className={`tile-${index + 1}`} key={item}><i>{index % 2 === 0 ? "Y" : "Aa"}</i><span>{item}</span></div>)}</div><div className="hc-graphics-footer"><span>94% approved first round</span><span>Average turnaround 1.8 days</span></div></div>;
+
+  return <div className="hc-unique-dashboard hc-board--ghl"><DashboardHeader title="GoHighLevel opportunity pipeline" period="Live CRM" /><div className="hc-ghl-pipeline">{[["New leads", "128", "Consultation request", "Website lead"], ["Contacted", "74", "Follow-up sent", "Call scheduled"], ["Qualified", "39", "Proposal ready", "Decision maker"], ["Won", "18", "New retainer", "Onboarding"]].map(([title, count, ...cards]) => <div key={title}><header><b>{title}</b><span>{count}</span></header>{cards.map((card) => <p key={card}>{card}<small>Automation active</small></p>)}</div>)}</div><div className="hc-ghl-automation"><i>Trigger</i><span>→</span><i>SMS + Email</i><span>→</span><i>Book call</i><span>→</span><i>Pipeline update</i></div></div>;
+}
+
 export function ServiceTabs() {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeService = serviceTabs[activeIndex];
@@ -227,15 +261,7 @@ export function ServiceTabs() {
       <div className="hc-service-detail" key={activeService.title}>
         <div className="hc-browser-shot">
           <div className="hc-window-bar"><i /><i /><i /><span>{activeService.dashboard}</span></div>
-          <div className="hc-service-dashboard" aria-label={`${activeService.title} performance dashboard`}>
-            <aside><b>{activeService.title}</b>{["Overview", "Campaigns", "Reports", "Audience"].map((item, index) => <span className={index === 0 ? "is-current" : ""} key={item}>{item}</span>)}</aside>
-            <div className="hc-service-dashboard__main">
-              <div className="hc-service-dashboard__heading"><div><span>Performance overview</span><b>Last 30 days</b></div><button type="button" aria-label="Export dashboard report">Export report</button></div>
-              <div className="hc-service-dashboard__metrics">{dashboardMetrics.map((metric) => <article key={metric.label}><span>{metric.label}</span><b>{metric.value}</b><small>{metric.change}</small></article>)}</div>
-              <div className="hc-service-dashboard__chart"><div><span>Performance trend</span><b>{dashboardMetrics[0].value}</b></div><div className="hc-dashboard-bars" aria-hidden="true">{Array.from({ length: 14 }, (_, index) => <i key={index} style={{ height: `${30 + ((index * 17 + activeIndex * 11) % 62)}%` }} />)}</div></div>
-              <div className="hc-service-dashboard__table"><b>Active work</b>{["Primary campaign", "Optimization sprint", "Monthly reporting"].map((item, index) => <div key={item}><span>{item}</span><small>{index === 2 ? "Ready" : "Active"}</small></div>)}</div>
-            </div>
-          </div>
+          <ServiceDashboardVisual metrics={dashboardMetrics} activeIndex={activeIndex} />
         </div>
         <h3>{activeService.title}</h3>
         <p>{activeService.description}</p>
