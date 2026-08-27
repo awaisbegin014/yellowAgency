@@ -688,7 +688,10 @@ body:has(.reference-home) .site-header { background: #fff; background-attachment
 .hc-testimonial-person h3 { margin: 0; }
 .hc-model-cards blockquote { position: relative; z-index: 1; margin: 55px 0 0; font-size: 24px; line-height: 1.45; }
 .hc-testimonial-controls { position: absolute; z-index: 2; bottom: 38px; left: 40px; display: flex; align-items: center; gap: 16px; }
-.hc-testimonial-controls button { display: grid; width: 62px; height: 62px; place-items: center; border: 3px solid #343434; border-radius: 50%; background: transparent; color: #343434; cursor: pointer; font-size: 48px; line-height: .7; transition: background .2s ease; }
+.hc-testimonial-controls button { position: relative; display: grid; width: 62px; height: 62px; place-items: center; padding: 0; border: 3px solid #343434; border-radius: 50%; background: transparent; color: transparent; cursor: pointer; font-size: 48px; line-height: 1; transition: background .2s ease; }
+.hc-testimonial-controls button::after { position: absolute; inset: 0; display: grid; place-items: center; padding-bottom: 5px; color: #343434; font-family: Arial, sans-serif; font-size: 48px; line-height: 1; }
+.hc-testimonial-controls button:first-child::after { content: "‹"; }
+.hc-testimonial-controls button:nth-child(2)::after { content: "›"; }
 .hc-testimonial-controls button:hover, .hc-testimonial-controls button:focus-visible { background: white; }
 .hc-testimonial-controls span { margin-left: 6px; font-weight: 800; }
 
@@ -711,6 +714,10 @@ body:has(.reference-home) .site-header { background: #fff; background-attachment
 .hc-niche-detail ul { padding: 0; list-style: none; }
 .hc-niche-detail li { position: relative; margin-bottom: 10px; padding-left: 30px; }
 .hc-niche-detail li::before { content: "✓"; position: absolute; left: 0; color: var(--yellow-deep); font-weight: 900; }
+.hc-niche-detail__focus { margin-top: 28px; padding: 22px; border-left: 5px solid var(--yellow); border-radius: 0 12px 12px 0; background: rgba(255,210,26,.17); }
+.hc-niche-detail__focus b { display: block; margin-bottom: 6px; }
+.hc-niche-outcomes { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 9px; margin-top: 25px; }
+.hc-niche-outcomes span { padding: 8px 13px; border: 1px solid var(--yellow-deep); border-radius: 99px; background: white; font-size: 14px; font-weight: 700; }
 .hc-niche-detail .hc-text-link { margin-top: 32px; padding: 13px 20px; border: 2px solid var(--yellow-deep); border-radius: 9px; background: var(--yellow); }
 
 .reference-home.reference-home > section.hc-band { overflow: hidden; padding: 80px 0; border: 0; background-color: var(--yellow); background-image: radial-gradient(circle at 75% 35%, rgba(255,255,255,.38), transparent 28%), linear-gradient(115deg, #ffd21a 0%, #ffe45f 55%, #ffd21a 100%); }
@@ -727,7 +734,8 @@ body:has(.reference-home) .site-header { background: #fff; background-attachment
 .hc-case-grid article > div { position: relative; height: 330px; overflow: hidden; background: #eee; }
 .hc-case-grid article > div > img { object-fit: cover; }
 .hc-case-grid h3 { min-height: 110px; margin: 25px 0 18px; font-size: 34px; }
-.hc-case-grid article > a { display: grid; width: 90px; height: 36px; place-items: center; border: 2px solid #444; border-radius: 99px; font-size: 28px; }
+.hc-case-grid article > a { position: relative; display: grid; width: 90px; height: 42px; place-items: center; border: 2px solid #444; border-radius: 99px; color: transparent; font-size: 28px; line-height: 1; }
+.hc-case-grid article > a::after { content: "→"; position: absolute; inset: 0; display: grid; place-items: center; padding-bottom: 2px; color: #343434; font-family: Arial, sans-serif; font-size: 28px; line-height: 1; }
 .hc-case-chart { position: absolute; right: 20px; bottom: 20px; width: 180px; padding: 12px; border-radius: 8px; background: white; box-shadow: 0 8px 20px rgba(0,0,0,.12); }
 .hc-case-chart .hc-bars { height: 75px; }
 
