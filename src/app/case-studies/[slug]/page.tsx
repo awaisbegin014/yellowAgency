@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { AutomotiveCaseStudyPage } from "@/components/automotive-case-study-page";
 import { MediaPlaceholder } from "@/components/media-placeholder";
 import { AccentHeading, StandardCta } from "@/components/page-templates";
 import { caseStudies, findCaseStudy } from "@/content/site-data";
@@ -9,6 +10,7 @@ export async function generateMetadata({ params }: PageProps<"/case-studies/[slu
 
 export default async function CaseStudyPage({ params }: PageProps<"/case-studies/[slug]">) {
   const { slug } = await params; const study = findCaseStudy(slug); if (!study) notFound();
+  if (slug === "automotive-digital-marketing-case-study") return <AutomotiveCaseStudyPage />;
   return <main id="top" className="inner-page">
     <section className="page-hero page-hero--yellow"><div className="container"><div className="article-header"><p className="eyebrow">{study.industry} case study / {study.client}</p><AccentHeading as="h1">{study.title}</AccentHeading><p className="page-hero__lead">{study.summary}</p></div></div></section>
     <section className="section"><div className="container"><MediaPlaceholder label={`${study.client} campaign video placeholder`} type="video" /></div></section>
