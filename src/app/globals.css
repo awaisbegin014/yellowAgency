@@ -3539,7 +3539,7 @@ body:has(.inner-page) {
 
 body:has(.inner-page) .site-header,
 body:has(.inner-page) .primary-nav {
-  background: rgba(255, 255, 255, .98);
+  background: #fff;
   background-image: none;
 }
 
@@ -4570,4 +4570,2011 @@ body:has(.inner-page) .site-header > .site-header__inner > .nav-cta {
   .automotive-study__metric-grid article { min-width: 0; }
   .automotive-study__metric-grid strong { font-size: 2rem; }
   .automotive-study__metric-grid span { overflow-wrap: anywhere; }
+}
+
+/* Dental case study — Yellow Agency editorial performance story */
+.dental-study {
+  --dental-ink: #30302f;
+  --dental-muted: #66665f;
+  --dental-line: #e5e1d3;
+  overflow: clip;
+  background: #fff;
+  color: var(--dental-ink);
+}
+
+.dental-study .container { width: min(calc(100% - 48px), 1420px); }
+.dental-study__section { padding: clamp(84px, 8.5vw, 132px) 0; }
+.dental-study h2 { max-width: 1050px; margin: 0 0 28px; color: var(--dental-ink); font-size: clamp(2.7rem, 4.6vw, 5.25rem); letter-spacing: -.06em; line-height: .99; text-wrap: balance; }
+.dental-study .eyebrow { color: #8c6b00; }
+.dental-study__copy { text-align: center; }
+.dental-study__copy > h2 { margin-inline: auto; }
+.dental-study__copy > p:not(.eyebrow) { max-width: 900px; margin: 0 auto; color: var(--dental-muted); font-size: 1.08rem; line-height: 1.82; }
+
+.dental-study__hero { position: relative; isolation: isolate; display: grid; min-height: 680px; place-items: center; overflow: hidden; padding: clamp(100px,10vw,155px) 0; border-bottom: 1px solid #e9dfad; background: radial-gradient(circle at 50% 46%,rgba(255,222,69,.25),transparent 36%),#fffdf8; text-align: center; }
+.dental-study__hero::before { content: ""; position: absolute; z-index: -1; top: 8%; left: 50%; width: min(88vw,1100px); height: 78%; border: 1px solid rgba(239,185,0,.2); border-radius: 46% 54% 48% 52%; transform: translateX(-50%) rotate(-2deg); }
+.dental-study__hero::after { content: "1,161.76"; position: absolute; z-index: -1; right: 50%; bottom: -8%; color: rgba(239,185,0,.045); font: 900 clamp(10rem,22vw,25rem)/.7 var(--heading); letter-spacing: -.12em; transform: translateX(50%); }
+.dental-study__hero-inner { display: grid; place-items: center; }
+.dental-study__hero-copy { display: grid; place-items: center; }
+.dental-study__hero-copy .eyebrow { margin-bottom: 22px; }
+.dental-study__hero-copy h1 { max-width: 1180px; margin: 0; color: var(--dental-ink); font-size: clamp(3.7rem,6.4vw,7rem); letter-spacing: -.067em; line-height: .96; text-wrap: balance; }
+.dental-study__hero-copy h1 span { color: #9d7600; background: linear-gradient(transparent 76%,rgba(255,210,26,.72) 76%); }
+.dental-study__hero-actions { display: flex; justify-content: center; margin-top: 36px; }
+
+.dental-study__overview { position: relative; background: linear-gradient(135deg,#fff 0,#fff 62%,#fff9d8 100%); }
+.dental-study__overview::before { content: ""; position: absolute; top: 0; left: 50%; width: min(1420px,calc(100% - 48px)); height: 5px; background: linear-gradient(90deg,var(--yellow) 0 22%,transparent 22%); transform: translateX(-50%); }
+.dental-study__overview-grid { display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); align-items: start; gap: clamp(60px,8vw,130px); }
+.dental-study__overview-intro > p:last-child { max-width: 660px; color: var(--dental-muted); font-size: 1.08rem; line-height: 1.8; }
+.dental-study__challenge-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; }
+.dental-study__challenge-grid article { position: relative; min-height: 350px; padding: clamp(30px,3vw,44px); overflow: hidden; border: 1px solid var(--dental-line); border-radius: 26px; background: #fff; box-shadow: 0 22px 60px rgba(47,47,43,.07); }
+.dental-study__challenge-grid article:last-child { background: var(--yellow); }
+.dental-study__challenge-grid article::after { content: ""; position: absolute; right: -75px; bottom: -100px; width: 240px; aspect-ratio: 1; border: 1px solid rgba(48,48,47,.12); border-radius: 50%; box-shadow: 0 0 0 35px rgba(255,255,255,.12); }
+.dental-study__challenge-grid article > span { font-size: .72rem; font-weight: 900; letter-spacing: .13em; }
+.dental-study__challenge-grid h3 { margin: 70px 0 18px; color: var(--dental-ink); font-size: 1.7rem; }
+.dental-study__challenge-grid p { position: relative; z-index: 1; margin: 0; color: #565650; line-height: 1.75; }
+
+.dental-study__solution { background: radial-gradient(circle at 50% 44%,rgba(255,222,69,.15),transparent 48%),#fffdf8; }
+.dental-study__solution-copy { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 46px; max-width: 1160px; margin: 0 auto; text-align: left; }
+.dental-study__solution-copy p { margin: 0; color: var(--dental-muted); font-size: 1.05rem; line-height: 1.82; }
+.dental-board { overflow: hidden; border: 1px solid #d8d4c6; border-radius: 25px; background: #fff; box-shadow: 0 30px 75px rgba(45,44,38,.11); text-align: left; }
+.dental-board__header { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px; min-height: 64px; padding: 13px 20px; border-bottom: 1px solid #e5e1d5; background: #faf9f4; }
+.dental-board__mark { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 50%; background: var(--yellow); color: #2d2c27; font: 900 1rem/1 var(--heading); }
+.dental-board__header strong { color: #363631; font-size: .8rem; }
+.dental-board__header small { color: #8b887e; font-size: .65rem; }
+.dental-journey { width: min(100%,1100px); margin: 64px auto 0; }
+.dental-journey__stages { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; align-items: center; gap: 22px; padding: clamp(34px,5vw,68px); background: radial-gradient(circle at center,rgba(255,210,26,.16),transparent 70%); }
+.dental-journey__stages article { min-height: 190px; padding: 27px; border: 1px solid #dedacc; border-radius: 20px; background: #fff; }
+.dental-journey__stages article:nth-of-type(2) { border-color: var(--yellow-deep); background: var(--yellow); transform: translateY(-12px); }
+.dental-journey__stages article > span { display: grid; width: 36px; height: 36px; place-items: center; border-radius: 50%; background: #292927; color: var(--yellow); font-size: .67rem; font-weight: 900; }
+.dental-journey__stages strong { display: block; margin-top: 46px; font: 800 1.1rem/1.25 var(--heading); }
+.dental-journey__stages small { display: block; margin-top: 8px; color: #77746b; }
+.dental-journey__stages > i { color: var(--yellow-deep); font-size: 1.6rem; font-style: normal; }
+.dental-journey__footer { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding: 20px 28px; border-top: 1px solid #e5e1d5; background: #2a2a28; color: #fff; }
+.dental-journey__footer span { color: #c9c5b8; font-size: .62rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+.dental-journey__footer strong { font-family: var(--heading); }
+
+.dental-study__section-heading { display: grid; grid-template-columns: minmax(0,1.28fr) minmax(320px,.72fr); align-items: end; gap: clamp(54px,7vw,110px); margin-bottom: 62px; }
+.dental-study__section-heading h2 { margin-bottom: 0; }
+.dental-study__section-heading > p { margin: 0 0 8px; color: var(--dental-muted); font-size: 1.06rem; line-height: 1.76; }
+.dental-study__method { position: relative; background: radial-gradient(circle at 90% 8%,rgba(255,210,26,.13),transparent 26%),#242423; color: #fff; }
+.dental-study__method h2 { color: #fff; }
+.dental-study__method .eyebrow, .dental-study__method .dental-study__section-heading > p { color: #e3dcc0; }
+.dental-study__method-grid { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 14px; }
+.dental-study__method-grid article { min-height: 176px; padding: 24px; border: 1px solid rgba(255,255,255,.14); border-radius: 19px; background: #30302f; transition: transform .2s ease,border-color .2s ease,background .2s ease; }
+.dental-study__method-grid article:nth-child(3n+2) { background: #39372d; }
+.dental-study__method-grid article:hover { border-color: var(--yellow); background: #36352f; transform: translateY(-4px); }
+.dental-study__method-grid span { color: var(--yellow); font-size: .71rem; font-weight: 900; letter-spacing: .13em; }
+.dental-study__method-grid h3 { margin: 72px 0 0; color: #fff; font-size: 1.05rem; letter-spacing: -.02em; }
+
+.dental-study__lead-magnet { position: relative; overflow: hidden; background: linear-gradient(125deg,#ffd21a 0,#ffe158 54%,#efb900 100%); }
+.dental-study__lead-magnet::after { content: ""; position: absolute; right: -140px; bottom: -240px; width: 600px; aspect-ratio: 1; border: 1px solid rgba(48,48,47,.17); border-radius: 50%; box-shadow: 0 0 0 70px rgba(255,255,255,.08),0 0 0 140px rgba(255,255,255,.045); }
+.dental-study__split { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); align-items: center; gap: clamp(64px,8vw,132px); }
+.dental-study__lead-magnet h2 { color: #2f2e27; }
+.dental-study__lead-magnet p:not(.eyebrow) { color: #554b1d; font-size: 1.06rem; line-height: 1.8; }
+.dental-study__lead-magnet ul { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 13px 24px; margin: 28px 0 32px; padding: 0; list-style: none; }
+.dental-study__lead-magnet li { position: relative; padding-left: 27px; font-size: .88rem; font-weight: 800; line-height: 1.45; }
+.dental-study__lead-magnet li::before { content: "✓"; position: absolute; left: 0; font-weight: 900; }
+.dental-growth { position: relative; z-index: 1; border-color: rgba(47,46,39,.3); box-shadow: 18px 18px 0 rgba(49,45,25,.12); }
+.dental-growth__summary { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1px; background: #ded9c9; }
+.dental-growth__summary > div { padding: 28px; background: #fff; }
+.dental-growth__summary span { display: block; color: #77736a; font-size: .64rem; font-weight: 800; text-transform: uppercase; }
+.dental-growth__summary strong { display: block; margin: 8px 0; color: #34332d; font: 900 clamp(2rem,3vw,3.2rem)/1 var(--heading); letter-spacing: -.07em; }
+.dental-growth__summary small { color: #8b6900; font-weight: 800; }
+.dental-growth__chart { padding: 30px 30px 22px; }
+.dental-growth__chart-head { display: flex; justify-content: space-between; gap: 20px; margin-bottom: 20px; font-size: .7rem; }
+.dental-growth__chart-head span { color: #88847a; }
+.dental-growth__bars { display: flex; height: 180px; align-items: end; gap: 8px; padding: 15px 12px 0; border-bottom: 1px solid #bbb7aa; background: repeating-linear-gradient(to bottom,#efede7 0,#efede7 1px,transparent 1px,transparent 45px); }
+.dental-growth__bars i { flex: 1; border-radius: 4px 4px 0 0; background: linear-gradient(180deg,#ffe46b,#efb900); }
+.dental-growth__axis { display: flex; justify-content: space-between; padding-top: 10px; color: #8b887e; font-size: .58rem; }
+
+.dental-study__results { background: linear-gradient(180deg,#fff 0,#fffdf5 100%); }
+.dental-study__metric-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 18px; }
+.dental-study__metric-grid article { position: relative; min-height: 215px; padding: 31px; overflow: hidden; border: 1px solid var(--dental-line); border-radius: 22px; background: #fff; box-shadow: 0 16px 45px rgba(48,48,45,.055); }
+.dental-study__metric-grid article:first-child { background: var(--yellow); }
+.dental-study__metric-grid article::before { content: ""; position: absolute; top: -1px; right: 28px; left: 28px; height: 4px; border-radius: 0 0 8px 8px; background: var(--yellow); }
+.dental-study__metric-grid strong { display: block; color: var(--dental-ink); font: 900 clamp(2.45rem,3.8vw,4.5rem)/.96 var(--heading); letter-spacing: -.07em; }
+.dental-study__metric-grid span { display: block; margin-top: 70px; color: var(--dental-muted); font-size: .73rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.dental-results-board { display: grid; grid-template-columns: 86px 1fr; min-height: 620px; margin-top: 48px; overflow: hidden; border: 1px solid #d9d5c6; border-radius: 28px; background: #f8f7f2; box-shadow: 0 30px 80px rgba(43,42,37,.1); }
+.dental-results-board__rail { display: flex; align-items: center; flex-direction: column; gap: 18px; padding: 20px 12px; background: #292927; color: #fff; }
+.dental-results-board__rail > i { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 10px; color: #a8a59b; font-size: .63rem; font-style: normal; font-weight: 900; }
+.dental-results-board__rail > i.is-active { background: var(--yellow); color: #292927; }
+.dental-results-board__rail small { margin-top: auto; color: #928e82; font-size: .52rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; writing-mode: vertical-rl; }
+.dental-results-board__main { padding: clamp(24px,4vw,52px); }
+.dental-results-board__main > header { display: flex; align-items: end; justify-content: space-between; gap: 20px; }
+.dental-results-board__main > header div { display: flex; flex-direction: column; }
+.dental-results-board__main > header span { color: #858177; font-size: .65rem; font-weight: 900; letter-spacing: .09em; text-transform: uppercase; }
+.dental-results-board__main > header strong { margin-top: 6px; font: 800 clamp(1.5rem,2.4vw,2.3rem)/1.1 var(--heading); }
+.dental-results-board__main > header small { color: #8b877c; }
+.dental-results-board__stats { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; margin-top: 30px; }
+.dental-results-board__stats article { padding: 22px; border: 1px solid #dedacf; border-radius: 16px; background: #fff; }
+.dental-results-board__stats article:first-child { background: var(--yellow); }
+.dental-results-board__stats span,.dental-results-board__stats small { display: block; color: #77736a; font-size: .62rem; }
+.dental-results-board__stats strong { display: block; margin: 10px 0 7px; font: 900 clamp(1.65rem,2.5vw,2.6rem)/1 var(--heading); letter-spacing: -.06em; }
+.dental-results-board__lower { display: grid; grid-template-columns: 1.5fr .5fr; gap: 16px; margin-top: 16px; }
+.dental-results-board__line,.dental-results-board__mix { min-height: 280px; padding: 24px; border: 1px solid #dedacf; border-radius: 18px; background: #fff; }
+.dental-results-board__line > div { display: flex; justify-content: space-between; gap: 20px; font-size: .72rem; }
+.dental-results-board__line span { color: #8b877c; }
+.dental-results-board__line svg { display: block; width: 100%; height: 205px; margin-top: 14px; }
+.dental-results-board__mix { display: flex; flex-direction: column; gap: 25px; }
+.dental-results-board__mix > strong { font-size: .78rem; }
+.dental-results-board__mix > div { position: relative; height: 8px; border-radius: 9px; background: #e9e6dc; }
+.dental-results-board__mix > div > i { display: block; height: 100%; border-radius: inherit; background: var(--yellow); }
+.dental-results-board__mix span { display: flex; justify-content: space-between; margin-top: 8px; color: #7a766c; font-size: .6rem; }
+
+.dental-study__analysis { background: linear-gradient(145deg,#fffdf1,#fff 48%,#fff8cc); }
+.dental-study__analysis-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; margin-top: 62px; }
+.dental-study__analysis-grid > article { overflow: hidden; border: 1px solid var(--dental-line); border-radius: 26px; background: #fff; box-shadow: 0 24px 60px rgba(48,48,45,.07); }
+.dental-study__analysis-grid > article > div:first-child { padding: 38px 38px 24px; }
+.dental-study__analysis-grid > article > div:first-child > span { color: #987300; font-size: .7rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.dental-study__analysis-grid > article > div:first-child h3 { max-width: 600px; margin: 13px 0 16px; font-size: clamp(1.75rem,2.4vw,2.5rem); }
+.dental-study__analysis-grid > article > div:first-child p { margin: 0; color: var(--dental-muted); line-height: 1.74; }
+.dental-analysis-board { border: 0; border-top: 1px solid #e1ddcf; border-radius: 0; box-shadow: none; }
+.dental-analysis-board__score { display: grid; grid-template-columns: 1fr 130px; align-items: center; gap: 25px; padding: 30px; }
+.dental-analysis-board__score > div span,.dental-analysis-board__score > div small { display: block; color: #817d73; font-size: .63rem; }
+.dental-analysis-board__score > div strong { display: block; margin: 7px 0; font: 900 3rem/1 var(--heading); letter-spacing: -.07em; }
+.dental-analysis-board__score > i { display: grid; width: 110px; aspect-ratio: 1; place-content: center; border: 8px solid #eeeadd; border-top-color: var(--yellow-deep); border-radius: 50%; font-style: normal; text-align: center; }
+.dental-analysis-board__score > i strong,.dental-analysis-board__score > i small { display: block; }
+.dental-analysis-board__score > i small { color: #77736a; font-size: .56rem; }
+.dental-analysis-board__table { padding: 0 30px 30px; }
+.dental-analysis-board__table > div { display: grid; grid-template-columns: 1fr 70px 82px; align-items: center; min-height: 52px; border-bottom: 1px solid #e9e5da; font-size: .69rem; }
+.dental-analysis-board__table > div:first-child { color: #8c887d; font-size: .57rem; text-transform: uppercase; }
+.dental-analysis-board__table strong { justify-self: center; }
+.dental-analysis-board__table em { justify-self: end; color: #8b6900; font-style: normal; font-weight: 900; }
+.dental-analysis-board--dark { background: #292927; color: #fff; }
+.dental-analysis-board--dark .dental-board__header { border-color: #45443f; background: #20201f; }
+.dental-analysis-board--dark .dental-board__header strong { color: #fff; }
+.dental-analysis-board--dark .dental-analysis-board__table > div { border-color: #47463f; color: #d5d1c4; }
+.dental-analysis-board--dark .dental-analysis-board__table > div:first-child { color: #8f8b80; }
+.dental-analysis-board__paid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 22px; padding: 30px; }
+.dental-analysis-board__paid > div:first-child { display: flex; justify-content: center; flex-direction: column; padding: 23px; border-radius: 16px; background: #373631; }
+.dental-analysis-board__paid span,.dental-analysis-board__paid small { color: #bcb7a9; font-size: .63rem; }
+.dental-analysis-board__paid strong { margin: 8px 0; color: var(--yellow); font: 900 2.8rem/1 var(--heading); letter-spacing: -.07em; }
+.dental-analysis-board__paid > div:last-child { display: flex; height: 145px; align-items: end; gap: 8px; padding: 16px 16px 0; border-bottom: 1px solid #55534c; background: repeating-linear-gradient(to bottom,#3d3c38 0,#3d3c38 1px,transparent 1px,transparent 42px); }
+.dental-analysis-board__paid > div:last-child i { flex: 1; border-radius: 4px 4px 0 0; background: linear-gradient(#ffe775,#eab400); }
+
+.dental-study__conclusion { background: #fff; }
+.dental-study__conclusion .dental-study__split > div > p:not(.eyebrow) { color: var(--dental-muted); font-size: 1.06rem; line-height: 1.8; }
+.dental-study__conclusion blockquote { position: relative; isolation: isolate; overflow: hidden; margin: 0; padding: clamp(38px,5vw,64px); border: 1px solid #3d3d39; border-radius: 30px 30px 90px 30px; background: #242423; color: #fff; box-shadow: 0 30px 75px rgba(32,32,30,.17); }
+.dental-study__conclusion blockquote::after { content: ""; position: absolute; z-index: -1; right: -100px; bottom: -130px; width: 360px; aspect-ratio: 1; border: 1px solid rgba(255,211,24,.27); border-radius: 50%; box-shadow: 0 0 0 50px rgba(255,211,24,.04),0 0 0 100px rgba(255,211,24,.025); }
+.dental-study__quote-mark { color: var(--yellow); font: 900 6rem/.7 Georgia,serif; }
+.dental-study__conclusion blockquote > p { margin: 44px 0 58px; color: #f5f2e9; font: 700 clamp(1.5rem,2.2vw,2.15rem)/1.45 var(--heading); letter-spacing: -.03em; }
+.dental-study__conclusion blockquote footer { display: grid; grid-template-columns: 50px 1fr auto; align-items: center; gap: 14px; }
+.dental-study__conclusion blockquote footer > span { display: grid; width: 50px; aspect-ratio: 1; place-items: center; border-radius: 50%; background: var(--yellow); color: #292927; font-weight: 900; }
+.dental-study__conclusion blockquote footer > div:nth-child(2) { display: flex; flex-direction: column; }
+.dental-study__conclusion blockquote footer small { color: #aaa69a; }
+.dental-study__conclusion blockquote footer > div:last-child { color: var(--yellow); letter-spacing: .12em; }
+
+.dental-study__onboarding { border-top: 1px solid #eee2a6; background: radial-gradient(circle at 50% 55%,rgba(255,210,26,.18),transparent 50%),#fffdf6; }
+.dental-onboarding__flow { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); width: min(100%,1200px); margin: 58px auto 0; overflow: hidden; border: 1px solid #ded8c3; border-radius: 24px; background: #fff; box-shadow: 0 24px 65px rgba(48,48,44,.08); text-align: left; }
+.dental-onboarding__flow article { position: relative; min-height: 190px; padding: 28px; border-right: 1px solid #e4dfd1; }
+.dental-onboarding__flow article:last-child { border-right: 0; background: var(--yellow); }
+.dental-onboarding__flow span { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 50%; background: #292927; color: var(--yellow); font-size: .66rem; font-weight: 900; }
+.dental-onboarding__flow strong { display: block; margin-top: 66px; font-family: var(--heading); }
+.dental-onboarding__flow i { position: absolute; z-index: 1; top: 50%; right: -13px; display: grid; width: 26px; height: 26px; place-items: center; border: 1px solid #d8d2bf; border-radius: 50%; background: #fff; color: var(--yellow-deep); font-size: .72rem; font-style: normal; transform: translateY(-50%); }
+.dental-study__cta { padding: clamp(65px,7vw,105px) 0; background: var(--yellow); }
+.dental-study__cta > .container { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 60px; }
+.dental-study__cta h2 { max-width: 900px; margin-bottom: 16px; font-size: clamp(2.8rem,4.4vw,5rem); }
+.dental-study__cta p:not(.eyebrow) { max-width: 780px; margin: 0; color: #554b1d; font-size: 1.05rem; }
+
+@media (max-width: 1100px) {
+  .dental-study__overview-grid,.dental-study__section-heading,.dental-study__split { grid-template-columns: 1fr; }
+  .dental-study__method-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .dental-study__section-heading { align-items: start; }
+  .dental-study__analysis-grid { grid-template-columns: 1fr; }
+  .dental-study__cta > .container { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+  .dental-study .container { width: min(calc(100% - 32px),1420px); }
+  .dental-study__section { padding: 72px 0; }
+  .dental-study h2 { font-size: clamp(2.35rem,10vw,3.35rem); }
+  .dental-study__hero { min-height: 570px; padding: 82px 0; }
+  .dental-study__hero::before { top: 10%; width: 112vw; height: 76%; }
+  .dental-study__hero-copy h1 { font-size: clamp(3rem,13vw,4.4rem); }
+  .dental-study__challenge-grid,.dental-study__solution-copy,.dental-study__metric-grid { grid-template-columns: 1fr; }
+  .dental-study__challenge-grid article { min-height: 290px; }
+  .dental-study__challenge-grid h3 { margin-top: 48px; }
+  .dental-journey__stages { grid-template-columns: 1fr; }
+  .dental-journey__stages > i { transform: rotate(90deg); justify-self: center; }
+  .dental-journey__stages article:nth-of-type(2) { transform: none; }
+  .dental-journey__footer { align-items: flex-start; flex-direction: column; }
+  .dental-study__method-grid { gap: 10px; }
+  .dental-study__method-grid article { min-height: 145px; padding: 18px; }
+  .dental-study__method-grid h3 { margin-top: 48px; font-size: .94rem; }
+  .dental-study__lead-magnet ul { grid-template-columns: 1fr; }
+  .dental-growth__summary,.dental-results-board__stats,.dental-results-board__lower { grid-template-columns: 1fr; }
+  .dental-growth__bars { height: 150px; }
+  .dental-study__metric-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .dental-study__metric-grid article { min-height: 170px; padding: 22px; }
+  .dental-study__metric-grid strong { font-size: clamp(2rem,9vw,2.8rem); }
+  .dental-study__metric-grid span { margin-top: 44px; }
+  .dental-results-board { grid-template-columns: 1fr; }
+  .dental-results-board__rail { display: none; }
+  .dental-results-board__main > header { align-items: start; flex-direction: column; }
+  .dental-results-board__line { min-height: 230px; }
+  .dental-results-board__line svg { height: 160px; }
+  .dental-analysis-board__paid { grid-template-columns: 1fr; }
+  .dental-analysis-board__table { overflow-x: auto; padding-inline: 20px; }
+  .dental-analysis-board__table > div { min-width: 450px; }
+  .dental-study__conclusion blockquote footer { grid-template-columns: 50px 1fr; }
+  .dental-study__conclusion blockquote footer > div:last-child { grid-column: 2; }
+  .dental-onboarding__flow { grid-template-columns: 1fr; }
+  .dental-onboarding__flow article { min-height: 125px; border-right: 0; border-bottom: 1px solid #e4dfd1; }
+  .dental-onboarding__flow article:last-child { border-bottom: 0; }
+  .dental-onboarding__flow strong { margin-top: 30px; }
+  .dental-onboarding__flow i { top: auto; right: 30px; bottom: -14px; transform: rotate(90deg); }
+}
+
+@media (max-width: 430px) {
+  .dental-study__method-grid,.dental-study__metric-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .dental-study__metric-grid strong { font-size: 1.8rem; overflow-wrap: anywhere; }
+  .dental-study__metric-grid span { overflow-wrap: anywhere; }
+}
+
+/* Shared long-form case studies: HVAC, outdoor blinds, outreach, auto dealer, and party rentals */
+.growth-study { --growth-ink: #30302f; --growth-muted: #66665f; --growth-line: #e5e1d3; overflow: clip; background: #fff; color: var(--growth-ink); }
+.growth-study .container { width: min(calc(100% - 48px),1420px); }
+.growth-study__section { padding: clamp(84px,8.5vw,132px) 0; }
+.growth-study h2 { max-width: 1060px; margin: 0 0 28px; color: var(--growth-ink); font-size: clamp(2.65rem,4.5vw,5.1rem); letter-spacing: -.06em; line-height: 1; text-wrap: balance; }
+.automotive-study__section h2,
+.dental-study__section h2,
+.growth-study__section h2 {
+  position: relative;
+  isolation: isolate;
+}
+.automotive-study__section h2::before,
+.dental-study__section h2::before,
+.growth-study__section h2::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 38%;
+  width: min(760px, 92vw);
+  height: 145%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(255, 210, 26, .28) 0%, rgba(255, 222, 69, .14) 38%, rgba(255, 246, 191, 0) 74%);
+  filter: blur(20px);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.automotive-study__section h2 > span:first-child,
+.dental-study__section h2 > span:first-child,
+.growth-study__section h2 > span:first-child {
+  color: #30302f;
+}
+.automotive-study__section h2 > .case-study-heading__accent,
+.dental-study__section h2 > .case-study-heading__accent,
+.growth-study__section h2 > .case-study-heading__accent {
+  color: var(--yellow-deep);
+}
+.growth-study .eyebrow { color: #8c6b00; }
+.growth-study__copy { text-align: center; }
+.growth-study__copy > h2 { margin-inline: auto; }
+.growth-study__copy > p:not(.eyebrow) { max-width: 920px; margin: 0 auto; color: var(--growth-muted); font-size: 1.07rem; line-height: 1.82; }
+
+.growth-study__hero { position: relative; isolation: isolate; display: grid; min-height: 680px; place-items: center; overflow: hidden; padding: clamp(100px,10vw,155px) 0; border-bottom: 1px solid #e9dfad; background: radial-gradient(circle at 50% 46%,rgba(255,222,69,.25),transparent 36%),#fffdf8; text-align: center; }
+.growth-study__hero::before { content: ""; position: absolute; z-index: -1; top: 8%; left: 50%; width: min(88vw,1100px); height: 78%; border: 1px solid rgba(239,185,0,.2); border-radius: 46% 54% 48% 52%; transform: translateX(-50%) rotate(-2deg); }
+.growth-study__hero::after { content: "Y+"; position: absolute; z-index: -1; right: 50%; bottom: -11%; color: rgba(239,185,0,.045); font: 900 clamp(13rem,28vw,31rem)/.7 var(--heading); letter-spacing: -.14em; transform: translateX(50%); }
+.growth-study__hero .container { display: grid; place-items: center; }
+.growth-study__hero .eyebrow { margin-bottom: 24px; }
+.growth-study__hero h1 { max-width: 1220px; margin: 0; color: var(--growth-ink); font-size: clamp(3.65rem,6.25vw,6.9rem); letter-spacing: -.068em; line-height: .96; text-wrap: balance; }
+.growth-study__hero h1 span { color: #9d7600; background: linear-gradient(transparent 76%,rgba(255,210,26,.72) 76%); }
+.growth-study__hero .button { margin-top: 38px; }
+
+.growth-study__overview { position: relative; background: linear-gradient(135deg,#fff 0,#fff 61%,#fff9d8 100%); }
+.growth-study__overview::before { content: ""; position: absolute; top: 0; left: 50%; width: min(1420px,calc(100% - 48px)); height: 5px; background: linear-gradient(90deg,var(--yellow) 0 22%,transparent 22%); transform: translateX(-50%); }
+.growth-study__overview-grid { display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); align-items: start; gap: clamp(60px,8vw,130px); }
+.growth-study__overview-grid > div:first-child > p:last-child { max-width: 670px; color: var(--growth-muted); font-size: 1.08rem; line-height: 1.82; }
+.growth-study__briefs { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; }
+.growth-study__briefs article { position: relative; min-height: 350px; padding: clamp(30px,3vw,44px); overflow: hidden; border: 1px solid var(--growth-line); border-radius: 26px; background: #fff; box-shadow: 0 22px 60px rgba(47,47,43,.07); }
+.growth-study__briefs article:last-child { background: var(--yellow); }
+.growth-study__briefs article::after { content: ""; position: absolute; right: -78px; bottom: -105px; width: 245px; aspect-ratio: 1; border: 1px solid rgba(48,48,47,.12); border-radius: 50%; box-shadow: 0 0 0 35px rgba(255,255,255,.12); }
+.growth-study__briefs article > span { font-size: .72rem; font-weight: 900; letter-spacing: .13em; }
+.growth-study__briefs h3 { margin: 70px 0 18px; font-size: 1.7rem; }
+.growth-study__briefs p { position: relative; z-index: 1; margin: 0; color: #565650; line-height: 1.75; }
+
+.growth-study__solution { background: radial-gradient(circle at 50% 43%,rgba(255,222,69,.14),transparent 50%),#fffdf8; }
+.growth-study__solution-copy { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 46px; max-width: 1160px; margin: 0 auto; text-align: left; }
+.growth-study__solution-copy p { margin: 0; color: var(--growth-muted); font-size: 1.05rem; line-height: 1.82; }
+.growth-study__media { width: min(100%,1040px); min-height: 500px; margin: 62px auto 0; border-color: #e0ce74; border-radius: 28px; box-shadow: 0 28px 70px rgba(48,48,45,.1); }
+
+.growth-study__section-heading { display: grid; grid-template-columns: minmax(0,1.28fr) minmax(320px,.72fr); align-items: end; gap: clamp(54px,7vw,110px); margin-bottom: 62px; }
+.growth-study__section-heading h2 { margin-bottom: 0; }
+.growth-study__section-heading > p,.growth-study__section-heading > div:last-child p { margin: 0 0 8px; color: var(--growth-muted); font-size: 1.04rem; line-height: 1.76; }
+.growth-study__method { position: relative; background: radial-gradient(circle at 90% 8%,rgba(255,210,26,.13),transparent 26%),#242423; color: #fff; }
+.growth-study__method h2 { color: #fff; }
+.growth-study__method .eyebrow,.growth-study__method .growth-study__section-heading > p { color: #e3dcc0; }
+.growth-study__method-grid { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 14px; }
+.growth-study__method-grid article { min-height: 176px; padding: 24px; border: 1px solid rgba(255,255,255,.14); border-radius: 19px; background: #30302f; transition: transform .2s ease,border-color .2s ease,background .2s ease; }
+.growth-study__method-grid article:nth-child(3n+2) { background: #39372d; }
+.growth-study__method-grid article:hover { border-color: var(--yellow); background: #36352f; transform: translateY(-4px); }
+.growth-study__method-grid span { color: var(--yellow); font-size: .71rem; font-weight: 900; letter-spacing: .13em; }
+.growth-study__method-grid h3 { margin: 72px 0 0; color: #fff; font-size: 1.02rem; letter-spacing: -.02em; }
+
+.growth-study__lead-magnet { position: relative; overflow: hidden; background: linear-gradient(125deg,#ffd21a 0,#ffe158 54%,#efb900 100%); }
+.growth-study__lead-magnet::after { content: ""; position: absolute; right: -140px; bottom: -240px; width: 600px; aspect-ratio: 1; border: 1px solid rgba(48,48,47,.17); border-radius: 50%; box-shadow: 0 0 0 70px rgba(255,255,255,.08),0 0 0 140px rgba(255,255,255,.045); }
+.growth-study__lead-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0,1fr) minmax(400px,.82fr); align-items: center; gap: clamp(65px,8vw,132px); }
+.growth-study__lead-grid > div:first-child > p:not(.eyebrow) { color: #554b1d; font-size: 1.06rem; line-height: 1.8; }
+.growth-study__lead-grid ul { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 13px 24px; margin: 28px 0 32px; padding: 0; list-style: none; }
+.growth-study__lead-grid li { position: relative; padding-left: 27px; font-size: .88rem; font-weight: 800; line-height: 1.45; }
+.growth-study__lead-grid li::before { content: "✓"; position: absolute; left: 0; font-weight: 900; }
+.growth-study__lead-card { position: relative; isolation: isolate; min-height: 460px; padding: clamp(34px,5vw,62px); overflow: hidden; border: 1px solid #343129; border-radius: 30px 30px 88px 30px; background: #292927; color: #fff; box-shadow: 18px 18px 0 rgba(49,45,25,.14); }
+.growth-study__lead-card::after { content: ""; position: absolute; z-index: -1; right: -110px; bottom: -130px; width: 350px; aspect-ratio: 1; border: 1px solid rgba(255,210,26,.35); border-radius: 50%; box-shadow: 0 0 0 45px rgba(255,210,26,.045),0 0 0 90px rgba(255,210,26,.028); }
+.growth-study__lead-card > span { color: #c8c3b3; font-size: .68rem; font-weight: 900; letter-spacing: .11em; text-transform: uppercase; }
+.growth-study__lead-card > strong { display: block; margin-top: 54px; color: var(--yellow); font: 900 clamp(4rem,7vw,7.2rem)/.9 var(--heading); letter-spacing: -.08em; }
+.growth-study__lead-card > p { margin: 13px 0 0; color: #fff; font: 700 1.35rem/1.3 var(--heading); text-transform: capitalize; }
+.growth-study__lead-card > div { display: flex; gap: 8px; margin-top: 85px; }
+.growth-study__lead-card > div i { width: 45px; height: 7px; border-radius: 9px; background: var(--yellow); }
+.growth-study__lead-card > div i:nth-child(2) { opacity: .55; }
+.growth-study__lead-card > div i:nth-child(3) { opacity: .25; }
+.growth-study__lead-card > small { display: block; margin-top: 12px; color: #a9a598; }
+
+.growth-study__results { background: linear-gradient(180deg,#fff 0,#fffdf5 100%); }
+.growth-study__metric-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 18px; }
+.growth-study__metric-grid article { position: relative; min-height: 215px; padding: 31px; overflow: hidden; border: 1px solid var(--growth-line); border-radius: 22px; background: #fff; box-shadow: 0 16px 45px rgba(48,48,45,.055); }
+.growth-study__metric-grid article:first-child { background: var(--yellow); }
+.growth-study__metric-grid article::before { content: ""; position: absolute; top: -1px; right: 28px; left: 28px; height: 4px; border-radius: 0 0 8px 8px; background: var(--yellow); }
+.growth-study__metric-grid strong { display: block; color: var(--growth-ink); font: 900 clamp(2.5rem,3.8vw,4.55rem)/.96 var(--heading); letter-spacing: -.07em; }
+.growth-study__metric-grid span { display: block; margin-top: 70px; color: var(--growth-muted); font-size: .73rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.growth-study__board { overflow: hidden; margin-top: 48px; border: 1px solid #d8d4c6; border-radius: 27px; background: #f7f6f1; box-shadow: 0 30px 80px rgba(43,42,37,.1); }
+.growth-study__board > header { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px; min-height: 68px; padding: 14px 22px; border-bottom: 1px solid #e2ded1; background: #2a2a28; color: #fff; }
+.growth-study__board-mark { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 50%; background: var(--yellow); color: #2a2a28; font: 900 1rem/1 var(--heading); }
+.growth-study__board > header strong { font-size: .82rem; }
+.growth-study__board > header small { color: #aaa69a; }
+.growth-study__board-stats { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1px; background: #dedacf; }
+.growth-study__board-stats article { padding: 28px; background: #fff; }
+.growth-study__board-stats article.is-primary { background: var(--yellow); }
+.growth-study__board-stats span,.growth-study__board-stats small { display: block; color: #77736a; font-size: .63rem; text-transform: capitalize; }
+.growth-study__board-stats strong { display: block; margin: 9px 0; font: 900 clamp(2.2rem,3.5vw,3.8rem)/1 var(--heading); letter-spacing: -.07em; }
+.growth-study__board-chart { padding: clamp(26px,4vw,48px); }
+.growth-study__board-chart > div:first-child { display: flex; justify-content: space-between; gap: 20px; font-size: .75rem; }
+.growth-study__board-chart > div:first-child span { color: #858177; }
+.growth-study__board-chart > div:nth-child(2) { display: flex; height: 260px; align-items: end; gap: 11px; margin-top: 26px; padding: 18px 18px 0; border-bottom: 1px solid #bbb7aa; background: repeating-linear-gradient(to bottom,#e8e6de 0,#e8e6de 1px,transparent 1px,transparent 65px); }
+.growth-study__board-chart > div:nth-child(2) i { flex: 1; border-radius: 5px 5px 0 0; background: linear-gradient(180deg,#ffe66f,#efb900); }
+.growth-study__board-chart footer { display: flex; justify-content: space-between; padding-top: 12px; color: #8b877c; font-size: .6rem; }
+
+.growth-study__analysis { background: linear-gradient(145deg,#fffdf1,#fff 48%,#fff8cc); }
+.growth-study__comparison { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; margin-top: 58px; text-align: left; }
+.growth-study__comparison article { position: relative; min-height: 460px; padding: clamp(34px,4vw,56px); overflow: hidden; border: 1px solid var(--growth-line); border-radius: 28px; background: #fff; box-shadow: 0 24px 60px rgba(48,48,45,.07); }
+.growth-study__comparison article:last-child { background: #292927; color: #fff; }
+.growth-study__comparison article::after { content: ""; position: absolute; right: -100px; bottom: -140px; width: 350px; aspect-ratio: 1; border: 1px solid rgba(239,185,0,.2); border-radius: 50%; box-shadow: 0 0 0 45px rgba(255,210,26,.04); }
+.growth-study__comparison article > span { color: #927000; font-size: .7rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.growth-study__comparison article:last-child > span { color: var(--yellow); }
+.growth-study__comparison h3 { max-width: 500px; margin: 44px 0 32px; color: inherit; font-size: clamp(2rem,3vw,3.2rem); }
+.growth-study__comparison ul { display: grid; gap: 15px; margin: 0; padding: 0; list-style: none; }
+.growth-study__comparison li { position: relative; z-index: 1; padding: 14px 18px 14px 44px; border: 1px solid #e4e0d4; border-radius: 12px; background: #faf9f5; color: #55534d; font-weight: 700; }
+.growth-study__comparison article:last-child li { border-color: #4c4b45; background: #353431; color: #f1eee4; }
+.growth-study__comparison li::before { content: "✓"; position: absolute; left: 17px; color: #927000; font-weight: 900; }
+.growth-study__comparison article:last-child li::before { color: var(--yellow); }
+
+.growth-study__conclusion { background: #fff; }
+.growth-study__conclusion-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); align-items: center; gap: clamp(65px,8vw,132px); }
+.growth-study__conclusion-grid > div > p:not(.eyebrow) { color: var(--growth-muted); font-size: 1.05rem; line-height: 1.82; }
+.growth-study__conclusion blockquote { position: relative; isolation: isolate; overflow: hidden; margin: 0; padding: clamp(38px,5vw,64px); border: 1px solid #3d3d39; border-radius: 30px 30px 90px 30px; background: #242423; color: #fff; box-shadow: 0 30px 75px rgba(32,32,30,.17); }
+.growth-study__conclusion blockquote::after { content: ""; position: absolute; z-index: -1; right: -100px; bottom: -130px; width: 360px; aspect-ratio: 1; border: 1px solid rgba(255,211,24,.27); border-radius: 50%; box-shadow: 0 0 0 50px rgba(255,211,24,.04),0 0 0 100px rgba(255,211,24,.025); }
+.growth-study__conclusion blockquote > span { color: var(--yellow); font: 900 6rem/.7 Georgia,serif; }
+.growth-study__conclusion blockquote > p { margin: 44px 0 58px; color: #f5f2e9; font: 700 clamp(1.5rem,2.2vw,2.15rem)/1.45 var(--heading); letter-spacing: -.03em; }
+.growth-study__conclusion blockquote footer { display: grid; grid-template-columns: 50px 1fr auto; align-items: center; gap: 14px; }
+.growth-study__conclusion blockquote footer > b { display: grid; width: 50px; aspect-ratio: 1; place-items: center; border-radius: 50%; background: var(--yellow); color: #292927; }
+.growth-study__conclusion blockquote footer > div { display: flex; flex-direction: column; }
+.growth-study__conclusion blockquote footer small { color: #aaa69a; }
+.growth-study__conclusion blockquote footer em { color: var(--yellow); font-style: normal; letter-spacing: .12em; }
+
+.growth-study__onboarding { border-top: 1px solid #eee2a6; background: radial-gradient(circle at 50% 55%,rgba(255,210,26,.18),transparent 50%),#fffdf6; }
+.growth-study__onboarding-flow { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); width: min(100%,1200px); margin: 58px auto 0; overflow: hidden; border: 1px solid #ded8c3; border-radius: 24px; background: #fff; box-shadow: 0 24px 65px rgba(48,48,44,.08); text-align: left; }
+.growth-study__onboarding-flow article { position: relative; min-height: 190px; padding: 28px; border-right: 1px solid #e4dfd1; }
+.growth-study__onboarding-flow article:last-child { border-right: 0; background: var(--yellow); }
+.growth-study__onboarding-flow span { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 50%; background: #292927; color: var(--yellow); font-size: .66rem; font-weight: 900; }
+.growth-study__onboarding-flow strong { display: block; margin-top: 66px; font-family: var(--heading); }
+.growth-study__onboarding-flow i { position: absolute; z-index: 1; top: 50%; right: -13px; display: grid; width: 26px; height: 26px; place-items: center; border: 1px solid #d8d2bf; border-radius: 50%; background: #fff; color: var(--yellow-deep); font-size: .72rem; font-style: normal; transform: translateY(-50%); }
+.growth-study__cta { padding: clamp(65px,7vw,105px) 0; background: var(--yellow); }
+.growth-study__cta > .container { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 60px; }
+.growth-study__cta h2 { max-width: 900px; margin-bottom: 16px; font-size: clamp(2.8rem,4.4vw,5rem); }
+.growth-study__cta p:not(.eyebrow) { max-width: 780px; margin: 0; color: #554b1d; font-size: 1.05rem; }
+
+@media (max-width: 1100px) {
+  .growth-study__overview-grid,.growth-study__section-heading,.growth-study__lead-grid,.growth-study__conclusion-grid { grid-template-columns: 1fr; }
+  .growth-study__method-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .growth-study__section-heading { align-items: start; }
+  .growth-study__lead-card { width: min(100%,760px); }
+  .growth-study__cta > .container { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+  .growth-study .container { width: min(calc(100% - 32px),1420px); }
+  .growth-study__section { padding: 72px 0; }
+  .growth-study h2 { font-size: clamp(2.35rem,10vw,3.35rem); }
+  .automotive-study__section h2::before,
+  .dental-study__section h2::before,
+  .growth-study__section h2::before {
+    left: 46%;
+    width: 112vw;
+    height: 125%;
+    filter: blur(16px);
+  }
+  .growth-study__hero { min-height: 570px; padding: 82px 0; }
+  .growth-study__hero::before { top: 10%; width: 112vw; height: 76%; }
+  .growth-study__hero h1 { font-size: clamp(3rem,13vw,4.35rem); }
+  .growth-study__briefs,.growth-study__solution-copy,.growth-study__metric-grid,.growth-study__comparison { grid-template-columns: 1fr; }
+  .growth-study__briefs article { min-height: 290px; }
+  .growth-study__briefs h3 { margin-top: 48px; }
+  .growth-study__media { min-height: 340px; }
+  .growth-study__method-grid { gap: 10px; }
+  .growth-study__method-grid article { min-height: 145px; padding: 18px; }
+  .growth-study__method-grid h3 { margin-top: 48px; font-size: .94rem; }
+  .growth-study__lead-grid ul { grid-template-columns: 1fr; }
+  .growth-study__lead-card { min-height: 400px; }
+  .growth-study__lead-card > strong { font-size: clamp(3.5rem,18vw,5.5rem); }
+  .growth-study__metric-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .growth-study__metric-grid article { min-height: 170px; padding: 22px; }
+  .growth-study__metric-grid strong { font-size: clamp(2rem,9vw,2.8rem); }
+  .growth-study__metric-grid span { margin-top: 44px; }
+  .growth-study__board-stats { grid-template-columns: 1fr; }
+  .growth-study__board > header { grid-template-columns: auto 1fr; }
+  .growth-study__board > header small { display: none; }
+  .growth-study__board-chart > div:nth-child(2) { height: 180px; gap: 6px; padding-inline: 8px; }
+  .growth-study__comparison article { min-height: 400px; }
+  .growth-study__conclusion blockquote footer { grid-template-columns: 50px 1fr; }
+  .growth-study__conclusion blockquote footer em { grid-column: 2; }
+  .growth-study__onboarding-flow { grid-template-columns: 1fr; }
+  .growth-study__onboarding-flow article { min-height: 125px; border-right: 0; border-bottom: 1px solid #e4dfd1; }
+  .growth-study__onboarding-flow article:last-child { border-bottom: 0; }
+  .growth-study__onboarding-flow strong { margin-top: 30px; }
+  .growth-study__onboarding-flow i { top: auto; right: 30px; bottom: -14px; transform: rotate(90deg); }
+}
+
+@media (max-width: 430px) {
+  .growth-study__method-grid,.growth-study__metric-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .growth-study__metric-grid strong { font-size: 1.8rem; overflow-wrap: anywhere; }
+  .growth-study__metric-grid span { overflow-wrap: anywhere; }
+}
+
+/* Case-study method cards — shared yellow treatment and consistent alignment */
+.automotive-study > .automotive-study__method,
+.dental-study > .dental-study__method,
+.growth-study > .growth-study__method {
+  background:
+    radial-gradient(circle at 88% 8%, rgba(255, 210, 26, .32), transparent 25%),
+    linear-gradient(135deg, #fffef7 0%, #fff8d4 58%, #ffe98b 100%);
+  color: var(--ink);
+}
+
+.automotive-study__method .automotive-study__section-heading,
+.dental-study__method .dental-study__section-heading,
+.growth-study__method .growth-study__section-heading {
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: 18px;
+  text-align: left;
+}
+
+.automotive-study__method h2,
+.dental-study__method h2,
+.growth-study__method h2 {
+  max-width: 1180px;
+  margin-bottom: 0;
+  color: var(--ink);
+}
+
+.automotive-study__method .eyebrow,
+.dental-study__method .eyebrow,
+.growth-study__method .eyebrow {
+  color: var(--gold-text);
+}
+
+.automotive-study__method .automotive-study__section-heading > p,
+.dental-study__method .dental-study__section-heading > p,
+.growth-study__method .growth-study__section-heading > p {
+  max-width: 1020px;
+  margin: 0;
+  color: #605a43;
+  font-size: 1.04rem;
+  line-height: 1.75;
+  text-align: left;
+}
+
+.automotive-study__method-grid,
+.dental-study__method-grid,
+.growth-study__method-grid {
+  align-items: stretch;
+}
+
+.automotive-study__method-grid article,
+.dental-study__method-grid article,
+.growth-study__method-grid article {
+  display: flex;
+  min-height: 178px;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 24px;
+  border: 1px solid #ddb000;
+  border-radius: 19px;
+  background: #fff4b8;
+  color: var(--ink);
+  flex-direction: column;
+  box-shadow: 0 12px 30px rgba(126, 94, 0, .08);
+}
+
+.automotive-study__method-grid article:nth-child(2n),
+.dental-study__method-grid article:nth-child(2n),
+.growth-study__method-grid article:nth-child(2n),
+.growth-study__method-grid article:nth-child(3n+2) {
+  background: #ffe36a;
+}
+
+.automotive-study__method-grid article:hover,
+.dental-study__method-grid article:hover,
+.growth-study__method-grid article:hover {
+  border-color: #a77d00;
+  background: var(--yellow);
+  transform: translateY(-4px);
+}
+
+.automotive-study__method-grid span,
+.dental-study__method-grid span,
+.growth-study__method-grid span {
+  color: #765900;
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .13em;
+  line-height: 1;
+}
+
+.automotive-study__method-grid h3,
+.dental-study__method-grid h3,
+.growth-study__method-grid h3 {
+  width: 100%;
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.05rem;
+  letter-spacing: -.02em;
+  line-height: 1.3;
+  text-align: left;
+}
+
+@media (max-width: 1050px) {
+  .automotive-study__method .automotive-study__section-heading,
+  .dental-study__method .dental-study__section-heading,
+  .growth-study__method .growth-study__section-heading {
+    align-items: start;
+  }
+}
+
+@media (max-width: 760px) {
+  .automotive-study__method-grid article,
+  .dental-study__method-grid article,
+  .growth-study__method-grid article {
+    min-height: 150px;
+    padding: 19px;
+  }
+
+  .automotive-study__method-grid h3,
+  .dental-study__method-grid h3,
+  .growth-study__method-grid h3 {
+    font-size: .94rem;
+  }
+}
+
+/* Case-study pages use one uninterrupted white canvas. */
+.automotive-study > section[class],
+.dental-study > section[class],
+.growth-study > section[class] {
+  background: #fff;
+}
+
+/* Focused yellow glow behind every case-study method heading. */
+.automotive-study__method .automotive-study__section-heading,
+.dental-study__method .dental-study__section-heading,
+.growth-study__method .growth-study__section-heading {
+  position: relative;
+  isolation: isolate;
+}
+
+.automotive-study__method .automotive-study__section-heading::before,
+.dental-study__method .dental-study__section-heading::before,
+.growth-study__method .growth-study__section-heading::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -30%;
+  left: -7%;
+  width: min(1120px, 92vw);
+  height: 155%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 38% 48%, rgba(255, 210, 26, .34) 0%, rgba(255, 228, 91, .19) 38%, rgba(255, 245, 190, .08) 58%, transparent 76%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.automotive-study__method .automotive-study__section-heading > *,
+.dental-study__method .dental-study__section-heading > *,
+.growth-study__method .growth-study__section-heading > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 760px) {
+  .automotive-study__method .automotive-study__section-heading::before,
+  .dental-study__method .dental-study__section-heading::before,
+  .growth-study__method .growth-study__section-heading::before {
+    top: -20%;
+    left: -16%;
+    width: 125%;
+    height: 140%;
+    filter: blur(16px);
+  }
+}
+
+/* Yellow insights — reference-led editorial page */
+.yellow-blog,
+.yellow-contact {
+  overflow: clip;
+  background: #fff;
+}
+
+.yellow-blog__hero,
+.yellow-contact__hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: 650px;
+  place-items: center;
+  padding: clamp(92px, 11vw, 155px) 0 clamp(80px, 9vw, 120px);
+  background: #fff;
+  text-align: center;
+}
+
+.yellow-blog__hero::before,
+.yellow-contact__hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 8%;
+  left: 50%;
+  width: min(1080px, 92vw);
+  height: 78%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(255, 210, 26, .38), rgba(255, 230, 101, .2) 42%, rgba(255, 248, 206, .08) 60%, transparent 76%);
+  filter: blur(22px);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.yellow-blog__hero .container,
+.yellow-contact__hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.yellow-blog__hero .eyebrow,
+.yellow-contact__hero .eyebrow {
+  color: var(--gold-text);
+}
+
+.yellow-blog__hero h1,
+.yellow-contact__hero h1 {
+  max-width: 1120px;
+  margin: 0 auto 28px;
+  color: #2f2f2d;
+  font-size: clamp(3.8rem, 7.4vw, 7.25rem);
+  letter-spacing: -.065em;
+  line-height: .94;
+}
+
+.yellow-blog__hero h1 span,
+.yellow-contact__hero h1 span {
+  position: relative;
+  z-index: 1;
+  display: inline;
+}
+
+.yellow-blog__hero h1 span::after,
+.yellow-contact__hero h1 span::after {
+  content: "";
+  position: absolute;
+  right: 1%;
+  bottom: .02em;
+  left: 1%;
+  z-index: -1;
+  height: .14em;
+  border-radius: 99px 35px 99px 30px;
+  background: var(--yellow);
+  transform: rotate(-.7deg);
+}
+
+.yellow-blog__hero .container > p:not(.eyebrow),
+.yellow-contact__hero .container > p:not(.eyebrow) {
+  max-width: 790px;
+  margin: 0 auto;
+  color: #615f58;
+  font-size: clamp(1.05rem, 1.45vw, 1.24rem);
+  line-height: 1.75;
+}
+
+.yellow-blog__hero-actions,
+.yellow-contact__hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 27px;
+  margin-top: 36px;
+}
+
+.yellow-blog__hero-actions .button,
+.yellow-contact__hero-actions .button {
+  border: 1px solid #30302e;
+}
+
+.yellow-blog__discovery {
+  padding: 0 0 clamp(75px, 8vw, 110px);
+  background: #fff;
+  scroll-margin-top: 105px;
+}
+
+.yellow-blog__search-panel {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 25px;
+  padding: 16px 18px 16px 24px;
+  border: 1px solid #c9c7bd;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 20px 60px rgba(52, 50, 40, .08);
+}
+
+.yellow-blog__search-panel > div {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  align-items: center;
+}
+
+.yellow-blog__search-icon {
+  color: var(--yellow-deep);
+  font: 900 1.9rem/1 var(--heading);
+  transform: rotate(-18deg);
+}
+
+.yellow-blog__search-panel input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: clamp(1rem, 1.3vw, 1.18rem);
+}
+
+.yellow-blog__search-panel input::placeholder {
+  color: #96938a;
+}
+
+.yellow-blog__search-panel > span {
+  padding: 12px 17px;
+  border-radius: 999px;
+  background: var(--yellow);
+  color: #564300;
+  font-size: .7rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.yellow-blog__categories {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  align-items: start;
+  gap: 28px;
+  margin-top: 28px;
+}
+
+.yellow-blog__categories > span {
+  padding-top: 10px;
+  color: #77746b;
+  font-size: .7rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.yellow-blog__categories > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.yellow-blog__categories button {
+  min-height: 40px;
+  padding: 8px 15px;
+  border: 1px solid #d6d3c8;
+  border-radius: 999px;
+  background: #fff;
+  font-size: .74rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: border-color .2s ease, background .2s ease, transform .2s ease;
+}
+
+.yellow-blog__categories button:hover,
+.yellow-blog__categories button.is-active {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.yellow-blog__articles {
+  padding: clamp(82px, 9vw, 135px) 0;
+  border-top: 1px solid #ece9df;
+  background: #fff;
+}
+
+.yellow-blog__section-heading,
+.yellow-blog__latest-heading,
+.yellow-contact__section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, .55fr);
+  align-items: end;
+  gap: clamp(45px, 7vw, 105px);
+  margin-bottom: 56px;
+}
+
+.yellow-blog__section-heading h2,
+.yellow-blog__latest-heading h2,
+.yellow-contact__section-heading h2 {
+  max-width: 850px;
+  margin: 0;
+  color: #2f2f2d;
+  font-size: clamp(2.55rem, 4.7vw, 5rem);
+  letter-spacing: -.055em;
+  line-height: 1;
+}
+
+.yellow-blog__section-heading > p,
+.yellow-blog__latest-heading > span,
+.yellow-contact__section-heading > p {
+  margin: 0 0 7px;
+  color: #716e65;
+  line-height: 1.75;
+}
+
+.yellow-blog__featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.yellow-blog__featured-card {
+  display: flex;
+  min-height: 660px;
+  overflow: hidden;
+  border: 1px solid #d9d5c8;
+  border-radius: 30px;
+  background: #fff;
+  flex-direction: column;
+  box-shadow: 0 28px 75px rgba(54, 51, 39, .09);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.yellow-blog__featured-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 34px 85px rgba(54, 51, 39, .14);
+}
+
+.yellow-blog__featured-media {
+  position: relative;
+}
+
+.yellow-blog__featured-media > .media-placeholder {
+  min-height: 340px;
+  border: 0;
+  border-bottom: 1px solid #d9d5c8;
+  border-radius: 0;
+}
+
+.yellow-blog__featured-media > span {
+  position: absolute;
+  z-index: 4;
+  top: 18px;
+  left: 18px;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border: 1px solid rgba(24, 24, 24, .3);
+  border-radius: 50%;
+  background: var(--yellow);
+  font-size: .67rem;
+  font-weight: 900;
+}
+
+.yellow-blog__featured-card > div:last-child {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: clamp(30px, 4vw, 48px);
+}
+
+.yellow-blog__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: #807c72;
+  font-size: .66rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.yellow-blog__meta i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--yellow-deep);
+}
+
+.yellow-blog__featured-card h3 {
+  margin: 26px 0 18px;
+  font-size: clamp(1.9rem, 2.8vw, 3rem);
+  letter-spacing: -.05em;
+}
+
+.yellow-blog__featured-card p {
+  color: #69665e;
+  line-height: 1.78;
+}
+
+.yellow-blog__featured-card .yellow-blog__read-link {
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+.yellow-blog__read-link {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 16px;
+  margin-top: 24px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--yellow-deep);
+  font-size: .78rem;
+  font-weight: 900;
+}
+
+.yellow-blog__read-link b {
+  font-size: 1rem;
+  transition: transform .2s ease;
+}
+
+.yellow-blog__featured-card:hover .yellow-blog__read-link b,
+.yellow-blog__card:hover .yellow-blog__read-link b {
+  transform: translate(3px, -3px);
+}
+
+.yellow-blog__latest {
+  margin-top: clamp(100px, 11vw, 160px);
+}
+
+.yellow-blog__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 48px 22px;
+}
+
+.yellow-blog__card {
+  display: flex;
+  min-width: 0;
+  padding-bottom: 26px;
+  border-bottom: 1px solid #bfbbae;
+  flex-direction: column;
+}
+
+.yellow-blog__card-media {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.yellow-blog__card-media .media-placeholder {
+  min-height: 285px;
+  border-radius: 20px;
+}
+
+.yellow-blog__card-media > span {
+  position: absolute;
+  z-index: 4;
+  top: 16px;
+  left: 16px;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(24, 24, 24, .3);
+  border-radius: 50%;
+  background: var(--yellow);
+  font-size: .65rem;
+  font-weight: 900;
+}
+
+.yellow-blog__card h3 {
+  margin: 15px 0 13px;
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  letter-spacing: -.04em;
+}
+
+.yellow-blog__card > p {
+  margin-bottom: 0;
+  color: #706d65;
+  font-size: .9rem;
+  line-height: 1.72;
+}
+
+.yellow-blog__card .yellow-blog__read-link {
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.yellow-blog__recent {
+  margin-top: clamp(100px, 11vw, 160px);
+  padding-top: clamp(70px, 8vw, 105px);
+  border-top: 1px solid #d8d4c8;
+}
+
+.yellow-blog__recent-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 35px;
+  margin-bottom: 50px;
+}
+
+.yellow-blog__recent-heading h2 {
+  max-width: 780px;
+  margin: 0;
+  font-size: clamp(2.45rem, 4.4vw, 4.6rem);
+  letter-spacing: -.055em;
+  line-height: 1;
+}
+
+.yellow-blog__recent-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 36px;
+}
+
+.yellow-blog__recent-grid > a {
+  display: grid;
+  min-height: 150px;
+  grid-template-columns: 165px 1fr;
+  align-items: stretch;
+  gap: 22px;
+  padding: 16px 0;
+  border-bottom: 1px solid #d8d4c8;
+}
+
+.yellow-blog__recent-grid .media-placeholder {
+  min-height: 118px;
+  border-radius: 14px;
+}
+
+.yellow-blog__recent-grid .media-placeholder::after,
+.yellow-blog__recent-grid .media-placeholder__credit {
+  display: none;
+}
+
+.yellow-blog__recent-grid > a > div:last-child {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.yellow-blog__recent-grid span {
+  color: #858177;
+  font-size: .62rem;
+  font-weight: 900;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.yellow-blog__recent-grid h3 {
+  margin: 9px 0 12px;
+  font-size: clamp(1.02rem, 1.5vw, 1.28rem);
+  letter-spacing: -.035em;
+}
+
+.yellow-blog__recent-grid b {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #6f5600;
+  font-size: .68rem;
+}
+
+.yellow-blog__recent-grid i {
+  font-style: normal;
+}
+
+.yellow-blog__empty {
+  display: grid;
+  max-width: 780px;
+  min-height: 430px;
+  place-items: center;
+  align-content: center;
+  margin: 0 auto;
+  padding: 50px;
+  border: 1px solid #d9d5c8;
+  border-radius: 30px;
+  background: radial-gradient(circle at center, rgba(255, 210, 26, .23), transparent 60%), #fff;
+  text-align: center;
+}
+
+.yellow-blog__empty > span {
+  color: var(--yellow-deep);
+  font: 900 5rem/1 var(--heading);
+  letter-spacing: -.1em;
+}
+
+.yellow-blog__empty h2 {
+  margin: 20px 0 12px;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.yellow-blog__empty p {
+  color: var(--muted);
+}
+
+.yellow-blog__empty .button {
+  margin-top: 24px;
+}
+
+.yellow-blog__cta,
+.yellow-contact__cta {
+  padding: clamp(75px, 8vw, 115px) 0;
+  background: var(--yellow);
+}
+
+.yellow-blog__cta > .container,
+.yellow-contact__cta > .container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 70px;
+}
+
+.yellow-blog__cta h2,
+.yellow-contact__cta h2 {
+  max-width: 900px;
+  margin: 0 0 16px;
+  font-size: clamp(2.8rem, 5vw, 5.2rem);
+  letter-spacing: -.06em;
+  line-height: .98;
+}
+
+.yellow-blog__cta p:not(.eyebrow),
+.yellow-contact__cta p:not(.eyebrow) {
+  max-width: 760px;
+  margin: 0;
+  color: #594b18;
+  line-height: 1.75;
+}
+
+/* Yellow contact — reference-led sales and services page */
+.yellow-contact__hero {
+  min-height: 750px;
+  padding-bottom: 64px;
+}
+
+.yellow-contact__hero h1 {
+  max-width: 1180px;
+  font-size: clamp(3.7rem, 7vw, 7rem);
+}
+
+.yellow-contact__trust-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 1050px;
+  margin: 64px auto 0;
+  overflow: hidden;
+  border: 1px solid #cfcbbe;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, .74);
+  box-shadow: 0 22px 60px rgba(61, 55, 28, .08);
+  backdrop-filter: blur(10px);
+}
+
+.yellow-contact__trust-row > span {
+  display: flex;
+  min-height: 82px;
+  align-items: center;
+  gap: 12px;
+  padding: 18px;
+  border-right: 1px solid #dcd8ca;
+  font: 700 .82rem/1.35 var(--heading);
+  text-align: left;
+}
+
+.yellow-contact__trust-row > span:last-child {
+  border-right: 0;
+}
+
+.yellow-contact__trust-row b {
+  color: #977400;
+  font: 900 .63rem/1 var(--body);
+  letter-spacing: .08em;
+}
+
+.yellow-contact__sales,
+.yellow-contact__services,
+.yellow-contact__direction {
+  padding: clamp(85px, 9vw, 140px) 0;
+  background: #fff;
+}
+
+.yellow-contact__sales {
+  border-top: 1px solid #eee9d9;
+  scroll-margin-top: 105px;
+}
+
+.yellow-contact__sales-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .82fr) minmax(480px, 1.18fr);
+  align-items: start;
+  gap: clamp(55px, 8vw, 120px);
+}
+
+.yellow-contact__sales-copy,
+.yellow-contact__form {
+  position: relative;
+}
+
+.yellow-contact__section-number {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  margin-bottom: 38px;
+  border-radius: 50%;
+  background: var(--yellow);
+  color: #574300;
+  font-size: .67rem;
+  font-weight: 900;
+}
+
+.yellow-contact__sales-copy h2,
+.yellow-contact__form h2,
+.yellow-contact__direction h2 {
+  margin: 0 0 24px;
+  color: #2f2f2d;
+  font-size: clamp(2.4rem, 4.4vw, 4.65rem);
+  letter-spacing: -.055em;
+  line-height: 1;
+}
+
+.yellow-contact__sales-copy > p:not(.eyebrow),
+.yellow-contact__direction-copy > p:not(.eyebrow) {
+  color: #68655d;
+  line-height: 1.82;
+}
+
+.yellow-contact__details {
+  margin: 42px 0;
+  border-top: 1px solid #d8d4c8;
+}
+
+.yellow-contact__details > * {
+  display: grid;
+  min-height: 74px;
+  grid-template-columns: 120px 1fr auto;
+  align-items: center;
+  gap: 18px;
+  border-bottom: 1px solid #d8d4c8;
+}
+
+.yellow-contact__details span {
+  color: #8a877d;
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.yellow-contact__details strong {
+  font-size: .82rem;
+  line-height: 1.45;
+}
+
+.yellow-contact__details b {
+  color: var(--yellow-deep);
+}
+
+.yellow-contact__sales-copy > .media-placeholder {
+  min-height: 360px;
+  border-radius: 24px 24px 90px 24px;
+}
+
+.yellow-contact__form {
+  padding: clamp(30px, 5vw, 60px);
+  border: 1px solid #d2aa00;
+  border-radius: 30px;
+  background: linear-gradient(145deg, #fff8d0, #ffe15c);
+  box-shadow: 0 30px 75px rgba(90, 69, 0, .12);
+}
+
+.yellow-contact__form-heading {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 20px;
+  margin-bottom: 38px;
+}
+
+.yellow-contact__form-heading > span {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 50%;
+  background: #2d2d2b;
+  color: var(--yellow);
+  font-size: .67rem;
+  font-weight: 900;
+}
+
+.yellow-contact__form-heading h2 {
+  margin-bottom: 0;
+  font-size: clamp(2.1rem, 3.5vw, 3.6rem);
+}
+
+.yellow-contact__form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.yellow-contact__form label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 18px;
+  color: #4f430f;
+  font-size: .71rem;
+  font-weight: 900;
+  letter-spacing: .04em;
+}
+
+.yellow-contact__form input,
+.yellow-contact__form select,
+.yellow-contact__form textarea {
+  width: 100%;
+  border: 1px solid rgba(61, 52, 14, .3);
+  border-radius: 10px;
+  outline: 0;
+  background: rgba(255, 255, 255, .94);
+  color: var(--ink);
+}
+
+.yellow-contact__form input,
+.yellow-contact__form select {
+  min-height: 54px;
+  padding: 0 14px;
+}
+
+.yellow-contact__form textarea {
+  padding: 14px;
+  resize: vertical;
+}
+
+.yellow-contact__form input:focus,
+.yellow-contact__form select:focus,
+.yellow-contact__form textarea:focus {
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px rgba(24, 24, 24, .1);
+}
+
+.yellow-contact__choice-set {
+  margin: 4px 0 20px;
+  padding: 0;
+  border: 0;
+}
+
+.yellow-contact__choice-set legend {
+  margin-bottom: 10px;
+  color: #4f430f;
+  font-size: .71rem;
+  font-weight: 900;
+  letter-spacing: .04em;
+}
+
+.yellow-contact__choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.yellow-contact__choice-grid label,
+.yellow-contact__form .yellow-contact__consent {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  margin: 0;
+  padding: 11px 13px;
+  border: 1px solid rgba(61, 52, 14, .24);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, .55);
+  cursor: pointer;
+}
+
+.yellow-contact__choice-grid input,
+.yellow-contact__form .yellow-contact__consent input {
+  width: 18px;
+  min-width: 18px;
+  height: 18px;
+  min-height: 18px;
+  margin: 0;
+  padding: 0;
+  accent-color: #242423;
+  box-shadow: none;
+}
+
+.yellow-contact__choice-grid span,
+.yellow-contact__consent span {
+  color: #5b4e1b;
+  font-size: .68rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.yellow-contact__form .yellow-contact__consent {
+  margin-top: 5px;
+  background: transparent;
+}
+
+.yellow-contact__form-footer {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 10px;
+}
+
+.yellow-contact__form-footer small {
+  color: #62551e;
+  font-size: .63rem;
+  line-height: 1.45;
+}
+
+.yellow-contact__form-success {
+  display: flex;
+  min-height: 610px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: clamp(35px, 6vw, 70px);
+  border: 1px solid #d2aa00;
+  border-radius: 30px;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, .74), transparent 60%), var(--yellow);
+  text-align: center;
+}
+
+.yellow-contact__form-success > span {
+  display: grid;
+  width: 64px;
+  height: 64px;
+  place-items: center;
+  margin-bottom: 28px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--yellow);
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+.yellow-contact__form-success h2 {
+  max-width: 620px;
+  margin-bottom: 18px;
+  font-size: clamp(2.3rem, 4.2vw, 4.2rem);
+}
+
+.yellow-contact__form-success > p:not(.eyebrow) {
+  max-width: 550px;
+  color: #5e511e;
+}
+
+.yellow-contact__form-success .button {
+  margin-top: 28px;
+}
+
+.yellow-contact__services {
+  border-top: 1px solid #eee9d9;
+}
+
+.yellow-contact__service-tabs .feature-tabs {
+  overflow: hidden;
+  border: 1px solid #d8d4c8;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 28px 70px rgba(54, 51, 39, .08);
+}
+
+.yellow-contact__service-tabs .feature-tabs__list button {
+  min-height: 64px;
+  padding-left: 18px;
+}
+
+.yellow-contact__service-tabs .feature-tabs__list button.is-active {
+  background: var(--yellow);
+}
+
+.yellow-contact__service-tabs .feature-tabs__panel {
+  min-height: 710px;
+}
+
+.yellow-contact__service-tabs .feature-tabs__visual {
+  background: #2d2d2b;
+}
+
+.yellow-contact__service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.yellow-contact__service-grid > a {
+  display: flex;
+  min-height: 310px;
+  padding: 28px;
+  border: 1px solid #d6ac00;
+  border-radius: 20px;
+  background: #fff2a9;
+  flex-direction: column;
+  transition: transform .22s ease, background .22s ease, box-shadow .22s ease;
+}
+
+.yellow-contact__service-grid > a:nth-child(3n + 2) {
+  background: #ffe060;
+}
+
+.yellow-contact__service-grid > a:nth-child(4n) {
+  background: #fff8cf;
+}
+
+.yellow-contact__service-grid > a:hover {
+  background: var(--yellow);
+  box-shadow: 0 18px 45px rgba(94, 71, 0, .12);
+  transform: translateY(-5px);
+}
+
+.yellow-contact__service-grid > a > span {
+  color: #765900;
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+
+.yellow-contact__service-grid h3 {
+  margin: 58px 0 14px;
+  font-size: clamp(1.4rem, 2vw, 1.9rem);
+}
+
+.yellow-contact__service-grid p {
+  color: #615c47;
+  font-size: .86rem;
+  line-height: 1.65;
+}
+
+.yellow-contact__service-grid b {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(75, 61, 5, .25);
+  font-size: .72rem;
+}
+
+.yellow-contact__service-grid i {
+  font-size: 1rem;
+  font-style: normal;
+  transition: transform .2s ease;
+}
+
+.yellow-contact__service-grid > a:hover i {
+  transform: translate(3px, -3px);
+}
+
+.yellow-contact__direction {
+  border-top: 1px solid #eee9d9;
+}
+
+.yellow-contact__direction-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(500px, 1.2fr);
+  align-items: center;
+  gap: clamp(55px, 8vw, 120px);
+}
+
+.yellow-contact__direction-copy .text-link {
+  margin-top: 18px;
+}
+
+.yellow-contact__principles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.yellow-contact__principles article {
+  display: flex;
+  min-height: 480px;
+  justify-content: flex-end;
+  padding: clamp(30px, 4vw, 48px);
+  border: 1px solid #3d3d39;
+  border-radius: 24px 24px 72px 24px;
+  background: #292927;
+  color: #fff;
+  flex-direction: column;
+}
+
+.yellow-contact__principles article:last-child {
+  border-color: #d6ac00;
+  background: var(--yellow);
+  color: var(--ink);
+  transform: translateY(42px);
+}
+
+.yellow-contact__principles span {
+  margin-bottom: auto;
+  color: var(--yellow);
+  font-size: .7rem;
+  font-weight: 900;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.yellow-contact__principles article:last-child span {
+  color: #765900;
+}
+
+.yellow-contact__principles h3 {
+  margin: 100px 0 18px;
+  color: inherit;
+  font-size: clamp(1.45rem, 2.25vw, 2.15rem);
+}
+
+.yellow-contact__principles p {
+  color: #c9c6bc;
+  font-size: .87rem;
+  line-height: 1.7;
+}
+
+.yellow-contact__principles article:last-child p {
+  color: #665719;
+}
+
+@media (max-width: 1050px) {
+  .yellow-blog__section-heading,
+  .yellow-blog__latest-heading,
+  .yellow-contact__section-heading,
+  .yellow-contact__sales-grid,
+  .yellow-contact__direction-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .yellow-blog__featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .yellow-blog__featured-card {
+    min-height: 0;
+  }
+
+  .yellow-blog__featured-media > .media-placeholder {
+    min-height: 430px;
+  }
+
+  .yellow-blog__grid,
+  .yellow-contact__service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .yellow-blog__cta > .container,
+  .yellow-contact__cta > .container {
+    grid-template-columns: 1fr;
+  }
+
+  .yellow-contact__sales-grid {
+    gap: 70px;
+  }
+
+  .yellow-contact__form {
+    width: min(100%, 860px);
+  }
+
+  .yellow-contact__service-tabs .feature-tabs__panel {
+    min-height: 0;
+  }
+
+  .yellow-contact__principles {
+    width: min(100%, 850px);
+  }
+}
+
+@media (max-width: 760px) {
+  .yellow-blog__hero,
+  .yellow-contact__hero {
+    min-height: 560px;
+    padding: 78px 0 70px;
+  }
+
+  .yellow-blog__hero::before,
+  .yellow-contact__hero::before {
+    top: 5%;
+    width: 120vw;
+    height: 80%;
+    filter: blur(16px);
+  }
+
+  .yellow-blog__hero h1,
+  .yellow-contact__hero h1 {
+    font-size: clamp(3rem, 13.5vw, 4.4rem);
+  }
+
+  .yellow-blog__hero-actions,
+  .yellow-contact__hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .yellow-blog__hero-actions .text-link,
+  .yellow-contact__hero-actions .text-link {
+    align-self: center;
+  }
+
+  .yellow-blog__discovery {
+    padding-bottom: 68px;
+  }
+
+  .yellow-blog__search-panel {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+
+  .yellow-blog__search-panel > span {
+    justify-self: start;
+  }
+
+  .yellow-blog__categories {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .yellow-blog__categories > div {
+    flex-wrap: nowrap;
+    padding-bottom: 8px;
+    overflow-x: auto;
+  }
+
+  .yellow-blog__categories button {
+    white-space: nowrap;
+  }
+
+  .yellow-blog__section-heading,
+  .yellow-blog__latest-heading,
+  .yellow-contact__section-heading {
+    gap: 22px;
+    margin-bottom: 38px;
+  }
+
+  .yellow-blog__section-heading h2,
+  .yellow-blog__latest-heading h2,
+  .yellow-contact__section-heading h2 {
+    font-size: clamp(2.35rem, 10.5vw, 3.35rem);
+  }
+
+  .yellow-blog__featured-card,
+  .yellow-blog__featured-media > .media-placeholder {
+    min-height: 0;
+  }
+
+  .yellow-blog__featured-media > .media-placeholder {
+    height: 330px;
+  }
+
+  .yellow-blog__featured-card > div:last-child {
+    padding: 30px 24px 36px;
+  }
+
+  .yellow-blog__featured-card h3 {
+    font-size: 2.1rem;
+  }
+
+  .yellow-blog__grid,
+  .yellow-contact__service-grid,
+  .yellow-contact__principles,
+  .yellow-contact__form-row,
+  .yellow-contact__choice-grid,
+  .yellow-blog__recent-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .yellow-blog__recent-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .yellow-blog__recent-grid > a {
+    grid-template-columns: 120px 1fr;
+    gap: 15px;
+  }
+
+  .yellow-blog__recent-grid .media-placeholder {
+    min-height: 105px;
+  }
+
+  .yellow-blog__card-media .media-placeholder {
+    min-height: 310px;
+  }
+
+  .yellow-blog__cta > .container,
+  .yellow-contact__cta > .container {
+    gap: 34px;
+  }
+
+  .yellow-blog__cta h2,
+  .yellow-contact__cta h2 {
+    font-size: clamp(2.55rem, 11vw, 3.7rem);
+  }
+
+  .yellow-contact__trust-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 45px;
+  }
+
+  .yellow-contact__trust-row > span:nth-child(2) {
+    border-right: 0;
+  }
+
+  .yellow-contact__trust-row > span:nth-child(-n + 2) {
+    border-bottom: 1px solid #dcd8ca;
+  }
+
+  .yellow-contact__sales-grid {
+    gap: 58px;
+  }
+
+  .yellow-contact__details > * {
+    grid-template-columns: 1fr auto;
+    gap: 6px 15px;
+    padding: 15px 0;
+  }
+
+  .yellow-contact__details span {
+    grid-column: 1 / -1;
+  }
+
+  .yellow-contact__form {
+    padding: 28px 20px;
+    border-radius: 24px;
+  }
+
+  .yellow-contact__form-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .yellow-contact__form-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .yellow-contact__form-footer .button {
+    width: 100%;
+  }
+
+  .yellow-contact__service-tabs .feature-tabs {
+    border-radius: 18px;
+  }
+
+  .yellow-contact__service-grid > a {
+    min-height: 280px;
+  }
+
+  .yellow-contact__principles article {
+    min-height: 410px;
+  }
+
+  .yellow-contact__principles article:last-child {
+    transform: none;
+  }
+}
+
+/* Focused hero-title glow shared by every case-study page. */
+.automotive-study__hero h1,
+.dental-study__hero-copy h1,
+.growth-study__hero h1 {
+  position: relative;
+  isolation: isolate;
+}
+
+.automotive-study__hero h1::before,
+.dental-study__hero-copy h1::before,
+.growth-study__hero h1::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  width: min(1160px, 104vw);
+  height: 165%;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 50% 48%, rgba(255, 210, 26, .46) 0%, rgba(255, 225, 77, .28) 34%, rgba(255, 242, 166, .13) 54%, transparent 76%);
+  filter: blur(26px);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+@media (max-width: 760px) {
+  .automotive-study__hero h1::before,
+  .dental-study__hero-copy h1::before,
+  .growth-study__hero h1::before {
+    width: 120vw;
+    height: 145%;
+    background: radial-gradient(ellipse at center, rgba(255, 210, 26, .4), rgba(255, 231, 103, .2) 42%, transparent 74%);
+    filter: blur(18px);
+  }
+}
+
+/* Results copy sits directly below its heading on every case-study page. */
+.automotive-study__results-heading,
+.dental-study__results-heading,
+.growth-study__results-heading {
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: 0;
+  max-width: 1180px;
+  margin-bottom: 62px;
+}
+
+.automotive-study__results-heading > div,
+.dental-study__results-heading > div,
+.growth-study__results-heading > div {
+  width: 100%;
+}
+
+.automotive-study__results-copy,
+.dental-study__results-copy,
+.growth-study__results-copy {
+  display: grid;
+  max-width: 1040px;
+  gap: 13px;
+  margin-top: 28px;
+  padding-left: 24px;
+  border-left: 4px solid var(--yellow);
+}
+
+.automotive-study__results-copy p,
+.dental-study__results-copy p,
+.growth-study__results-copy p {
+  margin: 0;
+  color: #666259;
+  font-size: clamp(1rem, 1.15vw, 1.08rem);
+  line-height: 1.8;
+}
+
+@media (max-width: 760px) {
+  .automotive-study__results-heading,
+  .dental-study__results-heading,
+  .growth-study__results-heading {
+    margin-bottom: 44px;
+  }
+
+  .automotive-study__results-copy,
+  .dental-study__results-copy,
+  .growth-study__results-copy {
+    margin-top: 22px;
+    padding-left: 17px;
+  }
 }

@@ -1,8 +1,36 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { MediaPlaceholder } from "@/components/media-placeholder";
-import { AccentHeading, StandardCta } from "@/components/page-templates";
+import { BlogExplorer } from "@/components/blog-explorer";
 import { posts } from "@/content/site-data";
 
-export const metadata: Metadata = { title: "Marketing Insights", description: "Useful ideas on strategy, creative, performance, websites, and sustainable growth." };
-export default function BlogPage() { return <main id="top" className="inner-page"><section className="page-hero"><div className="container page-hero__grid"><div><p className="eyebrow">Yellow insights</p><AccentHeading as="h1">Fresh thinking, minus the filler.</AccentHeading><p className="page-hero__lead">Practical perspectives on the strategy, creative, media, and technology behind better growth.</p></div><MediaPlaceholder label="Insights editorial collage placeholder" priority /></div></section><section className="section"><div className="container"><div className="filters"><span className="filter-pill">All insights</span>{[...new Set(posts.map((post) => post.category))].map((category) => <Link className="filter-pill" href={`/category/${category.toLowerCase().replaceAll(" ", "-")}`} key={category}>{category}</Link>)}</div><div className="post-grid">{posts.map((post) => <Link key={post.slug} href={`/blog/${post.slug}`} className="post-card"><MediaPlaceholder label={`${post.title} image placeholder`} /><span>{post.category} · {post.date} · {post.readTime}</span><h3>{post.title}</h3><p>{post.excerpt}</p><b>Read article ↗</b></Link>)}</div></div></section><StandardCta title="Want useful ideas applied to your business?" /></main>; }
+export const metadata: Metadata = {
+  title: "Marketing Insights",
+  description: "Practical ideas for agency strategy, creative, performance, delivery, and sustainable growth.",
+};
+
+export default function BlogPage() {
+  return (
+    <main id="top" className="yellow-blog">
+      <section className="yellow-blog__hero">
+        <div className="container">
+          <p className="eyebrow">Yellow insights</p>
+          <h1>Ideas that make <span>agency growth</span> easier to act on.</h1>
+          <p>Clear perspectives on the strategy, creative, media, technology, and delivery systems behind better client outcomes.</p>
+          <div className="yellow-blog__hero-actions">
+            <a href="#browse-insights" className="button button--yellow">Browse the latest <span aria-hidden="true">↓</span></a>
+            <Link href="/contact-us" className="text-link">Bring us a challenge <span aria-hidden="true">↗</span></Link>
+          </div>
+        </div>
+      </section>
+
+      <div id="browse-insights"><BlogExplorer posts={posts} /></div>
+
+      <section className="yellow-blog__cta">
+        <div className="container">
+          <div><p className="eyebrow">Turn thinking into momentum</p><h2>Want these ideas applied to your agency?</h2><p>Bring us the goal, the bottleneck, or the half-formed plan. We&apos;ll help make the next move practical.</p></div>
+          <Link href="/book-appointment" className="button button--dark">Book a free consultation <span aria-hidden="true">↗</span></Link>
+        </div>
+      </section>
+    </main>
+  );
+}

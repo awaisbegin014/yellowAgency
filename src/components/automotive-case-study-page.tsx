@@ -139,7 +139,15 @@ function AdsDashboard() {
 function StudyHeading({ children }: { children: string }) {
   const words = children.trim().split(/\s+/);
   const splitAt = Math.ceil(words.length / 2);
-  return <h2><span>{words.slice(0, splitAt).join(" ")}</span>{" "}<span>{words.slice(splitAt).join(" ")}</span></h2>;
+  const lead = words.slice(0, splitAt).join(" ");
+  const accent = words.slice(splitAt).join(" ");
+
+  return (
+    <h2>
+      <span>{lead}</span>
+      {accent ? <>{" "}<span className="case-study-heading__accent">{accent}</span></> : null}
+    </h2>
+  );
 }
 
 export function AutomotiveCaseStudyPage() {
@@ -185,7 +193,7 @@ export function AutomotiveCaseStudyPage() {
 
       <section className="automotive-study__section automotive-study__method">
         <div className="container">
-          <div className="automotive-study__section-heading"><div><p className="eyebrow">How we did it</p><StudyHeading>Ten connected capabilities. One commercial outcome.</StudyHeading></div><p>The account was rebuilt around a shared measurement plan, so research, content, local visibility, technical improvements, and paid campaigns reinforced one another.</p></div>
+          <div className="automotive-study__section-heading"><div><p className="eyebrow">How we did it</p><StudyHeading>Ten connected capabilities. One commercial outcome.</StudyHeading></div><p>The account was rebuilt around a shared measurement plan, so research, content, local visibility, technical improvements, and paid campaigns reinforced one another. Every specialist worked from the same commercial priorities, reviewed the same evidence, and used each new insight to improve the next customer touchpoint.</p></div>
           <div className="automotive-study__method-grid">{deliverySteps.map((step, index) => <article key={step}><span>{String(index + 1).padStart(2, "0")}</span><h3>{step}</h3></article>)}</div>
         </div>
       </section>
@@ -199,7 +207,7 @@ export function AutomotiveCaseStudyPage() {
 
       <section id="results" className="automotive-study__section automotive-study__results">
         <div className="container">
-          <div className="automotive-study__section-heading"><div><p className="eyebrow">The results</p><StudyHeading>A stronger pipeline, not just more activity.</StudyHeading></div><p>Better relevance, simpler conversion paths, and coordinated optimization improved lead volume and efficiency at the same time.</p></div>
+          <div className="automotive-study__section-heading automotive-study__results-heading"><div><p className="eyebrow">The results</p><StudyHeading>A stronger pipeline, not just more activity.</StudyHeading><div className="automotive-study__results-copy"><p>Better relevance, simpler conversion paths, and coordinated optimization improved lead volume and efficiency at the same time.</p><p>Organic visibility and paid search began supporting the same commercial journey. Prospects discovered more useful content, reached clearer service pages, and encountered calls to action shaped around genuine transport needs.</p><p>The result was a healthier acquisition system: more qualified enquiries, less wasted media spend, and stronger performance evidence the team could use to guide future campaigns.</p></div></div></div>
           <div className="automotive-study__metric-grid">{results.map(([metric, label]) => <article key={label}><strong>{metric}</strong><span>{label}</span></article>)}</div>
           <ResultsDashboard />
           <ComparisonDashboard />
