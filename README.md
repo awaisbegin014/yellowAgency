@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Yellow Agency Website
 
-## Getting Started
+Production-ready Next.js 16 web application for Yellow Agency.
 
-First, run the development server:
+## 🚀 Getting Started
 
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Build for production:
+```bash
+npm run build
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🌐 Deploy to Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Option 1: Automatic Deployment via GitHub (Recommended)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Push your latest code to your GitHub repository:
+   ```bash
+   git add .
+   git commit -m "Deploy to Vercel"
+   git push origin main
+   ```
+2. Go to [vercel.com](https://vercel.com) and log in.
+3. Click **"Add New..."** > **"Project"**.
+4. Import your repository (`yellowAgency`).
+5. Preset settings:
+   - **Framework Preset**: Next.js (automatically detected)
+   - **Root Directory**: `./`
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `.next`
+6. Click **Deploy**. Vercel will automatically build, generate static pages, and assign a production URL with free SSL.
 
-## Deploy on Vercel
+### Option 2: Deploy with Vercel CLI
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Install Vercel CLI globally:
+   ```bash
+   npm i -g vercel
+   ```
+2. Run deployment from the project root:
+   ```bash
+   vercel
+   ```
+3. For production release:
+   ```bash
+   vercel --prod
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## ⚙️ Environment Variables (Optional)
+
+| Variable | Description | Default |
+| :--- | :--- | :--- |
+| `NEXT_PUBLIC_SITE_URL` | Canonical domain for sitemap and OpenGraph tags | Auto-detected from Vercel (`VERCEL_PROJECT_PRODUCTION_URL` / `VERCEL_URL`) |
+
