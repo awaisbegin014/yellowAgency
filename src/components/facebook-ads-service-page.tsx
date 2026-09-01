@@ -3,7 +3,7 @@ import Link from "next/link";
 import { LeadForm } from "@/components/interactive";
 
 export type DashboardVariant = "performance" | "audience" | "campaigns" | "reporting" | "landing" | "proposal" | "creative";
-export type DashboardChannel = "facebook" | "google" | "seo" | "ppc" | "social" | "design" | "development" | "graphics" | "content" | "ghl";
+export type DashboardChannel = "facebook" | "google" | "seo" | "ppc" | "social" | "design" | "development" | "graphics" | "content" | "ghl" | "ai-ugc";
 
 type DashboardCopy = { title: string; metric: string; label: string; secondary: string; cost: string; pipeline: string };
 
@@ -97,6 +97,15 @@ const dashboardCopy: Record<DashboardChannel, Record<DashboardVariant, Dashboard
     landing: { title: "Funnel and page performance", metric: "18.4%", label: "visitor-to-lead rate", secondary: "+27.1%", cost: "1.6s", pipeline: "12,840" },
     proposal: { title: "GoHighLevel launch roadmap", metric: "30 days", label: "planned implementation", secondary: "6 systems", cost: "42", pipeline: "12" },
     creative: { title: "Automation workflow studio", metric: "46", label: "active workflows", secondary: "+43.5%", cost: "18", pipeline: "8,620" },
+  },
+  "ai-ugc": {
+    performance: { title: "AI UGC performance overview", metric: "4.82×", label: "blended return on ad spend", secondary: "+48.2%", cost: "$14.20", pipeline: "$48,920" },
+    audience: { title: "Creator & audience insights", metric: "380K", label: "qualified video views", secondary: "+32.4%", cost: "$0.04", pipeline: "$54,180" },
+    campaigns: { title: "UGC video studio control", metric: "68", label: "active video ads", secondary: "96%", cost: "$13.80", pipeline: "$62,400" },
+    reporting: { title: "Agency AI UGC reporting", metric: "1,420", label: "conversions driven", secondary: "+54.1%", cost: "$14.20", pipeline: "$71,800" },
+    landing: { title: "Video ad-to-landing journey", metric: "22.4%", label: "hook-to-conversion rate", secondary: "+31.5%", cost: "$11.60", pipeline: "$58,900" },
+    proposal: { title: "AI UGC creative proposal", metric: "30 days", label: "video creative plan", secondary: "6 creators", cost: "$15.40", pipeline: "$84,200" },
+    creative: { title: "AI avatar & script lab", metric: "180+", label: "generated video variations", secondary: "+52.6%", cost: "$12.90", pipeline: "$68,500" },
   },
 };
 

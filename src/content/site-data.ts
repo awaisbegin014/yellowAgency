@@ -146,6 +146,16 @@ export const services: Service[] = [
     metric: "20+ hrs",
     metricLabel: "returned to your team each month",
   },
+  {
+    slug: "ai-ugc-services",
+    shortTitle: "AI UGC",
+    title: "White Label AI UGC Services",
+    summary: "High-converting AI-powered User Generated Content videos and ad creatives at scale.",
+    description: "Yellow scripts, generates, edits, and optimizes white-label AI UGC creator videos and high-converting video ad variations under your agency brand.",
+    points: ["AI creator video & avatar generation", "Viral hooks & persuasive scriptwriting", "Multi-platform vertical video ads", "Creative iteration & performance testing"],
+    metric: "4.5×",
+    metricLabel: "faster video creative turnaround",
+  },
 ];
 
 export const industries: Industry[] = [

@@ -11,6 +11,7 @@ import { SocialMediaServicePage } from "@/components/social-media-service-page";
 import { WebDesignServicePage } from "@/components/web-design-service-page";
 import { WebDevelopmentServicePage } from "@/components/web-development-service-page";
 import { VaServicePage } from "@/components/va-service-page";
+import { AiUgcServicePage } from "@/components/ai-ugc-service-page";
 import { DetailPage } from "@/components/page-templates";
 import { findService, services } from "@/content/site-data";
 
@@ -38,5 +39,6 @@ export default async function ServiceDetailPage({ params }: PageProps<"/white-la
   if (slug === "content-writing-services") return <ContentWritingServicePage />;
   if (slug === "go-high-level-services") return <GoHighLevelServicePage />;
   if (slug === "va-services") return <VaServicePage />;
+  if (slug === "ai-ugc-services") return <AiUgcServicePage />;
   return <DetailPage eyebrow="Yellow service" title={service.title} summary={service.summary} description={service.description} points={service.points} metric={service.metric} metricLabel={service.metricLabel} />;
 }
