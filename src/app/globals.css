@@ -6578,3 +6578,214 @@ body:has(.inner-page) .site-header > .site-header__inner > .nav-cta {
     padding-left: 17px;
   }
 }
+
+/* ============================================================
+   Blog Article Rich Content & Single Post Typography
+   ============================================================ */
+.article-body {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 40px 0 80px;
+}
+
+.blog-article-content {
+  color: #2d2d2d;
+  font-size: 1.125rem;
+  line-height: 1.85;
+  margin-top: 36px;
+}
+
+.blog-article-content h1,
+.blog-article-content h2,
+.blog-article-content h3,
+.blog-article-content h4 {
+  color: #111827;
+  font-weight: 800;
+  line-height: 1.35;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+  letter-spacing: -0.02em;
+}
+
+.blog-article-content h2 {
+  font-size: clamp(1.5rem, 2.5vw, 1.85rem);
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.blog-article-content h3 {
+  font-size: clamp(1.25rem, 2vw, 1.45rem);
+}
+
+.blog-article-content p {
+  margin-bottom: 1.5em;
+  color: #374151;
+}
+
+.blog-article-content ul,
+.blog-article-content ol {
+  margin: 1.5em 0;
+  padding-left: 1.75em;
+  color: #374151;
+}
+
+.blog-article-content li {
+  margin-bottom: 0.5em;
+  line-height: 1.75;
+}
+
+.blog-article-content blockquote,
+.blog-article-content .article-callout {
+  margin: 2em 0;
+  padding: 20px 24px;
+  background: #fdfbf4;
+  border-left: 4px solid var(--yellow, #f7ce3e);
+  border-radius: 0 16px 16px 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1f2937;
+  font-style: italic;
+}
+
+.blog-article-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 18px;
+  margin: 2.5em 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.blog-article-content a {
+  color: #d97706;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.blog-article-content a:hover {
+  color: #b45309;
+}
+
+.blog-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.blog-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  background: #f3f4f6;
+  color: #4b5563;
+  border-radius: 9999px;
+  font-size: 0.825rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.blog-tag-pill:hover {
+  background: var(--yellow, #f7ce3e);
+  color: #111827;
+}
+
+.article-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 36px;
+  font-weight: 700;
+  color: #111827;
+  text-decoration: none;
+}
+
+.article-back-link:hover {
+  color: #d97706;
+}
+
+/* ============================================================
+   Branded Default Media Placeholder (when no image is uploaded)
+   ============================================================ */
+.media-placeholder {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  background: #f8f6f0;
+}
+
+.media-placeholder--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #faf8f3 0%, #f1ecdc 100%);
+  border: 1px dashed #d5d0be;
+  position: relative;
+}
+
+.media-placeholder--empty::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(#d3cebc 1px, transparent 1px);
+  background-size: 16px 16px;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.media-placeholder__graphic {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+  gap: 12px;
+}
+
+.media-placeholder__badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: var(--yellow, #f7ce3e);
+  border: 2px solid #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.media-placeholder__y-logo {
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 900;
+  color: #1a1a1a;
+  line-height: 1;
+}
+
+.media-placeholder__text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.media-placeholder__brand {
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  color: #2b2b28;
+  text-transform: uppercase;
+}
+
+.media-placeholder__sub {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #8c887b;
+  letter-spacing: 0.04em;
+}

@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BlogExplorer } from "@/components/blog-explorer";
-import { posts } from "@/content/site-data";
+import { getPublishedBlogs } from "@/lib/blog-service";
+
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: "Marketing Insights",
   description: "Practical ideas for agency strategy, creative, performance, delivery, and sustainable growth.",
 };
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const posts = await getPublishedBlogs();
+
   return (
     <main id="top" className="yellow-blog">
       <section className="yellow-blog__hero">

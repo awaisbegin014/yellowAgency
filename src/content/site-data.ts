@@ -27,12 +27,19 @@ export type CaseStudy = {
 };
 
 export type Post = {
+  id?: string;
   slug: string;
   category: string;
   title: string;
   excerpt: string;
   date: string;
   readTime: string;
+  content?: string;
+  image?: string;
+  author?: string;
+  tags?: string[];
+  featured?: boolean;
+  isPinned?: boolean;
 };
 
 export const services: Service[] = [

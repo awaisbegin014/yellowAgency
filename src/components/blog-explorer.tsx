@@ -93,7 +93,7 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
                 {featured.map((post, index) => (
                   <Link href={`/blog/${post.slug}`} className="yellow-blog__featured-card" key={post.slug}>
                     <div className="yellow-blog__featured-media">
-                      <MediaPlaceholder label={`${post.title} editorial feature image`} />
+                      <MediaPlaceholder label={`${post.title} editorial feature image`} src={post.image} />
                       <span>{String(index + 1).padStart(2, "0")}</span>
                     </div>
                     <div>
@@ -116,7 +116,7 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
                     {remaining.map((post, index) => (
                       <Link key={post.slug} href={`/blog/${post.slug}`} className="yellow-blog__card">
                         <div className="yellow-blog__card-media">
-                          <MediaPlaceholder label={`${post.title} article image`} />
+                          <MediaPlaceholder label={`${post.title} article image`} src={post.image} />
                           <span>{String(index + 3).padStart(2, "0")}</span>
                         </div>
                         <PostMeta post={post} />
@@ -138,7 +138,7 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
                   <div className="yellow-blog__recent-grid">
                     {recent.map((post) => (
                       <Link href={`/blog/${post.slug}`} key={post.slug}>
-                        <MediaPlaceholder label={`${post.title} recent article image`} />
+                        <MediaPlaceholder label={`${post.title} recent article image`} src={post.image} />
                         <div><span>{post.category} · {post.date}</span><h3>{post.title}</h3><b>Read article <i aria-hidden="true">↗</i></b></div>
                       </Link>
                     ))}

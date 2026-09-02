@@ -1,9 +1,11 @@
 import type { MetadataRoute } from "next";
-import { caseStudies, industries, posts, services } from "@/content/site-data";
+import { caseStudies, industries, services } from "@/content/site-data";
+import { getPublishedBlogs } from "@/lib/blog-service";
 import { getSiteUrl } from "@/lib/site";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = getSiteUrl();
+  const posts = await getPublishedBlogs();
   const staticRoutes = ["", "/about-us", "/white-label", "/industries", "/case-studies", "/portfolio", "/blog", "/contact-us", "/book-appointment", "/testimonials", "/dedicated-teams", "/partnership", "/privacy-policy", "/terms-and-conditions", "/disclaimer"];
   return [
     ...staticRoutes.map((path) => ({ url: `${base}${path}`, lastModified: new Date(), changeFrequency: path === "" ? "weekly" as const : "monthly" as const, priority: path === "" ? 1 : .7 })),
