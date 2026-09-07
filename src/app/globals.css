@@ -2764,13 +2764,13 @@ p:last-child { margin-bottom: 0; }
 }
 
 body {
-  background: var(--site-yellow-glow);
-  background-attachment: fixed;
+  background: #fff;
+  background-image: none;
 }
 
 .site-header {
-  background: var(--site-yellow-glow);
-  background-attachment: fixed;
+  background: #fff;
+  background-image: none;
 }
 
 main,
@@ -2817,14 +2817,14 @@ main .page-hero--dark .page-hero__lead { color: var(--muted); }
 
 @media (max-width: 1050px) {
   .primary-nav {
-    background: var(--site-yellow-glow);
-    background-attachment: fixed;
+    background: #fff;
+    background-image: none;
   }
 }
 
 /* Reference-matched Yellow homepage */
-body:has(.reference-home) { background: var(--site-yellow-glow); background-attachment: fixed; color: #343434; }
-body:has(.reference-home) .site-header { background: var(--site-yellow-glow); background-attachment: fixed; }
+body:has(.reference-home) { background: #fff; background-image: none; color: #343434; }
+body:has(.reference-home) .site-header { background: #fff; background-image: none; }
 .reference-home,
 .reference-home > section[class] { background: transparent; color: #343434; }
 .reference-home h1,
@@ -3531,25 +3531,36 @@ body:has(.reference-home) .site-header > .site-header__inner > .nav-cta { min-wi
 }
 
 /* Inner pages — the clean white, black and yellow language established on the homepage. */
-body:has(.inner-page) {
+body:has(.inner-page),
+body:has(.yellow-blog),
+body:has(.yellow-contact) {
   background: #fff;
   background-image: none;
   color: #343434;
 }
 
 body:has(.inner-page) .site-header,
-body:has(.inner-page) .primary-nav {
+body:has(.inner-page) .primary-nav,
+body:has(.yellow-blog) .site-header,
+body:has(.yellow-blog) .primary-nav,
+body:has(.yellow-contact) .site-header,
+body:has(.yellow-contact) .primary-nav {
   background: #fff;
   background-image: none;
+  box-shadow: none;
 }
 
-body:has(.inner-page) .site-header__inner {
+body:has(.inner-page) .site-header__inner,
+body:has(.yellow-blog) .site-header__inner,
+body:has(.yellow-contact) .site-header__inner {
   width: min(calc(100% - 48px), 1700px);
   min-height: 108px;
   padding-block: 0;
 }
 
-body:has(.inner-page) .site-header > .site-header__inner > .nav-cta {
+body:has(.inner-page) .site-header > .site-header__inner > .nav-cta,
+body:has(.yellow-blog) .site-header > .site-header__inner > .nav-cta,
+body:has(.yellow-contact) .site-header > .site-header__inner > .nav-cta {
   min-width: 240px;
   min-height: 64px;
 }
@@ -4134,13 +4145,17 @@ body:has(.inner-page) .site-header > .site-header__inner > .nav-cta {
 }
 
 @media (max-width: 1050px) {
-  body:has(.inner-page) .site-header__inner {
+  body:has(.inner-page) .site-header__inner,
+  body:has(.yellow-blog) .site-header__inner,
+  body:has(.yellow-contact) .site-header__inner {
     position: relative;
     display: flex;
     min-height: 80px;
   }
 
-  body:has(.inner-page) .menu-toggle {
+  body:has(.inner-page) .menu-toggle,
+  body:has(.yellow-blog) .menu-toggle,
+  body:has(.yellow-contact) .menu-toggle {
     position: absolute;
     top: 50%;
     right: 0;
@@ -4187,12 +4202,16 @@ body:has(.inner-page) .site-header > .site-header__inner > .nav-cta {
 }
 
 @media (max-width: 700px) {
-  body:has(.inner-page) .site-header__inner {
+  body:has(.inner-page) .site-header__inner,
+  body:has(.yellow-blog) .site-header__inner,
+  body:has(.yellow-contact) .site-header__inner {
     width: min(calc(100% - 30px), 1700px);
     min-height: 76px;
   }
 
-  body:has(.inner-page) .menu-toggle {
+  body:has(.inner-page) .menu-toggle,
+  body:has(.yellow-blog) .menu-toggle,
+  body:has(.yellow-contact) .menu-toggle {
     display: block !important;
   }
 
@@ -5222,22 +5241,6 @@ body:has(.inner-page) .site-header > .site-header__inner > .nav-cta {
   padding: clamp(92px, 11vw, 155px) 0 clamp(80px, 9vw, 120px);
   background: #fff;
   text-align: center;
-}
-
-.yellow-blog__hero::before,
-.yellow-contact__hero::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 8%;
-  left: 50%;
-  width: min(1080px, 92vw);
-  height: 78%;
-  border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(255, 210, 26, .38), rgba(255, 230, 101, .2) 42%, rgba(255, 248, 206, .08) 60%, transparent 76%);
-  filter: blur(22px);
-  transform: translateX(-50%);
-  pointer-events: none;
 }
 
 .yellow-blog__hero .container,
@@ -6307,14 +6310,6 @@ body:has(.inner-page) .site-header > .site-header__inner > .nav-cta {
   .yellow-contact__hero {
     min-height: 560px;
     padding: 78px 0 70px;
-  }
-
-  .yellow-blog__hero::before,
-  .yellow-contact__hero::before {
-    top: 5%;
-    width: 120vw;
-    height: 80%;
-    filter: blur(16px);
   }
 
   .yellow-blog__hero h1,
