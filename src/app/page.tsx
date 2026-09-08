@@ -116,7 +116,7 @@ export default function Home() {
               <span><b>04</b> Capacity scales with your pipeline</span>
             </div>
             <p className="hc-agency-model__note">Sell more confidently, deliver consistently, and grow without adding unnecessary overhead.</p>
-            <div className="hc-link-columns"><ul><li>White Label PPC Services</li><li>White Label SMM Services</li><li>Book an Appointment</li><li>Read Client Reviews</li></ul><ul><li>White Label SEO Services</li><li>About Yellow Agency</li><li>Get in Touch</li><li>What We Offer</li></ul></div>
+            <div className="hc-link-columns"><ul><li>White Label PPC Services</li><li>White Label SMM Services</li><li>Book an Appointment</li><li>Read Client Reviews</li></ul><ul><li>White Label SEO Services</li><li>About Yellow Clicks</li><li>Get in Touch</li><li>What We Offer</li></ul></div>
           </div>
           <div className="hc-model-diagram" aria-label="Yellow white label agency partnership model"><div className="hc-model-client"><span className="hc-model-client__icon" aria-hidden="true"><i /></span><b>Your Client</b></div><div className="hc-model-connector"><span>↑</span><i /><span>↓</span></div><div className="hc-model-agency"><div><b>$$</b><strong>Agency</strong></div><div><span>Margins</span><b>$$</b></div></div><span className="hc-model-side hc-model-side--revenue">$$$ <small>Partner revenue</small></span><span className="hc-model-side hc-model-side--channels">SEO&nbsp;&nbsp; PPC&nbsp;&nbsp; SOCIAL</span><div className="hc-model-connector"><i /></div><div className="hc-model-yellow"><b>Y</b><strong>Yellow</strong><span>Your fulfillment team</span></div></div>
         </div>
@@ -126,7 +126,7 @@ export default function Home() {
         <div className="hc-support__intro">
           <div className="hc-shell hc-centered"><h2>How Will Our Support Team<br /><span className="hc-heading-accent">Help You?</span></h2><p>Every client project is supervised by a client success manager and project manager, with clear KPIs, reports, analysis, and updates ready for your clients.</p><Link href="/dedicated-teams" className="hc-btn hc-btn--outline">Learn More</Link></div>
         </div>
-        <div className="hc-shell"><div className="hc-support-flow-image"><Image src="/images/yellow-support-flow.svg" alt="Yellow Agency support delivery flow from client to fulfillment team" width={1756} height={760} sizes="100vw" priority unoptimized /></div></div>
+        <div className="hc-shell"><div className="hc-support-flow-image"><Image src="/images/yellow-support-flow.svg" alt="Yellow Clicks support delivery flow from client to fulfillment team" width={1756} height={760} sizes="100vw" priority unoptimized /></div></div>
       </section>
 
       <section className="hc-section hc-lead">

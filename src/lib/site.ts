@@ -8,5 +8,5 @@ export function getSiteUrl(): string {
   if (process.env.VERCEL_URL) {
     return "https://" + process.env.VERCEL_URL;
   }
-  return "https://yellowagency.com";
+  return "https://yellowclicks.com";
 }

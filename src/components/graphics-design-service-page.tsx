@@ -64,8 +64,8 @@ export function GraphicsDesignServicePage() {
             <div><p>Agency partners rely on Yellow for responsive collaboration, on-brand execution, and organized assets ready to share.</p><CheckList items={["Scale creative delivery without fixed overhead", "Keep control of client direction and approvals", "Deliver through an experienced design team"]} /></div>
           </div>
           <div className="facebook-service__videos">
-            <article><Image src="/images/unsplash/portrait-03.jpg" alt="Agency partner Liam Thorne discussing Yellow's graphic design production" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Liam Thorne</h3><p>Brand Director, Thorne Creative</p></div></article>
-            <article><Image src="/images/unsplash/partner-elena.jpg" alt="Agency partner Elena Rostova sharing a brand production success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Elena Rostova</h3><p>Founder, Lumina Brand Lab</p></div></article>
+            <article><Image src="/images/unsplash/portrait-03.jpg" alt="Agency partner Liam Thorne discussing Yellow's graphic design production" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Liam Thorne</h3><p>Brand Director, Thorne Creative</p></div></article>
+            <article><Image src="/images/unsplash/partner-elena.jpg" alt="Agency partner Elena Rostova sharing a brand production success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Elena Rostova</h3><p>Founder, Lumina Brand Lab</p></div></article>
           </div>
         </div>
       </section>

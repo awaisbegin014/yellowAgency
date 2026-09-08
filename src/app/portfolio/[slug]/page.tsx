@@ -67,7 +67,7 @@ const projectDetails: Record<
 };
 
 export function generateStaticParams() { return Object.keys(projectDetails).map((slug) => ({ slug })); }
-export async function generateMetadata({ params }: PageProps<"/portfolio/[slug]">): Promise<Metadata> { const { slug } = await params; const name = projectDetails[slug]?.name ?? "Project"; return { title: `${name} Portfolio Project`, description: `Selected creative work for ${name}, designed and delivered by Yellow Agency.` }; }
+export async function generateMetadata({ params }: PageProps<"/portfolio/[slug]">): Promise<Metadata> { const { slug } = await params; const name = projectDetails[slug]?.name ?? "Project"; return { title: `${name} Portfolio Project`, description: `Selected creative work for ${name}, designed and delivered by Yellow Clicks.` }; }
 export default async function PortfolioDetailPage({ params }: PageProps<"/portfolio/[slug]">) {
   const { slug } = await params;
   const project = projectDetails[slug];

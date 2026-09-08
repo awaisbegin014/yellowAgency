@@ -1,6 +1,6 @@
-# Yellow Agency Website
+# Yellow Clicks Website
 
-Production-ready Next.js 16 web application for Yellow Agency.
+Production-ready Next.js 16 web application for Yellow Clicks.
 
 ## 🚀 Getting Started
 

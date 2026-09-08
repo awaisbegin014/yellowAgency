@@ -65,8 +65,8 @@ export function SeoServicePage() {
             <div><p>Agency partners choose Yellow for thoughtful strategy, responsive delivery, and SEO work that arrives ready to present.</p><CheckList items={["Scale without expanding fixed overhead", "Keep complete ownership of client relationships", "Deliver through experienced search specialists"]} /></div>
           </div>
           <div className="facebook-service__videos">
-            <article><Image src="/images/unsplash/partner-sarah.jpg" alt="Agency partner Sarah Jenkins discussing Yellow's organic search delivery" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Sarah Jenkins</h3><p>VP of Strategy, Catalyst Agency</p></div></article>
-            <article><Image src="/images/unsplash/partner-marcus.jpg" alt="Agency partner Marcus Vance sharing an SEO scaling success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Marcus Vance</h3><p>Managing Partner, Elevate SEO</p></div></article>
+            <article><Image src="/images/unsplash/partner-sarah.jpg" alt="Agency partner Sarah Jenkins discussing Yellow's organic search delivery" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Sarah Jenkins</h3><p>VP of Strategy, Catalyst Agency</p></div></article>
+            <article><Image src="/images/unsplash/partner-marcus.jpg" alt="Agency partner Marcus Vance sharing an SEO scaling success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Marcus Vance</h3><p>Managing Partner, Elevate SEO</p></div></article>
           </div>
         </div>
       </section>

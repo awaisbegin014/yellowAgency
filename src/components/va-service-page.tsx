@@ -100,8 +100,8 @@ export function VaServicePage() {
             <div><p>Agency work balances client management, marketing, delivery, and operations. Yellow assistants adapt to your tools and workflow while an account lead keeps responsibilities visible and organized.</p><CheckList items={["Dedicated support that learns your systems", "Communication that matches your agency process"]} /></div>
           </div>
           <div className="facebook-service__videos">
-            <article><Image src="/images/unsplash/partner-elena.jpg" alt="Agency owner Elena Rostova discussing Yellow's virtual assistant support" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Elena Rostova</h3><p>Founder &amp; CEO, Elevation Media</p></div></article>
-            <article><Image src="/images/unsplash/partner-marcus.jpg" alt="Agency owner Marcus Vance sharing an operations support story" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Marcus Vance</h3><p>COO, Apex Agency Group</p></div></article>
+            <article><Image src="/images/unsplash/partner-elena.jpg" alt="Agency owner Elena Rostova discussing Yellow's virtual assistant support" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Elena Rostova</h3><p>Founder &amp; CEO, Elevation Media</p></div></article>
+            <article><Image src="/images/unsplash/partner-marcus.jpg" alt="Agency owner Marcus Vance sharing an operations support story" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Marcus Vance</h3><p>COO, Apex Agency Group</p></div></article>
           </div>
         </div>
       </section>

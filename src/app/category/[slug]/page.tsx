@@ -29,7 +29,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const title = slug.replaceAll("-", " ");
-  return { title: `${title[0]?.toUpperCase()}${title.slice(1)} Insights | Yellow Agency` };
+  return { title: `${title[0]?.toUpperCase()}${title.slice(1)} Insights | Yellow Clicks` };
 }
 
 export default async function CategoryPage({ params }: Props) {

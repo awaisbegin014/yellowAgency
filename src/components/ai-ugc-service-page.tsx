@@ -64,8 +64,8 @@ export function AiUgcServicePage() {
             <div><p>Agencies rely on Yellow for rapid creative testing, high-hook video ads, and reliable fulfillment delivered on schedule.</p><CheckList items={["Scale video ad output 5× faster without hiring talent", "Maintain 100% white-label privacy and ownership", "Deliver high-performing UGC creatives across Meta & TikTok"]} /></div>
           </div>
           <div className="facebook-service__videos">
-            <article><Image src="/images/unsplash/partner-sarah.jpg" alt="Agency owner Sarah Jenkins talking about Yellow AI UGC performance" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Sarah Jenkins</h3><p>Founder, ViralEdge Media</p></div></article>
-            <article><Image src="/images/unsplash/partner-david.jpg" alt="Agency partner David Cho discussing AI UGC creative scale" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>David Cho</h3><p>Paid Social Lead, Spark Growth</p></div></article>
+            <article><Image src="/images/unsplash/partner-sarah.jpg" alt="Agency owner Sarah Jenkins talking about Yellow AI UGC performance" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Sarah Jenkins</h3><p>Founder, ViralEdge Media</p></div></article>
+            <article><Image src="/images/unsplash/partner-david.jpg" alt="Agency partner David Cho discussing AI UGC creative scale" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>David Cho</h3><p>Paid Social Lead, Spark Growth</p></div></article>
           </div>
         </div>
       </section>

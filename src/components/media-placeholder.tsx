@@ -57,7 +57,7 @@ export function MediaPlaceholder({
           <span className="media-placeholder__y-logo">Y</span>
         </div>
         <div className="media-placeholder__text">
-          <span className="media-placeholder__brand">Yellow Agency</span>
+          <span className="media-placeholder__brand">Yellow Clicks</span>
           <span className="media-placeholder__sub">Insight & Strategy</span>
         </div>
       </div>

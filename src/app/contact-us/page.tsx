@@ -7,7 +7,7 @@ import { services } from "@/content/site-data";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: "Talk with Yellow Agency about white-label marketing delivery, client growth, and your next opportunity.",
+  description: "Talk with Yellow Clicks about white-label marketing delivery, client growth, and your next opportunity.",
 };
 
 export default function ContactPage() {
@@ -38,13 +38,13 @@ export default function ContactPage() {
             <h2>Big brief, small question, or a half-formed idea—we&apos;re listening.</h2>
             <p>Tell us what the client needs, what is slowing your team down, or where you want to expand. We&apos;ll come back with useful questions and an honest next step.</p>
             <div className="yellow-contact__details">
-              <a href="mailto:hello@yellowagency.co"><span>Email</span><strong>hello@yellowagency.co</strong><b aria-hidden="true">↗</b></a>
+              <a href="mailto:hello@yellowclicks.com"><span>Email</span><strong>hello@yellowclicks.com</strong><b aria-hidden="true">↗</b></a>
               <div><span>Availability</span><strong>Monday–Friday · 24/5 delivery support</strong></div>
               <div><span>Where we work</span><strong>Remote-first · supporting agencies worldwide</strong></div>
               <div><span>Response time</span><strong>Within one business day</strong></div>
             </div>
             <MediaPlaceholder
-              label="Yellow agency strategy team working with a partner"
+              label="Yellow Clicks strategy team working with a partner"
               src="/images/unsplash/team-collaboration-01.jpg"
             />
           </div>

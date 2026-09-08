@@ -4,7 +4,7 @@ import { MediaPlaceholder } from "@/components/media-placeholder";
 import { AccentHeading, StandardCta } from "@/components/page-templates";
 import { caseStudies } from "@/content/site-data";
 
-export const metadata: Metadata = { title: "Case Studies", description: "See how Yellow Agency turns connected strategy and creative into measurable growth." };
+export const metadata: Metadata = { title: "Case Studies", description: "See how Yellow Clicks turns connected strategy and creative into measurable growth." };
 
 export default function CaseStudiesPage() {
   return <main id="top" className="inner-page">

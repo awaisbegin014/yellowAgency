@@ -366,8 +366,8 @@ export function FacebookAdsServicePage() {
         <div className="container">
           <div className="facebook-service__proof-heading"><ServiceHeading>Hear what our partners have to say about us.</ServiceHeading><div><p>Agency partners value responsive communication, specialist depth, and work that arrives ready to share.</p><CheckList items={["Scale without expanding fixed overhead", "Protect every client relationship", "Deliver through experienced specialists"]} /></div></div>
           <div className="facebook-service__videos">
-            <article><Image src="/images/unsplash/portrait-02.jpg" alt="Agency partner discussing Yellow's Facebook Ads support" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Seth Brown</h3><p>Agency Owner</p></div></article>
-            <article><Image src="/images/unsplash/portrait-04.jpg" alt="Agency partner sharing a paid social success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Josh Radford</h3><p>Agency Owner</p></div></article>
+            <article><Image src="/images/unsplash/portrait-02.jpg" alt="Agency partner discussing Yellow's Facebook Ads support" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Seth Brown</h3><p>Agency Owner</p></div></article>
+            <article><Image src="/images/unsplash/portrait-04.jpg" alt="Agency partner sharing a paid social success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Josh Radford</h3><p>Agency Owner</p></div></article>
           </div>
         </div>
       </section>

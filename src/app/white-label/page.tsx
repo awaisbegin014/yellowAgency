@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { CollectionPage } from "@/components/page-templates";
 import { services } from "@/content/site-data";
 
-export const metadata: Metadata = { title: "Marketing Services", description: "Explore Yellow Agency's connected strategy, creative, media, and technology services." };
+export const metadata: Metadata = { title: "Marketing Services", description: "Explore Yellow Clicks's connected strategy, creative, media, and technology services." };
 
 export default function ServicesPage() {
   return (

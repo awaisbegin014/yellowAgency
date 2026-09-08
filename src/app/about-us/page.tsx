@@ -7,7 +7,7 @@ import { AccentHeading } from "@/components/page-templates";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Meet the people, principles, and connected agency model behind Yellow Agency.",
+  description: "Meet the people, principles, and connected agency model behind Yellow Clicks.",
 };
 
 const team = [
@@ -96,7 +96,7 @@ export default function AboutPage() {
       <section className="about-reference__hero">
         <div className="container about-reference__hero-inner">
           <p className="eyebrow">The team behind your team</p>
-          <AccentHeading as="h1">About Yellow Agency</AccentHeading>
+          <AccentHeading as="h1">About Yellow Clicks</AccentHeading>
           <p>Yellow is a full-stack white-label digital marketing agency built for ambitious agencies that need specialist depth without adding another department. You own every client relationship; our team delivers the work behind your brand.</p>
           <Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link>
         </div>
@@ -157,7 +157,7 @@ export default function AboutPage() {
           <div className="about-reference__centered-heading"><p className="eyebrow">What keeps us focused</p><AccentHeading>Our vision and mission.</AccentHeading><p>Growth matters most when the process is clear, the work is useful, and every partner feels supported.</p></div>
           <div className="about-reference__vision-grid">
             <div className="about-reference__vision-copy"><article><span>01</span><h3>Our vision</h3><p>To become the most dependable white-label growth partner for agencies that want to expand their services without compromising quality or client trust.</p></article><article><span>02</span><h3>Our mission</h3><p>To remove fulfillment friction through experienced specialists, connected strategy, transparent reporting, and work that creates measurable progress.</p></article></div>
-            <div className="about-reference__vision-media"><Image src="/images/unsplash/agency-team.jpg" alt="Yellow agency team discussing client growth" fill sizes="(max-width: 800px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><b>Built around partnership</b><small>See how Yellow works behind your brand</small></div></div>
+            <div className="about-reference__vision-media"><Image src="/images/unsplash/agency-team.jpg" alt="Yellow Clicks team discussing client growth" fill sizes="(max-width: 800px) 100vw, 50vw" /><div><b>Built around partnership</b><small>See how Yellow Clicks works behind your brand</small></div></div>
           </div>
           <Link href="/testimonials" className="button button--outline">View partner stories <span aria-hidden="true">↗</span></Link>
         </div>

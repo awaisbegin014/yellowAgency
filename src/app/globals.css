@@ -698,18 +698,7 @@
 }
 
 .facebook-service__videos article > span {
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  left: 50%;
-  display: grid;
-  width: 64px;
-  height: 64px;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--yellow);
-  color: #30302f;
-  transform: translate(-50%, -50%);
+  display: none !important;
 }
 
 .facebook-service__videos article > div {
@@ -1901,19 +1890,7 @@
 }
 
 .about-reference__vision-media > span {
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  left: 50%;
-  display: grid;
-  width: 78px;
-  height: 78px;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--yellow);
-  color: #343434;
-  font-size: 1.7rem;
-  transform: translate(-50%, -50%);
+  display: none !important;
 }
 
 .about-reference__vision-media > div {
@@ -4607,7 +4584,7 @@ body:has(.yellow-contact) .site-header > .site-header__inner > .nav-cta {
   .automotive-study__metric-grid span { overflow-wrap: anywhere; }
 }
 
-/* Dental case study — Yellow Agency editorial performance story */
+/* Dental case study — Yellow Clicks editorial performance story */
 .dental-study {
   --dental-ink: #30302f;
   --dental-muted: #66665f;

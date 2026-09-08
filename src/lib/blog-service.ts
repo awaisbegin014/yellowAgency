@@ -27,7 +27,7 @@ export function formatBlogDate(dateStr?: string): string {
 }
 
 /**
- * Transforms a Supabase row into the Post interface used throughout Yellow Agency.
+ * Transforms a Supabase row into the Post interface used throughout Yellow Clicks.
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function mapDbPostToPost(db: any): Post {
@@ -63,7 +63,7 @@ export async function getPublishedBlogs(): Promise<Post[]> {
       .order('created_at', { ascending: false });
 
     if (error) {
-      console.warn('[Yellow Agency blogService] Supabase error, using fallback:', error.message);
+      console.warn('[Yellow Clicks blogService] Supabase error, using fallback:', error.message);
       return fallbackPosts;
     }
 
@@ -74,6 +74,7 @@ export async function getPublishedBlogs(): Promise<Post[]> {
           return true;
         }
         return (
+          row.target_sites.includes('yellowclicks') ||
           row.target_sites.includes('yellowagency') ||
           row.target_sites.includes('all')
         );
@@ -85,7 +86,7 @@ export async function getPublishedBlogs(): Promise<Post[]> {
 
     return fallbackPosts;
   } catch (err) {
-    console.error('[Yellow Agency blogService] unexpected error:', err);
+    console.error('[Yellow Clicks blogService] unexpected error:', err);
     return fallbackPosts;
   }
 }
@@ -111,7 +112,7 @@ export async function getBlogBySlug(slug: string): Promise<Post | null> {
     const fallback = fallbackPosts.find((p) => p.slug === slug);
     return fallback || null;
   } catch (err) {
-    console.error(`[Yellow Agency blogService] error getting blog for slug "${slug}":`, err);
+    console.error(`[Yellow Clicks blogService] error getting blog for slug "${slug}":`, err);
     const fallback = fallbackPosts.find((p) => p.slug === slug);
     return fallback || null;
   }
