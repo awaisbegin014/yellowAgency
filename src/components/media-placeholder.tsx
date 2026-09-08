@@ -22,7 +22,7 @@ export function MediaPlaceholder({
     const isExternalCustom = !imageSource.startsWith("/images/");
 
     return (
-      <div className={`media-placeholder media-placeholder--${type} ${className}`.trim()}>
+      <div className={`media-placeholder media-placeholder--has-image media-placeholder--${type} ${className}`.trim()}>
         {isExternalCustom ? (
           <img
             className="media-placeholder__image"

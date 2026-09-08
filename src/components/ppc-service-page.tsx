@@ -64,8 +64,8 @@ export function PpcServicePage() {
             <div><p>Agency partners rely on Yellow for responsive communication, cross-channel depth, and campaign work that arrives ready to present.</p><CheckList items={["Scale paid-media delivery without fixed overhead", "Keep control of every client relationship", "Deliver through experienced channel specialists"]} /></div>
           </div>
           <div className="facebook-service__videos">
-            <article><Image src="/images/unsplash/portrait-02.jpg" alt="Agency partner discussing Yellow's PPC support" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Seth Brown</h3><p>Agency Owner</p></div></article>
-            <article><Image src="/images/unsplash/portrait-04.jpg" alt="Agency partner sharing a paid media success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Josh Radford</h3><p>Agency Owner</p></div></article>
+            <article><Image src="/images/unsplash/partner-marcus.jpg" alt="Agency partner Marcus Vance discussing Yellow's cross-channel PPC management" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Marcus Vance</h3><p>Head of Media, Omnichannel Group</p></div></article>
+            <article><Image src="/images/unsplash/partner-david.jpg" alt="Agency partner David Cho sharing a multi-channel PPC scaling story" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>David Cho</h3><p>Performance Director, ScaleFlow</p></div></article>
           </div>
         </div>
       </section>

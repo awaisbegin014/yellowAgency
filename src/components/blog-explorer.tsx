@@ -5,6 +5,15 @@ import { useMemo, useState } from "react";
 import { MediaPlaceholder } from "@/components/media-placeholder";
 import type { Post } from "@/content/site-data";
 
+const BLOG_FALLBACKS = [
+  "/images/unsplash/digital-marketing.jpg",
+  "/images/unsplash/analytics-01.jpg",
+  "/images/unsplash/team-collaboration-02.jpg",
+  "/images/unsplash/brand-growth.jpg",
+  "/images/unsplash/content-writing.jpg",
+  "/images/unsplash/agency-team.jpg",
+];
+
 function normalize(value: string) {
   return value.trim().toLocaleLowerCase();
 }
@@ -93,7 +102,7 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
                 {featured.map((post, index) => (
                   <Link href={`/blog/${post.slug}`} className="yellow-blog__featured-card" key={post.slug}>
                     <div className="yellow-blog__featured-media">
-                      <MediaPlaceholder label={`${post.title} editorial feature image`} src={post.image} />
+                      <MediaPlaceholder label={`${post.title} editorial feature image`} src={post.image ?? BLOG_FALLBACKS[index % BLOG_FALLBACKS.length]} />
                       <span>{String(index + 1).padStart(2, "0")}</span>
                     </div>
                     <div>
@@ -116,7 +125,7 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
                     {remaining.map((post, index) => (
                       <Link key={post.slug} href={`/blog/${post.slug}`} className="yellow-blog__card">
                         <div className="yellow-blog__card-media">
-                          <MediaPlaceholder label={`${post.title} article image`} src={post.image} />
+                          <MediaPlaceholder label={`${post.title} article image`} src={post.image ?? BLOG_FALLBACKS[(index + 2) % BLOG_FALLBACKS.length]} />
                           <span>{String(index + 3).padStart(2, "0")}</span>
                         </div>
                         <PostMeta post={post} />
@@ -138,7 +147,7 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
                   <div className="yellow-blog__recent-grid">
                     {recent.map((post) => (
                       <Link href={`/blog/${post.slug}`} key={post.slug}>
-                        <MediaPlaceholder label={`${post.title} recent article image`} src={post.image} />
+                        <MediaPlaceholder label={`${post.title} recent article image`} src={post.image ?? BLOG_FALLBACKS[recent.indexOf(post) % BLOG_FALLBACKS.length]} />
                         <div><span>{post.category} · {post.date}</span><h3>{post.title}</h3><b>Read article <i aria-hidden="true">↗</i></b></div>
                       </Link>
                     ))}

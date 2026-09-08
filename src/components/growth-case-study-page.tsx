@@ -22,6 +22,7 @@ type GrowthStudy = {
   solutionHeading: string;
   solution: string[];
   mediaLabel: string;
+  mediaImage: string;
   methodHeading: string;
   methodIntro: string;
   methods: string[];
@@ -59,6 +60,7 @@ const studies: Record<GrowthCaseStudySlug, GrowthStudy> = {
       "Research and A/B testing shaped a stronger promotional offer and clearer calls to action. Budget was moved toward the ads, audiences, and locations demonstrating the best commercial intent.",
     ],
     mediaLabel: "HVAC paid search campaign strategy and conversion planning",
+    mediaImage: "/images/unsplash/contractor.jpg",
     methodHeading: "Ten coordinated moves created one faster route to qualified calls.",
     methodIntro: "The three-month sprint connected research, local visibility, content, and paid media around a single conversion target. Weekly performance reviews helped the team identify wasted spend quickly, strengthen the best-performing messages, and keep every channel focused on qualified service calls.",
     methods: ["SEO strategy", "Keyword research", "On-page SEO", "Local optimization", "Authority building", "Competitor analysis", "Content marketing", "Market research", "Google Ads", "PPC optimization"],
@@ -86,6 +88,7 @@ const studies: Record<GrowthCaseStudySlug, GrowthStudy> = {
       "Paid search and social creative supported the organic program. Budgets were reallocated, irrelevant categories were paused, and landing paths were simplified around quote requests.",
     ],
     mediaLabel: "Outdoor blinds website redesign and local marketing campaign",
+    mediaImage: "/images/unsplash/landscaping-01.jpg",
     methodHeading: "Search, content, creative, and conversion design moved in sequence.",
     methodIntro: "The campaign was planned backward from the summer deadline so foundational work could compound before peak demand arrived. Website improvements, search visibility, creative, and paid promotion were sequenced carefully so the new experience was ready when local buying interest was highest.",
     methods: ["Website assessment", "SEO strategy", "Keyword research", "On-page SEO", "Local optimization", "Link building", "Content marketing", "Google Ads", "Social creative", "Conversion testing"],
@@ -113,6 +116,7 @@ const studies: Record<GrowthCaseStudySlug, GrowthStudy> = {
       "Deliverability, opens, clicks, replies, and opportunity quality were reviewed together so each round of outreach improved the next one.",
     ],
     mediaLabel: "Cold email outreach campaign content and lead qualification workflow",
+    mediaImage: "/images/unsplash/analytics-01.jpg",
     methodHeading: "A complete outreach system—from infrastructure to booked conversations.",
     methodIntro: "Every stage protected sender health while improving the relevance and commercial value of replies. Clean data, careful audience segments, controlled sending volume, and responsive message testing worked together to turn outreach activity into conversations the sales team could genuinely progress.",
     methods: ["Domain setup", "Mailbox warming", "Lead sourcing", "Data validation", "Audience segments", "Message strategy", "Sequence build", "Campaign launch", "Reply handling", "Reporting"],
@@ -140,6 +144,7 @@ const studies: Record<GrowthCaseStudySlug, GrowthStudy> = {
       "Conversion-focused bidding, remarketing lists, in-market segments, demographic signals, and A/B testing created a more disciplined route from search to enquiry.",
     ],
     mediaLabel: "Automotive Google Ads performance and audience targeting dashboard",
+    mediaImage: "/images/unsplash/auto-dealer.jpg",
     methodHeading: "Every account decision moved closer to a qualified vehicle enquiry.",
     methodIntro: "The rebuild connected search intent, audience signals, ad relevance, bidding, and landing-page action. Instead of optimizing isolated metrics, the team followed the complete journey from search term to vehicle enquiry and moved budget toward the combinations producing real customer intent.",
     methods: ["Account audit", "Search-term review", "Negative keywords", "High-intent groups", "Ad copy testing", "Offer strategy", "Smart bidding", "Remarketing", "Audience targeting", "Performance reporting"],
@@ -167,6 +172,7 @@ const studies: Record<GrowthCaseStudySlug, GrowthStudy> = {
       "Terms such as ‘party rentals Long Island’ and ‘bouncer rentals’ were matched with the client’s experience, family-run story, service details, phone number, and geographic coverage.",
     ],
     mediaLabel: "Party rental Google Ads campaign and local conversion strategy",
+    mediaImage: "/images/unsplash/party-rentals.jpg",
     methodHeading: "Local targeting and clear service intent turned attention into bookings.",
     methodIntro: "The one-week launch concentrated budget on the searches, locations, and messages most likely to produce enquiries. Daily checks kept spend close to Long Island demand, surfaced the rental categories earning attention, and gave the family-run business a clear view of which ads were creating calls and bookings.",
     methods: ["Keyword research", "Local search intent", "Ad copy", "Location targeting", "Ad extensions", "Service messaging", "Landing-page UX", "Budget control", "Call tracking", "Daily optimization"],
@@ -229,7 +235,7 @@ export function GrowthCaseStudyPage({ slug }: { slug: GrowthCaseStudySlug }) {
 
       <section className="growth-study__section growth-study__overview"><div className="container growth-study__overview-grid"><div><p className="eyebrow">Client overview</p><StudyHeading>A strong business ready for a stronger acquisition system.</StudyHeading><p>{study.clientOverview}</p></div><div className="growth-study__briefs"><article><span>01</span><h3>Their objective</h3><p>{study.objective}</p></article><article><span>02</span><h3>The challenge</h3><p>{study.challenge}</p></article></div></div></section>
 
-      <section className="growth-study__section growth-study__solution"><div className="container growth-study__copy"><p className="eyebrow">Our digital marketing solution</p><StudyHeading>{study.solutionHeading}</StudyHeading><div className="growth-study__solution-copy">{study.solution.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div><MediaPlaceholder label={study.mediaLabel} className="growth-study__media" /></div></section>
+      <section className="growth-study__section growth-study__solution"><div className="container growth-study__copy"><p className="eyebrow">Our digital marketing solution</p><StudyHeading>{study.solutionHeading}</StudyHeading><div className="growth-study__solution-copy">{study.solution.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div><MediaPlaceholder label={study.mediaLabel} src={study.mediaImage} className="growth-study__media" /></div></section>
 
       <section className="growth-study__section growth-study__method"><div className="container"><div className="growth-study__section-heading"><div><p className="eyebrow">How we did it</p><StudyHeading>{study.methodHeading}</StudyHeading></div><p>{study.methodIntro}</p></div><div className="growth-study__method-grid">{study.methods.map((method, index) => <article key={method}><span>{String(index + 1).padStart(2, "0")}</span><h3>{method}</h3></article>)}</div></div></section>
 

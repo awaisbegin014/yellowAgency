@@ -65,8 +65,8 @@ export function WebDevelopmentServicePage() {
             <div><p>Agency partners choose Yellow for practical engineering decisions, responsive communication, and dependable work delivered behind their brand.</p><CheckList items={["Scale development without fixed overhead", "Protect every client relationship", "Deliver through experienced engineers"]} /></div>
           </div>
           <div className="facebook-service__videos">
-            <article><Image src="/images/unsplash/portrait-02.jpg" alt="Agency partner discussing Yellow's web development support" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Seth Brown</h3><p>Agency Owner</p></div></article>
-            <article><Image src="/images/unsplash/portrait-04.jpg" alt="Agency partner sharing a website development success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Josh Radford</h3><p>Agency Owner</p></div></article>
+            <article><Image src="/images/unsplash/partner-david.jpg" alt="Agency partner David Cho discussing Yellow's headless web development support" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>David Cho</h3><p>CTO &amp; Co-Founder, Vector Digital</p></div></article>
+            <article><Image src="/images/unsplash/partner-elena.jpg" alt="Agency partner Elena Rostova sharing an enterprise web development success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Elena Rostova</h3><p>Managing Director, Nexus Tech</p></div></article>
           </div>
         </div>
       </section>

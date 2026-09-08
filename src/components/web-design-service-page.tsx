@@ -64,8 +64,8 @@ export function WebDesignServicePage() {
             <div><p>Agency partners rely on Yellow for thoughtful UX, reliable communication, and design files that arrive ready to present and build.</p><CheckList items={["Scale design delivery without fixed overhead", "Keep control of every client relationship", "Deliver through an experienced design team"]} /></div>
           </div>
           <div className="facebook-service__videos">
-            <article><Image src="/images/unsplash/portrait-02.jpg" alt="Agency partner discussing Yellow's web design support" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Seth Brown</h3><p>Agency Owner</p></div></article>
-            <article><Image src="/images/unsplash/portrait-04.jpg" alt="Agency partner sharing a website design success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Josh Radford</h3><p>Agency Owner</p></div></article>
+            <article><Image src="/images/unsplash/portrait-01.jpg" alt="Agency partner Rachel Sterling discussing Yellow's UI/UX design support" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Rachel Sterling</h3><p>Creative Director, North Studio</p></div></article>
+            <article><Image src="/images/unsplash/portrait-03.jpg" alt="Agency partner Liam Thorne sharing a website redesign success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Liam Thorne</h3><p>Design Principal, Thorne &amp; Co</p></div></article>
           </div>
         </div>
       </section>

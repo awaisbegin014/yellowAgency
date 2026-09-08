@@ -14,6 +14,13 @@ export const metadata: Metadata = {
   },
   description:
     "Yellow Agency is a full-service creative growth partner for ambitious teams that want clearer strategy, stronger creative, and measurable results.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/images/y2.png", type: "image/png" },
+    ],
+    apple: "/images/y2.png",
+  },
   openGraph: {
     title: "Yellow Agency — Creative Growth, Made Clear",
     description: "Strategy, creative, performance, and technology in one connected agency team.",

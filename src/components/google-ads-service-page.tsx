@@ -61,8 +61,8 @@ export function GoogleAdsServicePage() {
         <div className="container">
           <div className="facebook-service__proof-heading"><ServiceHeading>Hear what our partners have to say about us.</ServiceHeading><div><p>Agency partners rely on Yellow for responsive communication, practical search expertise, and delivery that stays confidently behind their brand.</p><CheckList items={["Scale paid-search delivery without fixed overhead", "Retain complete ownership of client relationships", "Present clear recommendations and agency-ready reports"]} /></div></div>
           <div className="facebook-service__videos">
-            <article><Image src="/images/unsplash/portrait-02.jpg" alt="Agency partner discussing Yellow's Google Ads support" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Seth Brown</h3><p>Agency Owner</p></div></article>
-            <article><Image src="/images/unsplash/portrait-04.jpg" alt="Agency partner sharing a paid search success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Josh Radford</h3><p>Agency Owner</p></div></article>
+            <article><Image src="/images/unsplash/partner-elena.jpg" alt="Agency partner Elena Rostova discussing Yellow's Google Ads management" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Elena Rostova</h3><p>Founder &amp; MD, Horizon Search</p></div></article>
+            <article><Image src="/images/unsplash/partner-david.jpg" alt="Agency partner David Cho sharing a Google Ads scaling success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>David Cho</h3><p>Head of Growth, Beacon Media</p></div></article>
           </div>
         </div>
       </section>

@@ -1,26 +1,30 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { caseStudies, services } from "@/content/site-data";
-
-function Brand() {
-  return (
-    <span className="brand" aria-label="Yellow Agency home">
-      <span className="brand__mark" aria-hidden="true">Y</span>
-      <span className="brand__copy"><span className="brand__word">Yellow</span><span className="brand__sub">white label growth agency</span></span>
-    </span>
-  );
-}
+import { BrandLogo } from "@/components/brand-logo";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<"services" | "cases" | null>(null);
+  const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.body.classList.toggle("menu-is-open", open);
     return () => document.body.classList.remove("menu-is-open");
   }, [open]);
+
+  // Close dropdown when clicking outside the nav
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setOpenDropdown(null);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   function closeNavigation() {
     setOpen(false);
@@ -29,9 +33,9 @@ export function SiteHeader() {
 
   return (
     <header className="site-header">
-      <div className="site-header__inner">
+      <div ref={navRef} className="site-header__inner">
         <Link href="/" className="site-header__brand" onClick={closeNavigation}>
-          <Brand />
+          <BrandLogo priority />
         </Link>
 
         <button

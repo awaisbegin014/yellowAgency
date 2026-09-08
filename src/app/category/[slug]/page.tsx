@@ -4,6 +4,15 @@ import { MediaPlaceholder } from "@/components/media-placeholder";
 import { AccentHeading } from "@/components/page-templates";
 import { getBlogsByCategory, getPublishedBlogs } from "@/lib/blog-service";
 
+const BLOG_FALLBACKS = [
+  "/images/unsplash/digital-marketing.jpg",
+  "/images/unsplash/analytics-01.jpg",
+  "/images/unsplash/team-collaboration-02.jpg",
+  "/images/unsplash/brand-growth.jpg",
+  "/images/unsplash/content-writing.jpg",
+  "/images/unsplash/agency-team.jpg",
+];
+
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
@@ -43,9 +52,9 @@ export default async function CategoryPage({ params }: Props) {
 
       <section className="section">
         <div className="container post-grid">
-          {visible.map((post) => (
+          {visible.map((post, index) => (
             <Link key={post.slug} href={`/blog/${post.slug}`} className="post-card">
-              <MediaPlaceholder label={`${post.title} image`} src={post.image} />
+              <MediaPlaceholder label={`${post.title} image`} src={post.image ?? BLOG_FALLBACKS[index % BLOG_FALLBACKS.length]} />
               <span>
                 {post.category} · {post.readTime}
               </span>

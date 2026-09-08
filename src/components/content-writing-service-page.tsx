@@ -64,8 +64,8 @@ export function ContentWritingServicePage() {
             <div><p>Agency partners rely on Yellow for responsive collaboration, consistent voice, and polished content delivered on schedule.</p><CheckList items={["Scale editorial production without fixed overhead", "Keep ownership of client strategy and approvals", "Deliver through researchers, writers, and editors"]} /></div>
           </div>
           <div className="facebook-service__videos">
-            <article><Image src="/images/unsplash/portrait-02.jpg" alt="Agency partner discussing Yellow's content writing support" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Seth Brown</h3><p>Agency Owner</p></div></article>
-            <article><Image src="/images/unsplash/portrait-04.jpg" alt="Agency partner sharing a content production success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Josh Radford</h3><p>Agency Owner</p></div></article>
+            <article><Image src="/images/unsplash/partner-sarah.jpg" alt="Agency partner Sarah Jenkins discussing Yellow's editorial content support" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Sarah Jenkins</h3><p>Head of Content, Storyline Group</p></div></article>
+            <article><Image src="/images/unsplash/portrait-01.jpg" alt="Agency partner Rachel Sterling sharing a content production success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Rachel Sterling</h3><p>Editorial Director, Clarity Media</p></div></article>
           </div>
         </div>
       </section>

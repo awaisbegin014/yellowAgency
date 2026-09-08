@@ -43,7 +43,10 @@ export default function ContactPage() {
               <div><span>Where we work</span><strong>Remote-first · supporting agencies worldwide</strong></div>
               <div><span>Response time</span><strong>Within one business day</strong></div>
             </div>
-            <MediaPlaceholder label="Yellow agency strategy team working with a partner" />
+            <MediaPlaceholder
+              label="Yellow agency strategy team working with a partner"
+              src="/images/unsplash/team-collaboration-01.jpg"
+            />
           </div>
           <ContactSalesForm />
         </div>

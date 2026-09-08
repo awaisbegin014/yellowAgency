@@ -24,6 +24,7 @@ export type CaseStudy = {
   summary: string;
   result: string;
   metric: string;
+  image?: string;
 };
 
 export type Post = {
@@ -177,13 +178,13 @@ export const industries: Industry[] = [
 ];
 
 export const caseStudies: CaseStudy[] = [
-  { slug: "automotive-digital-marketing-case-study", client: "Summit Auto", industry: "Automotive", title: "Automotive digital marketing case study", summary: "A connected search, content, and conversion program created a more dependable inquiry pipeline.", result: "Qualified inquiries", metric: "+148%" },
-  { slug: "dental-digital-marketing-case-study", client: "Dental practice", industry: "Dental", title: "Dental digital marketing case study", summary: "A connected local-search, content, and paid-media system turned digital discovery into measurable patient demand.", result: "Organic growth", metric: "+1,161.76%" },
-  { slug: "hvac-digital-marketing-case-study", client: "HVAC business", industry: "HVAC", title: "HVAC digital marketing case study", summary: "A three-month paid-search sprint turned off-season intent into qualified calls and measurable sales growth.", result: "Conversion growth", metric: "+215.79%" },
-  { slug: "outdoor-blinds-digital-marketing-case-study", client: "Shade-solutions provider", industry: "Outdoor Blinds", title: "Outdoor blinds digital marketing case study", summary: "A new website and connected local-growth plan created stronger visibility before the client’s busiest season.", result: "Organic lead traffic", metric: "+106%" },
-  { slug: "cold-email-outreach-digital-marketing-case-study", client: "US digital agency", industry: "B2B Outreach", title: "Cold email outreach case study", summary: "A managed outbound system turned qualified data and relevant messaging into sixteen commercial opportunities.", result: "Opportunity value", metric: "$8,000" },
-  { slug: "auto-dealer-google-ads-case-study", client: "Atlanta auto dealer", industry: "Google Ads", title: "Auto dealer Google Ads case study", summary: "A rebuilt search account increased qualified vehicle enquiries while lowering the cost of conversion.", result: "Conversions", metric: "97.33" },
-  { slug: "party-rentals-google-ads-case-study", client: "Long Island rental company", industry: "Party Rentals", title: "Party rentals Google Ads case study", summary: "Focused local targeting generated immediate attention, enquiries, and bookings in the campaign’s first week.", result: "Click-through rate", metric: "39%" },
+  { slug: "automotive-digital-marketing-case-study", client: "Summit Auto", industry: "Automotive", title: "Automotive digital marketing case study", summary: "A connected search, content, and conversion program created a more dependable inquiry pipeline.", result: "Qualified inquiries", metric: "+148%", image: "/images/case-studies/automotive/automotive.webp" },
+  { slug: "dental-digital-marketing-case-study", client: "Dental practice", industry: "Dental", title: "Dental digital marketing case study", summary: "A connected local-search, content, and paid-media system turned digital discovery into measurable patient demand.", result: "Organic growth", metric: "+1,161.76%", image: "/images/unsplash/dental-care.jpg" },
+  { slug: "hvac-digital-marketing-case-study", client: "HVAC business", industry: "HVAC", title: "HVAC digital marketing case study", summary: "A three-month paid-search sprint turned off-season intent into qualified calls and measurable sales growth.", result: "Conversion growth", metric: "+215.79%", image: "/images/unsplash/contractor.jpg" },
+  { slug: "outdoor-blinds-digital-marketing-case-study", client: "Shade-solutions provider", industry: "Outdoor Blinds", title: "Outdoor blinds digital marketing case study", summary: "A new website and connected local-growth plan created stronger visibility before the client’s busiest season.", result: "Organic lead traffic", metric: "+106%", image: "/images/unsplash/landscaping-01.jpg" },
+  { slug: "cold-email-outreach-digital-marketing-case-study", client: "US digital agency", industry: "B2B Outreach", title: "Cold email outreach case study", summary: "A managed outbound system turned qualified data and relevant messaging into sixteen commercial opportunities.", result: "Opportunity value", metric: "$8,000", image: "/images/unsplash/analytics-01.jpg" },
+  { slug: "auto-dealer-google-ads-case-study", client: "Atlanta auto dealer", industry: "Google Ads", title: "Auto dealer Google Ads case study", summary: "A rebuilt search account increased qualified vehicle enquiries while lowering the cost of conversion.", result: "Conversions", metric: "97.33", image: "/images/unsplash/auto-dealer.jpg" },
+  { slug: "party-rentals-google-ads-case-study", client: "Long Island rental company", industry: "Party Rentals", title: "Party rentals Google Ads case study", summary: "Focused local targeting generated immediate attention, enquiries, and bookings in the campaign’s first week.", result: "Click-through rate", metric: "39%", image: "/images/unsplash/party-rentals.jpg" },
 ];
 
 export const testimonials = [
@@ -194,15 +195,15 @@ export const testimonials = [
 ];
 
 export const posts: Post[] = [
-  { slug: "a-practical-guide-to-local-seo", category: "SEO", title: "A practical guide to local SEO that generates real demand", excerpt: "The essential foundations for appearing in the moments nearby customers are ready to buy.", date: "August 18, 2026", readTime: "8 min read" },
-  { slug: "landing-pages-that-convert", category: "Web design", title: "What high-converting service landing pages do differently", excerpt: "A plain-language breakdown of hierarchy, proof, friction, and calls to action.", date: "August 8, 2026", readTime: "6 min read" },
-  { slug: "stop-reporting-vanity-metrics", category: "Strategy", title: "Stop reporting vanity metrics: a better monthly marketing review", excerpt: "The small set of numbers that connects marketing activity to business outcomes.", date: "July 29, 2026", readTime: "5 min read" },
-  { slug: "brand-consistency-without-boredom", category: "Branding", title: "How to build brand consistency without becoming predictable", excerpt: "Simple rules that leave enough room for creative campaigns and fresh ideas.", date: "July 16, 2026", readTime: "7 min read" },
-  { slug: "paid-search-account-audit", category: "Paid media", title: "A 30-minute paid search account health check", excerpt: "Six places to look when cost rises, volume falls, or lead quality quietly slips.", date: "July 3, 2026", readTime: "9 min read" },
-  { slug: "email-automation-human-touch", category: "Email", title: "Email automation that still feels human", excerpt: "How to use relevance, timing, and restraint to create follow-up people welcome.", date: "June 21, 2026", readTime: "6 min read" },
-  { slug: "white-label-partner-playbook", category: "Operations", title: "A practical playbook for choosing the right white-label partner", excerpt: "The questions that reveal delivery quality, communication habits, capacity, and the true cost of a partnership.", date: "June 9, 2026", readTime: "8 min read" },
-  { slug: "creative-testing-system", category: "Paid media", title: "Build a creative testing system your whole performance team can use", excerpt: "A repeatable way to turn campaign evidence into sharper concepts, messages, and next-round decisions.", date: "May 26, 2026", readTime: "7 min read" },
-  { slug: "ai-workflows-for-agencies", category: "Automation", title: "Where AI workflows genuinely save agency teams time", excerpt: "Five useful automations that remove repetitive work without making the client experience feel robotic.", date: "May 12, 2026", readTime: "6 min read" },
+  { slug: "a-practical-guide-to-local-seo", category: "SEO", title: "A practical guide to local SEO that generates real demand", excerpt: "The essential foundations for appearing in the moments nearby customers are ready to buy.", date: "August 18, 2026", readTime: "8 min read", image: "/images/unsplash/analytics-02.jpg" },
+  { slug: "landing-pages-that-convert", category: "Web design", title: "What high-converting service landing pages do differently", excerpt: "A plain-language breakdown of hierarchy, proof, friction, and calls to action.", date: "August 8, 2026", readTime: "6 min read", image: "/images/unsplash/creative-design-01.jpg" },
+  { slug: "stop-reporting-vanity-metrics", category: "Strategy", title: "Stop reporting vanity metrics: a better monthly marketing review", excerpt: "The small set of numbers that connects marketing activity to business outcomes.", date: "July 29, 2026", readTime: "5 min read", image: "/images/unsplash/analytics-03.jpg" },
+  { slug: "brand-consistency-without-boredom", category: "Branding", title: "How to build brand consistency without becoming predictable", excerpt: "Simple rules that leave enough room for creative campaigns and fresh ideas.", date: "July 16, 2026", readTime: "7 min read", image: "/images/unsplash/creative-design-02.jpg" },
+  { slug: "paid-search-account-audit", category: "Paid media", title: "A 30-minute paid search account health check", excerpt: "Six places to look when cost rises, volume falls, or lead quality quietly slips.", date: "July 3, 2026", readTime: "9 min read", image: "/images/unsplash/digital-marketing.jpg" },
+  { slug: "email-automation-human-touch", category: "Email", title: "Email automation that still feels human", excerpt: "How to use relevance, timing, and restraint to create follow-up people welcome.", date: "June 21, 2026", readTime: "6 min read", image: "/images/unsplash/team-collaboration-01.jpg" },
+  { slug: "white-label-partner-playbook", category: "Operations", title: "A practical playbook for choosing the right white-label partner", excerpt: "The questions that reveal delivery quality, communication habits, capacity, and the true cost of a partnership.", date: "June 9, 2026", readTime: "8 min read", image: "/images/unsplash/agency-team.jpg" },
+  { slug: "creative-testing-system", category: "Paid media", title: "Build a creative testing system your whole performance team can use", excerpt: "A repeatable way to turn campaign evidence into sharper concepts, messages, and next-round decisions.", date: "May 26, 2026", readTime: "7 min read", image: "/images/unsplash/creative-design-03.jpg" },
+  { slug: "ai-workflows-for-agencies", category: "Automation", title: "Where AI workflows genuinely save agency teams time", excerpt: "Five useful automations that remove repetitive work without making the client experience feel robotic.", date: "May 12, 2026", readTime: "6 min read", image: "/images/unsplash/development-02.jpg" },
 ];
 
 export const faqs = [

@@ -86,9 +86,9 @@ const serviceTabs = [
 ];
 
 const homeCaseStudies = [
-  { title: "Cold Email Outreach Digital Marketing Case Study", image: "content-writing.jpg" },
-  { title: "Auto Dealer Google Ads Case Study", image: "contractor-02.jpg" },
-  { title: "Party Rentals Google Ads Case Study", image: "brand-growth.jpg" },
+  { title: "Cold Email Outreach Digital Marketing Case Study", image: "analytics-01.jpg" },
+  { title: "Auto Dealer Google Ads Case Study", image: "auto-dealer.jpg" },
+  { title: "Party Rentals Google Ads Case Study", image: "party-rentals.jpg" },
 ];
 
 const serviceDashboardMetrics: Record<string, Array<{ label: string; value: string; change: string }>> = {

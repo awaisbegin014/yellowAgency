@@ -64,8 +64,8 @@ export function GoHighLevelServicePage() {
             <div><p>Agency partners value structured implementation, responsive support, and systems that are easier for their teams and clients to use.</p><CheckList items={["Scale platform delivery without fixed overhead", "Keep ownership of client strategy and data", "Build through experienced CRM specialists"]} /></div>
           </div>
           <div className="facebook-service__videos">
-            <article><Image src="/images/unsplash/portrait-02.jpg" alt="Agency partner discussing Yellow's GoHighLevel support" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Seth Brown</h3><p>Agency Owner</p></div></article>
-            <article><Image src="/images/unsplash/portrait-04.jpg" alt="Agency partner sharing a CRM automation success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Josh Radford</h3><p>Agency Owner</p></div></article>
+            <article><Image src="/images/unsplash/partner-david.jpg" alt="Agency partner David Cho discussing Yellow's GoHighLevel architecture" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>David Cho</h3><p>Agency Operations Director, ScaleX</p></div></article>
+            <article><Image src="/images/unsplash/partner-sarah.jpg" alt="Agency partner Sarah Jenkins sharing a CRM automation success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><span aria-hidden="true">▶</span><div><h3>Sarah Jenkins</h3><p>Managing Director, Pipeline Pro</p></div></article>
           </div>
         </div>
       </section>

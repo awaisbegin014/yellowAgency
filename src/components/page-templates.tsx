@@ -32,24 +32,34 @@ export function CollectionPage({
   intro,
   items,
   cardLabel = "Explore",
+  image,
+  introEyebrow = "Everything connected",
+  introHeading = "The right specialists, working as one.",
+  introCopy = "Choose a focused starting point or combine capabilities around a larger growth goal. Either way, the work stays connected to one strategy.",
+  ctaTitle = "Not sure where to start? That's a useful place to begin.",
 }: {
   eyebrow: string;
   title: string;
   intro: string;
   items: CollectionItem[];
   cardLabel?: string;
+  image?: string;
+  introEyebrow?: string;
+  introHeading?: string;
+  introCopy?: string;
+  ctaTitle?: string;
 }) {
   return (
     <main id="top" className="inner-page">
       <section className="page-hero page-hero--yellow">
         <div className="container page-hero__grid">
           <div><p className="eyebrow">{eyebrow}</p><AccentHeading as="h1">{title}</AccentHeading><p className="page-hero__lead">{intro}</p></div>
-          <MediaPlaceholder label={`${title} hero image placeholder`} type="portrait" priority />
+          <MediaPlaceholder label={`${title} showcase`} type="portrait" priority src={image ?? "/images/unsplash/digital-marketing.jpg"} />
         </div>
       </section>
       <section className="section">
         <div className="container">
-          <div className="page-intro"><p className="eyebrow">Everything connected</p><AccentHeading>The right specialists, working as one.</AccentHeading><p className="large-copy">Choose a focused starting point or combine capabilities around a larger growth goal. Either way, the work stays connected to one strategy.</p></div>
+          <div className="page-intro"><p className="eyebrow">{introEyebrow}</p><AccentHeading>{introHeading}</AccentHeading><p className="large-copy">{introCopy}</p></div>
         </div>
       </section>
       <section className="section section--soft">
@@ -62,7 +72,7 @@ export function CollectionPage({
           ))}
         </div>
       </section>
-      <StandardCta title="Not sure where to start? That's a useful place to begin." />
+      <StandardCta title={ctaTitle} />
     </main>
   );
 }
@@ -75,6 +85,20 @@ export function DetailPage({
   points,
   metric,
   metricLabel,
+  image,
+  teamImage,
+  opportunityEyebrow = "The opportunity",
+  opportunityHeading = "Make every part work harder together.",
+  opportunityBody,
+  deliveryEyebrow = "What you get",
+  deliveryHeading = "A complete, practical delivery system.",
+  stepsHeading = "Clear from day one.",
+  steps,
+  teamEyebrow = "A connected team",
+  teamHeading = "Strategy is only useful when the whole team can act on it.",
+  teamCopy = "Yellow brings every needed discipline into one visible working rhythm, with senior leads close to the detail.",
+  teamCtaLabel = "Meet the model",
+  teamCtaHref = "/dedicated-teams",
 }: {
   eyebrow: string;
   title: string;
@@ -83,7 +107,28 @@ export function DetailPage({
   points: string[];
   metric?: string;
   metricLabel?: string;
+  image?: string;
+  teamImage?: string;
+  opportunityEyebrow?: string;
+  opportunityHeading?: string;
+  opportunityBody?: string;
+  deliveryEyebrow?: string;
+  deliveryHeading?: string;
+  stepsHeading?: string;
+  steps?: { heading: string; body: string }[];
+  teamEyebrow?: string;
+  teamHeading?: string;
+  teamCopy?: string;
+  teamCtaLabel?: string;
+  teamCtaHref?: string;
 }) {
+  const defaultSteps = [
+    { heading: "Understand", body: "Align on the audience, market, baseline, goals, and the highest-value problems to solve." },
+    { heading: "Shape", body: "Create the strategy, messages, channel plan, experience, and measurement framework." },
+    { heading: "Launch", body: "Build and release in focused stages so useful work reaches customers sooner." },
+    { heading: "Improve", body: "Review performance, learn from real behavior, and compound the work that creates value." },
+  ];
+  const resolvedSteps = steps ?? defaultSteps;
   return (
     <main id="top" className="inner-page">
       <section className="page-hero">
@@ -92,18 +137,18 @@ export function DetailPage({
             <p className="eyebrow">{eyebrow}</p><AccentHeading as="h1">{title}</AccentHeading><p className="page-hero__lead">{summary}</p>
             <Link href="/book-appointment" className="button button--dark">Talk to a specialist <span>↗</span></Link>
           </div>
-          <MediaPlaceholder label={`${title} video placeholder`} type="video" priority />
+          <MediaPlaceholder label={`${title} presentation`} type="video" priority src={image ?? "/images/unsplash/agency-team.jpg"} />
         </div>
       </section>
       <section className="section">
         <div className="container detail-outcomes">
-          <div><p className="eyebrow">The opportunity</p><AccentHeading>Make every part work harder together.</AccentHeading></div>
-          <div><p className="large-copy">{description}</p><p>We begin with the customer and commercial goal, then build the clearest path from attention to action. That means useful strategy, disciplined execution, and reporting everyone can understand.</p></div>
+          <div><p className="eyebrow">{opportunityEyebrow}</p><AccentHeading>{opportunityHeading}</AccentHeading></div>
+          <div><p className="large-copy">{description}</p><p>{opportunityBody ?? "We begin with the customer and commercial goal, then build the clearest path from attention to action. That means useful strategy, disciplined execution, and reporting everyone can understand."}</p></div>
         </div>
       </section>
       <section className="section section--soft">
         <div className="container detail-outcomes">
-          <div><p className="eyebrow">What you get</p><AccentHeading>A complete, practical delivery system.</AccentHeading>{metric && <div className="mini-metrics"><div><strong>{metric}</strong><span>{metricLabel}</span></div></div>}</div>
+          <div><p className="eyebrow">{deliveryEyebrow}</p><AccentHeading>{deliveryHeading}</AccentHeading>{metric && <div className="mini-metrics"><div><strong>{metric}</strong><span>{metricLabel}</span></div></div>}</div>
           <div className="detail-outcomes__cards">
             {points.map((point, index) => <article key={point}><span>0{index + 1}</span><h3>{point}</h3></article>)}
           </div>
@@ -111,19 +156,18 @@ export function DetailPage({
       </section>
       <section className="section">
         <div className="container">
-          <div className="section-heading"><div><p className="eyebrow">How it works</p><AccentHeading>Clear from day one.</AccentHeading></div><p>Our approach is structured enough to keep momentum and flexible enough to respond to what the evidence tells us.</p></div>
+          <div className="section-heading"><div><p className="eyebrow">How it works</p><AccentHeading>{stepsHeading}</AccentHeading></div><p>Our approach is structured enough to keep momentum and flexible enough to respond to what the evidence tells us.</p></div>
           <div className="detail-steps">
-            <div className="detail-step"><h3>Understand</h3><p>Align on the audience, market, baseline, goals, and the highest-value problems to solve.</p></div>
-            <div className="detail-step"><h3>Shape</h3><p>Create the strategy, messages, channel plan, experience, and measurement framework.</p></div>
-            <div className="detail-step"><h3>Launch</h3><p>Build and release in focused stages so useful work reaches customers sooner.</p></div>
-            <div className="detail-step"><h3>Improve</h3><p>Review performance, learn from real behavior, and compound the work that creates value.</p></div>
+            {resolvedSteps.map((step) => (
+              <div key={step.heading} className="detail-step"><h3>{step.heading}</h3><p>{step.body}</p></div>
+            ))}
           </div>
         </div>
       </section>
       <section className="section section--dark">
         <div className="container featured-work__grid">
-          <div><p className="eyebrow">A connected team</p><AccentHeading>Strategy is only useful when the whole team can act on it.</AccentHeading><p>Yellow brings every needed discipline into one visible working rhythm, with senior leads close to the detail.</p><Link href="/dedicated-teams" className="button button--yellow">Meet the model <span>↗</span></Link></div>
-          <MediaPlaceholder label="Specialist team image placeholder" type="portrait" />
+          <div><p className="eyebrow">{teamEyebrow}</p><AccentHeading>{teamHeading}</AccentHeading><p>{teamCopy}</p><Link href={teamCtaHref} className="button button--yellow">{teamCtaLabel} <span>↗</span></Link></div>
+          <MediaPlaceholder label="Specialist team working on strategy" type="portrait" src={teamImage ?? "/images/unsplash/team-collaboration-04.jpg"} />
         </div>
       </section>
       <FaqBlock />

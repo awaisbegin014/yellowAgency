@@ -59,7 +59,7 @@ export default async function ArticlePage({ params }: Props) {
           <div className="container article-body">
             <MediaPlaceholder
               label={`${post.title} feature image`}
-              src={post.image}
+              src={post.image ?? "/images/unsplash/digital-marketing.jpg"}
               priority
             />
 
