@@ -38,7 +38,8 @@ export function SiteFooter() {
           <a href="mailto:hello@yellowclicks.com">✉ hello@yellowclicks.com</a>
           <div className="reference-footer__social">
             <a href="https://www.facebook.com" target="_blank" rel="noreferrer" aria-label="Yellow Clicks on Facebook">f</a>
-            <a href="https://www.instagram.com" target="_blank" rel="noreferrer" aria-label="Yellow Clicks on Instagram">◎</a>
+            <a href="https://www.instagram.com/theyellowclicks.agency/" target="_blank" rel="noreferrer" aria-label="Yellow Clicks on Instagram">◎</a>
+            <a href="https://www.linkedin.com/company/the-yellow-clicks/" target="_blank" rel="noreferrer" aria-label="Yellow Clicks on LinkedIn">in</a>
           </div>
           <div className="reference-footer__badges" aria-label="Technology partnerships">
             <div className="reference-footer__badge">

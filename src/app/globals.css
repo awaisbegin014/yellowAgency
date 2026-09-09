@@ -3498,6 +3498,7 @@ body:has(.reference-home) .site-header > .site-header__inner > .nav-cta { min-wi
 .reference-footer__social { display: flex; gap: 18px; margin-top: 10px; }
 .reference-footer__social a:not(.hc-btn) { display: grid; width: 44px; height: 44px; place-items: center; margin: 0; border: 2px solid #343434; border-radius: 50%; background: #343434; color: white; font-family: Arial, sans-serif; font-size: 29px; font-weight: 800; line-height: 1; transition: border-color .2s ease, background .2s ease, color .2s ease; }
 .reference-footer__social a:nth-child(2):not(.hc-btn) { border-radius: 12px; background: white; color: #343434; font-size: 32px; }
+.reference-footer__social a:nth-child(3):not(.hc-btn) { font-size: 18px; letter-spacing: -.02em; }
 .reference-footer__social a:hover { border-color: var(--yellow-deep); background: var(--yellow); color: #343434; }
 .reference-footer__badges { display: flex; width: 100%; gap: 14px; margin-top: 28px; }
 .reference-footer__badge { display: flex; min-height: 105px; flex: 1; align-items: center; justify-content: center; gap: 12px; padding: 17px; border: 1px solid #bbb; border-radius: 13px; background: white; }
