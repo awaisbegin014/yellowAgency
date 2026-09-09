@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { MediaPlaceholder } from "@/components/media-placeholder";
 import { AccentHeading, StandardCta } from "@/components/page-templates";
 import { getBlogBySlug, getPublishedBlogs } from "@/lib/blog-service";
+import { Reveal } from "@/components/motion-primitives";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -43,7 +44,7 @@ export default async function ArticlePage({ params }: Props) {
     <main id="top" className="inner-page">
       <article>
         <header className="page-hero page-hero--yellow">
-          <div className="container article-header">
+          <Reveal className="container article-header">
             <p className="eyebrow">{post.category}</p>
             <AccentHeading as="h1">{post.title}</AccentHeading>
             <p className="page-hero__lead">{post.excerpt}</p>
@@ -52,11 +53,11 @@ export default async function ArticlePage({ params }: Props) {
               <span>{post.readTime}</span>
               <span>{post.author || "Yellow Strategy Team"}</span>
             </div>
-          </div>
+          </Reveal>
         </header>
 
         <div className="section">
-          <div className="container article-body">
+          <Reveal className="container article-body">
             <MediaPlaceholder
               label={`${post.title} feature image`}
               src={post.image ?? "/images/unsplash/digital-marketing.jpg"}
@@ -119,7 +120,7 @@ export default async function ArticlePage({ params }: Props) {
                 Discuss this with our team <span>↗</span>
               </Link>
             </div>
-          </div>
+          </Reveal>
         </div>
       </article>
 

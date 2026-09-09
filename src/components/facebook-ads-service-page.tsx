@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { LeadForm } from "@/components/interactive";
+import { FloatLoop, Reveal, StaggerGroup, StaggerItem } from "@/components/motion-primitives";
 
 export type DashboardVariant = "performance" | "audience" | "campaigns" | "reporting" | "landing" | "proposal" | "creative";
 export type DashboardChannel = "facebook" | "google" | "seo" | "ppc" | "social" | "design" | "development" | "graphics" | "content" | "ghl" | "ai-ugc";
@@ -290,8 +291,8 @@ export function DashboardMock({ variant, channel = "facebook" }: { variant: Dash
           <DashboardVisualization variant={variant} mix={mix} channel={channel} />
         </div>
       </div>
-      <div className="facebook-service__float-card facebook-service__float-card--left"><small>Cost per result</small><b>{copy.cost}</b><i /></div>
-      <div className="facebook-service__float-card facebook-service__float-card--right"><small>Qualified pipeline</small><b>{copy.pipeline}</b><div>{[35, 58, 82, 64].map((height, index) => <i key={index} style={{ height: `${height}%` }} />)}</div></div>
+      <FloatLoop className="facebook-service__float-card facebook-service__float-card--left" duration={5}><small>Cost per result</small><b>{copy.cost}</b><i /></FloatLoop>
+      <FloatLoop className="facebook-service__float-card facebook-service__float-card--right" delay={0.6} duration={5.5}><small>Qualified pipeline</small><b>{copy.pipeline}</b><div>{[35, 58, 82, 64].map((height, index) => <i key={index} style={{ height: `${height}%` }} />)}</div></FloatLoop>
     </div>
   );
 }
@@ -329,12 +330,12 @@ export function ContentSection({
 }) {
   return (
     <section className={`facebook-service__section${soft ? " facebook-service__section--soft" : ""}`}>
-      <div className="container facebook-service__content">
+      <Reveal className="container facebook-service__content">
         <ServiceHeading>{title}</ServiceHeading>
         {paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
         {items && <CheckList items={items} />}
         <DashboardMock variant={dashboard} channel={channel} />
-      </div>
+      </Reveal>
     </section>
   );
 }
@@ -343,32 +344,32 @@ export function FacebookAdsServicePage() {
   return (
     <main id="top" className="inner-page facebook-service">
       <section className="facebook-service__hero">
-        <div className="container">
-          <p className="eyebrow">White-label paid social</p>
-          <h1>White Label <span>Facebook Ads</span></h1>
-          <p>Campaign strategy, creative coordination, media buying, optimization, and agency-ready reporting—delivered quietly behind your brand.</p>
-          <Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link>
-        </div>
+        <StaggerGroup className="container">
+          <StaggerItem as="p" className="eyebrow">White-label paid social</StaggerItem>
+          <StaggerItem as="h1">White Label <span>Facebook Ads</span></StaggerItem>
+          <StaggerItem as="p">Campaign strategy, creative coordination, media buying, optimization, and agency-ready reporting—delivered quietly behind your brand.</StaggerItem>
+          <StaggerItem><Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link></StaggerItem>
+        </StaggerGroup>
       </section>
 
       <section className="facebook-service__section facebook-service__intro">
-        <div className="container facebook-service__content">
+        <Reveal className="container facebook-service__content">
           <p className="eyebrow">Built for qualified demand</p>
           <ServiceHeading>Drive qualified sales and leads with Yellow.</ServiceHeading>
           <p>Facebook and Instagram can create demand at every stage of the customer journey, but dependable results require more than boosting posts. Yellow combines audience research, offer strategy, conversion-focused creative, accurate tracking, and disciplined media buying to help your agency turn paid social into a measurable growth channel.</p>
           <p>Our specialists work as an extension of your team. We plan campaigns around the client&apos;s goals, test messages and audiences, monitor spend, improve performance, and prepare clear reports that your agency can confidently present as its own.</p>
           <Link href="/book-appointment" className="button button--dark">Schedule a consultation <span aria-hidden="true">↗</span></Link>
           <DashboardMock variant="performance" />
-        </div>
+        </Reveal>
       </section>
 
       <section className="facebook-service__proof">
         <div className="container">
-          <div className="facebook-service__proof-heading"><ServiceHeading>Hear what our partners have to say about us.</ServiceHeading><div><p>Agency partners value responsive communication, specialist depth, and work that arrives ready to share.</p><CheckList items={["Scale without expanding fixed overhead", "Protect every client relationship", "Deliver through experienced specialists"]} /></div></div>
-          <div className="facebook-service__videos">
-            <article><Image src="/images/unsplash/portrait-02.jpg" alt="Agency partner discussing Yellow's Facebook Ads support" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Seth Brown</h3><p>Agency Owner</p></div></article>
-            <article><Image src="/images/unsplash/portrait-04.jpg" alt="Agency partner sharing a paid social success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Josh Radford</h3><p>Agency Owner</p></div></article>
-          </div>
+          <Reveal className="facebook-service__proof-heading"><ServiceHeading>Hear what our partners have to say about us.</ServiceHeading><div><p>Agency partners value responsive communication, specialist depth, and work that arrives ready to share.</p><CheckList items={["Scale without expanding fixed overhead", "Protect every client relationship", "Deliver through experienced specialists"]} /></div></Reveal>
+          <StaggerGroup className="facebook-service__videos">
+            <StaggerItem as="article"><Image src="/images/unsplash/portrait-02.jpg" alt="Agency partner discussing Yellow's Facebook Ads support" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Seth Brown</h3><p>Agency Owner</p></div></StaggerItem>
+            <StaggerItem as="article"><Image src="/images/unsplash/portrait-04.jpg" alt="Agency partner sharing a paid social success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Josh Radford</h3><p>Agency Owner</p></div></StaggerItem>
+          </StaggerGroup>
         </div>
       </section>
 
@@ -393,13 +394,13 @@ export function FacebookAdsServicePage() {
       />
 
       <section className="facebook-service__form-section">
-        <div className="container facebook-service__form-grid">
+        <Reveal className="container facebook-service__form-grid">
           <div><p className="eyebrow">Grow without growing overhead</p><ServiceHeading>Power up and join other ambitious agencies.</ServiceHeading><p>Add a specialist paid social team to your offer while your people stay focused on relationships, sales, and strategy.</p><CheckList items={["Expand your existing and new services", "Generate more revenue without increasing fixed costs", "Save and reallocate your team&apos;s time", "Customize delivery across client niches", "Gain practical platform insight and reporting"]} /></div>
           <LeadForm />
-        </div>
+        </Reveal>
       </section>
 
-      <section className="facebook-service__benefits-intro"><div className="container"><p className="eyebrow">A complete delivery model</p><ServiceHeading>Benefits of Yellow&apos;s white-label Facebook Ads services.</ServiceHeading><p>More than media buying, this is an accountable system for planning, producing, improving, and reporting paid social campaigns under your agency&apos;s name.</p><p>Your account lead coordinates audiences, creative, approvals, optimization, and reporting so every campaign moves forward with clear ownership and a consistent standard of delivery.</p></div></section>
+      <section className="facebook-service__benefits-intro"><Reveal className="container"><p className="eyebrow">A complete delivery model</p><ServiceHeading>Benefits of Yellow&apos;s white-label Facebook Ads services.</ServiceHeading><p>More than media buying, this is an accountable system for planning, producing, improving, and reporting paid social campaigns under your agency&apos;s name.</p><p>Your account lead coordinates audiences, creative, approvals, optimization, and reporting so every campaign moves forward with clear ownership and a consistent standard of delivery.</p></Reveal></section>
 
       <ContentSection
         title="Power up your Facebook Ads offering."
@@ -446,7 +447,7 @@ export function FacebookAdsServicePage() {
       />
 
       <section className="facebook-service__faq">
-        <div className="container facebook-service__faq-grid">
+        <Reveal className="container facebook-service__faq-grid">
           <div><p className="eyebrow">Frequently asked questions</p><ServiceHeading>Everything you need to know before we begin.</ServiceHeading><p>Still deciding whether white-label paid social fits your agency? These are the questions we hear most often.</p></div>
           <div className="facebook-service__faq-list">
             {facebookAdsFaqs.map((faq, index) => (
@@ -456,10 +457,10 @@ export function FacebookAdsServicePage() {
               </details>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
-      <section className="facebook-service__final-cta"><div className="container"><div><p className="eyebrow">Your team behind the scenes</p><ServiceHeading>Ready to add paid social capacity?</ServiceHeading><p>Let&apos;s map the right white-label Facebook Ads model for your agency and clients.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></div></section>
+      <section className="facebook-service__final-cta"><Reveal className="container"><div><p className="eyebrow">Your team behind the scenes</p><ServiceHeading>Ready to add paid social capacity?</ServiceHeading><p>Let&apos;s map the right white-label Facebook Ads model for your agency and clients.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></Reveal></section>
     </main>
   );
 }

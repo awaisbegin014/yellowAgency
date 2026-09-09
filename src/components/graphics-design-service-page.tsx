@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CheckList, ContentSection, DashboardMock, ServiceHeading } from "@/components/facebook-ads-service-page";
 import { LeadForm } from "@/components/interactive";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion-primitives";
 
 const graphicsDesignFaqs = [
   {
@@ -38,35 +39,35 @@ export function GraphicsDesignServicePage() {
   return (
     <main id="top" className="inner-page facebook-service graphics-design-service">
       <section className="facebook-service__hero">
-        <div className="container">
-          <p className="eyebrow">White-label creative production</p>
-          <h1>White Label <span>Graphic Design</span></h1>
-          <p>Brand systems, campaign assets, social graphics, advertising, presentations, documents, and print-ready production—delivered quietly behind your agency.</p>
-          <Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link>
-        </div>
+        <StaggerGroup className="container">
+          <StaggerItem as="p" className="eyebrow">White-label creative production</StaggerItem>
+          <StaggerItem as="h1">White Label <span>Graphic Design</span></StaggerItem>
+          <StaggerItem as="p">Brand systems, campaign assets, social graphics, advertising, presentations, documents, and print-ready production—delivered quietly behind your agency.</StaggerItem>
+          <StaggerItem><Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link></StaggerItem>
+        </StaggerGroup>
       </section>
 
       <section className="facebook-service__section facebook-service__intro">
-        <div className="container facebook-service__content">
+        <Reveal className="container facebook-service__content">
           <p className="eyebrow">A dependable creative team behind your name</p>
           <ServiceHeading>Improve client creative without expanding fixed overhead.</ServiceHeading>
           <p>Agencies need a steady stream of visuals across campaigns, channels, presentations, sales materials, and brand touchpoints. The challenge is maintaining quality and consistency while deadlines, formats, and client expectations change every day.</p>
           <p>Yellow gives your agency flexible design capacity with an organized briefing, production, review, and handoff workflow. We create under your direction and behind your brand while your team owns the strategy and client relationship.</p>
           <Link href="/book-appointment" className="button button--dark">Schedule a consultation <span aria-hidden="true">↗</span></Link>
           <DashboardMock variant="performance" channel="graphics" />
-        </div>
+        </Reveal>
       </section>
 
       <section className="facebook-service__proof">
         <div className="container">
-          <div className="facebook-service__proof-heading">
+          <Reveal className="facebook-service__proof-heading">
             <ServiceHeading>Hear what our partners have to say about us.</ServiceHeading>
             <div><p>Agency partners rely on Yellow for responsive collaboration, on-brand execution, and organized assets ready to share.</p><CheckList items={["Scale creative delivery without fixed overhead", "Keep control of client direction and approvals", "Deliver through an experienced design team"]} /></div>
-          </div>
-          <div className="facebook-service__videos">
-            <article><Image src="/images/unsplash/portrait-03.jpg" alt="Agency partner Liam Thorne discussing Yellow's graphic design production" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Liam Thorne</h3><p>Brand Director, Thorne Creative</p></div></article>
-            <article><Image src="/images/unsplash/partner-elena.jpg" alt="Agency partner Elena Rostova sharing a brand production success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Elena Rostova</h3><p>Founder, Lumina Brand Lab</p></div></article>
-          </div>
+          </Reveal>
+          <StaggerGroup className="facebook-service__videos">
+            <StaggerItem as="article"><Image src="/images/unsplash/portrait-03.jpg" alt="Agency partner Liam Thorne discussing Yellow's graphic design production" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Liam Thorne</h3><p>Brand Director, Thorne Creative</p></div></StaggerItem>
+            <StaggerItem as="article"><Image src="/images/unsplash/partner-elena.jpg" alt="Agency partner Elena Rostova sharing a brand production success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Elena Rostova</h3><p>Founder, Lumina Brand Lab</p></div></StaggerItem>
+          </StaggerGroup>
         </div>
       </section>
 
@@ -93,13 +94,13 @@ export function GraphicsDesignServicePage() {
       />
 
       <section className="facebook-service__form-section">
-        <div className="container facebook-service__form-grid">
+        <Reveal className="container facebook-service__form-grid">
           <div><p className="eyebrow">Grow without growing overhead</p><ServiceHeading>Power up and join other ambitious agencies.</ServiceHeading><p>Add dependable creative capacity while your internal team stays focused on relationships, sales, campaigns, and strategic direction.</p><CheckList items={["Expand your creative service offering", "Generate revenue without increasing fixed costs", "Save and reallocate your team’s time", "Support multiple clients and asset formats", "Gain reliable creative production and QA"]} /></div>
           <LeadForm />
-        </div>
+        </Reveal>
       </section>
 
-      <section className="facebook-service__benefits-intro"><div className="container"><p className="eyebrow">A complete creative delivery model</p><ServiceHeading>Benefits of Yellow’s white-label graphic design services.</ServiceHeading><p>Briefing, concept development, production, review, revisions, and organized handoff stay connected through one system designed around your agency.</p><p>From campaign assets to reusable brand templates, every file is checked for message, hierarchy, consistency, dimensions, and export quality before it reaches your team.</p></div></section>
+      <section className="facebook-service__benefits-intro"><Reveal className="container"><p className="eyebrow">A complete creative delivery model</p><ServiceHeading>Benefits of Yellow’s white-label graphic design services.</ServiceHeading><p>Briefing, concept development, production, review, revisions, and organized handoff stay connected through one system designed around your agency.</p><p>From campaign assets to reusable brand templates, every file is checked for message, hierarchy, consistency, dimensions, and export quality before it reaches your team.</p></Reveal></section>
 
       <ContentSection
         title="Cost-effective creative capacity that flexes with demand."
@@ -145,7 +146,7 @@ export function GraphicsDesignServicePage() {
       />
 
       <section className="facebook-service__faq">
-        <div className="container facebook-service__faq-grid">
+        <Reveal className="container facebook-service__faq-grid">
           <div><p className="eyebrow">Frequently asked questions</p><ServiceHeading>Everything you need to know before we begin.</ServiceHeading><p>These are the questions agencies ask most often before adding white-label graphic design support.</p></div>
           <div className="facebook-service__faq-list">
             {graphicsDesignFaqs.map((faq, index) => (
@@ -155,10 +156,10 @@ export function GraphicsDesignServicePage() {
               </details>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
-      <section className="facebook-service__final-cta"><div className="container"><div><p className="eyebrow">Your creative team behind the scenes</p><ServiceHeading>Ready to add graphic design capacity?</ServiceHeading><p>Let’s map the right white-label creative model for your agency and clients.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></div></section>
+      <section className="facebook-service__final-cta"><Reveal className="container"><div><p className="eyebrow">Your creative team behind the scenes</p><ServiceHeading>Ready to add graphic design capacity?</ServiceHeading><p>Let’s map the right white-label creative model for your agency and clients.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></Reveal></section>
     </main>
   );
 }

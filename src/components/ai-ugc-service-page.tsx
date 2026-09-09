@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CheckList, ContentSection, DashboardMock, ServiceHeading } from "@/components/facebook-ads-service-page";
 import { LeadForm } from "@/components/interactive";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion-primitives";
 
 const aiUgcFaqs = [
   {
@@ -38,35 +39,35 @@ export function AiUgcServicePage() {
   return (
     <main id="top" className="inner-page facebook-service ai-ugc-service">
       <section className="facebook-service__hero">
-        <div className="container">
-          <p className="eyebrow">White-label video creative production</p>
-          <h1>High-Converting White Label <span>AI UGC Services</span></h1>
-          <p>Viral AI creator videos, high-converting ad hooks, and vertical social content—planned, generated, edited, and delivered quietly under your agency brand.</p>
-          <Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link>
-        </div>
+        <StaggerGroup className="container">
+          <StaggerItem as="p" className="eyebrow">White-label video creative production</StaggerItem>
+          <StaggerItem as="h1">High-Converting White Label <span>AI UGC Services</span></StaggerItem>
+          <StaggerItem as="p">Viral AI creator videos, high-converting ad hooks, and vertical social content—planned, generated, edited, and delivered quietly under your agency brand.</StaggerItem>
+          <StaggerItem><Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link></StaggerItem>
+        </StaggerGroup>
       </section>
 
       <section className="facebook-service__section facebook-service__intro">
-        <div className="container facebook-service__content">
+        <Reveal className="container facebook-service__content">
           <p className="eyebrow">Creator-style video ads at AI speed</p>
           <ServiceHeading>Scale authentic video ad creative without creator headaches.</ServiceHeading>
           <p>Modern social media audiences scroll past polished corporate ads and engage with authentic creator-style videos. Yellow brings AI video synthesis, viral scriptwriting, motion graphics, and rapid performance testing into one white-label video engine for your agency.</p>
           <p>We craft high-converting video variations around audience pain points and proven ad hooks. Every batch arrives fully edited with captions, sound effects, and calls to action ready to drive conversions across Meta, TikTok, and YouTube.</p>
           <Link href="/book-appointment" className="button button--dark">Schedule a consultation <span aria-hidden="true">↗</span></Link>
           <DashboardMock variant="performance" channel="ai-ugc" />
-        </div>
+        </Reveal>
       </section>
 
       <section className="facebook-service__proof">
         <div className="container">
-          <div className="facebook-service__proof-heading">
+          <Reveal className="facebook-service__proof-heading">
             <ServiceHeading>Hear what our agency partners say about us.</ServiceHeading>
             <div><p>Agencies rely on Yellow for rapid creative testing, high-hook video ads, and reliable fulfillment delivered on schedule.</p><CheckList items={["Scale video ad output 5× faster without hiring talent", "Maintain 100% white-label privacy and ownership", "Deliver high-performing UGC creatives across Meta & TikTok"]} /></div>
-          </div>
-          <div className="facebook-service__videos">
-            <article><Image src="/images/unsplash/partner-sarah.jpg" alt="Agency owner Sarah Jenkins talking about Yellow AI UGC performance" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Sarah Jenkins</h3><p>Founder, ViralEdge Media</p></div></article>
-            <article><Image src="/images/unsplash/partner-david.jpg" alt="Agency partner David Cho discussing AI UGC creative scale" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>David Cho</h3><p>Paid Social Lead, Spark Growth</p></div></article>
-          </div>
+          </Reveal>
+          <StaggerGroup className="facebook-service__videos">
+            <StaggerItem as="article"><Image src="/images/unsplash/partner-sarah.jpg" alt="Agency owner Sarah Jenkins talking about Yellow AI UGC performance" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Sarah Jenkins</h3><p>Founder, ViralEdge Media</p></div></StaggerItem>
+            <StaggerItem as="article"><Image src="/images/unsplash/partner-david.jpg" alt="Agency partner David Cho discussing AI UGC creative scale" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>David Cho</h3><p>Paid Social Lead, Spark Growth</p></div></StaggerItem>
+          </StaggerGroup>
         </div>
       </section>
 
@@ -101,13 +102,13 @@ export function AiUgcServicePage() {
       />
 
       <section className="facebook-service__form-section">
-        <div className="container facebook-service__form-grid">
+        <Reveal className="container facebook-service__form-grid">
           <div><p className="eyebrow">Grow without expanding overhead</p><ServiceHeading>Power up and join ambitious growth agencies.</ServiceHeading><p>Add a dedicated AI UGC video production lab while your internal team focuses on client management, strategy, and scaling retainers.</p><CheckList items={["Expand ad creative offerings with zero overhead", "Deliver batch video variations in 48-72 hours", "Lower video production costs by up to 70%", "Support e-commerce, local service, & B2B brands", "Improve client ad account ROAS with fresh creative"]} /></div>
           <LeadForm />
-        </div>
+        </Reveal>
       </section>
 
-      <section className="facebook-service__benefits-intro"><div className="container"><p className="eyebrow">A complete AI video fulfillment engine</p><ServiceHeading>Benefits of Yellow’s white-label AI UGC services.</ServiceHeading><p>Your agency gets flexible video production capacity, script strategy, AI avatar generation, professional post-production editing, and performance-driven creative iterations.</p><p>We help you provide continuous fresh video ads to prevent ad fatigue and keep performance metrics climbing across all client channels.</p></div></section>
+      <section className="facebook-service__benefits-intro"><Reveal className="container"><p className="eyebrow">A complete AI video fulfillment engine</p><ServiceHeading>Benefits of Yellow’s white-label AI UGC services.</ServiceHeading><p>Your agency gets flexible video production capacity, script strategy, AI avatar generation, professional post-production editing, and performance-driven creative iterations.</p><p>We help you provide continuous fresh video ads to prevent ad fatigue and keep performance metrics climbing across all client channels.</p></Reveal></section>
 
       <ContentSection
         title="Rapid creative iteration to conquer ad fatigue."
@@ -132,7 +133,7 @@ export function AiUgcServicePage() {
       />
 
       <section className="facebook-service__faq">
-        <div className="container facebook-service__faq-grid">
+        <Reveal className="container facebook-service__faq-grid">
           <div><p className="eyebrow">Frequently asked questions</p><ServiceHeading>Everything you need to know before we begin.</ServiceHeading><p>These are the questions agencies ask most often before adding white-label AI UGC services.</p></div>
           <div className="facebook-service__faq-list">
             {aiUgcFaqs.map((faq, index) => (
@@ -142,10 +143,10 @@ export function AiUgcServicePage() {
               </details>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
-      <section className="facebook-service__final-cta"><div className="container"><div><p className="eyebrow">Your AI video team behind the scenes</p><ServiceHeading>Ready to add AI UGC video capacity?</ServiceHeading><p>Let’s map the right white-label AI video production model for your agency and clients.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></div></section>
+      <section className="facebook-service__final-cta"><Reveal className="container"><div><p className="eyebrow">Your AI video team behind the scenes</p><ServiceHeading>Ready to add AI UGC video capacity?</ServiceHeading><p>Let’s map the right white-label AI video production model for your agency and clients.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></Reveal></section>
     </main>
   );
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion-primitives";
 
 const capabilities = [
   "SEO strategy",
@@ -160,79 +161,79 @@ export function DentalCaseStudyPage() {
     <main id="top" className="inner-page dental-study">
       <section className="dental-study__hero">
         <div className="container dental-study__hero-inner">
-          <div className="dental-study__hero-copy">
-            <p className="eyebrow">Dental digital marketing case study</p>
-            <h1>How we grew organic leads by <span>1,161.76%</span> for our dental client?</h1>
-            <div className="dental-study__hero-actions"><Link href="/book-appointment" className="button button--dark">Free 20-min consultation <span aria-hidden="true">↗</span></Link></div>
-          </div>
+          <StaggerGroup className="dental-study__hero-copy">
+            <StaggerItem as="p" className="eyebrow">Dental digital marketing case study</StaggerItem>
+            <StaggerItem as="h1">How we grew organic leads by <span>1,161.76%</span> for our dental client?</StaggerItem>
+            <StaggerItem className="dental-study__hero-actions"><Link href="/book-appointment" className="button button--dark">Free 20-min consultation <span aria-hidden="true">↗</span></Link></StaggerItem>
+          </StaggerGroup>
         </div>
       </section>
 
       <section className="dental-study__section dental-study__overview">
         <div className="container dental-study__overview-grid">
-          <div className="dental-study__overview-intro"><p className="eyebrow">Client overview</p><CaseStudyHeading>A trusted local practice ready to be found by more patients.</CaseStudyHeading><p>The client provides dental and orthodontic care across its region, combining modern technology with a professional, patient-first experience. Strong referrals had built the practice—but digital discovery had not kept pace.</p></div>
-          <div className="dental-study__challenge-grid">
-            <article><span>01</span><h3>The objective</h3><p>Create a more functional website journey, strengthen search rankings, and turn organic and paid visibility into measurable appointment requests.</p></article>
-            <article><span>02</span><h3>The challenge</h3><p>Rankings fluctuated because the practice depended on word of mouth. Yellow needed to build lasting demand in a competitive local healthcare market.</p></article>
-          </div>
+          <Reveal className="dental-study__overview-intro"><p className="eyebrow">Client overview</p><CaseStudyHeading>A trusted local practice ready to be found by more patients.</CaseStudyHeading><p>The client provides dental and orthodontic care across its region, combining modern technology with a professional, patient-first experience. Strong referrals had built the practice—but digital discovery had not kept pace.</p></Reveal>
+          <StaggerGroup className="dental-study__challenge-grid">
+            <StaggerItem as="article"><span>01</span><h3>The objective</h3><p>Create a more functional website journey, strengthen search rankings, and turn organic and paid visibility into measurable appointment requests.</p></StaggerItem>
+            <StaggerItem as="article"><span>02</span><h3>The challenge</h3><p>Rankings fluctuated because the practice depended on word of mouth. Yellow needed to build lasting demand in a competitive local healthcare market.</p></StaggerItem>
+          </StaggerGroup>
         </div>
       </section>
 
       <section className="dental-study__section dental-study__solution">
-        <div className="container dental-study__copy">
+        <Reveal className="container dental-study__copy">
           <p className="eyebrow">Our digital marketing solution</p>
           <CaseStudyHeading>Make every channel feel like one reassuring patient journey.</CaseStudyHeading>
           <div className="dental-study__solution-copy"><p>We began with market, competitor, and keyword research, replacing low-volume terms with searches that reflected real treatment needs and local intent. New ad messaging spoke directly to patient concerns while clearer landing-page paths made calls and appointment requests easier.</p><p>Local visibility, Google Business Profile optimization, useful treatment content, and authoritative links helped the practice build a credible search footprint. In parallel, a more disciplined paid-search structure reduced waste and focused investment on the services most likely to produce qualified enquiries.</p></div>
           <PatientJourneyBoard />
-        </div>
+        </Reveal>
       </section>
 
       <section className="dental-study__section dental-study__method">
         <div className="container">
-          <div className="dental-study__section-heading"><div><p className="eyebrow">How we did it</p><CaseStudyHeading>Ten capabilities. One patient-growth system.</CaseStudyHeading></div><p>Strategy, content, local visibility, paid media, and conversion design shared the same priorities and measurement plan. The team mapped every activity to a patient decision—from discovering a nearby practice to understanding a treatment and confidently requesting an appointment.</p></div>
-          <div className="dental-study__method-grid">{capabilities.map((capability, index) => <article key={capability}><span>{String(index + 1).padStart(2, "0")}</span><h3>{capability}</h3></article>)}</div>
+          <Reveal className="dental-study__section-heading"><div><p className="eyebrow">How we did it</p><CaseStudyHeading>Ten capabilities. One patient-growth system.</CaseStudyHeading></div><p>Strategy, content, local visibility, paid media, and conversion design shared the same priorities and measurement plan. The team mapped every activity to a patient decision—from discovering a nearby practice to understanding a treatment and confidently requesting an appointment.</p></Reveal>
+          <StaggerGroup className="dental-study__method-grid">{capabilities.map((capability, index) => <StaggerItem as="article" key={capability}><span>{String(index + 1).padStart(2, "0")}</span><h3>{capability}</h3></StaggerItem>)}</StaggerGroup>
         </div>
       </section>
 
       <section className="dental-study__section dental-study__lead-magnet">
-        <div className="container dental-study__split">
+        <Reveal className="container dental-study__split">
           <div><p className="eyebrow">Free lead-magnet campaign</p><CaseStudyHeading>Turn helpful expertise into a reason to connect.</CaseStudyHeading><p>Patient education became an acquisition asset. Helpful content introduced the practice before treatment was urgent, while paid distribution and organic optimization kept that expertise working over time.</p><ul>{leadMagnetBenefits.map((benefit) => <li key={benefit}>{benefit}</li>)}</ul><Link href="/book-appointment" className="button button--dark">Plan your campaign <span aria-hidden="true">↗</span></Link></div>
           <GrowthDashboard />
-        </div>
+        </Reveal>
       </section>
 
       <section id="results" className="dental-study__section dental-study__results">
         <div className="container">
-          <div className="dental-study__section-heading dental-study__results-heading"><div><p className="eyebrow">The results</p><CaseStudyHeading>A much stronger digital footprint—and a healthier pipeline.</CaseStudyHeading><div className="dental-study__results-copy"><p>The campaign exceeded its original growth target, raised high-intent visibility, and improved conversion efficiency at the same time.</p><p>More patients found the practice through relevant local and treatment searches, while stronger educational content gave them the confidence to call, request an appointment, or explore a service in greater detail.</p><p>Because organic search, paid media, and the landing experience were measured together, the practice gained more than a traffic increase—it gained a dependable patient-acquisition system built to keep compounding.</p></div></div></div>
-          <div className="dental-study__metric-grid">{resultMetrics.map(([metric, label]) => <article key={label}><strong>{metric}</strong><span>{label}</span></article>)}</div>
-          <ResultsDashboard />
+          <Reveal className="dental-study__section-heading dental-study__results-heading"><div><p className="eyebrow">The results</p><CaseStudyHeading>A much stronger digital footprint—and a healthier pipeline.</CaseStudyHeading><div className="dental-study__results-copy"><p>The campaign exceeded its original growth target, raised high-intent visibility, and improved conversion efficiency at the same time.</p><p>More patients found the practice through relevant local and treatment searches, while stronger educational content gave them the confidence to call, request an appointment, or explore a service in greater detail.</p><p>Because organic search, paid media, and the landing experience were measured together, the practice gained more than a traffic increase—it gained a dependable patient-acquisition system built to keep compounding.</p></div></div></Reveal>
+          <StaggerGroup className="dental-study__metric-grid">{resultMetrics.map(([metric, label]) => <StaggerItem as="article" key={label}><strong>{metric}</strong><span>{label}</span></StaggerItem>)}</StaggerGroup>
+          <Reveal><ResultsDashboard /></Reveal>
         </div>
       </section>
 
       <section className="dental-study__section dental-study__analysis">
         <div className="container">
-          <div className="dental-study__copy"><p className="eyebrow">SEO + PPC analysis</p><CaseStudyHeading>Organic authority and paid efficiency moved together.</CaseStudyHeading><p>More relevant keywords improved both search visibility and media performance—bringing the practice closer to patients already looking for care.</p></div>
-          <div className="dental-study__analysis-grid"><article><div><span>Organic search</span><h3>Local SEO built compounding visibility.</h3><p>Treatment content, local optimization, and stronger authority signals improved rankings for the searches that lead to appointments.</p></div><SeoBoard /></article><article><div><span>Paid search</span><h3>Sharper intent made every click work harder.</h3><p>Refined targeting, better ad relevance, and easier conversion paths increased enquiries while reducing cost per lead.</p></div><PpcBoard /></article></div>
+          <Reveal className="dental-study__copy"><p className="eyebrow">SEO + PPC analysis</p><CaseStudyHeading>Organic authority and paid efficiency moved together.</CaseStudyHeading><p>More relevant keywords improved both search visibility and media performance—bringing the practice closer to patients already looking for care.</p></Reveal>
+          <StaggerGroup className="dental-study__analysis-grid"><StaggerItem as="article"><div><span>Organic search</span><h3>Local SEO built compounding visibility.</h3><p>Treatment content, local optimization, and stronger authority signals improved rankings for the searches that lead to appointments.</p></div><SeoBoard /></StaggerItem><StaggerItem as="article"><div><span>Paid search</span><h3>Sharper intent made every click work harder.</h3><p>Refined targeting, better ad relevance, and easier conversion paths increased enquiries while reducing cost per lead.</p></div><PpcBoard /></StaggerItem></StaggerGroup>
         </div>
       </section>
 
       <section className="dental-study__section dental-study__conclusion">
-        <div className="container dental-study__split">
+        <Reveal className="container dental-study__split">
           <div><p className="eyebrow">Spend less and earn more</p><CaseStudyHeading>Relevance turned visibility into booked appointments.</CaseStudyHeading><p>More precise keywords attracted better-qualified prospects. Stronger content built confidence before the first call, while simpler landing-page actions removed friction from the decision.</p><p>The result was not just more traffic. The practice gained a connected acquisition system that improved visibility, conversion, and media efficiency together.</p></div>
           <blockquote><div className="dental-study__quote-mark" aria-hidden="true">“</div><p>I couldn&apos;t recommend the team more highly. Their work is impeccable and their communication is incredibly professional.</p><footer><span>SB</span><div><strong>Seth Brown</strong><small>Agency partner</small></div><div aria-label="Five out of five stars">★★★★★</div></footer></blockquote>
-        </div>
+        </Reveal>
       </section>
 
       <section className="dental-study__section dental-study__onboarding">
-        <div className="container dental-study__copy">
+        <Reveal className="container dental-study__copy">
           <p className="eyebrow">White-label onboarding</p>
           <CaseStudyHeading>Simple, confidential, and ready to move.</CaseStudyHeading>
           <p>Your agency stays in control of the client relationship. Yellow brings the audit, strategy, delivery team, and reporting structure that help you move from opportunity to execution with confidence.</p>
           <OnboardingFlow />
-        </div>
+        </Reveal>
       </section>
 
-      <section className="dental-study__cta"><div className="container"><div><p className="eyebrow">Your next growth story</p><h2>Can Yellow take care of your clients?</h2><p>Book a focused strategy call and see how our white-label team can support your agency&apos;s next win.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></div></section>
+      <section className="dental-study__cta"><Reveal className="container"><div><p className="eyebrow">Your next growth story</p><h2>Can Yellow take care of your clients?</h2><p>Book a focused strategy call and see how our white-label team can support your agency&apos;s next win.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></Reveal></section>
     </main>
   );
 }

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CheckList, ContentSection, DashboardMock, ServiceHeading } from "@/components/facebook-ads-service-page";
 import { LeadForm } from "@/components/interactive";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion-primitives";
 
 const webDesignFaqs = [
   {
@@ -38,35 +39,35 @@ export function WebDesignServicePage() {
   return (
     <main id="top" className="inner-page facebook-service web-design-service">
       <section className="facebook-service__hero">
-        <div className="container">
-          <p className="eyebrow">White-label digital experiences</p>
-          <h1>White Label <span>Web Design</span></h1>
-          <p>UX strategy, wireframes, responsive interface design, prototypes, design systems, and developer-ready handoff—delivered quietly behind your agency.</p>
-          <Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link>
-        </div>
+        <StaggerGroup className="container">
+          <StaggerItem as="p" className="eyebrow">White-label digital experiences</StaggerItem>
+          <StaggerItem as="h1">White Label <span>Web Design</span></StaggerItem>
+          <StaggerItem as="p">UX strategy, wireframes, responsive interface design, prototypes, design systems, and developer-ready handoff—delivered quietly behind your agency.</StaggerItem>
+          <StaggerItem><Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link></StaggerItem>
+        </StaggerGroup>
       </section>
 
       <section className="facebook-service__section facebook-service__intro">
-        <div className="container facebook-service__content">
+        <Reveal className="container facebook-service__content">
           <p className="eyebrow">Design that looks good and works hard</p>
           <ServiceHeading>Resell thoughtful website design under your brand.</ServiceHeading>
           <p>A strong website has to do more than look polished. It should make the client’s value clear, guide the right visitor toward action, work comfortably on every device, support useful content, and give the development team a coherent system to build.</p>
           <p>Yellow works behind your agency to turn business goals, audience needs, brand direction, and content into responsive website experiences. Your team owns the relationship and presentation while our designers handle the detailed strategy and production.</p>
           <Link href="/book-appointment" className="button button--dark">Schedule a consultation <span aria-hidden="true">↗</span></Link>
           <DashboardMock variant="performance" channel="design" />
-        </div>
+        </Reveal>
       </section>
 
       <section className="facebook-service__proof">
         <div className="container">
-          <div className="facebook-service__proof-heading">
+          <Reveal className="facebook-service__proof-heading">
             <ServiceHeading>Hear what our partners have to say about us.</ServiceHeading>
             <div><p>Agency partners rely on Yellow for thoughtful UX, reliable communication, and design files that arrive ready to present and build.</p><CheckList items={["Scale design delivery without fixed overhead", "Keep control of every client relationship", "Deliver through an experienced design team"]} /></div>
-          </div>
-          <div className="facebook-service__videos">
-            <article><Image src="/images/unsplash/portrait-01.jpg" alt="Agency partner Rachel Sterling discussing Yellow's UI/UX design support" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Rachel Sterling</h3><p>Creative Director, North Studio</p></div></article>
-            <article><Image src="/images/unsplash/portrait-03.jpg" alt="Agency partner Liam Thorne sharing a website redesign success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Liam Thorne</h3><p>Design Principal, Thorne &amp; Co</p></div></article>
-          </div>
+          </Reveal>
+          <StaggerGroup className="facebook-service__videos">
+            <StaggerItem as="article"><Image src="/images/unsplash/portrait-01.jpg" alt="Agency partner Rachel Sterling discussing Yellow's UI/UX design support" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Rachel Sterling</h3><p>Creative Director, North Studio</p></div></StaggerItem>
+            <StaggerItem as="article"><Image src="/images/unsplash/portrait-03.jpg" alt="Agency partner Liam Thorne sharing a website redesign success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Liam Thorne</h3><p>Design Principal, Thorne &amp; Co</p></div></StaggerItem>
+          </StaggerGroup>
         </div>
       </section>
 
@@ -93,13 +94,13 @@ export function WebDesignServicePage() {
       />
 
       <section className="facebook-service__form-section">
-        <div className="container facebook-service__form-grid">
+        <Reveal className="container facebook-service__form-grid">
           <div><p className="eyebrow">Grow without growing overhead</p><ServiceHeading>Power up and join other ambitious agencies.</ServiceHeading><p>Add dependable website-design capacity while your internal team stays focused on relationships, sales, and strategy.</p><CheckList items={["Expand your web and creative offering", "Generate revenue without increasing fixed costs", "Save and reallocate your team’s time", "Support different client niches and platforms", "Gain reliable UX and design expertise"]} /></div>
           <LeadForm />
-        </div>
+        </Reveal>
       </section>
 
-      <section className="facebook-service__benefits-intro"><div className="container"><p className="eyebrow">A complete digital design model</p><ServiceHeading>Benefits of Yellow’s white-label website design services.</ServiceHeading><p>Strategy, content structure, responsive UI, quality review, and implementation handoff stay connected through one system built around your agency.</p><p>Your team receives thoughtful page journeys, reusable visual systems, responsive states, organized feedback rounds, and developer-ready files that make every client handoff feel polished.</p></div></section>
+      <section className="facebook-service__benefits-intro"><Reveal className="container"><p className="eyebrow">A complete digital design model</p><ServiceHeading>Benefits of Yellow’s white-label website design services.</ServiceHeading><p>Strategy, content structure, responsive UI, quality review, and implementation handoff stay connected through one system built around your agency.</p><p>Your team receives thoughtful page journeys, reusable visual systems, responsive states, organized feedback rounds, and developer-ready files that make every client handoff feel polished.</p></Reveal></section>
 
       <ContentSection
         title="Help clients stand apart from their competitors."
@@ -144,16 +145,16 @@ export function WebDesignServicePage() {
       />
 
       <section className="facebook-service__section facebook-service__section--soft">
-        <div className="container facebook-service__content">
+        <Reveal className="container facebook-service__content">
           <ServiceHeading>Reduce bounce by making the next step obvious.</ServiceHeading>
           <p>Visitors leave when a site is slow, confusing, visually inconsistent, difficult to read, or unclear about what should happen next. Yellow reviews the complete experience—not only the first screen—to remove unnecessary friction and create a stronger path through the content.</p>
           <p>Navigation, page purpose, message hierarchy, proof, forms, mobile behavior, accessibility, and calls to action are designed as connected parts of one journey. That helps the site hold attention for the right reasons and turn more qualified visits into meaningful actions.</p>
           <CheckList items={["Clear page purpose and message hierarchy", "Useful navigation and internal pathways", "Readable responsive content", "Credible proof and trust elements", "Focused forms and calls to action"]} />
-        </div>
+        </Reveal>
       </section>
 
       <section className="facebook-service__faq">
-        <div className="container facebook-service__faq-grid">
+        <Reveal className="container facebook-service__faq-grid">
           <div><p className="eyebrow">Frequently asked questions</p><ServiceHeading>Everything you need to know before we begin.</ServiceHeading><p>These are the questions agencies ask most often before adding white-label web design support.</p></div>
           <div className="facebook-service__faq-list">
             {webDesignFaqs.map((faq, index) => (
@@ -163,10 +164,10 @@ export function WebDesignServicePage() {
               </details>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
-      <section className="facebook-service__final-cta"><div className="container"><div><p className="eyebrow">Your design team behind the scenes</p><ServiceHeading>Ready to add website design capacity?</ServiceHeading><p>Let’s map the right white-label design model for your agency and clients.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></div></section>
+      <section className="facebook-service__final-cta"><Reveal className="container"><div><p className="eyebrow">Your design team behind the scenes</p><ServiceHeading>Ready to add website design capacity?</ServiceHeading><p>Let’s map the right white-label design model for your agency and clients.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></Reveal></section>
     </main>
   );
 }

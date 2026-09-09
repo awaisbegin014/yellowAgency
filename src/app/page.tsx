@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { MotionConfig } from "motion/react";
 import { AnimatedStats, CaseStudiesSlider, NicheTabs, PartnerEquation, ResultsComparison, ServiceTabs } from "@/components/home-interactions";
+import { FloatLoop, PressButton, PulseLoop, Reveal, StaggerGroup, StaggerItem } from "@/components/motion-primitives";
 
 const onboarding = [
   ["01", "Client Privacy", "We put NDAs, access rules, and white-label safeguards in place so every client relationship, account, and shared asset remains protected."],
@@ -23,8 +25,8 @@ function AnalyticsDashboard({ compact = false }: { compact?: boolean }) {
           <div className="hc-analytics__content"><div className="hc-dashboard-metrics"><span><b>6K</b>Users</span><span><b>2m 14s</b>Engagement</span><span><b>$23K</b>Revenue</span></div><div className="hc-area-chart"><i /></div></div>
         </div>
       </div>
-      <div className="hc-analytics__float hc-analytics__float--left"><b>175</b><span>Users in last 30 minutes</span><MiniBars count={14} /></div>
-      <div className="hc-analytics__float hc-analytics__float--right"><span>Organic search</span><MiniBars count={5} /></div>
+      <FloatLoop className="hc-analytics__float hc-analytics__float--left" duration={5}><b>175</b><span>Users in last 30 minutes</span><MiniBars count={14} /></FloatLoop>
+      <FloatLoop className="hc-analytics__float hc-analytics__float--right" delay={0.6} duration={5.5}><span>Organic search</span><MiniBars count={5} /></FloatLoop>
     </div>
   );
 }
@@ -35,36 +37,44 @@ function Hexagon({ children, accent = false }: { children: React.ReactNode; acce
 
 export default function Home() {
   return (
+    <MotionConfig reducedMotion="user">
     <main id="top" className="reference-home">
       <section className="hc-hero">
-        <div className="hc-shell hc-hero__copy"><h1>Full Stack White Label<br /><span className="hc-heading-accent">Digital Marketing Agency</span></h1><p>We aim to keep your clients exceptionally satisfied and your project management smooth. Partner with us for a professional yet easy approach to digital marketing success.</p><div className="hc-actions"><Link href="/book-appointment" className="hc-btn hc-btn--blue">Schedule A Consultation</Link><a href="#services" className="hc-btn hc-btn--outline">Learn More</a></div></div>
-        <div className="hc-shell hc-hero__visual"><AnalyticsDashboard /></div>
+        <StaggerGroup className="hc-shell hc-hero__copy">
+          <StaggerItem><h1>Full Stack White Label<br /><span className="hc-heading-accent">Digital Marketing Agency</span></h1></StaggerItem>
+          <StaggerItem as="p">We aim to keep your clients exceptionally satisfied and your project management smooth. Partner with us for a professional yet easy approach to digital marketing success.</StaggerItem>
+          <StaggerItem><div className="hc-actions"><Link href="/book-appointment" className="hc-btn hc-btn--blue">Schedule A Consultation</Link><a href="#services" className="hc-btn hc-btn--outline">Learn More</a></div></StaggerItem>
+        </StaggerGroup>
+        <Reveal className="hc-shell hc-hero__visual" delay={0.15}><AnalyticsDashboard /></Reveal>
       </section>
 
-      <section className="hc-section hc-partners"><div className="hc-shell"><div className="hc-split-heading"><h2>Hear What Our Partners<br /><span className="hc-heading-accent">Have To Say About Us</span></h2><div><p>Our partners value responsive communication, specialist knowledge, and dependable delivery that stays invisible behind their brand. We help agencies confidently accept more work while protecting the client relationships they worked hard to build.</p><ul className="hc-checks"><li>Scale your agency without expanding overhead</li><li>Retain high-quality client relationships</li><li>Deliver campaigns through proven specialists</li><li>Receive clear updates, reports, and strategic support</li></ul></div></div><div className="hc-video-grid"><article className="hc-video-card"><Image src="/images/unsplash/portrait-02.jpg" alt="Agency partner Seth Brown" fill sizes="50vw" /><div><h3>Seth Brown</h3><span>Agency Owner</span></div></article><article className="hc-video-card"><Image src="/images/unsplash/portrait-04.jpg" alt="Agency partner Josh Radford" fill sizes="50vw" /><div><h3>Josh Radford</h3><span>Agency Owner</span></div></article></div></div></section>
+      <section className="hc-section hc-partners"><div className="hc-shell"><Reveal className="hc-split-heading"><h2>Hear What Our Partners<br /><span className="hc-heading-accent">Have To Say About Us</span></h2><div><p>Our partners value responsive communication, specialist knowledge, and dependable delivery that stays invisible behind their brand. We help agencies confidently accept more work while protecting the client relationships they worked hard to build.</p><ul className="hc-checks"><li>Scale your agency without expanding overhead</li><li>Retain high-quality client relationships</li><li>Deliver campaigns through proven specialists</li><li>Receive clear updates, reports, and strategic support</li></ul></div></Reveal><StaggerGroup className="hc-video-grid"><StaggerItem><article className="hc-video-card"><Image src="/images/unsplash/portrait-02.jpg" alt="Agency partner Seth Brown" fill sizes="50vw" /><div><h3>Seth Brown</h3><span>Agency Owner</span></div></article></StaggerItem><StaggerItem><article className="hc-video-card"><Image src="/images/unsplash/portrait-04.jpg" alt="Agency partner Josh Radford" fill sizes="50vw" /><div><h3>Josh Radford</h3><span>Agency Owner</span></div></article></StaggerItem></StaggerGroup></div></section>
 
-      <section className="hc-section hc-help"><div className="hc-shell hc-two-col"><div className="hc-photo-collage"><Image src="/images/unsplash/team-collaboration-01.jpg" alt="Agency strategy meeting" fill sizes="50vw" /><div className="hc-chart-card hc-chart-card--top"><span>Users</span><div className="hc-area-chart"><i /></div></div><div className="hc-chart-card hc-chart-card--bottom"><span>Search volume trends</span><MiniBars count={9} /></div></div><div><h2>How Can Yellow <span className="hc-heading-accent">Help You?</span></h2><p>Yellow is your elite white label growth and fulfillment partner for digital marketing services. We will:</p><ul className="hc-arrow-list"><li>Streamline your client onboarding process</li><li>Scale your profits fast</li><li>Generate more revenue</li><li>Reduce overhead costs</li><li>Save and reallocate your time</li><li>Customize your services across niches</li></ul><p>Gain refined insight with complete transparency under your agency&apos;s name. Our reseller services evolve with the market to offer premium white label marketing services.</p><p className="hc-help__note">From the first strategy call through campaign delivery and monthly reporting, our specialists work quietly behind your brand. You keep ownership of every client relationship while gaining the capacity, systems, and expertise of an experienced fulfillment department.</p><Link href="/about-us" className="hc-btn hc-btn--outline">About Us</Link></div></div></section>
+      <section className="hc-section hc-help"><div className="hc-shell hc-two-col">
+        <Reveal className="hc-photo-collage"><Image src="/images/unsplash/team-collaboration-01.jpg" alt="Agency strategy meeting" fill sizes="50vw" /><div className="hc-chart-card hc-chart-card--top"><span>Users</span><div className="hc-area-chart"><i /></div></div><div className="hc-chart-card hc-chart-card--bottom"><span>Search volume trends</span><MiniBars count={9} /></div></Reveal>
+        <Reveal delay={0.15}><h2>How Can Yellow <span className="hc-heading-accent">Help You?</span></h2><p>Yellow is your elite white label growth and fulfillment partner for digital marketing services. We will:</p><ul className="hc-arrow-list"><li>Streamline your client onboarding process</li><li>Scale your profits fast</li><li>Generate more revenue</li><li>Reduce overhead costs</li><li>Save and reallocate your time</li><li>Customize your services across niches</li></ul><p>Gain refined insight with complete transparency under your agency&apos;s name. Our reseller services evolve with the market to offer premium white label marketing services.</p><p className="hc-help__note">From the first strategy call through campaign delivery and monthly reporting, our specialists work quietly behind your brand. You keep ownership of every client relationship while gaining the capacity, systems, and expertise of an experienced fulfillment department.</p><Link href="/about-us" className="hc-btn hc-btn--outline">About Us</Link></Reveal>
+      </div></section>
 
       <AnimatedStats />
 
-      <section className="hc-section hc-services" id="services"><div className="hc-shell"><h2>Our <span className="hc-heading-accent">Services</span></h2><ServiceTabs /></div></section>
+      <section className="hc-section hc-services" id="services"><div className="hc-shell"><Reveal as="h2">Our <span className="hc-heading-accent">Services</span></Reveal><ServiceTabs /></div></section>
 
-      <section className="hc-section hc-dental"><div className="hc-shell hc-centered"><h2>How We Increased Organic Leads<br /><span className="hc-heading-accent">For Our Dental Client?</span></h2><p>Partnering with a dental practice, we built a digital marketing strategy around SEO, PPC, and targeted social campaigns. The result was a dramatic improvement in organic visibility, qualified leads, and booked patients.</p><ResultsComparison /></div></section>
+      <section className="hc-section hc-dental"><Reveal className="hc-shell hc-centered"><h2>How We Increased Organic Leads<br /><span className="hc-heading-accent">For Our Dental Client?</span></h2><p>Partnering with a dental practice, we built a digital marketing strategy around SEO, PPC, and targeted social campaigns. The result was a dramatic improvement in organic visibility, qualified leads, and booked patients.</p><ResultsComparison /></Reveal></section>
 
-      <section className="hc-section hc-partner-model"><div className="hc-shell"><div className="hc-split-heading"><h2>What Our White Label<br /><span className="hc-heading-accent">Partners Have To Say</span></h2><p>See the difference we make through our partners&apos; eyes and discover how their agencies gained the confidence to sell more services. Our partners rely on Yellow to add specialist capacity, maintain quality standards, and deliver campaigns on schedule—all under their own brand. From onboarding and strategy through reporting and optimization, our team helps agencies support more clients without expanding fixed overhead.</p></div><PartnerEquation /></div></section>
+      <section className="hc-section hc-partner-model"><div className="hc-shell"><Reveal className="hc-split-heading"><h2>What Our White Label<br /><span className="hc-heading-accent">Partners Have To Say</span></h2><p>See the difference we make through our partners&apos; eyes and discover how their agencies gained the confidence to sell more services. Our partners rely on Yellow to add specialist capacity, maintain quality standards, and deliver campaigns on schedule—all under their own brand. From onboarding and strategy through reporting and optimization, our team helps agencies support more clients without expanding fixed overhead.</p></Reveal><PartnerEquation /></div></section>
 
-      <section className="hc-section hc-niches"><div className="hc-shell"><div className="hc-centered"><h2>Our Niches And <span className="hc-heading-accent">Specializations</span></h2><p>We bring our expertise to the table and go the extra mile for our clients. Our strategies help drive campaigns towards leads, sales, profit, and growth across competitive service industries.</p></div><NicheTabs /></div></section>
+      <section className="hc-section hc-niches"><div className="hc-shell"><Reveal className="hc-centered"><h2>Our Niches And <span className="hc-heading-accent">Specializations</span></h2><p>We bring our expertise to the table and go the extra mile for our clients. Our strategies help drive campaigns towards leads, sales, profit, and growth across competitive service industries.</p></Reveal><NicheTabs /></div></section>
 
-      <section className="hc-band"><div className="hc-shell"><h2><em>Need GoHighLevel For Clients?</em><br />Or Custom White Label GHL</h2><Link href="/white-label/go-high-level-services" className="hc-btn hc-btn--outline">Learn More</Link></div></section>
+      <section className="hc-band"><StaggerGroup className="hc-shell"><StaggerItem as="h2"><em>Need GoHighLevel For Clients?</em><br />Or Custom White Label GHL</StaggerItem><StaggerItem><Link href="/white-label/go-high-level-services" className="hc-btn hc-btn--outline">Learn More</Link></StaggerItem></StaggerGroup></section>
 
-      <section className="hc-section hc-cases"><div className="hc-shell hc-centered"><h2>Backup Your Agency With<br /><span className="hc-heading-accent">Data-Driven Case Studies</span></h2><p>All it takes for clients to choose your services is a stellar case study. Use proof from niche campaigns to improve conversion rates and grow with confidence.</p><CaseStudiesSlider /><Link href="/case-studies" className="hc-btn hc-btn--outline">View All Case Studies</Link></div></section>
+      <section className="hc-section hc-cases"><Reveal className="hc-shell hc-centered"><h2>Backup Your Agency With<br /><span className="hc-heading-accent">Data-Driven Case Studies</span></h2><p>All it takes for clients to choose your services is a stellar case study. Use proof from niche campaigns to improve conversion rates and grow with confidence.</p><CaseStudiesSlider /><Link href="/case-studies" className="hc-btn hc-btn--outline">View All Case Studies</Link></Reveal></section>
 
-      <section className="hc-band hc-band--cta"><div className="hc-shell"><h2><em>Ready To Move Into</em><br />The Digital World?</h2><div><Link href="/book-appointment" className="hc-btn hc-btn--dark">Schedule A Consultation</Link><Link href="/contact-us" className="hc-btn hc-btn--outline">Contact Us</Link></div></div></section>
+      <section className="hc-band hc-band--cta"><StaggerGroup className="hc-shell"><StaggerItem as="h2"><em>Ready To Move Into</em><br />The Digital World?</StaggerItem><StaggerItem><Link href="/book-appointment" className="hc-btn hc-btn--dark">Schedule A Consultation</Link><Link href="/contact-us" className="hc-btn hc-btn--outline">Contact Us</Link></StaggerItem></StaggerGroup></section>
 
       <section className="hc-section hc-small-business">
         <div className="hc-shell hc-two-col">
-          <AnalyticsDashboard compact />
-          <div>
+          <Reveal><AnalyticsDashboard compact /></Reveal>
+          <Reveal delay={0.15}>
             <h2>Does Your Agency Offer Digital Marketing<br /><span className="hc-heading-accent">Solutions To Small Businesses?</span></h2>
             <p>To build a dependable, profitable service for small-business clients, your agency needs:</p>
             <ul className="hc-arrow-list">
@@ -80,30 +90,32 @@ export default function Home() {
             <p>Yellow supplies the strategy, production, optimization, and reporting support behind your brand. Your team can stay focused on relationships and sales while we quietly handle the specialist work.</p>
             <p className="hc-small-business__note">Add complete fulfillment capacity without recruiting a separate department, increasing overhead, or giving up control of your client experience.</p>
             <Link href="/dedicated-teams" className="hc-btn hc-btn--outline">Learn More</Link>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       <section className="hc-section hc-onboarding">
-        <div className="hc-shell hc-centered">
+        <Reveal className="hc-shell hc-centered">
           <h2>White Label Digital Marketing<br /><span className="hc-heading-accent">Onboarding Process</span></h2>
           <p className="hc-onboarding__intro">Our onboarding process is simple, secure, and transparent. We support your agency from discovery and audit through launch, reporting, and ongoing optimization. Every step is designed to keep responsibilities clear, protect your client relationships, and give your team full visibility before delivery begins.</p>
-          <div className="hc-onboarding-flow">
+          <StaggerGroup className="hc-onboarding-flow">
             {onboarding.map(([number, title, text]) => (
-              <article key={number}>
-                <Hexagon><b>{number}</b></Hexagon>
-                <i />
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </article>
+              <StaggerItem key={number} as="div">
+                <article>
+                  <Hexagon><b>{number}</b></Hexagon>
+                  <i />
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              </StaggerItem>
             ))}
-          </div>
-        </div>
+          </StaggerGroup>
+        </Reveal>
       </section>
 
       <section className="hc-section hc-agency-model">
         <div className="hc-shell hc-two-col">
-          <div className="hc-agency-model__copy">
+          <Reveal className="hc-agency-model__copy">
             <span className="hc-agency-model__eyebrow">Your brand. Our delivery team.</span>
             <h2>White Label Digital<br /><span className="hc-heading-accent">Marketing Agency Model</span></h2>
             <p>Yellow helps agencies offer a complete digital marketing department without the time, cost, and risk of building every specialty in-house.</p>
@@ -117,21 +129,21 @@ export default function Home() {
             </div>
             <p className="hc-agency-model__note">Sell more confidently, deliver consistently, and grow without adding unnecessary overhead.</p>
             <div className="hc-link-columns"><ul><li>White Label PPC Services</li><li>White Label SMM Services</li><li>Book an Appointment</li><li>Read Client Reviews</li></ul><ul><li>White Label SEO Services</li><li>About Yellow Clicks</li><li>Get in Touch</li><li>What We Offer</li></ul></div>
-          </div>
-          <div className="hc-model-diagram" aria-label="Yellow white label agency partnership model"><div className="hc-model-client"><span className="hc-model-client__icon" aria-hidden="true"><i /></span><b>Your Client</b></div><div className="hc-model-connector"><span>↑</span><i /><span>↓</span></div><div className="hc-model-agency"><div><b>$$</b><strong>Agency</strong></div><div><span>Margins</span><b>$$</b></div></div><span className="hc-model-side hc-model-side--revenue">$$$ <small>Partner revenue</small></span><span className="hc-model-side hc-model-side--channels">SEO&nbsp;&nbsp; PPC&nbsp;&nbsp; SOCIAL</span><div className="hc-model-connector"><i /></div><div className="hc-model-yellow"><b>Y</b><strong>Yellow</strong><span>Your fulfillment team</span></div></div>
+          </Reveal>
+          <Reveal delay={0.15} className="hc-model-diagram" aria-label="Yellow white label agency partnership model"><div className="hc-model-client"><span className="hc-model-client__icon" aria-hidden="true"><i /></span><b>Your Client</b></div><div className="hc-model-connector"><PulseLoop as="span">↑</PulseLoop><i /><PulseLoop as="span" delay={0.3}>↓</PulseLoop></div><div className="hc-model-agency"><div><b>$$</b><strong>Agency</strong></div><div><span>Margins</span><b>$$</b></div></div><span className="hc-model-side hc-model-side--revenue">$$$ <small>Partner revenue</small></span><span className="hc-model-side hc-model-side--channels">SEO&nbsp;&nbsp; PPC&nbsp;&nbsp; SOCIAL</span><div className="hc-model-connector"><i /></div><div className="hc-model-yellow"><b>Y</b><strong>Yellow</strong><span>Your fulfillment team</span></div></Reveal>
         </div>
       </section>
 
       <section className="hc-section hc-support">
         <div className="hc-support__intro">
-          <div className="hc-shell hc-centered"><h2>How Will Our Support Team<br /><span className="hc-heading-accent">Help You?</span></h2><p>Every client project is supervised by a client success manager and project manager, with clear KPIs, reports, analysis, and updates ready for your clients.</p><Link href="/dedicated-teams" className="hc-btn hc-btn--outline">Learn More</Link></div>
+          <Reveal className="hc-shell hc-centered"><h2>How Will Our Support Team<br /><span className="hc-heading-accent">Help You?</span></h2><p>Every client project is supervised by a client success manager and project manager, with clear KPIs, reports, analysis, and updates ready for your clients.</p><Link href="/dedicated-teams" className="hc-btn hc-btn--outline">Learn More</Link></Reveal>
         </div>
-        <div className="hc-shell"><div className="hc-support-flow-image"><Image src="/images/yellow-support-flow.svg" alt="Yellow Clicks support delivery flow from client to fulfillment team" width={1756} height={760} sizes="100vw" priority unoptimized /></div></div>
+        <Reveal delay={0.1} className="hc-shell"><div className="hc-support-flow-image"><Image src="/images/yellow-support-flow.svg" alt="Yellow Clicks support delivery flow from client to fulfillment team" width={1756} height={760} sizes="100vw" priority unoptimized /></div></Reveal>
       </section>
 
       <section className="hc-section hc-lead">
         <div className="hc-shell hc-two-col">
-          <div className="hc-lead__copy">
+          <Reveal className="hc-lead__copy">
             <span className="hc-lead__eyebrow">Grow without the overhead</span>
             <h2>Power-Up And Join Other Great Businesses<br /><span className="hc-heading-accent">Focusing On Their Growth</span></h2>
             <p>Build a stronger service offering with a specialist fulfillment team working quietly behind your agency. You own the client relationship while Yellow supports strategy, delivery, optimization, and reporting.</p>
@@ -146,19 +158,20 @@ export default function Home() {
               <li>Get clear communication and performance reporting</li>
             </ul>
             <p className="hc-lead__note">Tell us what your agency needs today, and we&apos;ll recommend a practical fulfillment setup that can grow with you.</p>
-          </div>
-          <form className="hc-lead-form">
-            <div><input aria-label="Full name" placeholder="Full Name*" /><input aria-label="Company" placeholder="Company*" /></div>
-            <div><input type="email" aria-label="Email" placeholder="Email*" /><input type="tel" aria-label="Phone" placeholder="Phone*" /></div>
-            <div className="hc-options"><label><input type="checkbox" /> Immediate Need, Let&apos;s Talk</label><label><input type="checkbox" /> Agency</label><label><input type="checkbox" /> In Research Mode</label><label><input type="checkbox" /> Business Owner</label></div>
-            <textarea aria-label="Message" placeholder="Message" rows={5} />
-            <label className="hc-consent"><input type="checkbox" /> I consent to receive updates about my consultation and service inquiry.</label>
-            <button className="hc-btn hc-btn--blue" type="submit">Submit</button>
-          </form>
+          </Reveal>
+          <StaggerGroup as="form" className="hc-lead-form">
+            <StaggerItem><input aria-label="Full name" placeholder="Full Name*" /><input aria-label="Company" placeholder="Company*" /></StaggerItem>
+            <StaggerItem><input type="email" aria-label="Email" placeholder="Email*" /><input type="tel" aria-label="Phone" placeholder="Phone*" /></StaggerItem>
+            <StaggerItem className="hc-options"><label><input type="checkbox" /> Immediate Need, Let&apos;s Talk</label><label><input type="checkbox" /> Agency</label><label><input type="checkbox" /> In Research Mode</label><label><input type="checkbox" /> Business Owner</label></StaggerItem>
+            <StaggerItem as="textarea" aria-label="Message" placeholder="Message" rows={5} />
+            <StaggerItem as="label" className="hc-consent"><input type="checkbox" /> I consent to receive updates about my consultation and service inquiry.</StaggerItem>
+            <PressButton className="hc-btn hc-btn--blue" type="submit">Submit</PressButton>
+          </StaggerGroup>
         </div>
       </section>
 
-      <section className="hc-final-cta"><div className="hc-shell"><div><h2>Can A Third Party Agency Truly Take Care Of My Clients?</h2><p>Set up a free session with us to learn how our process and services can help drive your agency&apos;s growth.</p></div><Link href="/book-appointment" className="hc-btn hc-btn--dark">Free 20-Mins Consultation</Link></div></section>
+      <section className="hc-final-cta"><Reveal className="hc-shell"><div><h2>Can A Third Party Agency Truly Take Care Of My Clients?</h2><p>Set up a free session with us to learn how our process and services can help drive your agency&apos;s growth.</p></div><Link href="/book-appointment" className="hc-btn hc-btn--dark">Free 20-Mins Consultation</Link></Reveal></section>
     </main>
+    </MotionConfig>
   );
 }

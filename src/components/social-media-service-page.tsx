@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CheckList, ContentSection, DashboardMock, ServiceHeading } from "@/components/facebook-ads-service-page";
 import { LeadForm } from "@/components/interactive";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion-primitives";
 
 const socialMediaFaqs = [
   {
@@ -37,23 +38,23 @@ export function SocialMediaServicePage() {
   return (
     <main id="top" className="inner-page facebook-service social-media-service">
       <section className="facebook-service__hero">
-        <div className="container">
-          <p className="eyebrow">White-label social media management</p>
-          <h1>Social Media <span>Management Services</span></h1>
-          <p>Channel strategy, content calendars, copy, creative coordination, publishing, community workflows, and reporting—delivered quietly behind your agency.</p>
-          <Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link>
-        </div>
+        <StaggerGroup className="container">
+          <StaggerItem as="p" className="eyebrow">White-label social media management</StaggerItem>
+          <StaggerItem as="h1">Social Media <span>Management Services</span></StaggerItem>
+          <StaggerItem as="p">Channel strategy, content calendars, copy, creative coordination, publishing, community workflows, and reporting—delivered quietly behind your agency.</StaggerItem>
+          <StaggerItem><Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link></StaggerItem>
+        </StaggerGroup>
       </section>
 
       <section className="facebook-service__section facebook-service__intro">
-        <div className="container facebook-service__content">
+        <Reveal className="container facebook-service__content">
           <p className="eyebrow">Build a presence people recognize</p>
           <ServiceHeading>Attract new customers with a useful online presence.</ServiceHeading>
           <p>Social media works when a brand shows up consistently with ideas its audience actually values. That requires more than filling a calendar: each channel needs a clear role, recognizable creative, relevant conversations, dependable approvals, and reporting that connects activity with the client’s wider marketing goals.</p>
           <p>Yellow gives your agency a coordinated social team without adding the fixed cost of strategists, writers, designers, editors, and community specialists in-house. We plan and deliver behind your name while your team leads the client relationship.</p>
           <Link href="/book-appointment" className="button button--dark">Schedule a consultation <span aria-hidden="true">↗</span></Link>
           <DashboardMock variant="performance" channel="social" />
-        </div>
+        </Reveal>
       </section>
 
       <ContentSection
@@ -80,13 +81,13 @@ export function SocialMediaServicePage() {
       />
 
       <section className="facebook-service__form-section">
-        <div className="container facebook-service__form-grid">
+        <Reveal className="container facebook-service__form-grid">
           <div><p className="eyebrow">Grow without growing overhead</p><ServiceHeading>Power up and join other ambitious agencies.</ServiceHeading><p>Add dependable social-media capacity while your internal team stays focused on relationships, sales, and strategic leadership.</p><CheckList items={["Expand your content and social offering", "Generate revenue without increasing fixed costs", "Save and reallocate your team’s time", "Support different client niches and channels", "Gain practical content insight and reporting"]} /></div>
           <LeadForm />
-        </div>
+        </Reveal>
       </section>
 
-      <section className="facebook-service__benefits-intro"><div className="container"><p className="eyebrow">A complete social delivery model</p><ServiceHeading>Benefits of Yellow’s white-label social media services.</ServiceHeading><p>Strategy, production, publishing, engagement, and reporting stay connected through one workflow designed to protect your agency’s standards.</p><p>Every calendar is shaped around the client’s audience, offer, voice, and objectives, while clear approvals and performance reviews keep the work useful, consistent, and easy to manage.</p></div></section>
+      <section className="facebook-service__benefits-intro"><Reveal className="container"><p className="eyebrow">A complete social delivery model</p><ServiceHeading>Benefits of Yellow’s white-label social media services.</ServiceHeading><p>Strategy, production, publishing, engagement, and reporting stay connected through one workflow designed to protect your agency’s standards.</p><p>Every calendar is shaped around the client’s audience, offer, voice, and objectives, while clear approvals and performance reviews keep the work useful, consistent, and easy to manage.</p></Reveal></section>
 
       <ContentSection
         title="Strategy development that keeps content relevant."
@@ -131,16 +132,16 @@ export function SocialMediaServicePage() {
       />
 
       <section className="facebook-service__section">
-        <div className="container facebook-service__content">
+        <Reveal className="container facebook-service__content">
           <ServiceHeading>Dedicated reputation monitoring behind your brand.</ServiceHeading>
           <p>Social channels are often where customers raise concerns first. Yellow can monitor agreed comments, mentions, messages, and reputation signals, then route issues through a documented response and escalation process before they are ignored or handled inconsistently.</p>
           <p>Your agency keeps control of sensitive decisions. We provide organized observations, response recommendations, recurring issue themes, and monthly context that helps the client improve communication and protect trust over time.</p>
           <CheckList items={["Comment, mention, and message monitoring", "Response guidance aligned with brand voice", "Clear escalation paths for sensitive issues", "Sentiment and recurring-theme observations", "Agency-ready reputation context"]} />
-        </div>
+        </Reveal>
       </section>
 
       <section className="facebook-service__faq">
-        <div className="container facebook-service__faq-grid">
+        <Reveal className="container facebook-service__faq-grid">
           <div><p className="eyebrow">Frequently asked questions</p><ServiceHeading>Everything you need to know before we begin.</ServiceHeading><p>These are the questions agencies ask most often before adding white-label social media support.</p></div>
           <div className="facebook-service__faq-list">
             {socialMediaFaqs.map((faq, index) => (
@@ -150,10 +151,10 @@ export function SocialMediaServicePage() {
               </details>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
-      <section className="facebook-service__final-cta"><div className="container"><div><p className="eyebrow">Your social team behind the scenes</p><ServiceHeading>Ready to add social-media capacity?</ServiceHeading><p>Let’s map the right white-label content and channel-management model for your agency and clients.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></div></section>
+      <section className="facebook-service__final-cta"><Reveal className="container"><div><p className="eyebrow">Your social team behind the scenes</p><ServiceHeading>Ready to add social-media capacity?</ServiceHeading><p>Let’s map the right white-label content and channel-management model for your agency and clients.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></Reveal></section>
     </main>
   );
 }

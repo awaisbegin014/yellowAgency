@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CheckList, ContentSection, DashboardMock, ServiceHeading } from "@/components/facebook-ads-service-page";
 import { LeadForm } from "@/components/interactive";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion-primitives";
 
 const contentWritingFaqs = [
   {
@@ -38,35 +39,35 @@ export function ContentWritingServicePage() {
   return (
     <main id="top" className="inner-page facebook-service content-writing-service">
       <section className="facebook-service__hero">
-        <div className="container">
-          <p className="eyebrow">White-label editorial production</p>
-          <h1>Premium White Label <span>Content Writing</span></h1>
-          <p>Research-led website copy, articles, campaigns, and resources—planned, written, edited, and delivered quietly behind your agency.</p>
-          <Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link>
-        </div>
+        <StaggerGroup className="container">
+          <StaggerItem as="p" className="eyebrow">White-label editorial production</StaggerItem>
+          <StaggerItem as="h1">Premium White Label <span>Content Writing</span></StaggerItem>
+          <StaggerItem as="p">Research-led website copy, articles, campaigns, and resources—planned, written, edited, and delivered quietly behind your agency.</StaggerItem>
+          <StaggerItem><Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link></StaggerItem>
+        </StaggerGroup>
       </section>
 
       <section className="facebook-service__section facebook-service__intro">
-        <div className="container facebook-service__content">
+        <Reveal className="container facebook-service__content">
           <p className="eyebrow">Useful words with a commercial purpose</p>
           <ServiceHeading>Generate more value from every client message.</ServiceHeading>
           <p>Good content helps people understand a business, trust its expertise, and choose a clear next step. Yellow brings strategy, research, writing, editing, search awareness, and quality control into one dependable production system for your agency.</p>
           <p>We create around the audience and the objective—not a word count. Every brief connects the client’s offer, brand voice, customer questions, channel, and desired action so the final piece feels useful, specific, and ready to publish.</p>
           <Link href="/book-appointment" className="button button--dark">Schedule a consultation <span aria-hidden="true">↗</span></Link>
           <DashboardMock variant="performance" channel="content" />
-        </div>
+        </Reveal>
       </section>
 
       <section className="facebook-service__proof">
         <div className="container">
-          <div className="facebook-service__proof-heading">
+          <Reveal className="facebook-service__proof-heading">
             <ServiceHeading>Hear what our partners have to say about us.</ServiceHeading>
             <div><p>Agency partners rely on Yellow for responsive collaboration, consistent voice, and polished content delivered on schedule.</p><CheckList items={["Scale editorial production without fixed overhead", "Keep ownership of client strategy and approvals", "Deliver through researchers, writers, and editors"]} /></div>
-          </div>
-          <div className="facebook-service__videos">
-            <article><Image src="/images/unsplash/partner-sarah.jpg" alt="Agency partner Sarah Jenkins discussing Yellow's editorial content support" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Sarah Jenkins</h3><p>Head of Content, Storyline Group</p></div></article>
-            <article><Image src="/images/unsplash/portrait-01.jpg" alt="Agency partner Rachel Sterling sharing a content production success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Rachel Sterling</h3><p>Editorial Director, Clarity Media</p></div></article>
-          </div>
+          </Reveal>
+          <StaggerGroup className="facebook-service__videos">
+            <StaggerItem as="article"><Image src="/images/unsplash/partner-sarah.jpg" alt="Agency partner Sarah Jenkins discussing Yellow's editorial content support" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Sarah Jenkins</h3><p>Head of Content, Storyline Group</p></div></StaggerItem>
+            <StaggerItem as="article"><Image src="/images/unsplash/portrait-01.jpg" alt="Agency partner Rachel Sterling sharing a content production success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Rachel Sterling</h3><p>Editorial Director, Clarity Media</p></div></StaggerItem>
+          </StaggerGroup>
         </div>
       </section>
 
@@ -101,13 +102,13 @@ export function ContentWritingServicePage() {
       />
 
       <section className="facebook-service__form-section">
-        <div className="container facebook-service__form-grid">
+        <Reveal className="container facebook-service__form-grid">
           <div><p className="eyebrow">Grow without growing overhead</p><ServiceHeading>Power up and join other ambitious agencies.</ServiceHeading><p>Add dependable writing capacity while your internal team stays focused on client direction, relationships, campaigns, and growth.</p><CheckList items={["Expand your existing and new services", "Generate revenue without increasing fixed costs", "Save and reallocate your team’s time", "Support multiple niches and formats", "Build a consistent editorial production rhythm"]} /></div>
           <LeadForm />
-        </div>
+        </Reveal>
       </section>
 
-      <section className="facebook-service__benefits-intro"><div className="container"><p className="eyebrow">A complete editorial delivery model</p><ServiceHeading>Benefits of Yellow’s white-label content writing.</ServiceHeading><p>Your agency gets flexible writing capacity plus the planning, research, editing, quality control, and communication needed to make every deliverable easier to approve and use.</p><p>Writers and editors work from defined audiences, search intent, brand voice, and conversion goals to create content that sounds credible, supports the journey, and arrives ready to publish.</p></div></section>
+      <section className="facebook-service__benefits-intro"><Reveal className="container"><p className="eyebrow">A complete editorial delivery model</p><ServiceHeading>Benefits of Yellow’s white-label content writing.</ServiceHeading><p>Your agency gets flexible writing capacity plus the planning, research, editing, quality control, and communication needed to make every deliverable easier to approve and use.</p><p>Writers and editors work from defined audiences, search intent, brand voice, and conversion goals to create content that sounds credible, supports the journey, and arrives ready to publish.</p></Reveal></section>
 
       <ContentSection
         title="One writing team for diverse online platforms."
@@ -142,7 +143,7 @@ export function ContentWritingServicePage() {
       />
 
       <section className="facebook-service__faq">
-        <div className="container facebook-service__faq-grid">
+        <Reveal className="container facebook-service__faq-grid">
           <div><p className="eyebrow">Frequently asked questions</p><ServiceHeading>Everything you need to know before we begin.</ServiceHeading><p>These are the questions agencies ask most often before adding white-label editorial support.</p></div>
           <div className="facebook-service__faq-list">
             {contentWritingFaqs.map((faq, index) => (
@@ -152,10 +153,10 @@ export function ContentWritingServicePage() {
               </details>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
-      <section className="facebook-service__final-cta"><div className="container"><div><p className="eyebrow">Your editorial team behind the scenes</p><ServiceHeading>Ready to add content production capacity?</ServiceHeading><p>Let’s map the right white-label writing model for your agency and clients.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></div></section>
+      <section className="facebook-service__final-cta"><Reveal className="container"><div><p className="eyebrow">Your editorial team behind the scenes</p><ServiceHeading>Ready to add content production capacity?</ServiceHeading><p>Let’s map the right white-label writing model for your agency and clients.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></Reveal></section>
     </main>
   );
 }

@@ -6,6 +6,7 @@ import { GrowthCaseStudyPage, growthCaseStudySlugs, type GrowthCaseStudySlug } f
 import { MediaPlaceholder } from "@/components/media-placeholder";
 import { AccentHeading, StandardCta } from "@/components/page-templates";
 import { caseStudies, findCaseStudy } from "@/content/site-data";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion-primitives";
 
 export function generateStaticParams() { return caseStudies.map((study) => ({ slug: study.slug })); }
 export async function generateMetadata({ params }: PageProps<"/case-studies/[slug]">): Promise<Metadata> { const { slug } = await params; const study = findCaseStudy(slug); return study ? { title: `${study.client} Case Study`, description: study.summary } : {}; }
@@ -16,14 +17,14 @@ export default async function CaseStudyPage({ params }: PageProps<"/case-studies
   if (slug === "dental-digital-marketing-case-study") return <DentalCaseStudyPage />;
   if (growthCaseStudySlugs.includes(slug as GrowthCaseStudySlug)) return <GrowthCaseStudyPage slug={slug as GrowthCaseStudySlug} />;
   return <main id="top" className="inner-page">
-    <section className="page-hero page-hero--yellow"><div className="container"><div className="article-header"><p className="eyebrow">{study.industry} case study / {study.client}</p><AccentHeading as="h1">{study.title}</AccentHeading><p className="page-hero__lead">{study.summary}</p></div></div></section>
-    <section className="section"><div className="container"><MediaPlaceholder label={`${study.client} campaign preview`} type="video" src={study.image ?? "/images/unsplash/agency-team.jpg"} /></div></section>
-    <section className="section section--soft"><div className="container detail-outcomes"><div><p className="eyebrow">The result</p><div className="mini-metrics"><div><strong>{study.metric}</strong><span>{study.result}</span></div></div></div><div><AccentHeading>One connected system changed the trajectory.</AccentHeading><p className="large-copy">Yellow aligned the customer story, acquisition plan, website experience, and follow-up around one measurable growth goal.</p><p>These are placeholder case-study details ready to be replaced by approved client evidence, final statistics, quotes, and campaign visuals.</p></div></div></section>
-    <section className="section"><div className="container"><div className="section-heading"><div><p className="eyebrow">The work</p><AccentHeading>A campaign designed as one experience.</AccentHeading></div><p>Every touchpoint was built to reinforce the same useful promise and make the next step feel natural.</p></div><div className="collection-grid">{[
+    <section className="page-hero page-hero--yellow"><div className="container"><Reveal className="article-header"><p className="eyebrow">{study.industry} case study / {study.client}</p><AccentHeading as="h1">{study.title}</AccentHeading><p className="page-hero__lead">{study.summary}</p></Reveal></div></section>
+    <section className="section"><Reveal className="container"><MediaPlaceholder label={`${study.client} campaign preview`} type="video" src={study.image ?? "/images/unsplash/agency-team.jpg"} /></Reveal></section>
+    <section className="section section--soft"><Reveal className="container detail-outcomes"><div><p className="eyebrow">The result</p><div className="mini-metrics"><div><strong>{study.metric}</strong><span>{study.result}</span></div></div></div><div><AccentHeading>One connected system changed the trajectory.</AccentHeading><p className="large-copy">Yellow aligned the customer story, acquisition plan, website experience, and follow-up around one measurable growth goal.</p><p>These are placeholder case-study details ready to be replaced by approved client evidence, final statistics, quotes, and campaign visuals.</p></div></Reveal></section>
+    <section className="section"><div className="container"><Reveal className="section-heading"><div><p className="eyebrow">The work</p><AccentHeading>A campaign designed as one experience.</AccentHeading></div><p>Every touchpoint was built to reinforce the same useful promise and make the next step feel natural.</p></Reveal><StaggerGroup className="collection-grid">{[
       { label: "Strategy and positioning", src: "/images/unsplash/creative-design-01.jpg" },
       { label: "Campaign creative", src: "/images/unsplash/analytics-02.jpg" },
       { label: "Digital experience", src: "/images/unsplash/web-development.jpg" },
-    ].map((item) => <article key={item.label} className="collection-card collection-card--media"><MediaPlaceholder label={`${item.label} showcase`} src={item.src} /><h3>{item.label}</h3></article>)}</div></div></section>
+    ].map((item) => <StaggerItem as="article" className="collection-card collection-card--media" key={item.label}><MediaPlaceholder label={`${item.label} showcase`} src={item.src} /><h3>{item.label}</h3></StaggerItem>)}</StaggerGroup></div></section>
     <StandardCta title="Let's make your results the next story we tell." />
   </main>;
 }

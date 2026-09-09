@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CheckList, ContentSection, DashboardMock, ServiceHeading } from "@/components/facebook-ads-service-page";
 import { LeadForm } from "@/components/interactive";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion-primitives";
 
 const seoFaqs = [
   {
@@ -38,16 +39,16 @@ export function SeoServicePage() {
   return (
     <main id="top" className="inner-page facebook-service seo-service">
       <section className="facebook-service__hero">
-        <div className="container">
-          <p className="eyebrow">White-label organic growth</p>
-          <h1>White Label <span>SEO Services</span></h1>
-          <p>Research, technical SEO, content optimization, local visibility, authority building, and agency-ready reporting—delivered quietly behind your brand.</p>
-          <Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link>
-        </div>
+        <StaggerGroup className="container">
+          <StaggerItem as="p" className="eyebrow">White-label organic growth</StaggerItem>
+          <StaggerItem as="h1">White Label <span>SEO Services</span></StaggerItem>
+          <StaggerItem as="p">Research, technical SEO, content optimization, local visibility, authority building, and agency-ready reporting—delivered quietly behind your brand.</StaggerItem>
+          <StaggerItem><Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link></StaggerItem>
+        </StaggerGroup>
       </section>
 
       <section className="facebook-service__section facebook-service__intro">
-        <div className="container facebook-service__content">
+        <Reveal className="container facebook-service__content">
           <p className="eyebrow">Search delivery that earns trust</p>
           <ServiceHeading>SEO services designed to deliver measurable growth.</ServiceHeading>
           <p>Organic growth comes from hundreds of connected decisions: what customers search, how a website is structured, whether pages satisfy intent, how quickly search engines can understand the site, and whether the brand has enough authority to compete.</p>
@@ -55,19 +56,19 @@ export function SeoServicePage() {
           <CheckList items={["Technical, on-page, and off-page SEO", "Keyword and competitor research", "Local SEO and map visibility", "Content planning and optimization", "Flexible scopes across client niches", "Clear agency-ready reporting"]} />
           <Link href="/book-appointment" className="button button--dark">Schedule a consultation <span aria-hidden="true">↗</span></Link>
           <DashboardMock variant="performance" channel="seo" />
-        </div>
+        </Reveal>
       </section>
 
       <section className="facebook-service__proof">
         <div className="container">
-          <div className="facebook-service__proof-heading">
+          <Reveal className="facebook-service__proof-heading">
             <ServiceHeading>Hear what our partners have to say about us.</ServiceHeading>
             <div><p>Agency partners choose Yellow for thoughtful strategy, responsive delivery, and SEO work that arrives ready to present.</p><CheckList items={["Scale without expanding fixed overhead", "Keep complete ownership of client relationships", "Deliver through experienced search specialists"]} /></div>
-          </div>
-          <div className="facebook-service__videos">
-            <article><Image src="/images/unsplash/partner-sarah.jpg" alt="Agency partner Sarah Jenkins discussing Yellow's organic search delivery" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Sarah Jenkins</h3><p>VP of Strategy, Catalyst Agency</p></div></article>
-            <article><Image src="/images/unsplash/partner-marcus.jpg" alt="Agency partner Marcus Vance sharing an SEO scaling success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Marcus Vance</h3><p>Managing Partner, Elevate SEO</p></div></article>
-          </div>
+          </Reveal>
+          <StaggerGroup className="facebook-service__videos">
+            <StaggerItem as="article"><Image src="/images/unsplash/partner-sarah.jpg" alt="Agency partner Sarah Jenkins discussing Yellow's organic search delivery" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Sarah Jenkins</h3><p>VP of Strategy, Catalyst Agency</p></div></StaggerItem>
+            <StaggerItem as="article"><Image src="/images/unsplash/partner-marcus.jpg" alt="Agency partner Marcus Vance sharing an SEO scaling success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Marcus Vance</h3><p>Managing Partner, Elevate SEO</p></div></StaggerItem>
+          </StaggerGroup>
         </div>
       </section>
 
@@ -105,13 +106,13 @@ export function SeoServicePage() {
       />
 
       <section className="facebook-service__form-section">
-        <div className="container facebook-service__form-grid">
+        <Reveal className="container facebook-service__form-grid">
           <div><p className="eyebrow">Grow without growing overhead</p><ServiceHeading>Power up and join other ambitious agencies.</ServiceHeading><p>Add dependable organic-search capacity while your team stays focused on client leadership, sales, and strategy.</p><CheckList items={["Expand your SEO service offering", "Generate revenue without increasing fixed costs", "Save and reallocate your team’s time", "Support local, national, and niche clients", "Gain practical search insight and reporting"]} /></div>
           <LeadForm />
-        </div>
+        </Reveal>
       </section>
 
-      <section className="facebook-service__benefits-intro"><div className="container"><p className="eyebrow">Your search team behind the scenes</p><ServiceHeading>White-label SEO reseller services built around your agency.</ServiceHeading><p>The delivery model flexes around your workflow, client portfolio, internal capabilities, and growth plan without lowering your quality standard.</p><p>Research, technical fixes, on-page improvements, authority building, local visibility, and reporting are coordinated as one measurable search program your team can confidently present.</p></div></section>
+      <section className="facebook-service__benefits-intro"><Reveal className="container"><p className="eyebrow">Your search team behind the scenes</p><ServiceHeading>White-label SEO reseller services built around your agency.</ServiceHeading><p>The delivery model flexes around your workflow, client portfolio, internal capabilities, and growth plan without lowering your quality standard.</p><p>Research, technical fixes, on-page improvements, authority building, local visibility, and reporting are coordinated as one measurable search program your team can confidently present.</p></Reveal></section>
 
       <ContentSection
         title="Well-researched SEO strategies."
@@ -166,7 +167,7 @@ export function SeoServicePage() {
       />
 
       <section className="facebook-service__faq">
-        <div className="container facebook-service__faq-grid">
+        <Reveal className="container facebook-service__faq-grid">
           <div><p className="eyebrow">Frequently asked questions</p><ServiceHeading>Everything you need to know before we begin.</ServiceHeading><p>These are the questions agencies ask most often before adding white-label SEO support.</p></div>
           <div className="facebook-service__faq-list">
             {seoFaqs.map((faq, index) => (
@@ -176,10 +177,10 @@ export function SeoServicePage() {
               </details>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
-      <section className="facebook-service__final-cta"><div className="container"><div><p className="eyebrow">Your organic growth team behind the scenes</p><ServiceHeading>Ready to add dependable SEO capacity?</ServiceHeading><p>Let’s map the right white-label SEO model for your agency and clients.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></div></section>
+      <section className="facebook-service__final-cta"><Reveal className="container"><div><p className="eyebrow">Your organic growth team behind the scenes</p><ServiceHeading>Ready to add dependable SEO capacity?</ServiceHeading><p>Let’s map the right white-label SEO model for your agency and clients.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></Reveal></section>
     </main>
   );
 }

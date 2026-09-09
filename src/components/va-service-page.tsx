@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CheckList, ServiceHeading } from "@/components/facebook-ads-service-page";
 import { LeadForm } from "@/components/interactive";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion-primitives";
 
 const vaFaqs = [
   {
@@ -51,14 +52,14 @@ function VaPhotoSection({
 }) {
   return (
     <section className={`va-service__section va-service__story${soft ? " va-service__section--soft" : ""}`}>
-      <div className="container">
+      <Reveal className="container">
         <div className="va-service__story-copy">
           <ServiceHeading>{title}</ServiceHeading>
           {paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
           {items ? <CheckList items={items} /> : null}
         </div>
         <div className="va-service__photo"><Image src={image} alt={alt} fill sizes="(max-width: 760px) 100vw, 86vw" /></div>
-      </div>
+      </Reveal>
     </section>
   );
 }
@@ -67,16 +68,16 @@ export function VaServicePage() {
   return (
     <main id="top" className="inner-page facebook-service va-service">
       <section className="facebook-service__hero">
-        <div className="container">
-          <p className="eyebrow">White-label operational support</p>
-          <h1>White Label VA Services That Help Agencies <span>Work Smarter</span></h1>
-          <p>Dependable administrative, marketing, coordination, and client-support capacity—delivered quietly behind your agency.</p>
-          <Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link>
-        </div>
+        <StaggerGroup className="container">
+          <StaggerItem as="p" className="eyebrow">White-label operational support</StaggerItem>
+          <StaggerItem as="h1">White Label VA Services That Help Agencies <span>Work Smarter</span></StaggerItem>
+          <StaggerItem as="p">Dependable administrative, marketing, coordination, and client-support capacity—delivered quietly behind your agency.</StaggerItem>
+          <StaggerItem><Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link></StaggerItem>
+        </StaggerGroup>
       </section>
 
       <section className="va-service__section va-service__section--soft">
-        <div className="container va-service__split">
+        <Reveal className="container va-service__split">
           <div className="va-service__copy">
             <p className="eyebrow">More capacity without more fixed overhead</p>
             <ServiceHeading>Expand capacity with structured virtual assistant support.</ServiceHeading>
@@ -90,19 +91,19 @@ export function VaServicePage() {
             <div className="va-service__tool-card" aria-hidden="true"><span>✓</span><span>✉</span><span>◷</span><span>↗</span><span>☎</span><span>▣</span></div>
             <div className="va-service__status-card"><b>32 hrs</b><span>returned to your team</span></div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section className="facebook-service__proof va-service__proof">
         <div className="container">
-          <div className="facebook-service__proof-heading va-service__proof-heading">
+          <Reveal className="facebook-service__proof-heading va-service__proof-heading">
             <ServiceHeading>Partner with a VA team that understands agency life.</ServiceHeading>
             <div><p>Agency work balances client management, marketing, delivery, and operations. Yellow assistants adapt to your tools and workflow while an account lead keeps responsibilities visible and organized.</p><CheckList items={["Dedicated support that learns your systems", "Communication that matches your agency process"]} /></div>
-          </div>
-          <div className="facebook-service__videos">
-            <article><Image src="/images/unsplash/partner-elena.jpg" alt="Agency owner Elena Rostova discussing Yellow's virtual assistant support" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Elena Rostova</h3><p>Founder &amp; CEO, Elevation Media</p></div></article>
-            <article><Image src="/images/unsplash/partner-marcus.jpg" alt="Agency owner Marcus Vance sharing an operations support story" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Marcus Vance</h3><p>COO, Apex Agency Group</p></div></article>
-          </div>
+          </Reveal>
+          <StaggerGroup className="facebook-service__videos">
+            <StaggerItem as="article"><Image src="/images/unsplash/partner-elena.jpg" alt="Agency owner Elena Rostova discussing Yellow's virtual assistant support" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Elena Rostova</h3><p>Founder &amp; CEO, Elevation Media</p></div></StaggerItem>
+            <StaggerItem as="article"><Image src="/images/unsplash/partner-marcus.jpg" alt="Agency owner Marcus Vance sharing an operations support story" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Marcus Vance</h3><p>COO, Apex Agency Group</p></div></StaggerItem>
+          </StaggerGroup>
         </div>
       </section>
 
@@ -141,7 +142,7 @@ export function VaServicePage() {
       />
 
       <section className="facebook-service__form-section va-service__form-section">
-        <div className="container facebook-service__form-grid va-service__form-grid">
+        <Reveal className="container facebook-service__form-grid va-service__form-grid">
           <div className="va-service__copy">
             <p className="eyebrow">Find the right work to delegate first</p>
             <ServiceHeading>Discover how a VA can transform your daily workflow.</ServiceHeading>
@@ -149,10 +150,10 @@ export function VaServicePage() {
             <CheckList items={["Receive a workflow review designed for your agency", "Identify time-draining tasks that can move immediately", "Match responsibilities with the right skill profile", "Protect client trust through white-label execution", "Start with a clear process before onboarding begins"]} />
           </div>
           <LeadForm />
-        </div>
+        </Reveal>
       </section>
 
-      <section className="va-service__services-intro"><div className="container"><p className="eyebrow">Flexible support across agency operations</p><ServiceHeading>How Yellow VAs streamline operations and strengthen growth.</ServiceHeading><p>Each service area is designed to improve clarity, consistency, and delivery while your team keeps its attention on work that requires strategy and client leadership.</p></div></section>
+      <section className="va-service__services-intro"><Reveal className="container"><p className="eyebrow">Flexible support across agency operations</p><ServiceHeading>How Yellow VAs streamline operations and strengthen growth.</ServiceHeading><p>Each service area is designed to improve clarity, consistency, and delivery while your team keeps its attention on work that requires strategy and client leadership.</p></Reveal></section>
 
       <VaPhotoSection
         title="Administrative and scheduling assistance."
@@ -197,7 +198,7 @@ export function VaServicePage() {
       />
 
       <section className="facebook-service__faq va-service__faq">
-        <div className="container facebook-service__faq-grid">
+        <Reveal className="container facebook-service__faq-grid">
           <div><p className="eyebrow">Frequently asked questions</p><ServiceHeading>Everything you need to know before we begin.</ServiceHeading><p>These are the questions agencies ask most often before adding white-label virtual assistant support.</p></div>
           <div className="facebook-service__faq-list">
             {vaFaqs.map((faq, index) => (
@@ -207,10 +208,10 @@ export function VaServicePage() {
               </details>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
-      <section className="facebook-service__final-cta"><div className="container"><div><p className="eyebrow">Your operations team behind the scenes</p><ServiceHeading>Let’s simplify your workload and scale together.</ServiceHeading><p>Keep your focus on strategy, clients, and growth while Yellow handles the recurring details with care.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></div></section>
+      <section className="facebook-service__final-cta"><Reveal className="container"><div><p className="eyebrow">Your operations team behind the scenes</p><ServiceHeading>Let’s simplify your workload and scale together.</ServiceHeading><p>Keep your focus on strategy, clients, and growth while Yellow handles the recurring details with care.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></Reveal></section>
     </main>
   );
 }

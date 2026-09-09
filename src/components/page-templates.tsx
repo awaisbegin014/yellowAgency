@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MediaPlaceholder } from "@/components/media-placeholder";
 import { faqs } from "@/content/site-data";
+import { MotionLink, Reveal, StaggerGroup, StaggerItem, staggerItemVariants } from "@/components/motion-primitives";
 
 type CollectionItem = { title: string; summary: string; href: string };
 
@@ -53,24 +54,24 @@ export function CollectionPage({
     <main id="top" className="inner-page">
       <section className="page-hero page-hero--yellow">
         <div className="container page-hero__grid">
-          <div><p className="eyebrow">{eyebrow}</p><AccentHeading as="h1">{title}</AccentHeading><p className="page-hero__lead">{intro}</p></div>
-          <MediaPlaceholder label={`${title} showcase`} type="portrait" priority src={image ?? "/images/unsplash/digital-marketing.jpg"} />
+          <StaggerGroup><StaggerItem><p className="eyebrow">{eyebrow}</p></StaggerItem><StaggerItem><AccentHeading as="h1">{title}</AccentHeading></StaggerItem><StaggerItem><p className="page-hero__lead">{intro}</p></StaggerItem></StaggerGroup>
+          <Reveal delay={0.15}><MediaPlaceholder label={`${title} showcase`} type="portrait" priority src={image ?? "/images/unsplash/digital-marketing.jpg"} /></Reveal>
         </div>
       </section>
       <section className="section">
         <div className="container">
-          <div className="page-intro"><p className="eyebrow">{introEyebrow}</p><AccentHeading>{introHeading}</AccentHeading><p className="large-copy">{introCopy}</p></div>
+          <Reveal className="page-intro"><p className="eyebrow">{introEyebrow}</p><AccentHeading>{introHeading}</AccentHeading><p className="large-copy">{introCopy}</p></Reveal>
         </div>
       </section>
       <section className="section section--soft">
-        <div className="container collection-grid">
+        <StaggerGroup className="container collection-grid">
           {items.map((item, index) => (
-            <Link key={item.href} href={item.href} className="collection-card">
+            <MotionLink key={item.href} href={item.href} className="collection-card" variants={staggerItemVariants}>
               <span className="collection-card__number">{String(index + 1).padStart(2, "0")}</span>
               <h3>{item.title}</h3><p>{item.summary}</p><span className="text-link">{cardLabel} <span>↗</span></span>
-            </Link>
+            </MotionLink>
           ))}
-        </div>
+        </StaggerGroup>
       </section>
       <StandardCta title={ctaTitle} />
     </main>
@@ -133,41 +134,43 @@ export function DetailPage({
     <main id="top" className="inner-page">
       <section className="page-hero">
         <div className="container page-hero__grid">
-          <div>
-            <p className="eyebrow">{eyebrow}</p><AccentHeading as="h1">{title}</AccentHeading><p className="page-hero__lead">{summary}</p>
-            <Link href="/book-appointment" className="button button--dark">Talk to a specialist <span>↗</span></Link>
-          </div>
-          <MediaPlaceholder label={`${title} presentation`} type="video" priority src={image ?? "/images/unsplash/agency-team.jpg"} />
+          <StaggerGroup>
+            <StaggerItem><p className="eyebrow">{eyebrow}</p></StaggerItem>
+            <StaggerItem><AccentHeading as="h1">{title}</AccentHeading></StaggerItem>
+            <StaggerItem><p className="page-hero__lead">{summary}</p></StaggerItem>
+            <StaggerItem><Link href="/book-appointment" className="button button--dark">Talk to a specialist <span>↗</span></Link></StaggerItem>
+          </StaggerGroup>
+          <Reveal delay={0.15}><MediaPlaceholder label={`${title} presentation`} type="video" priority src={image ?? "/images/unsplash/agency-team.jpg"} /></Reveal>
         </div>
       </section>
       <section className="section">
-        <div className="container detail-outcomes">
+        <Reveal className="container detail-outcomes">
           <div><p className="eyebrow">{opportunityEyebrow}</p><AccentHeading>{opportunityHeading}</AccentHeading></div>
           <div><p className="large-copy">{description}</p><p>{opportunityBody ?? "We begin with the customer and commercial goal, then build the clearest path from attention to action. That means useful strategy, disciplined execution, and reporting everyone can understand."}</p></div>
-        </div>
+        </Reveal>
       </section>
       <section className="section section--soft">
         <div className="container detail-outcomes">
-          <div><p className="eyebrow">{deliveryEyebrow}</p><AccentHeading>{deliveryHeading}</AccentHeading>{metric && <div className="mini-metrics"><div><strong>{metric}</strong><span>{metricLabel}</span></div></div>}</div>
-          <div className="detail-outcomes__cards">
-            {points.map((point, index) => <article key={point}><span>0{index + 1}</span><h3>{point}</h3></article>)}
-          </div>
+          <Reveal><p className="eyebrow">{deliveryEyebrow}</p><AccentHeading>{deliveryHeading}</AccentHeading>{metric && <div className="mini-metrics"><div><strong>{metric}</strong><span>{metricLabel}</span></div></div>}</Reveal>
+          <StaggerGroup className="detail-outcomes__cards">
+            {points.map((point, index) => <StaggerItem as="article" key={point}><span>0{index + 1}</span><h3>{point}</h3></StaggerItem>)}
+          </StaggerGroup>
         </div>
       </section>
       <section className="section">
         <div className="container">
-          <div className="section-heading"><div><p className="eyebrow">How it works</p><AccentHeading>{stepsHeading}</AccentHeading></div><p>Our approach is structured enough to keep momentum and flexible enough to respond to what the evidence tells us.</p></div>
-          <div className="detail-steps">
+          <Reveal className="section-heading"><div><p className="eyebrow">How it works</p><AccentHeading>{stepsHeading}</AccentHeading></div><p>Our approach is structured enough to keep momentum and flexible enough to respond to what the evidence tells us.</p></Reveal>
+          <StaggerGroup className="detail-steps">
             {resolvedSteps.map((step) => (
-              <div key={step.heading} className="detail-step"><h3>{step.heading}</h3><p>{step.body}</p></div>
+              <StaggerItem key={step.heading} className="detail-step"><h3>{step.heading}</h3><p>{step.body}</p></StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </section>
       <section className="section section--dark">
         <div className="container featured-work__grid">
-          <div><p className="eyebrow">{teamEyebrow}</p><AccentHeading>{teamHeading}</AccentHeading><p>{teamCopy}</p><Link href={teamCtaHref} className="button button--yellow">{teamCtaLabel} <span>↗</span></Link></div>
-          <MediaPlaceholder label="Specialist team working on strategy" type="portrait" src={teamImage ?? "/images/unsplash/team-collaboration-04.jpg"} />
+          <StaggerGroup><StaggerItem><p className="eyebrow">{teamEyebrow}</p></StaggerItem><StaggerItem><AccentHeading>{teamHeading}</AccentHeading></StaggerItem><StaggerItem><p>{teamCopy}</p></StaggerItem><StaggerItem><Link href={teamCtaHref} className="button button--yellow">{teamCtaLabel} <span>↗</span></Link></StaggerItem></StaggerGroup>
+          <Reveal delay={0.15}><MediaPlaceholder label="Specialist team working on strategy" type="portrait" src={teamImage ?? "/images/unsplash/team-collaboration-04.jpg"} /></Reveal>
         </div>
       </section>
       <FaqBlock />
@@ -179,7 +182,7 @@ export function DetailPage({
 export function StandardCta({ title }: { title: string }) {
   return (
     <section className="section inner-cta-section">
-      <div className="container cta-panel"><AccentHeading>{title}</AccentHeading><Link href="/book-appointment" className="button button--dark">Book a consultation <span>↗</span></Link></div>
+      <Reveal className="container cta-panel"><AccentHeading>{title}</AccentHeading><Link href="/book-appointment" className="button button--dark">Book a consultation <span>↗</span></Link></Reveal>
     </section>
   );
 }
@@ -187,10 +190,10 @@ export function StandardCta({ title }: { title: string }) {
 export function FaqBlock() {
   return (
     <section className="section faq-section">
-      <div className="container faq-grid">
+      <Reveal className="container faq-grid">
         <div><p className="eyebrow">Common questions</p><AccentHeading>Good questions lead to better work.</AccentHeading></div>
         <div className="accordion-list">{faqs.slice(0, 4).map((faq, index) => <details key={faq.question} open={index === 0}><summary>{faq.question}<span>+</span></summary><p>{faq.answer}</p></details>)}</div>
-      </div>
+      </Reveal>
     </section>
   );
 }

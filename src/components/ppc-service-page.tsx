@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CheckList, ContentSection, DashboardMock, ServiceHeading } from "@/components/facebook-ads-service-page";
 import { LeadForm } from "@/components/interactive";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion-primitives";
 
 const ppcFaqs = [
   {
@@ -38,35 +39,35 @@ export function PpcServicePage() {
   return (
     <main id="top" className="inner-page facebook-service ppc-service">
       <section className="facebook-service__hero">
-        <div className="container">
-          <p className="eyebrow">White-label performance media</p>
-          <h1>White Label <span>PPC Services</span></h1>
-          <p>Cross-channel campaign strategy, research, creative coordination, conversion tracking, optimization, and reporting—delivered quietly behind your agency.</p>
-          <Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link>
-        </div>
+        <StaggerGroup className="container">
+          <StaggerItem as="p" className="eyebrow">White-label performance media</StaggerItem>
+          <StaggerItem as="h1">White Label <span>PPC Services</span></StaggerItem>
+          <StaggerItem as="p">Cross-channel campaign strategy, research, creative coordination, conversion tracking, optimization, and reporting—delivered quietly behind your agency.</StaggerItem>
+          <StaggerItem><Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link></StaggerItem>
+        </StaggerGroup>
       </section>
 
       <section className="facebook-service__section facebook-service__intro">
-        <div className="container facebook-service__content">
+        <Reveal className="container facebook-service__content">
           <p className="eyebrow">Turn media spend into accountable growth</p>
           <ServiceHeading>Drive high-quality traffic with Yellow.</ServiceHeading>
           <p>Paid media can create demand, capture active intent, and accelerate a client’s growth—but only when channels, audiences, offers, landing pages, tracking, and optimization work as one system.</p>
           <p>Yellow’s PPC specialists operate behind your brand to research opportunities, build campaigns, control budgets, improve conversion efficiency, and explain performance clearly. Your agency gains an experienced delivery team without adding fixed overhead or losing ownership of the client relationship.</p>
           <Link href="/book-appointment" className="button button--dark">Schedule a consultation <span aria-hidden="true">↗</span></Link>
           <DashboardMock variant="performance" channel="ppc" />
-        </div>
+        </Reveal>
       </section>
 
       <section className="facebook-service__proof">
         <div className="container">
-          <div className="facebook-service__proof-heading">
+          <Reveal className="facebook-service__proof-heading">
             <ServiceHeading>Hear what our partners have to say about us.</ServiceHeading>
             <div><p>Agency partners rely on Yellow for responsive communication, cross-channel depth, and campaign work that arrives ready to present.</p><CheckList items={["Scale paid-media delivery without fixed overhead", "Keep control of every client relationship", "Deliver through experienced channel specialists"]} /></div>
-          </div>
-          <div className="facebook-service__videos">
-            <article><Image src="/images/unsplash/partner-marcus.jpg" alt="Agency partner Marcus Vance discussing Yellow's cross-channel PPC management" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Marcus Vance</h3><p>Head of Media, Omnichannel Group</p></div></article>
-            <article><Image src="/images/unsplash/partner-david.jpg" alt="Agency partner David Cho sharing a multi-channel PPC scaling story" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>David Cho</h3><p>Performance Director, ScaleFlow</p></div></article>
-          </div>
+          </Reveal>
+          <StaggerGroup className="facebook-service__videos">
+            <StaggerItem as="article"><Image src="/images/unsplash/partner-marcus.jpg" alt="Agency partner Marcus Vance discussing Yellow's cross-channel PPC management" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Marcus Vance</h3><p>Head of Media, Omnichannel Group</p></div></StaggerItem>
+            <StaggerItem as="article"><Image src="/images/unsplash/partner-david.jpg" alt="Agency partner David Cho sharing a multi-channel PPC scaling story" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>David Cho</h3><p>Performance Director, ScaleFlow</p></div></StaggerItem>
+          </StaggerGroup>
         </div>
       </section>
 
@@ -106,13 +107,13 @@ export function PpcServicePage() {
       />
 
       <section className="facebook-service__form-section">
-        <div className="container facebook-service__form-grid">
+        <Reveal className="container facebook-service__form-grid">
           <div><p className="eyebrow">Grow without growing overhead</p><ServiceHeading>Power up and join other ambitious agencies.</ServiceHeading><p>Add dependable PPC capacity while your internal team stays focused on relationships, sales, and strategic leadership.</p><CheckList items={["Expand your existing and new services", "Generate revenue without increasing fixed costs", "Save and reallocate your team’s time", "Support multiple client niches and budgets", "Gain practical media insight and reporting"]} /></div>
           <LeadForm />
-        </div>
+        </Reveal>
       </section>
 
-      <section className="facebook-service__benefits-intro"><div className="container"><p className="eyebrow">A complete performance delivery model</p><ServiceHeading>Benefits of Yellow’s white-label PPC services.</ServiceHeading><p>From initial research to reporting, the system is designed to give your agency control, specialist depth, and presentation-ready work at every stage.</p><p>Channel planning, campaign builds, tracking, testing, budget pacing, and performance analysis stay connected, giving clients clearer decisions and your agency a dependable delivery rhythm.</p></div></section>
+      <section className="facebook-service__benefits-intro"><Reveal className="container"><p className="eyebrow">A complete performance delivery model</p><ServiceHeading>Benefits of Yellow’s white-label PPC services.</ServiceHeading><p>From initial research to reporting, the system is designed to give your agency control, specialist depth, and presentation-ready work at every stage.</p><p>Channel planning, campaign builds, tracking, testing, budget pacing, and performance analysis stay connected, giving clients clearer decisions and your agency a dependable delivery rhythm.</p></Reveal></section>
 
       <ContentSection
         title="Conversion-focused PPC landing pages."
@@ -168,7 +169,7 @@ export function PpcServicePage() {
       />
 
       <section className="facebook-service__faq">
-        <div className="container facebook-service__faq-grid">
+        <Reveal className="container facebook-service__faq-grid">
           <div><p className="eyebrow">Frequently asked questions</p><ServiceHeading>Everything you need to know before we begin.</ServiceHeading><p>These are the questions agencies ask most often before adding white-label PPC support.</p></div>
           <div className="facebook-service__faq-list">
             {ppcFaqs.map((faq, index) => (
@@ -178,10 +179,10 @@ export function PpcServicePage() {
               </details>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
-      <section className="facebook-service__final-cta"><div className="container"><div><p className="eyebrow">Your paid-media team behind the scenes</p><ServiceHeading>Ready to add cross-channel PPC capacity?</ServiceHeading><p>Let’s map the right white-label media model for your agency and clients.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></div></section>
+      <section className="facebook-service__final-cta"><Reveal className="container"><div><p className="eyebrow">Your paid-media team behind the scenes</p><ServiceHeading>Ready to add cross-channel PPC capacity?</ServiceHeading><p>Let’s map the right white-label media model for your agency and clients.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></Reveal></section>
     </main>
   );
 }

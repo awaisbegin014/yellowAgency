@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CheckList, ContentSection, DashboardMock, ServiceHeading } from "@/components/facebook-ads-service-page";
 import { LeadForm } from "@/components/interactive";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion-primitives";
 
 const googleAdsFaqs = [
   {
@@ -38,32 +39,32 @@ export function GoogleAdsServicePage() {
   return (
     <main id="top" className="inner-page facebook-service google-ads-service">
       <section className="facebook-service__hero">
-        <div className="container">
-          <p className="eyebrow">White-label paid search</p>
-          <h1>White Label <span>Google Ads</span></h1>
-          <p>High-intent campaign strategy, account builds, keyword planning, conversion tracking, optimization, and reporting—delivered quietly behind your agency.</p>
-          <Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link>
-        </div>
+        <StaggerGroup className="container">
+          <StaggerItem as="p" className="eyebrow">White-label paid search</StaggerItem>
+          <StaggerItem as="h1">White Label <span>Google Ads</span></StaggerItem>
+          <StaggerItem as="p">High-intent campaign strategy, account builds, keyword planning, conversion tracking, optimization, and reporting—delivered quietly behind your agency.</StaggerItem>
+          <StaggerItem><Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link></StaggerItem>
+        </StaggerGroup>
       </section>
 
       <section className="facebook-service__section facebook-service__intro">
-        <div className="container facebook-service__content">
+        <Reveal className="container facebook-service__content">
           <p className="eyebrow">Capture demand with clarity</p>
           <ServiceHeading>Reach high-intent customers with Yellow.</ServiceHeading>
           <p>Google Ads can put a client in front of people already searching for a solution, but valuable traffic depends on disciplined account structure, relevant keywords, persuasive ads, accurate conversion tracking, and landing pages that carry the promise through to action.</p>
           <p>Yellow’s paid-search specialists work behind your brand to plan, build, and improve campaigns around the client’s commercial goals. Your agency receives practical strategy, consistent optimization, and clear reporting without adding another specialist department in-house.</p>
           <Link href="/book-appointment" className="button button--dark">Schedule a consultation <span aria-hidden="true">↗</span></Link>
           <DashboardMock variant="performance" channel="google" />
-        </div>
+        </Reveal>
       </section>
 
       <section className="facebook-service__proof">
         <div className="container">
-          <div className="facebook-service__proof-heading"><ServiceHeading>Hear what our partners have to say about us.</ServiceHeading><div><p>Agency partners rely on Yellow for responsive communication, practical search expertise, and delivery that stays confidently behind their brand.</p><CheckList items={["Scale paid-search delivery without fixed overhead", "Retain complete ownership of client relationships", "Present clear recommendations and agency-ready reports"]} /></div></div>
-          <div className="facebook-service__videos">
-            <article><Image src="/images/unsplash/partner-elena.jpg" alt="Agency partner Elena Rostova discussing Yellow's Google Ads management" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Elena Rostova</h3><p>Founder &amp; MD, Horizon Search</p></div></article>
-            <article><Image src="/images/unsplash/partner-david.jpg" alt="Agency partner David Cho sharing a Google Ads scaling success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>David Cho</h3><p>Head of Growth, Beacon Media</p></div></article>
-          </div>
+          <Reveal className="facebook-service__proof-heading"><ServiceHeading>Hear what our partners have to say about us.</ServiceHeading><div><p>Agency partners rely on Yellow for responsive communication, practical search expertise, and delivery that stays confidently behind their brand.</p><CheckList items={["Scale paid-search delivery without fixed overhead", "Retain complete ownership of client relationships", "Present clear recommendations and agency-ready reports"]} /></div></Reveal>
+          <StaggerGroup className="facebook-service__videos">
+            <StaggerItem as="article"><Image src="/images/unsplash/partner-elena.jpg" alt="Agency partner Elena Rostova discussing Yellow's Google Ads management" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Elena Rostova</h3><p>Founder &amp; MD, Horizon Search</p></div></StaggerItem>
+            <StaggerItem as="article"><Image src="/images/unsplash/partner-david.jpg" alt="Agency partner David Cho sharing a Google Ads scaling success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>David Cho</h3><p>Head of Growth, Beacon Media</p></div></StaggerItem>
+          </StaggerGroup>
         </div>
       </section>
 
@@ -88,13 +89,13 @@ export function GoogleAdsServicePage() {
       />
 
       <section className="facebook-service__form-section">
-        <div className="container facebook-service__form-grid">
+        <Reveal className="container facebook-service__form-grid">
           <div><p className="eyebrow">Grow without growing overhead</p><ServiceHeading>Power up and join other ambitious agencies.</ServiceHeading><p>Add experienced Google Ads capacity while your internal team stays focused on relationships, sales, strategy, and client leadership.</p><CheckList items={["Expand your paid-search service offering", "Generate revenue without increasing fixed costs", "Save and reallocate your team’s time", "Support different client niches and budgets", "Gain practical search insight and reporting"]} /></div>
           <LeadForm />
-        </div>
+        </Reveal>
       </section>
 
-      <section className="facebook-service__benefits-intro"><div className="container"><p className="eyebrow">A complete search delivery model</p><ServiceHeading>Benefits of Yellow’s white-label Google Ads services.</ServiceHeading><p>From the search query to the final conversion, every part of the system is reviewed, managed, and reported with your agency’s reputation in mind.</p><p>Your clients receive focused campaign strategy, disciplined budget control, ongoing search-term refinement, conversion insight, and presentation-ready reports—all delivered quietly under your brand.</p></div></section>
+      <section className="facebook-service__benefits-intro"><Reveal className="container"><p className="eyebrow">A complete search delivery model</p><ServiceHeading>Benefits of Yellow’s white-label Google Ads services.</ServiceHeading><p>From the search query to the final conversion, every part of the system is reviewed, managed, and reported with your agency’s reputation in mind.</p><p>Your clients receive focused campaign strategy, disciplined budget control, ongoing search-term refinement, conversion insight, and presentation-ready reports—all delivered quietly under your brand.</p></Reveal></section>
 
       <ContentSection
         title="Conversion-focused landing page support."
@@ -139,7 +140,7 @@ export function GoogleAdsServicePage() {
       />
 
       <section className="facebook-service__faq">
-        <div className="container facebook-service__faq-grid">
+        <Reveal className="container facebook-service__faq-grid">
           <div><p className="eyebrow">Frequently asked questions</p><ServiceHeading>Everything you need to know before we begin.</ServiceHeading><p>These are the questions agencies ask most often when adding white-label Google Ads support.</p></div>
           <div className="facebook-service__faq-list">
             {googleAdsFaqs.map((faq, index) => (
@@ -149,10 +150,10 @@ export function GoogleAdsServicePage() {
               </details>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
-      <section className="facebook-service__final-cta"><div className="container"><div><p className="eyebrow">Your search team behind the scenes</p><ServiceHeading>Ready to add Google Ads capacity?</ServiceHeading><p>Let’s map the right white-label paid-search model for your agency and clients.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></div></section>
+      <section className="facebook-service__final-cta"><Reveal className="container"><div><p className="eyebrow">Your search team behind the scenes</p><ServiceHeading>Ready to add Google Ads capacity?</ServiceHeading><p>Let’s map the right white-label paid-search model for your agency and clients.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></Reveal></section>
     </main>
   );
 }

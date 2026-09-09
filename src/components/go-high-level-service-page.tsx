@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CheckList, ContentSection, DashboardMock, ServiceHeading } from "@/components/facebook-ads-service-page";
 import { LeadForm } from "@/components/interactive";
+import { Reveal, StaggerGroup, StaggerItem } from "@/components/motion-primitives";
 
 const goHighLevelFaqs = [
   {
@@ -38,35 +39,35 @@ export function GoHighLevelServicePage() {
   return (
     <main id="top" className="inner-page facebook-service go-high-level-service">
       <section className="facebook-service__hero">
-        <div className="container">
-          <p className="eyebrow">White-label CRM and automation</p>
-          <h1>White Label <span>Go High Level</span></h1>
-          <p>CRM configuration, pipelines, funnels, calendars, automation, reporting, and technical support—delivered quietly behind your agency.</p>
-          <Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link>
-        </div>
+        <StaggerGroup className="container">
+          <StaggerItem as="p" className="eyebrow">White-label CRM and automation</StaggerItem>
+          <StaggerItem as="h1">White Label <span>Go High Level</span></StaggerItem>
+          <StaggerItem as="p">CRM configuration, pipelines, funnels, calendars, automation, reporting, and technical support—delivered quietly behind your agency.</StaggerItem>
+          <StaggerItem><Link href="/book-appointment" className="button button--yellow">Free 20-Min Consultation <span aria-hidden="true">↗</span></Link></StaggerItem>
+        </StaggerGroup>
       </section>
 
       <section className="facebook-service__section facebook-service__intro">
-        <div className="container facebook-service__content">
+        <Reveal className="container facebook-service__content">
           <p className="eyebrow">One operating system for client growth</p>
           <ServiceHeading>Turn GoHighLevel into a dependable agency service.</ServiceHeading>
           <p>GoHighLevel can connect lead capture, conversations, appointments, opportunities, follow-up, funnels, and reporting in one platform. The value comes from configuring those parts around a real client journey—not simply switching on more features.</p>
           <p>Yellow helps your agency design, build, test, document, and support practical systems under your brand. Your team keeps the client relationship and strategic direction while our specialists handle the detailed platform work behind the scenes.</p>
           <Link href="/book-appointment" className="button button--dark">Schedule a consultation <span aria-hidden="true">↗</span></Link>
           <DashboardMock variant="performance" channel="ghl" />
-        </div>
+        </Reveal>
       </section>
 
       <section className="facebook-service__proof">
         <div className="container">
-          <div className="facebook-service__proof-heading">
+          <Reveal className="facebook-service__proof-heading">
             <ServiceHeading>Hear what our partners have to say about us.</ServiceHeading>
             <div><p>Agency partners value structured implementation, responsive support, and systems that are easier for their teams and clients to use.</p><CheckList items={["Scale platform delivery without fixed overhead", "Keep ownership of client strategy and data", "Build through experienced CRM specialists"]} /></div>
-          </div>
-          <div className="facebook-service__videos">
-            <article><Image src="/images/unsplash/partner-david.jpg" alt="Agency partner David Cho discussing Yellow's GoHighLevel architecture" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>David Cho</h3><p>Agency Operations Director, ScaleX</p></div></article>
-            <article><Image src="/images/unsplash/partner-sarah.jpg" alt="Agency partner Sarah Jenkins sharing a CRM automation success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Sarah Jenkins</h3><p>Managing Director, Pipeline Pro</p></div></article>
-          </div>
+          </Reveal>
+          <StaggerGroup className="facebook-service__videos">
+            <StaggerItem as="article"><Image src="/images/unsplash/partner-david.jpg" alt="Agency partner David Cho discussing Yellow's GoHighLevel architecture" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>David Cho</h3><p>Agency Operations Director, ScaleX</p></div></StaggerItem>
+            <StaggerItem as="article"><Image src="/images/unsplash/partner-sarah.jpg" alt="Agency partner Sarah Jenkins sharing a CRM automation success story" fill sizes="(max-width: 760px) 100vw, 50vw" /><div><h3>Sarah Jenkins</h3><p>Managing Director, Pipeline Pro</p></div></StaggerItem>
+          </StaggerGroup>
         </div>
       </section>
 
@@ -104,13 +105,13 @@ export function GoHighLevelServicePage() {
       />
 
       <section className="facebook-service__form-section">
-        <div className="container facebook-service__form-grid">
+        <Reveal className="container facebook-service__form-grid">
           <div><p className="eyebrow">Grow without growing overhead</p><ServiceHeading>Power up and join other ambitious agencies.</ServiceHeading><p>Add dependable GoHighLevel capacity while your internal team stays focused on client direction, relationships, sales, and growth.</p><CheckList items={["Expand your CRM and automation offer", "Generate revenue without increasing fixed costs", "Save and reallocate technical time", "Create reusable systems across niches", "Support client accounts through one organized queue"]} /></div>
           <LeadForm />
-        </div>
+        </Reveal>
       </section>
 
-      <section className="facebook-service__benefits-intro"><div className="container"><p className="eyebrow">A complete platform delivery model</p><ServiceHeading>Benefits of Yellow’s white-label GoHighLevel services.</ServiceHeading><p>Strategy, configuration, testing, documentation, and support stay connected through one accountable workflow designed around your agency.</p><p>Pipelines, automations, forms, calendars, messaging, snapshots, permissions, and reporting are organized as one operating system your team can understand, manage, and scale.</p></div></section>
+      <section className="facebook-service__benefits-intro"><Reveal className="container"><p className="eyebrow">A complete platform delivery model</p><ServiceHeading>Benefits of Yellow’s white-label GoHighLevel services.</ServiceHeading><p>Strategy, configuration, testing, documentation, and support stay connected through one accountable workflow designed around your agency.</p><p>Pipelines, automations, forms, calendars, messaging, snapshots, permissions, and reporting are organized as one operating system your team can understand, manage, and scale.</p></Reveal></section>
 
       <ContentSection
         title="Create funnels and pages that connect directly to follow-up."
@@ -135,12 +136,12 @@ export function GoHighLevelServicePage() {
       />
 
       <section className="facebook-service__section">
-        <div className="container facebook-service__content">
+        <Reveal className="container facebook-service__content">
           <ServiceHeading>Use reusable snapshots without creating rigid accounts.</ServiceHeading>
           <p>Snapshots can reduce setup time when they capture proven foundations instead of forcing every client into the same process. Yellow organizes reusable fields, tags, pipelines, calendars, forms, workflows, templates, and reporting views around a clear niche or service model.</p>
           <p>Each new sub-account is then reviewed against the client’s real offer, locations, users, hours, lead sources, and communication rules. This gives your agency a faster starting point while preserving the flexibility needed for responsible implementation.</p>
           <CheckList items={["Reusable account foundations", "Client-specific configuration review", "Consistent names and documentation", "Faster setup without copy-and-forget risk"]} />
-        </div>
+        </Reveal>
       </section>
 
       <ContentSection
@@ -155,7 +156,7 @@ export function GoHighLevelServicePage() {
       />
 
       <section className="facebook-service__faq">
-        <div className="container facebook-service__faq-grid">
+        <Reveal className="container facebook-service__faq-grid">
           <div><p className="eyebrow">Frequently asked questions</p><ServiceHeading>Everything you need to know before we begin.</ServiceHeading><p>These are the questions agencies ask most often before adding white-label GoHighLevel support.</p></div>
           <div className="facebook-service__faq-list">
             {goHighLevelFaqs.map((faq, index) => (
@@ -165,10 +166,10 @@ export function GoHighLevelServicePage() {
               </details>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
-      <section className="facebook-service__final-cta"><div className="container"><div><p className="eyebrow">Your platform team behind the scenes</p><ServiceHeading>Ready to add GoHighLevel capacity?</ServiceHeading><p>Let’s map the right white-label CRM and automation model for your agency and clients.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></div></section>
+      <section className="facebook-service__final-cta"><Reveal className="container"><div><p className="eyebrow">Your platform team behind the scenes</p><ServiceHeading>Ready to add GoHighLevel capacity?</ServiceHeading><p>Let’s map the right white-label CRM and automation model for your agency and clients.</p></div><Link href="/book-appointment" className="button button--dark">Book a free strategy call <span aria-hidden="true">↗</span></Link></Reveal></section>
     </main>
   );
 }

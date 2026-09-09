@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { MediaPlaceholder } from "@/components/media-placeholder";
+import { MotionLink, Reveal, StaggerGroup, staggerItemVariants } from "@/components/motion-primitives";
 import type { Post } from "@/content/site-data";
 
 const BLOG_FALLBACKS = [
@@ -51,7 +52,7 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
   return (
     <>
       <section className="yellow-blog__discovery" aria-label="Browse Yellow insights">
-        <div className="container">
+        <Reveal className="container">
           <div className="yellow-blog__search-panel">
             <div>
               <span className="yellow-blog__search-icon" aria-hidden="true">⌕</span>
@@ -83,24 +84,24 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section className="yellow-blog__articles">
         <div className="container">
           {featured.length > 0 ? (
             <>
-              <div className="yellow-blog__section-heading">
+              <Reveal className="yellow-blog__section-heading">
                 <div>
                   <p className="eyebrow">Featured perspectives</p>
                   <h2>Start with the ideas shaping better decisions.</h2>
                 </div>
                 <p>Practical thinking for agency leaders who want clearer delivery, stronger client outcomes, and growth that does not add unnecessary complexity.</p>
-              </div>
+              </Reveal>
 
-              <div className="yellow-blog__featured-grid">
+              <StaggerGroup className="yellow-blog__featured-grid">
                 {featured.map((post, index) => (
-                  <Link href={`/blog/${post.slug}`} className="yellow-blog__featured-card" key={post.slug}>
+                  <MotionLink href={`/blog/${post.slug}`} className="yellow-blog__featured-card" key={post.slug} variants={staggerItemVariants}>
                     <div className="yellow-blog__featured-media">
                       <MediaPlaceholder label={`${post.title} editorial feature image`} src={post.image ?? BLOG_FALLBACKS[index % BLOG_FALLBACKS.length]} />
                       <span>{String(index + 1).padStart(2, "0")}</span>
@@ -111,19 +112,19 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
                       <p>{post.excerpt}</p>
                       <span className="yellow-blog__read-link">Read the full article <b aria-hidden="true">↗</b></span>
                     </div>
-                  </Link>
+                  </MotionLink>
                 ))}
-              </div>
+              </StaggerGroup>
 
               {remaining.length > 0 && (
                 <div className="yellow-blog__latest">
-                  <div className="yellow-blog__latest-heading">
+                  <Reveal className="yellow-blog__latest-heading">
                     <div><p className="eyebrow">Latest thinking</p><h2>Useful ideas, without the filler.</h2></div>
                     <span>Fresh thinking across strategy, delivery, creative, media, and technology.</span>
-                  </div>
-                  <div className="yellow-blog__grid">
+                  </Reveal>
+                  <StaggerGroup className="yellow-blog__grid">
                     {remaining.map((post, index) => (
-                      <Link key={post.slug} href={`/blog/${post.slug}`} className="yellow-blog__card">
+                      <MotionLink key={post.slug} href={`/blog/${post.slug}`} className="yellow-blog__card" variants={staggerItemVariants}>
                         <div className="yellow-blog__card-media">
                           <MediaPlaceholder label={`${post.title} article image`} src={post.image ?? BLOG_FALLBACKS[(index + 2) % BLOG_FALLBACKS.length]} />
                           <span>{String(index + 3).padStart(2, "0")}</span>
@@ -132,26 +133,26 @@ export function BlogExplorer({ posts }: { posts: Post[] }) {
                         <h3>{post.title}</h3>
                         <p>{post.excerpt}</p>
                         <span className="yellow-blog__read-link">Read more <b aria-hidden="true">↗</b></span>
-                      </Link>
+                      </MotionLink>
                     ))}
-                  </div>
+                  </StaggerGroup>
                 </div>
               )}
 
               {recent.length > 1 && (
                 <div className="yellow-blog__recent">
-                  <div className="yellow-blog__recent-heading">
+                  <Reveal className="yellow-blog__recent-heading">
                     <div><p className="eyebrow">Recently published</p><h2>More ideas worth keeping close.</h2></div>
                     <Link href="/contact-us" className="text-link">Suggest a topic <span aria-hidden="true">↗</span></Link>
-                  </div>
-                  <div className="yellow-blog__recent-grid">
+                  </Reveal>
+                  <StaggerGroup className="yellow-blog__recent-grid">
                     {recent.map((post) => (
-                      <Link href={`/blog/${post.slug}`} key={post.slug}>
+                      <MotionLink href={`/blog/${post.slug}`} key={post.slug} variants={staggerItemVariants}>
                         <MediaPlaceholder label={`${post.title} recent article image`} src={post.image ?? BLOG_FALLBACKS[recent.indexOf(post) % BLOG_FALLBACKS.length]} />
                         <div><span>{post.category} · {post.date}</span><h3>{post.title}</h3><b>Read article <i aria-hidden="true">↗</i></b></div>
-                      </Link>
+                      </MotionLink>
                     ))}
-                  </div>
+                  </StaggerGroup>
                 </div>
               )}
             </>

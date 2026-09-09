@@ -2,7 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { StaggerGroup, StaggerItem } from "@/components/motion-primitives";
+
+const fadeSlide = {
+  initial: { opacity: 0, x: 12 },
+  animate: { opacity: 1, x: 0, transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] as const } },
+  exit: { opacity: 0, x: -12, transition: { duration: 0.2, ease: "easeIn" as const } },
+};
 
 const resultSets = {
   before: [
@@ -203,11 +211,11 @@ export function AnimatedStats() {
   }, []);
 
   return (
-    <section className="hc-stats" ref={sectionRef}>
+    <motion.section className="hc-stats" ref={sectionRef} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}>
       <div className="hc-shell">
         {agencyStats.map((stat, index) => <div key={stat.label}><b>{values[index]}{stat.suffix}</b><span>{stat.label}</span></div>)}
       </div>
-    </section>
+    </motion.section>
   );
 }
 
@@ -226,14 +234,17 @@ export function NicheTabs() {
             onClick={() => setActiveSlug(niche.slug)}
             key={niche.slug}
           >
-            {niche.title}
+            {niche.slug === activeSlug ? <motion.span className="hc-pill-indicator" layoutId="niche-pill" transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }} /> : null}
+            <span className="hc-pill-label">{niche.title}</span>
           </button>
         ))}
       </div>
-      <div className="hc-niche-detail" key={activeNiche.slug}>
-        <div><h3>{activeNiche.title}</h3><span>Worked on {activeNiche.clients} clients</span><p>{activeNiche.description}</p><p className="hc-niche-detail__focus"><b>Our strategic focus:</b> {activeNiche.focus}</p></div>
-        <div><h3>What You&apos;ll Get:</h3><ul>{activeNiche.benefits.map((benefit) => <li key={benefit}>{benefit}</li>)}</ul><div className="hc-niche-outcomes">{activeNiche.outcomes.map((outcome) => <span key={outcome}>{outcome}</span>)}</div><Link href={`/industries/${activeNiche.slug}`} className="hc-text-link">Learn More ↗</Link></div>
-      </div>
+      <AnimatePresence mode="wait">
+        <motion.div className="hc-niche-detail" key={activeNiche.slug} {...fadeSlide}>
+          <div><h3>{activeNiche.title}</h3><span>Worked on {activeNiche.clients} clients</span><p>{activeNiche.description}</p><p className="hc-niche-detail__focus"><b>Our strategic focus:</b> {activeNiche.focus}</p></div>
+          <div><h3>What You&apos;ll Get:</h3><ul>{activeNiche.benefits.map((benefit) => <li key={benefit}>{benefit}</li>)}</ul><div className="hc-niche-outcomes">{activeNiche.outcomes.map((outcome) => <span key={outcome}>{outcome}</span>)}</div><Link href={`/industries/${activeNiche.slug}`} className="hc-text-link">Learn More ↗</Link></div>
+        </motion.div>
+      </AnimatePresence>
     </>
   );
 }
@@ -243,13 +254,18 @@ function CaseStudyCard({ study, sizes }: { study: (typeof homeCaseStudies)[numbe
     <article>
       <div>
         <Image src={`/images/unsplash/${study.image}`} alt={study.title} fill sizes={sizes} />
-        <span className="hc-case-chart"><span className="hc-bars" aria-hidden="true">{Array.from({ length: 5 }, (_, index) => <i key={index} style={{ height: `${28 + ((index * 19) % 58)}%` }} />)}</span></span>
       </div>
       <h3>{study.title}</h3>
       <Link href="/case-studies" aria-label={`View ${study.title}`}>→</Link>
     </article>
   );
 }
+
+const caseSlideVariants = {
+  initial: (direction: "left" | "right") => ({ opacity: 0, x: direction === "right" ? 34 : -34 }),
+  animate: { opacity: 1, x: 0, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] as const } },
+  exit: (direction: "left" | "right") => ({ opacity: 0, x: direction === "right" ? -34 : 34, transition: { duration: 0.25, ease: "easeIn" as const } }),
+};
 
 export function CaseStudiesSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -261,13 +277,15 @@ export function CaseStudiesSlider() {
 
   return (
     <>
-      <div className="hc-case-grid hc-case-grid--desktop">
-        {homeCaseStudies.map((study) => <CaseStudyCard key={study.title} study={study} sizes="33vw" />)}
-      </div>
+      <StaggerGroup className="hc-case-grid hc-case-grid--desktop">
+        {homeCaseStudies.map((study) => <StaggerItem key={study.title}><CaseStudyCard study={study} sizes="33vw" /></StaggerItem>)}
+      </StaggerGroup>
       <div className="hc-case-slider" aria-live="polite">
-        <div className={`hc-case-slider__slide is-${direction}`} key={activeIndex}>
-          <CaseStudyCard study={homeCaseStudies[activeIndex]} sizes="92vw" />
-        </div>
+        <AnimatePresence mode="wait" custom={direction}>
+          <motion.div className="hc-case-slider__slide" key={activeIndex} custom={direction} variants={caseSlideVariants} initial="initial" animate="animate" exit="exit">
+            <CaseStudyCard study={homeCaseStudies[activeIndex]} sizes="92vw" />
+          </motion.div>
+        </AnimatePresence>
         <div className="hc-case-slider__controls">
           <button type="button" onClick={() => move(-1)} aria-label="Previous case study">‹</button>
           <button type="button" onClick={() => move(1)} aria-label="Next case study">›</button>
@@ -318,7 +336,7 @@ function ServiceDetail({ service, activeIndex, variant }: { service: ServiceTab;
   const dashboardMetrics = serviceDashboardMetrics[service.title];
 
   return (
-    <div className={`hc-service-detail hc-service-detail--${variant}`}>
+    <motion.div className={`hc-service-detail hc-service-detail--${variant}`} {...fadeSlide}>
       <div className="hc-browser-shot">
         <div className="hc-window-bar"><i /><i /><i /><span>{service.dashboard}</span></div>
         <ServiceDashboardVisual metrics={dashboardMetrics} activeIndex={activeIndex} />
@@ -327,7 +345,7 @@ function ServiceDetail({ service, activeIndex, variant }: { service: ServiceTab;
       <p>{service.description}</p>
       <ul>{service.benefits.map((benefit) => <li key={benefit}>{benefit}</li>)}</ul>
       <Link href={`/white-label/${service.slug}`} className="hc-text-link">Learn More ↗</Link>
-    </div>
+    </motion.div>
   );
 }
 
@@ -343,11 +361,13 @@ export function ServiceTabs() {
             <button type="button" className={index === activeIndex ? "is-active" : ""} aria-pressed={index === activeIndex} aria-expanded={index === activeIndex} onClick={() => setActiveIndex((current) => current === index ? null : index)}>
               <span>{service.title}</span><b aria-hidden="true">→</b>
             </button>
-            {index === activeIndex ? <ServiceDetail service={service} activeIndex={index} variant="mobile" /> : null}
+            <AnimatePresence>{index === activeIndex ? <ServiceDetail key={service.title} service={service} activeIndex={index} variant="mobile" /> : null}</AnimatePresence>
           </div>
         ))}
       </div>
-      {activeService && activeIndex !== null ? <ServiceDetail service={activeService} activeIndex={activeIndex} variant="desktop" /> : <div className="hc-service-detail hc-service-detail--desktop" />}
+      <AnimatePresence mode="wait">
+        {activeService && activeIndex !== null ? <ServiceDetail key={activeService.title} service={activeService} activeIndex={activeIndex} variant="desktop" /> : <div className="hc-service-detail hc-service-detail--desktop" />}
+      </AnimatePresence>
     </div>
   );
 }
@@ -359,17 +379,22 @@ export function PartnerEquation() {
 
   return (
     <div className="hc-model-cards" aria-live="polite">
-      <article className="hc-equation-card hc-equation-card--yellow" key={`services-${activeIndex}`}>
-        <div className="hc-equation-brand"><span aria-hidden="true">Y</span><b>Yellow</b></div>
-        <ul>{testimonial.services.map((item) => <li key={item}>{item}</li>)}</ul>
-      </article>
+      <AnimatePresence mode="wait">
+        <motion.article className="hc-equation-card hc-equation-card--yellow" key={`services-${activeIndex}`} {...fadeSlide}>
+          <div className="hc-equation-brand"><span aria-hidden="true">Y</span><b>Yellow</b></div>
+          <ul>{testimonial.services.map((item) => <li key={item}>{item}</li>)}</ul>
+        </motion.article>
+      </AnimatePresence>
       <span className="hc-equation-symbol hc-equation-symbol--plus" aria-hidden="true"><b>+</b></span>
-      <article className="hc-equation-card" key={`partner-${activeIndex}`}>
-        <h3>You As Our Partner</h3>
-        <ul>{testimonial.partnerFocus.map((item) => <li key={item}>{item}</li>)}</ul>
-      </article>
+      <AnimatePresence mode="wait">
+        <motion.article className="hc-equation-card" key={`partner-${activeIndex}`} {...fadeSlide}>
+          <h3>You As Our Partner</h3>
+          <ul>{testimonial.partnerFocus.map((item) => <li key={item}>{item}</li>)}</ul>
+        </motion.article>
+      </AnimatePresence>
       <span className="hc-equation-symbol hc-equation-symbol--equals" aria-hidden="true"><b>=</b></span>
-      <article className="hc-equation-card is-yellow">
+      <AnimatePresence mode="wait">
+      <motion.article className="hc-equation-card is-yellow" key={`testimonial-${activeIndex}`} {...fadeSlide}>
         <div className="hc-testimonial-person">
           <div className="hc-avatar"><Image src={testimonial.image} alt={testimonial.name} fill sizes="95px" /></div>
           <div><h3>{testimonial.name}</h3><span>{testimonial.role}</span></div>
@@ -379,7 +404,8 @@ export function PartnerEquation() {
           <button type="button" onClick={() => move(-1)} aria-label="Previous testimonial">‹</button>
           <button type="button" onClick={() => move(1)} aria-label="Next testimonial">›</button>
         </div>
-      </article>
+      </motion.article>
+      </AnimatePresence>
     </div>
   );
 }

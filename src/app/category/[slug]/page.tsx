@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { MediaPlaceholder } from "@/components/media-placeholder";
 import { AccentHeading } from "@/components/page-templates";
 import { getBlogsByCategory, getPublishedBlogs } from "@/lib/blog-service";
+import { MotionLink, Reveal, StaggerGroup, staggerItemVariants } from "@/components/motion-primitives";
 
 const BLOG_FALLBACKS = [
   "/images/unsplash/digital-marketing.jpg",
@@ -41,19 +41,19 @@ export default async function CategoryPage({ params }: Props) {
   return (
     <main id="top" className="inner-page">
       <section className="page-hero page-hero--yellow">
-        <div className="container article-header">
+        <Reveal className="container article-header">
           <p className="eyebrow">Insight category</p>
           <AccentHeading as="h1">{displayTitle}</AccentHeading>
           <p className="page-hero__lead">
             Useful perspectives, practical guides, and fresh thinking from the Yellow team.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       <section className="section">
-        <div className="container post-grid">
+        <StaggerGroup className="container post-grid">
           {visible.map((post, index) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} className="post-card">
+            <MotionLink key={post.slug} href={`/blog/${post.slug}`} className="post-card" variants={staggerItemVariants}>
               <MediaPlaceholder label={`${post.title} image`} src={post.image ?? BLOG_FALLBACKS[index % BLOG_FALLBACKS.length]} />
               <span>
                 {post.category} · {post.readTime}
@@ -61,9 +61,9 @@ export default async function CategoryPage({ params }: Props) {
               <h3>{post.title}</h3>
               <p>{post.excerpt}</p>
               <b>Read article ↗</b>
-            </Link>
+            </MotionLink>
           ))}
-        </div>
+        </StaggerGroup>
       </section>
     </main>
   );
